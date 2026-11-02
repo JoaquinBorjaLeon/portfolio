@@ -1,220 +1,29 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-title-es="Joaquín Borja León, ingeniero de software" data-title-en="Joaquín Borja León, software engineer">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Joaquín Borja León, ingeniero de software</title>
-<meta name="description" content="Portfolio de Joaquín Borja León, ingeniero de software en Madrid especializado en backend y datos. Proyectos: DocuChat, VecinUs, Sports Value Detector, RecuerdaMed, Analista incansable y The Precision.">
+<meta name="description" content="Portfolio de Joaquín Borja León, ingeniero de software en Madrid especializado en backend y datos: DocuChat, VecinUs, Sports Value Detector, RecuerdaMed, Analista incansable, The Precision y Poké-Hub.">
 <meta name="theme-color" content="#ffffff">
 <meta property="og:title" content="Joaquín Borja León, ingeniero de software">
-<meta property="og:description" content="Backend, datos e IA aplicada. Proyectos con código abierto en GitHub.">
-<meta property="og:url" content="https://joaquinborjaleon.com">
+<meta property="og:description" content="Portfolio de Joaquín Borja León, ingeniero de software en Madrid especializado en backend y datos: DocuChat, VecinUs, Sports Value Detector, RecuerdaMed, Analista incansable, The Precision y Poké-Hub.">
+<meta property="og:url" content="https://joaquinborjaleon.com/">
 <meta property="og:image" content="https://joaquinborjaleon.com/photo.jpg">
 <meta property="og:type" content="profile">
-<link rel="canonical" href="https://joaquinborjaleon.com">
-<link rel="icon" href="photo.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://joaquinborjaleon.com/">
+<link rel="icon" href="/photo.jpg">
 <link rel="preconnect" href="https://api.fontshare.com">
 <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
 <link href="https://api.fontshare.com/v2/css?f[]=gambarino@400&f[]=general-sans@400,500,600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#ffffff; --surface:#f3f4f6; --surface-2:#e7e9ee; --line:#e2e4ea;
-  --ink:#1f2b4d; --ink-2:#36415f; --muted:#5d6478; --accent:#f7941d; --link:#2c4a86;
-  --display:"Gambarino",Georgia,"Times New Roman",serif;
-  --text:"General Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  --wrap:1160px; --gutter:clamp(20px,5vw,48px);
-  --s-small:.875rem; --s-body:clamp(1.0625rem,1.02rem + .18vw,1.125rem);
-  --s-lead:clamp(1.125rem,1.05rem + .4vw,1.375rem);
-  --s-h3:clamp(1.875rem,1.5rem + 1.6vw,2.75rem);
-  --s-h2:clamp(2.25rem,1.7rem + 2.4vw,3.5rem);
-  --s-h1:clamp(2.75rem,1.6rem + 5vw,5.5rem);
-  --radius:14px; --ease:cubic-bezier(.22,1,.36,1);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:84px}
-body{background:var(--bg);color:var(--ink);font:400 var(--s-body)/1.6 var(--text);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-img{display:block;max-width:100%;height:auto}
-a{color:inherit;text-decoration-thickness:1px;text-underline-offset:.22em}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
-::selection{background:#fde3c2;color:var(--ink)}
-[data-lang="en"] [lang="es"],[data-lang="es"] [lang="en"]{display:none !important}
-.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
-.skip{position:absolute;left:-9999px;top:10px;z-index:30;background:var(--ink);color:#fff;padding:10px 14px;border-radius:8px}
-.skip:focus{left:12px}
-h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:-.01em;text-wrap:balance}
-p{text-wrap:pretty}
-
-/* cabecera */
-.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);transition:box-shadow .2s ease}
-.top.scrolled{box-shadow:0 1px 0 rgba(31,43,77,.08),0 8px 24px -18px rgba(31,43,77,.35)} /* taste-skill-ignore: sticky bar */
-.top .wrap{display:flex;align-items:center;gap:24px;height:68px}
-.brand{font-weight:600;text-decoration:none;white-space:nowrap;letter-spacing:-.005em;transition:opacity .25s ease,transform .25s var(--ease)}
-.js .brand.hidden{opacity:0;transform:translateY(4px);pointer-events:none}
-.top nav{margin-left:auto;display:flex;gap:4px}
-.top nav a{font-size:.875rem;font-weight:500;color:var(--ink-2);text-decoration:none;padding:8px 12px;border-radius:999px;transition:background-color .18s ease,color .18s ease}
-.top nav a:hover{background:var(--surface);color:var(--ink)}
-.lang{font:600 .8125rem/1 var(--text);letter-spacing:.04em;color:var(--ink);background:var(--surface);border:0;border-radius:999px;padding:10px 14px;cursor:pointer;transition:background-color .18s ease}
-.lang:hover{background:var(--surface-2)}
-@media (max-width:760px){.top nav{display:none}.lang{margin-left:auto}}
-
-/* portada */
-.hero{padding:clamp(48px,9vw,112px) 0 clamp(56px,8vw,96px)}
-.avatar{width:clamp(72px,7vw,88px);height:clamp(72px,7vw,88px);border-radius:50%;object-fit:cover;background:var(--surface);margin-bottom:clamp(20px,3vw,28px)}
-.hero h1{font-size:var(--s-h1);line-height:1.02}
-.hero-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:40px clamp(40px,6vw,88px);align-items:end}
-@media (max-width:860px){.hero-grid{grid-template-columns:1fr}}
-.statement{font-family:var(--display);font-size:clamp(1.5rem,1.2rem + 1.2vw,2rem);line-height:1.22;color:var(--ink-2);max-width:34ch;margin-top:clamp(14px,2vw,22px)}
-.hero .lead{font-size:var(--s-lead);color:var(--ink-2);max-width:52ch;margin-top:clamp(20px,2.6vw,28px);line-height:1.55}
-.cta{display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px;margin-top:clamp(28px,3.5vw,40px)}
-.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:1rem;text-decoration:none;padding:13px 22px;border-radius:999px;border:0;transition:background-color .18s ease,color .18s ease,transform .18s var(--ease)}
-.btn.primary{background:var(--ink);color:#fff}
-.btn.primary:hover{background:#2a3963}
-.btn:not(.primary){background:var(--surface)}
-.btn:not(.primary):hover{background:var(--surface-2)}
-.btn:active{transform:translateY(1px)}
-.textlink{font-weight:500;color:var(--ink-2);text-decoration:underline;text-decoration-color:var(--line)}
-.textlink:hover{color:var(--link);text-decoration-color:currentColor}
-.facts{display:grid;grid-template-columns:1fr;gap:18px;background:var(--surface);border-radius:18px;padding:clamp(20px,2.6vw,28px) clamp(20px,3vw,28px)}
-.facts dt{font-size:.8125rem;font-weight:500;color:var(--muted);margin-bottom:6px}
-.facts dd{font-weight:600;line-height:1.35}
-.facts dd small{display:block;font-weight:400;font-size:.875rem;color:var(--muted);margin-top:2px}
-@media (max-width:860px){.facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:420px){.facts{grid-template-columns:1fr}}
-
-/* secciones */
-section.block{padding:clamp(64px,9vw,120px) 0}
-.sec-head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px 48px;align-items:end;margin-bottom:clamp(36px,6vw,72px)}
-.sec-head h2{font-size:var(--s-h2);line-height:1.04}
-.sec-head p{color:var(--ink-2);max-width:52ch}
-@media (max-width:760px){.sec-head{grid-template-columns:1fr}}
-
-/* proyectos */
-.project{padding:clamp(48px,7vw,88px) 0}
-.project:first-of-type{padding-top:0}
-.p-head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:20px 48px;margin-bottom:clamp(28px,4vw,40px)}
-.p-meta{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:var(--s-small);font-weight:500;color:var(--muted);margin-top:14px}
-.p-meta .i+.i::before{content:"·";margin-right:14px;color:#a3a7b3}
-.p-head h3{font-size:var(--s-h3);line-height:1.05}
-.p-sub{font-size:1.125rem;color:var(--ink-2);margin-top:10px;max-width:36ch;line-height:1.45}
-.p-desc p+p{margin-top:12px}
-.p-desc .role{color:var(--ink);font-weight:500}
-.p-desc .role strong{font-weight:600}
-.links{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:20px}
-.links a{font-weight:600;font-size:1rem;text-decoration:underline;text-decoration-color:rgba(31,43,77,.28);transition:color .18s ease,text-decoration-color .18s ease}
-.links a:hover{color:var(--link);text-decoration-color:currentColor}
-.links a .arr{display:inline-block;font-weight:500;transition:transform .2s var(--ease)}
-.links a:hover .arr{transform:translate(2px,-2px)}
-@media (max-width:760px){.p-head{grid-template-columns:1fr}}
-
-.stage{background:var(--surface);border-radius:20px;padding:clamp(14px,4vw,48px);margin:0}
-.stage figcaption{font-size:var(--s-small);color:var(--muted);margin-top:clamp(14px,2vw,22px);text-align:center}
-.shot{border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 0 0 1px rgba(31,43,77,.08),0 18px 40px -24px rgba(31,43,77,.45)} /* taste-skill-ignore: screenshots of real interfaces */
-.shot img{width:100%}
-.solo{max-width:780px;margin:0 auto}
-.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,2.4vw,28px);align-items:start}
-.trio{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,2.4vw,24px)}
-.trio .shot:first-child{grid-column:1/-1}
-.phones{display:flex;justify-content:center;gap:clamp(14px,4vw,48px)}
-.phone{width:min(300px,44%);border-radius:28px;padding:7px;background:#fff;box-shadow:0 0 0 1px rgba(31,43,77,.1),0 24px 48px -28px rgba(31,43,77,.55)} /* taste-skill-ignore: phone screenshots */
-.phone img{border-radius:22px}
-.app-intro{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(20px,4vw,48px);align-items:center}
-.app-card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;padding:clamp(8px,2vw,24px)}
-.app-card img{width:clamp(96px,14vw,148px)}
-.app-card p{font-size:.875rem;color:var(--muted);max-width:26ch}
-.app-card .btn{padding:11px 18px}
-@media (max-width:760px){.pair{grid-template-columns:1fr}.app-intro{grid-template-columns:1fr}}
-
-.p-body{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px 48px;margin-top:clamp(28px,4vw,40px)}
-.stack{display:flex;flex-wrap:wrap;gap:8px;list-style:none;align-content:flex-start}
-.stack li{font-size:.8125rem;font-weight:500;color:var(--ink-2);background:var(--surface);border-radius:999px;padding:6px 12px;line-height:1.3}
-.points{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 32px}
-.points li{position:relative;padding-left:18px;color:var(--ink-2);font-size:1rem;line-height:1.55}
-.points li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:2px;background:var(--accent)}
-@media (max-width:960px){.points{grid-template-columns:1fr}}
-@media (max-width:760px){.p-body{grid-template-columns:1fr}.p-body .stack{order:2}}
-
-/* gráfico deportivo */
-.chart{background:#fff;border-radius:14px;padding:clamp(18px,3vw,36px);max-width:880px;margin:0 auto}
-.chart h4{font:600 1.125rem/1.3 var(--text)}
-.chart .sub{font-size:var(--s-small);color:var(--muted);margin-top:4px;max-width:60ch}
-.chart table{width:100%;border-collapse:collapse;margin-top:22px}
-.chart th,.chart td{text-align:left;padding:12px 0;border-top:1px solid var(--line);vertical-align:middle} /* taste-skill-ignore: real data table */
-.chart thead th{font-size:.8125rem;font-weight:500;color:var(--muted);border-top:0;padding-top:0}
-.chart tbody th{font-weight:600;font-size:1rem;width:34%;padding-right:16px;line-height:1.3}
-.chart tbody th small{display:block;font-weight:400;color:var(--muted);font-size:.8125rem}
-.chart .bar{width:40%;padding-right:16px}
-.chart .bar i{display:block;height:12px;border-radius:3px;background:var(--ink);transform-origin:left center}
-.chart .gap{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;width:10%}
-.chart .ll{font-size:.875rem;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
-.chart .note{font-size:.8125rem;color:var(--muted);margin-top:16px}
-.verdict{display:flex;gap:12px;align-items:flex-start;margin-top:18px;padding:14px 16px;border-radius:10px;background:#fff3e2;font-size:.875rem;color:var(--ink-2)}
-.verdict b{font-weight:600;color:var(--ink)}
-@media (max-width:640px){.chart thead{display:none}.chart tbody tr{display:grid;grid-template-columns:1fr auto;grid-template-areas:"name gap" "bar bar" "ll ll";border-top:1px solid var(--line); /* taste-skill-ignore: real data table */ padding:12px 0}.chart th,.chart td{border:0;padding:0}.chart tbody th{grid-area:name;width:auto}.chart .bar{grid-area:bar;width:auto;padding:10px 0 6px}.chart .gap{grid-area:gap;width:auto}.chart .ll{grid-area:ll;text-align:left}}
-
-/* más proyectos */
-.more{margin-top:clamp(8px,2vw,16px);padding:clamp(24px,4vw,40px);background:var(--surface);border-radius:20px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:20px 48px}
-.more h3{font-size:2rem;line-height:1.1}
-.more-item .p-meta{margin-top:6px}
-.more-item h4{font:600 1.125rem/1.3 var(--text)}
-.more-item p{color:var(--ink-2);margin-top:8px;max-width:60ch}
-.more-item .stack{margin-top:14px}
-.more-item .links{margin-top:14px}
-@media (max-width:760px){.more{grid-template-columns:1fr}}
-
-/* experiencia y formación */
-.rows{list-style:none}
-.rows{display:grid;gap:clamp(32px,4.5vw,48px)}
-.rows>li{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:8px 48px}
-.when{font-size:var(--s-small);font-weight:500;color:var(--muted);padding-top:4px;font-variant-numeric:tabular-nums}
-.rows h3{font:600 1.125rem/1.35 var(--text);letter-spacing:0}
-.org{color:var(--ink-2);margin-top:2px}
-.rows p.desc{color:var(--ink-2);margin-top:10px;max-width:68ch}
-.now{display:inline-flex;align-items:center;gap:8px;color:var(--ink)}
-.now::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
-@media (max-width:760px){.rows>li{grid-template-columns:1fr}.when{padding-top:0}}
-
-.subhead{font:600 1.125rem/1.3 var(--text);margin:clamp(48px,7vw,72px) 0 18px}
-.skills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 48px}
-.skills div{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:4px 20px}
-.skills dt{font-size:var(--s-small);font-weight:500;color:var(--muted);padding-top:2px}
-.skills dd{color:var(--ink-2);font-size:1rem}
-.langs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 48px}
-.langs dt{font-weight:600}
-.langs dd{color:var(--muted);font-size:.875rem;margin-top:2px}
-@media (max-width:860px){.skills{grid-template-columns:1fr}.langs{grid-template-columns:1fr}}
-
-/* contacto */
-.contact{background:var(--surface);border-top:0 !important}
-.contact .grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:40px 64px;align-items:start}
-.contact h2{font-size:var(--s-h2);line-height:1.04}
-.contact .intro{color:var(--ink-2);margin-top:20px;max-width:46ch}
-.contact .intro+.intro{margin-top:14px}
-.channels{list-style:none;display:grid;gap:10px}
-.channels a{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:20px 22px;border-radius:14px;background:#fff;text-decoration:none;transition:color .18s ease,background-color .18s ease}
-.channels a:hover{background:#fbfbfc}
-.channels a span:first-child{font-size:var(--s-small);font-weight:500;color:var(--muted);min-width:80px}
-.channels a span:last-child{font-weight:600;font-size:clamp(1.125rem,1rem + .5vw,1.375rem);text-align:right;overflow-wrap:anywhere}
-.channels a:hover span:last-child{color:var(--link)}
-@media (max-width:860px){.contact .grid{grid-template-columns:1fr}}
-footer{background:var(--surface)}
-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;padding-top:22px;padding-bottom:26px;font-size:var(--s-small);color:var(--muted)}
-
-/* aparición suave */
-@media (prefers-reduced-motion:no-preference){
-  .js .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
-  .js .reveal.in{opacity:1;transform:none}
-  .js .chart .bar i{transform:scaleX(0);transition:transform 1s var(--ease) .15s}
-  .js .chart.in .bar i{transform:scaleX(1)}
-}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-</style>
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body data-lang="es">
 <a class="skip" href="#main"><span lang="es">Saltar al contenido</span><span lang="en">Skip to content</span></a>
-
-<header class="top" id="top">
+<header class="top">
   <div class="wrap">
-    <a class="brand hidden" href="#main">Joaquín Borja León</a>
+    <a class="brand hidden" href="/">Joaquín Borja León</a>
     <nav aria-label="Secciones">
       <a href="#proyectos"><span lang="es">Proyectos</span><span lang="en">Projects</span></a>
       <a href="#experiencia"><span lang="es">Experiencia</span><span lang="en">Experience</span></a>
@@ -224,29 +33,28 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
     <button class="lang" id="langBtn" type="button" aria-label="Switch to English">EN</button>
   </div>
 </header>
-
 <main id="main">
   <section class="hero">
     <div class="wrap">
-      <img class="avatar" src="photo.jpg" alt="Joaquín Borja León" width="480" height="480">
+      <img class="avatar" src="/photo.jpg" alt="Joaquín Borja León" width="480" height="480" fetchpriority="high">
       <h1 id="name">Joaquín Borja León</h1>
       <div class="hero-grid">
         <div>
-      <p class="statement"><span lang="es">Ingeniero de software en Madrid. Construyo sistemas de backend y datos, y los llevo hasta producción.</span><span lang="en">Software engineer in Madrid. I build backend and data systems and take them all the way to production.</span></p>
-      <p class="lead"><span lang="es">Soy Digital Governance Trainee en Airbus Defence and Space, dentro del programa Airbus Discover, y a la vez curso dos másteres: uno en la Universidad de Sevilla y otro en la Universidad Camilo José Cela.</span><span lang="en">I'm a Digital Governance Trainee at Airbus Defence and Space, within the Airbus Discover programme, while studying two master's degrees: one at the University of Seville and one at Camilo José Cela University.</span></p>
-      <div class="cta">
-        <a class="btn primary" href="#proyectos"><span lang="es">Ver proyectos</span><span lang="en">See projects</span></a>
-        <a class="btn" href="mailto:hola@joaquinborjaleon.com"><span lang="es">Escríbeme</span><span lang="en">Get in touch</span></a>
-        <a class="textlink" href="https://github.com/JoaquinBorjaLeon" target="_blank" rel="noopener">GitHub</a>
-        <a class="textlink" href="https://www.linkedin.com/in/joaquinborjaleon" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
+          <p class="statement"><span lang="es">Ingeniero de software en Madrid. Construyo sistemas de backend y datos, y los llevo hasta producción.</span><span lang="en">Software engineer in Madrid. I build backend and data systems and take them all the way to production.</span></p>
+          <p class="lead"><span lang="es">Digital Governance Trainee en Airbus Defence and Space y estudiante de dos másteres, en la Universidad de Sevilla y en la Universidad Camilo José Cela.</span><span lang="en">Digital Governance Trainee at Airbus Defence and Space, studying two master’s degrees at the University of Seville and Camilo José Cela University.</span></p>
+          <div class="cta">
+            <a class="btn primary" href="#proyectos"><span lang="es">Ver proyectos</span><span lang="en">See projects</span></a>
+            <a class="btn" href="mailto:hola@joaquinborjaleon.com"><span lang="es">Escríbeme</span><span lang="en">Get in touch</span></a>
+            <a class="textlink" href="https://github.com/JoaquinBorjaLeon" target="_blank" rel="noopener">GitHub</a>
+            <a class="textlink" href="https://www.linkedin.com/in/joaquinborjaleon" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
         </div>
         <dl class="facts">
-        <div><dt><span lang="es">Ahora</span><span lang="en">Now</span></dt><dd>Airbus Defence and Space<small>Digital Governance Trainee</small></dd></div>
-        <div><dt><span lang="es">Formación</span><span lang="en">Education</span></dt><dd><span lang="es">Ingeniería del Software</span><span lang="en">Software Engineering</span><small><span lang="es">Universidad de Sevilla y dos másteres en curso</span><span lang="en">University of Seville, two master's in progress</span></small></dd></div>
-        <div><dt><span lang="es">Me centro en</span><span lang="en">Focus</span></dt><dd><span lang="es">Backend, datos e IA aplicada</span><span lang="en">Backend, data and applied AI</span><small>Python, FastAPI, PostgreSQL</small></dd></div>
-        <div><dt><span lang="es">Idiomas</span><span lang="en">Languages</span></dt><dd><span lang="es">Español e inglés C1</span><span lang="en">Spanish and English C1</span><small><span lang="es">Alemán B1</span><span lang="en">German B1</span></small></dd></div>
-      </dl>
+          <div><dt><span lang="es">Ahora</span><span lang="en">Now</span></dt><dd>Airbus Defence and Space<small>Digital Governance Trainee</small></dd></div>
+          <div><dt><span lang="es">Formación</span><span lang="en">Education</span></dt><dd><span lang="es">Ingeniería del Software</span><span lang="en">Software Engineering</span><small><span lang="es">Universidad de Sevilla y dos másteres en curso</span><span lang="en">University of Seville, two master’s in progress</span></small></dd></div>
+          <div><dt><span lang="es">Me centro en</span><span lang="en">Focus</span></dt><dd><span lang="es">Backend, datos e IA aplicada</span><span lang="en">Backend, data and applied AI</span><small>Python, FastAPI, PostgreSQL</small></dd></div>
+          <div><dt><span lang="es">Idiomas</span><span lang="en">Languages</span></dt><dd><span lang="es">Español e inglés C1</span><span lang="en">Spanish and English C1</span><small><span lang="es">Alemán B1</span><span lang="en">German B1</span></small></dd></div>
+        </dl>
       </div>
     </div>
   </section>
@@ -255,220 +63,72 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
     <div class="wrap">
       <div class="sec-head reveal">
         <h2 id="h-proyectos"><span lang="es">Proyectos</span><span lang="en">Projects</span></h2>
-        <p><span lang="es">Proyectos propios y de equipo, todos con el código público en GitHub. Las capturas son de las aplicaciones reales, con datos de prueba.</span><span lang="en">Personal and team projects, all with public code on GitHub. The screenshots come from the real apps, with test data.</span></p>
+        <p><span lang="es">Una selección de proyectos propios y de equipo. Entra en cada uno para ver capturas, mi parte y cómo está hecho.</span><span lang="en">A selection of personal and team projects. Open each one to see screenshots, my part and how it is built.</span></p>
       </div>
-
-      <!-- DocuChat -->
-      <article class="project" id="docuchat">
-        <div class="p-head reveal">
-          <div>
-            <h3>DocuChat</h3>
-            <p class="p-sub"><span lang="es">Asistente RAG que responde sobre tus documentos y cita sus fuentes</span><span lang="en">A RAG assistant that answers from your documents and cites its sources</span></p>
-            <h4>Poké-Hub</h4>
+      <a class="card featured reveal" href="/proyectos/docuchat/">
+        <div class="media"><img src="/img/covers/docuchat.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Interfaz de DocuChat respondiendo una pregunta con sus fuentes" data-en="DocuChat answering a question with its sources"></div>
+        <div class="card-body">
+          <h3>DocuChat</h3>
+          <p class="card-sum"><span lang="es">Asistente RAG que responde sobre tus PDF y cita la fuente de cada respuesta.</span><span lang="en">A RAG assistant that answers from your PDFs and cites the source of every answer.</span></p>
           <p class="p-meta"><span class="i"><span lang="es">Proyecto personal</span><span lang="en">Personal project</span></span><span class="i">2026</span></p>
-          </div>
-          <div class="p-desc">
-            <p><span lang="es">Subes tus PDF, preguntas en lenguaje natural y cada respuesta indica de qué documento sale. Si la respuesta no está en los documentos, lo dice en lugar de inventarla.</span><span lang="en">Upload your PDFs, ask in plain language and every answer shows which document it comes from. If the answer isn't in your documents, it says so instead of making it up.</span></p>
-            <p class="links"><a href="https://github.com/JoaquinBorjaLeon/docuchat" target="_blank" rel="noopener"><span lang="es">Código en GitHub</span><span lang="en">Code on GitHub</span> <span class="arr" aria-hidden="true">↗</span></a></p>
-          </div>
+          <span class="go"><span lang="es">Ver proyecto</span><span lang="en">View project</span> <span class="arr" aria-hidden="true">→</span></span>
         </div>
-        <figure class="stage reveal">
-          <div data-ui class="shot solo"><img src="img/docuchat.webp" width="1120" height="866" loading="lazy" decoding="async" alt="Interfaz de DocuChat respondiendo qué es el PMBOK, con los documentos de origen citados debajo" data-en="DocuChat answering what the PMBOK is, with the source documents listed below"></div>
-          <figcaption><span lang="es">La interfaz responde sobre apuntes de gestión de proyectos y enumera las fuentes de cada respuesta.</span><span lang="en">The interface answers questions about project management notes and lists the sources behind each answer.</span></figcaption>
-        </figure>
-        <div class="p-body reveal">
-          <ul class="stack" aria-label="Stack"><li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>pgvector</li><li>Ollama</li><li>Gemini</li><li>React</li><li>Docker Compose</li></ul>
-          <ul class="points">
-            <li><span lang="es">Búsqueda híbrida: vectores con pgvector y texto completo de PostgreSQL, fusionados con Reciprocal Rank Fusion. Con ella, «¿Qué es el PMBOK?» pasó de no encontrar el fragmento que lo define a ponerlo el primero.</span><span lang="en">Hybrid search: pgvector similarity plus PostgreSQL full-text search, fused with Reciprocal Rank Fusion. It took “What is the PMBOK?” from missing the defining passage to ranking it first.</span></li>
-            <li><span lang="es">Un agente con llamadas a herramientas que funciona con modelos locales (Ollama) o con Gemini.</span><span lang="en">An agent with tool calling that runs on local models (Ollama) or on Gemini.</span></li>
-            <li><span lang="es">Evaluación con 15 preguntas: recall@8 del 60 %, una cifra honesta tras corregir una métrica que la inflaba hasta el 93 %.</span><span lang="en">Evaluated on 15 questions: 60% recall@8, an honest figure after fixing a metric that had inflated it to 93%.</span></li>
-            <li><span lang="es">Cada consulta registra el proveedor, las herramientas usadas, los fragmentos recuperados y la latencia.</span><span lang="en">Every query logs the provider, the tools used, the passages retrieved and the latency.</span></li>
-          </ul>
+      </a>
+      <div class="cards">
+      <a class="card reveal" href="/proyectos/vecinus/">
+        <div class="media"><img src="/img/covers/vecinus.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Asistente de la comunidad y pase QR de una reserva en VecinUs" data-en="VecinUs community assistant and booking QR pass"></div>
+        <div class="card-body">
+          <h3>VecinUs</h3>
+          <p class="card-sum"><span lang="es">App para comunidades de vecinos. Fui el jefe de proyecto y monté la integración continua y la seguridad del repositorio.</span><span lang="en">An app for residents’ communities. I was the project manager and set up continuous integration and repository security.</span></p>
+          <p class="p-meta"><span class="i"><span lang="es">Proyecto de equipo</span><span lang="en">Team project</span></span><span class="i"><span lang="es">15 personas</span><span lang="en">15 people</span></span><span class="i">2026</span></p>
+          <span class="go"><span lang="es">Ver proyecto</span><span lang="en">View project</span> <span class="arr" aria-hidden="true">→</span></span>
         </div>
-      </article>
-
-      <!-- VecinUs -->
-      <article class="project" id="vecinus">
-        <div class="p-head reveal">
-          <div>
-            <h3>VecinUs</h3>
-            <p class="p-sub"><span lang="es">App para gestionar una comunidad de vecinos</span><span lang="en">An app to run a residents' community</span></p>
-            <p class="p-meta"><span class="i"><span lang="es">Proyecto de equipo</span><span lang="en">Team project</span></span><span class="i"><span lang="es">15 personas</span><span lang="en">15 people</span></span><span class="i">2026</span></p>
-          </div>
-          <div class="p-desc">
-            <p><span lang="es">Reúne el día a día de una comunidad en una sola aplicación: incidencias, reservas de zonas comunes con pase QR, votaciones, chat entre vecinos, un asistente que responde con las normas de la comunidad y actas que se generan a partir de la grabación de la reunión.</span><span lang="en">It brings a community's day-to-day into one app: incident reports, shared-space bookings with a QR pass, votes, chat between residents, an assistant that answers from the community rules, and meeting minutes generated from the recording.</span></p>
-            <p class="role"><span lang="es"><strong>Mi papel: jefe de proyecto.</strong> Además de desarrollar, coordiné al equipo durante todo el curso y presentaba los avances cada semana en formato pitch.</span><span lang="en"><strong>My role: project manager.</strong> Besides developing, I coordinated the team throughout the year and pitched our progress every week.</span></p>
-            <p class="links">
-              <a href="https://www.youtube.com/watch?v=asrHzVENuS0" target="_blank" rel="noopener"><span lang="es">Ver la demo en vídeo</span><span lang="en">Watch the demo video</span> <span class="arr" aria-hidden="true">↗</span></a>
-              <a href="https://github.com/Vecinus/vecinus" target="_blank" rel="noopener"><span lang="es">Código en GitHub</span><span lang="en">Code on GitHub</span> <span class="arr" aria-hidden="true">↗</span></a>
-            </p>
-          </div>
+      </a>
+      <a class="card reveal" href="/proyectos/sports-value-detector/">
+        <div class="media"><img src="/img/covers/sports-value-detector.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Gráficos de goles por liga y diagrama de calibración del modelo" data-en="Goals by league charts and model calibration diagram"></div>
+        <div class="card-body">
+          <h3>Sports Value Detector</h3>
+          <p class="card-sum"><span lang="es">Modelos de fútbol y tenis medidos contra la cuota de cierre, con una conclusión honesta.</span><span lang="en">Football and tennis models measured against the closing odds, with an honest conclusion.</span></p>
+          <p class="p-meta"><span class="i"><span lang="es">Proyecto personal</span><span lang="en">Personal project</span></span><span class="i">2026</span></p>
+          <span class="go"><span lang="es">Ver proyecto</span><span lang="en">View project</span> <span class="arr" aria-hidden="true">→</span></span>
         </div>
-        <figure class="stage reveal">
-          <div class="trio">
-            <div data-ui class="shot"><img src="img/vecinus-chatbot.webp" width="1200" height="585" loading="lazy" decoding="async" alt="Asistente de la comunidad respondiendo si se pueden hacer obras en una vivienda, a partir de las normas cargadas" data-en="Community assistant answering whether renovation work is allowed, based on the uploaded rules"></div>
-            <div data-ui class="shot"><img src="img/vecinus-reservas.webp" width="1200" height="585" loading="lazy" decoding="async" alt="Calendario de reservas de una zona común con las horas disponibles" data-en="Booking calendar for a shared space with the available time slots"></div>
-            <div data-ui class="shot"><img src="img/vecinus-acta.webp" width="1200" height="585" loading="lazy" decoding="async" alt="Resumen ejecutivo de un acta generado a partir de la grabación de una reunión" data-en="Executive summary of meeting minutes generated from a recording"></div>
-          </div>
-          <figcaption><span lang="es">Asistente de la comunidad, reservas y actas. Capturas del vídeo de demostración del equipo, con datos de prueba.</span><span lang="en">Community assistant, bookings and minutes. Stills from the team's demo video, with test data.</span></figcaption>
-        </figure>
-        <div class="p-body reveal">
-          <ul class="stack" aria-label="Stack"><li>FastAPI</li><li>Supabase</li><li>React Native</li><li>Expo</li><li>Gemini</li><li>Pinecone</li><li>GitHub Actions</li></ul>
-          <ul class="points">
-            <li><span lang="es">Asignatura Ingeniería del Software y Práctica Profesional, en el último curso del grado.</span><span lang="en">Software Engineering and Professional Practice, a final-year course of the degree.</span></li>
-            <li><span lang="es">Trabajo por sprints con ramas, revisiones de código e integración continua en GitHub Actions.</span><span lang="en">Sprint-based work with branches, code reviews and continuous integration on GitHub Actions.</span></li>
-          </ul>
+      </a>
+      <a class="card reveal" href="/proyectos/recuerdamed/">
+        <div class="media"><img src="/img/covers/recuerdamed.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Icono de RecuerdaMed y su pantalla de acceso" data-en="RecuerdaMed icon and sign-in screen"></div>
+        <div class="card-body">
+          <h3>RecuerdaMed</h3>
+          <p class="card-sum"><span lang="es">App de medicación para pacientes y cuidadores, con demo pública.</span><span lang="en">A medication app for patients and caregivers, with a public demo.</span></p>
+          <p class="p-meta"><span class="i"><span lang="es">Trabajo de fin de grado</span><span lang="en">Bachelor’s thesis</span></span><span class="i">2026</span></p>
+          <span class="go"><span lang="es">Ver proyecto</span><span lang="en">View project</span> <span class="arr" aria-hidden="true">→</span></span>
         </div>
-      </article>
-
-      <!-- Sports Value Detector -->
-      <article class="project" id="deportes">
-        <div class="p-head reveal">
-          <div>
-            <h3>Sports Value Detector</h3>
-            <p class="p-sub"><span lang="es">Modelos de probabilidad para fútbol y tenis, medidos contra el mercado</span><span lang="en">Probability models for football and tennis, measured against the market</span></p>
-            <p class="p-meta"><span class="i"><span lang="es">Proyecto personal</span><span lang="en">Personal project</span></span><span class="i">2026</span></p>
-          </div>
-          <div class="p-desc">
-            <p><span lang="es">Calcula sus propias probabilidades para mercados de fútbol y tenis y las compara con la cuota de cierre de casas de referencia, que es el listón de verdad. La conclusión es honesta: ningún modelo la bate de forma consistente, y el proyecto lo explica en lugar de esconderlo.</span><span lang="en">It prices football and tennis markets with its own models and compares them with the closing odds of sharp bookmakers, which is the real bar. The conclusion is honest: no model beats it consistently, and the project explains why instead of hiding it.</span></p>
-            <p class="links"><a href="https://github.com/JoaquinBorjaLeon/sports-analyzer" target="_blank" rel="noopener"><span lang="es">Código en GitHub</span><span lang="en">Code on GitHub</span> <span class="arr" aria-hidden="true">↗</span></a></p>
-          </div>
+      </a>
+      <a class="card reveal" href="/proyectos/analista-incansable/">
+        <div class="media"><img src="/img/covers/analista-incansable.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Panel de solo lectura en el móvil con la lista de seguimiento y el detalle de una empresa" data-en="Read-only phone panel with the watchlist and a company detail"></div>
+        <div class="card-body">
+          <h3>Analista incansable</h3>
+          <p class="card-sum"><span lang="es">Screener fundamental que puntúa empresas cada día y avisa por Telegram.</span><span lang="en">A fundamental screener that scores companies every day and alerts on Telegram.</span></p>
+          <p class="p-meta"><span class="i"><span lang="es">Proyecto personal</span><span lang="en">Personal project</span></span><span class="i">2026</span></p>
+          <span class="go"><span lang="es">Ver proyecto</span><span lang="en">View project</span> <span class="arr" aria-hidden="true">→</span></span>
         </div>
-        <figure class="stage reveal">
-          <div data-ui class="chart" id="chart">
-            <h4><span lang="es">Distancia a la línea de cierre</span><span lang="en">Distance to the closing line</span></h4>
-            <p class="sub"><span lang="es">Log loss del modelo menos log loss de la cuota de cierre. Cuanto más corta la barra, más cerca del mercado.</span><span lang="en">Model log loss minus closing-line log loss. The shorter the bar, the closer to the market.</span></p>
-            <table>
-              <thead><tr><th scope="col"><span lang="es">Mercado</span><span lang="en">Market</span></th><th scope="col"><span lang="es">Distancia</span><span lang="en">Gap</span></th><th scope="col"></th><th scope="col" class="ll"><span lang="es">Modelo y cierre</span><span lang="en">Model and close</span></th></tr></thead>
-              <tbody>
-                <tr><th scope="row"><span lang="es">Más/menos 2,5 goles</span><span lang="en">Over/under 2.5 goals</span><small><span lang="es">Fútbol, 5 ligas</span><span lang="en">Football, 5 leagues</span></small></th><td class="bar"><i style="width:34.6%"></i></td><td class="gap"><span lang="es">+0,009</span><span lang="en">+0.009</span></td><td class="ll"><span lang="es">0,683 frente a 0,674</span><span lang="en">0.683 vs 0.674</span></td></tr>
-                <tr><th scope="row">1X2<small><span lang="es">Fútbol, 5 ligas</span><span lang="en">Football, 5 leagues</span></small></th><td class="bar"><i style="width:57.7%"></i></td><td class="gap"><span lang="es">+0,015</span><span lang="en">+0.015</span></td><td class="ll"><span lang="es">0,993 frente a 0,978</span><span lang="en">0.993 vs 0.978</span></td></tr>
-                <tr><th scope="row"><span lang="es">Ganador del partido</span><span lang="en">Match winner</span><small><span lang="es">Tenis, ATP</span><span lang="en">Tennis, ATP</span></small></th><td class="bar"><i style="width:100%"></i></td><td class="gap"><span lang="es">+0,026</span><span lang="en">+0.026</span></td><td class="ll"><span lang="es">0,626 frente a 0,604</span><span lang="en">0.626 vs 0.604</span></td></tr>
-              </tbody>
-            </table>
-            <p class="verdict"><span><b><span lang="es">Lectura:</span><span lang="en">Takeaway:</span></b> <span lang="es">cuanto más líquido es un mercado, más difícil es acercarse a él. El margen, si existe, está en los mercados con menos volumen.</span><span lang="en">the more liquid a market, the harder it is to approach. Any edge, if it exists, lives in lower-volume markets.</span></span></p>
-            <p class="note"><span lang="es">Validación fuera de muestra: fútbol 2025/26 contra el cierre de Bet365 y tenis 2025 contra el de Pinnacle.</span><span lang="en">Out-of-sample validation: football 2025/26 against the Bet365 close and tennis 2025 against the Pinnacle close.</span></p>
-          </div>
-          <figcaption><span lang="es">Resultados reales del proyecto, recogidos en su README.</span><span lang="en">Real results from the project, as reported in its README.</span></figcaption>
-        </figure>
-        <div class="p-body reveal">
-          <ul class="stack" aria-label="Stack"><li>Python</li><li>pandas</li><li>scikit-learn</li><li>SQLite</li><li>FastAPI</li><li>React</li><li>pytest</li></ul>
-          <ul class="points">
-            <li><span lang="es">Datos de 5 ligas de fútbol en 5 temporadas (unos 8.900 partidos) y de unos 13.000 partidos de la ATP, cruzando dos fuentes con un 99,8 % de coincidencia.</span><span lang="en">Data from 5 football leagues over 5 seasons (about 8,900 matches) and about 13,000 ATP matches, joining two sources with a 99.8% match rate.</span></li>
-            <li><span lang="es">Regresión logística para el 1X2, Dixon-Coles para los goles y Elo por superficie para el tenis.</span><span lang="en">Logistic regression for 1X2, Dixon-Coles for goals and surface-specific Elo for tennis.</span></li>
-            <li><span lang="es">Sin fugas de información: validación temporal y tests que lo comprueban, 86 en total.</span><span lang="en">No information leakage: temporal validation and tests that check it, 86 in total.</span></li>
-            <li><span lang="es">Un panel con FastAPI y React para explorar partidos, backtests y calibración.</span><span lang="en">A FastAPI and React dashboard to explore matches, backtests and calibration.</span></li>
-          </ul>
+      </a>
+      <a class="card reveal" href="/proyectos/the-precision/">
+        <div class="media"><img src="/img/covers/the-precision.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Página de inicio y paso de elección de hora de The Precision" data-en="The Precision home page and time selection step"></div>
+        <div class="card-body">
+          <h3>The Precision</h3>
+          <p class="card-sum"><span lang="es">Reservas para una peluquería. Hice el frontend completo y la API de gestión del negocio.</span><span lang="en">Bookings for a hair salon. I built the whole frontend and the business management API.</span></p>
+          <p class="p-meta"><span class="i"><span lang="es">Proyecto en pareja</span><span lang="en">Two-person project</span></span><span class="i">2026</span></p>
+          <span class="go"><span lang="es">Ver proyecto</span><span lang="en">View project</span> <span class="arr" aria-hidden="true">→</span></span>
         </div>
-      </article>
-
-      <!-- RecuerdaMed -->
-      <article class="project" id="recuerdamed">
-        <div class="p-head reveal">
-          <div>
-            <h3>RecuerdaMed</h3>
-            <p class="p-sub"><span lang="es">App de adherencia a la medicación para pacientes y cuidadores</span><span lang="en">A medication adherence app for patients and caregivers</span></p>
-            <p class="p-meta"><span class="i"><span lang="es">Trabajo de fin de grado</span><span lang="en">Bachelor's thesis</span></span><span class="i">2026</span></p>
-          </div>
-          <div class="p-desc">
-            <p><span lang="es">Avisa de cada toma, deja confirmarla dentro de un margen y, si se pasa, notifica a cuidadores y familiares. Está pensada para personas mayores y polimedicadas, y las entrevistas con usuarios cambiaron casi todas las decisiones de diseño.</span><span lang="en">It reminds patients of every dose, lets them confirm it within a time window and, if one is missed, notifies caregivers and family. It's built for older people on several medications, and user interviews changed almost every design decision.</span></p>
-            <p class="links">
-              <a href="https://recuerda-med.vercel.app" target="_blank" rel="noopener"><span lang="es">Probar la demo</span><span lang="en">Try the demo</span> <span class="arr" aria-hidden="true">↗</span></a>
-              <a href="https://github.com/JoaquinBorjaLeon/RecuerdaMed" target="_blank" rel="noopener"><span lang="es">Código en GitHub</span><span lang="en">Code on GitHub</span> <span class="arr" aria-hidden="true">↗</span></a>
-            </p>
-          </div>
+      </a>
+      <a class="card reveal" href="/proyectos/poke-hub/">
+        <div class="media"><img src="/img/covers/poke-hub.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Tablero del proyecto y ejecuciones de GitHub Actions de Poké-Hub" data-en="Poké-Hub project board and GitHub Actions runs"></div>
+        <div class="card-body">
+          <h3>Poké-Hub</h3>
+          <p class="card-sum"><span lang="es">Repositorio de modelos con un flujo de trabajo de integración y despliegue continuos.</span><span lang="en">A model repository built around a continuous integration and deployment workflow.</span></p>
+          <p class="p-meta"><span class="i"><span lang="es">Proyecto de equipo</span><span lang="en">Team project</span></span><span class="i"><span lang="es">12 personas</span><span lang="en">12 people</span></span><span class="i">2025</span></p>
+          <span class="go"><span lang="es">Ver proyecto</span><span lang="en">View project</span> <span class="arr" aria-hidden="true">→</span></span>
         </div>
-        <figure class="stage reveal">
-          <div class="app-intro">
-            <div class="app-card">
-              <img src="img/recuerdamed-logo.png" width="256" height="256" loading="lazy" decoding="async" alt="Icono de RecuerdaMed" data-en="RecuerdaMed icon">
-              <p><span lang="es">Android, iOS y web desde una sola base de código.</span><span lang="en">Android, iOS and web from a single codebase.</span></p>
-              <a class="btn primary" href="https://recuerda-med.vercel.app" target="_blank" rel="noopener"><span lang="es">Abrir la demo</span><span lang="en">Open the demo</span></a>
-            </div>
-            <div data-ui class="shot"><img src="img/recuerdamed-login.webp" width="922" height="438" loading="lazy" decoding="async" alt="Pantalla de acceso de RecuerdaMed con correo, contraseña y opción de crear cuenta" data-en="RecuerdaMed sign-in screen with email, password and sign-up option"></div>
-          </div>
-          <figcaption><span lang="es">Pantalla de acceso de la demo pública, desplegada en Vercel.</span><span lang="en">Sign-in screen of the public demo, deployed on Vercel.</span></figcaption>
-        </figure>
-        <div class="p-body reveal">
-          <ul class="stack" aria-label="Stack"><li>React Native</li><li>Expo</li><li>TypeScript</li><li>Firebase</li><li>GitHub Actions</li><li>Vercel</li></ul>
-          <ul class="points">
-            <li><span lang="es">Tres roles (paciente, cuidador y familiar) con permisos aplicados en las propias reglas de la base de datos.</span><span lang="en">Three roles (patient, caregiver and family) with permissions enforced in the database rules themselves.</span></li>
-            <li><span lang="es">Pautas diarias, por días de la semana o cada X horas, con notificaciones locales y push.</span><span lang="en">Daily, weekday or every-X-hours schedules, with local and push notifications.</span></li>
-            <li><span lang="es">Vinculación con consentimiento: invitaciones revocables entre paciente, cuidadores y familiares.</span><span lang="en">Consent-based linking: revocable invitations between patients, caregivers and family.</span></li>
-            <li><span lang="es">Historial de tomas confirmadas y caducadas, y 18 tests unitarios.</span><span lang="en">A history of confirmed and expired doses, and 18 unit tests.</span></li>
-          </ul>
-        </div>
-      </article>
-
-      <!-- Analista incansable -->
-      <article class="project" id="analista">
-        <div class="p-head reveal">
-          <div>
-            <h3>Analista incansable</h3>
-            <p class="p-sub"><span lang="es">Screener fundamental y alertas sobre una lista de seguimiento de acciones</span><span lang="en">A fundamental screener and alerts for a stock watchlist</span></p>
-            <p class="p-meta"><span class="i"><span lang="es">Proyecto personal</span><span lang="en">Personal project</span></span><span class="i">2026</span></p>
-          </div>
-          <div class="p-desc">
-            <p><span lang="es">Cada mañana descarga precios y cuentas anuales, puntúa cada empresa de 0 a 100 y avisa cuando algo merece una segunda mirada. Analiza y vigila; nunca predice, ni compra ni vende.</span><span lang="en">Every morning it downloads prices and annual statements, scores each company from 0 to 100 and flags anything worth a second look. It analyses and watches; it never predicts, buys or sells.</span></p>
-            <p class="links"><a href="https://github.com/JoaquinBorjaLeon/analista-incansable" target="_blank" rel="noopener"><span lang="es">Código en GitHub</span><span lang="en">Code on GitHub</span> <span class="arr" aria-hidden="true">↗</span></a></p>
-          </div>
-        </div>
-        <figure class="stage reveal">
-          <div class="phones">
-            <div data-ui class="phone"><img src="img/analista-watchlist.webp" width="780" height="1688" loading="lazy" decoding="async" alt="Lista de seguimiento ordenada por distancia a la zona de entrada, con la puntuación de cada empresa" data-en="Watchlist sorted by distance to the entry zone, with each company's score"></div>
-            <div data-ui class="phone"><img src="img/analista-ticker.webp" width="780" height="1688" loading="lazy" decoding="async" alt="Detalle de una empresa con precio, zona, RSI, medias y desglose de la puntuación" data-en="Company detail with price, zone, RSI, moving averages and score breakdown"></div>
-          </div>
-          <figcaption><span lang="es">Panel web de solo lectura pensado para el móvil, con datos sintéticos de demostración.</span><span lang="en">Read-only web panel designed for the phone, with synthetic demo data.</span></figcaption>
-        </figure>
-        <div class="p-body reveal">
-          <ul class="stack" aria-label="Stack"><li>Python</li><li>pandas</li><li>yfinance</li><li>SQLite</li><li>FastAPI</li><li>n8n</li><li>Telegram</li></ul>
-          <ul class="points">
-            <li><span lang="es">Ocho criterios con pesos configurables: crecimiento, margen bruto, flujo de caja libre y su margen, deuda neta sobre EBITDA, ROE, dilución y si el beneficio acompaña.</span><span lang="en">Eight weighted criteria: growth, gross margin, free cash flow and its margin, net debt to EBITDA, ROE, dilution and whether earnings keep up.</span></li>
-            <li><span lang="es">Alertas al entrar en zona o acercarse a ella, al cruzar la media de 200 sesiones o al aparecer una bandera roja, con los últimos titulares y sin repetirse en 5 días.</span><span lang="en">Alerts when a stock enters or nears its zone, crosses the 200-day average or gets a new red flag, with the latest headlines and no repeats for 5 days.</span></li>
-            <li><span lang="es">Salida en JSON para n8n o envío directo a Telegram.</span><span lang="en">JSON output for n8n, or straight to Telegram.</span></li>
-            <li><span lang="es">Un dato que falta se muestra como «s/d»: nunca se inventa.</span><span lang="en">Missing data is shown as “n/a”: it is never invented.</span></li>
-          </ul>
-        </div>
-      </article>
-
-      <!-- The Precision -->
-      <article class="project" id="precision">
-        <div class="p-head reveal">
-          <div>
-            <h3>The Precision</h3>
-            <p class="p-sub"><span lang="es">Sistema de reservas para una peluquería</span><span lang="en">A booking system for a hair salon</span></p>
-            <p class="p-meta"><span class="i"><span lang="es">Proyecto en pareja</span><span lang="en">Two-person project</span></span><span class="i">2026</span></p>
-          </div>
-          <div class="p-desc">
-            <p><span lang="es">Aplicación web completa para un salón: el cliente elige servicio, profesional y hora en tres pasos, y el negocio gestiona agenda, servicios, profesionales y bloqueos desde un panel de administración.</span><span lang="en">A full web app for a salon: clients pick a service, a stylist and a time in three steps, and the business manages its calendar, services, staff and time blocks from an admin panel.</span></p>
-            <p class="role"><span lang="es">Hecha a dos manos con <a href="https://arielec-dev.vercel.app/" target="_blank" rel="noopener">Ariel Escobar</a>.</span><span lang="en">Built together with <a href="https://arielec-dev.vercel.app/" target="_blank" rel="noopener">Ariel Escobar</a>.</span></p>
-            <p class="links"><a href="https://github.com/ArielEC/mern-peluqueria" target="_blank" rel="noopener"><span lang="es">Código en GitHub</span><span lang="en">Code on GitHub</span> <span class="arr" aria-hidden="true">↗</span></a></p>
-          </div>
-        </div>
-        <figure class="stage reveal">
-          <div class="pair">
-            <div data-ui class="shot"><img src="img/salon-reserva.webp" width="1200" height="856" loading="lazy" decoding="async" alt="Paso de elección de fecha y hora, con los huecos libres de cada profesional" data-en="Date and time step, with each stylist's free slots"></div>
-            <div data-ui class="shot"><img src="img/salon-admin.webp" width="1200" height="856" loading="lazy" decoding="async" alt="Panel de administración con las citas del día y los ingresos previstos" data-en="Admin dashboard with today's appointments and expected revenue"></div>
-          </div>
-          <figcaption><span lang="es">Reserva del cliente y panel del negocio, con datos de prueba.</span><span lang="en">Client booking and business dashboard, with test data.</span></figcaption>
-        </figure>
-        <div class="p-body reveal">
-          <ul class="stack" aria-label="Stack"><li>MongoDB</li><li>Express</li><li>React</li><li>Node.js</li><li>JWT</li><li>FullCalendar</li></ul>
-          <ul class="points">
-            <li><span lang="es">Reserva guiada en tres pasos con huecos calculados por profesional y por día.</span><span lang="en">A guided three-step booking with free slots computed per stylist and day.</span></li>
-            <li><span lang="es">Agenda semanal, descansos y bloqueos para el negocio, y un área de cliente con sus citas.</span><span lang="en">Weekly calendar, breaks and time blocks for the business, plus a client area with their appointments.</span></li>
-          </ul>
-        </div>
-      </article>
-
-      <div class="more reveal">
-        <h3><span lang="es">Más proyectos</span><span lang="en">More projects</span></h3>
-        <div class="more-item">
-          <p class="p-meta"><span class="i"><span lang="es">Proyecto de equipo</span><span lang="en">Team project</span></span><span class="i"><span lang="es">6 personas</span><span lang="en">6 people</span></span><span class="i">2025</span></p>
-          <p><span lang="es">Plataforma para publicar y descargar conjuntos de modelos, construida sobre uvlhub en la asignatura Evolución y Gestión de la Configuración. El foco estaba en el proceso: ramas, revisión de código, integración y despliegue continuos.</span><span lang="en">A platform to publish and download model datasets, built on uvlhub for the Configuration Evolution and Management course. The focus was the process: branching, code review, continuous integration and deployment.</span></p>
-          <ul class="stack" aria-label="Stack"><li>Python</li><li>Flask</li><li>Docker</li><li>GitHub Actions</li></ul>
-          <p class="links"><a href="https://github.com/poke-hub/poke-hub" target="_blank" rel="noopener"><span lang="es">Código en GitHub</span><span lang="en">Code on GitHub</span> <span class="arr" aria-hidden="true">↗</span></a></p>
-        </div>
+      </a>
       </div>
     </div>
   </section>
@@ -477,40 +137,28 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
     <div class="wrap">
       <div class="sec-head reveal">
         <h2 id="h-exp"><span lang="es">Experiencia</span><span lang="en">Experience</span></h2>
-        <p><span lang="es">De la plataforma Smart City de Sevilla al gobierno del dato en Airbus, pasando por una startup propia.</span><span lang="en">From Seville's Smart City platform to data governance at Airbus, with a startup of my own in between.</span></p>
+        <p><span lang="es">De la plataforma Smart City de Sevilla al gobierno del dato en Airbus, pasando por una startup propia.</span><span lang="en">From Seville’s Smart City platform to data governance at Airbus, with a startup of my own in between.</span></p>
       </div>
       <ol class="rows reveal">
         <li>
           <p class="when"><span class="now"><span lang="es">Desde oct. 2026</span><span lang="en">Since Oct 2026</span></span></p>
-          <div>
-            <h3>Digital Governance Trainee</h3>
-            <p class="org">Airbus Defence and Space · Getafe, Madrid</p>
-            <p class="desc"><span lang="es">Programa Airbus Discover, en el equipo de Digital Governance de Air Power Services. Apoyo iniciativas de gobierno del dato y digital en la unidad de negocio y el desarrollo de soluciones de IA.</span><span lang="en">Airbus Discover programme, in the Digital Governance team of Air Power Services. I support data and digital governance initiatives across the business unit and the development of AI solutions.</span></p>
-          </div>
+          <div><h3>Digital Governance Trainee</h3><p class="org">Airbus Defence and Space · Getafe, Madrid</p>
+          <p class="desc"><span lang="es">Programa Airbus Discover en Air Power Services: gobierno del dato y apoyo al desarrollo de soluciones de IA.</span><span lang="en">Airbus Discover programme in Air Power Services: data governance and support for AI solutions.</span></p></div>
         </li>
         <li>
           <p class="when"><span lang="es">Abr. a jun. 2026</span><span lang="en">Apr to Jun 2026</span></p>
-          <div>
-            <h3><span lang="es">Cofundador y responsable de software</span><span lang="en">Co-founder and Software Lead</span></h3>
-            <p class="org">Byolux · Sevilla</p>
-            <p class="desc"><span lang="es">Startup de software para optimizar bioprocesos de productores de microalgas, seleccionada por la aceleradora Fusión Startups. Ganamos su Supersprint: 72 horas para pasar de una idea a un MVP, con toda la parte técnica a mi cargo. Después definí el producto y trabajé el descubrimiento de clientes junto a un cofundador biotecnólogo.</span><span lang="en">A software startup to optimise bioprocesses for microalgae producers, selected for the Fusión Startups accelerator. We won its Supersprint: 72 hours to go from an idea to an MVP, with the whole technical side on me. I then defined the product and ran customer discovery with a biotech co-founder.</span></p>
-          </div>
+          <div><h3><span lang="es">Cofundador y responsable de software</span><span lang="en">Co-founder and Software Lead</span></h3><p class="org">Byolux · Sevilla</p>
+          <p class="desc"><span lang="es">Startup de optimización de bioprocesos en la aceleradora Fusión Startups. Ganamos su Supersprint con un MVP hecho en 72 horas.</span><span lang="en">Bioprocess optimisation startup in the Fusión Startups accelerator. We won its Supersprint with an MVP built in 72 hours.</span></p></div>
         </li>
         <li>
           <p class="when"><span lang="es">Ene. a mar. 2026</span><span lang="en">Jan to Mar 2026</span></p>
-          <div>
-            <h3><span lang="es">Prácticas de ingeniería de software</span><span lang="en">Software Engineering Intern</span></h3>
-            <p class="org"><span lang="es">Ayuntamiento de Sevilla (ITAS) · Sevilla</span><span lang="en">Seville City Council (ITAS) · Seville</span></p>
-            <p class="desc"><span lang="es">Plataforma Sevilla Smart City: widgets de frontend, gestión de alertas con datos de dispositivos IoT e integración entre backend y frontend en un entorno de producción.</span><span lang="en">Sevilla Smart City platform: frontend widgets, alert management with data from IoT devices and backend to frontend integration in production.</span></p>
-          </div>
+          <div><h3><span lang="es">Prácticas de ingeniería de software</span><span lang="en">Software Engineering Intern</span></h3><p class="org"><span lang="es">Ayuntamiento de Sevilla (ITAS) · Sevilla</span><span lang="en">Seville City Council (ITAS) · Seville</span></p>
+          <p class="desc"><span lang="es">Widgets y gestión de alertas con datos de dispositivos IoT para la plataforma Sevilla Smart City.</span><span lang="en">Widgets and alert management with IoT device data for the Sevilla Smart City platform.</span></p></div>
         </li>
         <li>
           <p class="when"><span lang="es">Jun. a sept. 2025</span><span lang="en">Jun to Sep 2025</span></p>
-          <div>
-            <h3><span lang="es">Camarero, programa J1 Work &amp; Travel</span><span lang="en">Server, J1 Work &amp; Travel programme</span></h3>
-            <p class="org">Grand Hyatt Deer Valley · Park City, Utah</p>
-            <p class="desc"><span lang="es">Servicio en un resort de cinco estrellas, en inglés y en un equipo multicultural, coordinando con cocina y barra bajo presión.</span><span lang="en">Service at a five-star resort, in English and in a multicultural team, coordinating with kitchen and bar under pressure.</span></p>
-          </div>
+          <div><h3><span lang="es">Camarero, programa J1 Work &amp; Travel</span><span lang="en">Server, J1 Work &amp; Travel programme</span></h3><p class="org">Grand Hyatt Deer Valley · Park City, Utah</p>
+          <p class="desc"><span lang="es">Servicio en un resort de cinco estrellas, en inglés y en un equipo multicultural.</span><span lang="en">Service at a five-star resort, in English and in a multicultural team.</span></p></div>
         </li>
       </ol>
     </div>
@@ -520,114 +168,60 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
     <div class="wrap">
       <div class="sec-head reveal">
         <h2 id="h-edu"><span lang="es">Formación</span><span lang="en">Education</span></h2>
-        <p><span lang="es">Ingeniero del software por la Universidad de Sevilla, ahora con dos másteres en paralelo a mi trabajo en Airbus.</span><span lang="en">Software engineering graduate from the University of Seville, now studying two master's degrees alongside my work at Airbus.</span></p>
+        <p><span lang="es">Ingeniero del software por la Universidad de Sevilla, ahora con dos másteres en paralelo a mi trabajo en Airbus.</span><span lang="en">Software engineering graduate from the University of Seville, now studying two master’s degrees alongside my work at Airbus.</span></p>
       </div>
       <ol class="rows reveal">
         <li>
           <p class="when"><span class="now"><span lang="es">2026 a 2028</span><span lang="en">2026 to 2028</span></span></p>
-          <div>
-            <h3><span lang="es">Máster Universitario en Ingeniería del Software: Cloud, Datos y Gestión TI</span><span lang="en">Master's in Software Engineering: Cloud, Data and IT Management</span></h3>
-            <p class="org"><span lang="es">Universidad de Sevilla</span><span lang="en">University of Seville</span></p>
-            <p class="desc"><span lang="es">Máster oficial de 60 ECTS a tiempo parcial: ingeniería de datos, cloud, pruebas avanzadas y gobierno TI.</span><span lang="en">Official 60 ECTS master's, part-time: data engineering, cloud, advanced testing and IT governance.</span></p>
-          </div>
+          <div><h3><span lang="es">Máster Universitario en Ingeniería del Software: Cloud, Datos y Gestión TI</span><span lang="en">Master’s in Software Engineering: Cloud, Data and IT Management</span></h3><p class="org"><span lang="es">Universidad de Sevilla</span><span lang="en">University of Seville</span></p></div>
         </li>
         <li>
           <p class="when"><span class="now"><span lang="es">2026 a 2027</span><span lang="en">2026 to 2027</span></span></p>
-          <div>
-            <h3><span lang="es">Máster de Formación Permanente en Gestión Organizacional en Entornos Digitales y Analítica de Datos</span><span lang="en">Lifelong Learning Master's in Organizational Management in Digital Environments and Data Analytics</span></h3>
-            <p class="org"><span lang="es">Universidad Camilo José Cela</span><span lang="en">Camilo José Cela University</span></p>
-            <p class="desc"><span lang="es">Ligado al programa Airbus Discover: analítica de datos con Python, SQL, MongoDB y Power BI, y gestión de negocio digital.</span><span lang="en">Linked to the Airbus Discover programme: data analytics with Python, SQL, MongoDB and Power BI, plus digital business management.</span></p>
-          </div>
+          <div><h3><span lang="es">Máster de Formación Permanente en Gestión Organizacional en Entornos Digitales y Analítica de Datos</span><span lang="en">Lifelong Learning Master’s in Organizational Management in Digital Environments and Data Analytics</span></h3><p class="org"><span lang="es">Universidad Camilo José Cela, ligado al programa Airbus Discover</span><span lang="en">Camilo José Cela University, linked to the Airbus Discover programme</span></p></div>
         </li>
         <li>
           <p class="when"><span lang="es">2022 a 2026</span><span lang="en">2022 to 2026</span></p>
-          <div>
-            <h3><span lang="es">Grado en Ingeniería Informática, Ingeniería del Software</span><span lang="en">BSc in Computer Engineering, Software Engineering</span></h3>
-            <p class="org"><span lang="es">Universidad de Sevilla, ETSII</span><span lang="en">University of Seville, ETSII</span></p>
-            <p class="desc"><span lang="es">Trabajo de fin de grado: RecuerdaMed.</span><span lang="en">Bachelor's thesis: RecuerdaMed.</span></p>
-          </div>
+          <div><h3><span lang="es">Grado en Ingeniería Informática, Ingeniería del Software</span><span lang="en">BSc in Computer Engineering, Software Engineering</span></h3><p class="org"><span lang="es">Universidad de Sevilla, ETSII. Trabajo de fin de grado: RecuerdaMed</span><span lang="en">University of Seville, ETSII. Bachelor’s thesis: RecuerdaMed</span></p></div>
         </li>
       </ol>
-
-      <h3 class="subhead reveal"><span lang="es">Idiomas</span><span lang="en">Languages</span></h3>
-      <dl class="langs reveal">
-        <div><dt><span lang="es">Español</span><span lang="en">Spanish</span></dt><dd><span lang="es">Nativo</span><span lang="en">Native</span></dd></div>
-        <div><dt><span lang="es">Inglés, C1</span><span lang="en">English, C1</span></dt><dd>TOEFL iBT · Cambridge C1 Advanced</dd></div>
-        <div><dt><span lang="es">Alemán, B1</span><span lang="en">German, B1</span></dt><dd><span lang="es">Sin certificado oficial</span><span lang="en">No official certificate</span></dd></div>
-      </dl>
-
-      <h3 class="subhead reveal"><span lang="es">Herramientas</span><span lang="en">Toolkit</span></h3>
-      <dl class="skills reveal">
-        <div><dt><span lang="es">Lenguajes</span><span lang="en">Programming</span></dt><dd>Python, Java, TypeScript, SQL</dd></div>
-        <div><dt><span lang="es">Backend y datos</span><span lang="en">Backend and data</span></dt><dd>FastAPI, Spring Boot, PostgreSQL, pgvector, SQLite, MongoDB, pandas, scikit-learn</dd></div>
-        <div><dt><span lang="es">IA aplicada</span><span lang="en">Applied AI</span></dt><dd><span lang="es">RAG, agentes con herramientas, Ollama, Gemini</span><span lang="en">RAG, tool-calling agents, Ollama, Gemini</span></dd></div>
-        <div><dt><span lang="es">Apps</span><span lang="en">Apps</span></dt><dd>React, React Native, Expo, Firebase</dd></div>
-        <div><dt><span lang="es">Infraestructura</span><span lang="en">Infrastructure</span></dt><dd>Docker, Ubuntu Server, Tailscale, n8n, GitHub Actions</dd></div>
-      </dl>
+      <div class="extras reveal">
+        <div>
+          <h3 class="subhead"><span lang="es">Idiomas</span><span lang="en">Languages</span></h3>
+          <dl class="langs">
+            <div><dt><span lang="es">Español</span><span lang="en">Spanish</span></dt><dd><span lang="es">Nativo</span><span lang="en">Native</span></dd></div>
+            <div><dt><span lang="es">Inglés, C1</span><span lang="en">English, C1</span></dt><dd>TOEFL iBT · Cambridge C1 Advanced</dd></div>
+            <div><dt><span lang="es">Alemán, B1</span><span lang="en">German, B1</span></dt><dd><span lang="es">Sin certificado oficial</span><span lang="en">No official certificate</span></dd></div>
+          </dl>
+        </div>
+        <div>
+          <h3 class="subhead"><span lang="es">Herramientas</span><span lang="en">Toolkit</span></h3>
+          <ul class="stack tools" aria-label="Stack"><li>Python</li><li>Java</li><li>TypeScript</li><li>SQL</li><li>FastAPI</li><li>Spring Boot</li><li>PostgreSQL</li><li>pgvector</li><li>MongoDB</li><li>pandas</li><li>scikit-learn</li><li>RAG</li><li>Ollama</li><li>React</li><li>React Native</li><li>Firebase</li><li>Docker</li><li>GitHub Actions</li><li>n8n</li><li>Ubuntu Server</li></ul>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="block contact" id="contacto" aria-labelledby="h-contact">
     <div class="wrap grid">
       <div class="reveal">
-        <h2 id="h-contact"><span lang="es">¿Hablamos?</span><span lang="en">Let's talk</span></h2>
-        <p class="intro"><span lang="es">Soy de Sevilla y ahora vivo en Madrid. Me gusta que las cosas funcionen de principio a fin: diseñar el sistema, escribir el código, desplegarlo y medir si de verdad responde bien.</span><span lang="en">I'm from Seville and now live in Madrid. I like things to work end to end: designing the system, writing the code, deploying it and measuring whether it really holds up.</span></p>
-        <p class="intro"><span lang="es">Si buscas a alguien para backend, datos o IA aplicada, escríbeme y te respondo.</span><span lang="en">If you're looking for someone for backend, data or applied AI work, write to me and I'll get back to you.</span></p>
+        <h2 id="h-contact"><span lang="es">¿Hablamos?</span><span lang="en">Let’s talk</span></h2>
+        <p class="intro"><span lang="es">Soy de Sevilla y ahora vivo en Madrid. Me gusta que las cosas funcionen de principio a fin: diseñar el sistema, escribir el código, desplegarlo y medir si de verdad responde bien.</span><span lang="en">I’m from Seville and now live in Madrid. I like things to work end to end: designing the system, writing the code, deploying it and measuring whether it really holds up.</span></p>
+        <p class="intro"><span lang="es">Si buscas a alguien para backend, datos o IA aplicada, escríbeme y te respondo.</span><span lang="en">If you’re looking for someone for backend, data or applied AI work, write to me and I’ll get back to you.</span></p>
       </div>
       <ul class="channels reveal">
-        <li><a href="mailto:hola@joaquinborjaleon.com"><span lang="es">Correo</span><span lang="en">Email</span><span>hola@joaquinborjaleon.com</span></a></li>
-        <li><a href="https://www.linkedin.com/in/joaquinborjaleon" target="_blank" rel="noopener"><span>LinkedIn</span><span>in/joaquinborjaleon</span></a></li>
-        <li><a href="https://github.com/JoaquinBorjaLeon" target="_blank" rel="noopener"><span>GitHub</span><span>JoaquinBorjaLeon</span></a></li>
+        <li><a href="mailto:hola@joaquinborjaleon.com"><span class="ch-k"><span lang="es">Correo</span><span lang="en">Email</span></span><span class="ch-v">hola@joaquinborjaleon.com</span></a></li>
+        <li><a href="https://www.linkedin.com/in/joaquinborjaleon" target="_blank" rel="noopener"><span class="ch-k">LinkedIn</span><span class="ch-v">in/joaquinborjaleon</span></a></li>
+        <li><a href="https://github.com/JoaquinBorjaLeon" target="_blank" rel="noopener"><span class="ch-k">GitHub</span><span class="ch-v">JoaquinBorjaLeon</span></a></li>
       </ul>
     </div>
   </section>
 </main>
-
 <footer>
   <div class="wrap">
     <p>© <span id="y">2026</span> Joaquín Borja León</p>
-    <p><span lang="es">Madrid, España</span><span lang="en">Madrid, Spain</span></p>
+    <p><a href="mailto:hola@joaquinborjaleon.com">hola@joaquinborjaleon.com</a></p>
   </div>
 </footer>
-
-<script>
-(function(){
-  var root=document.documentElement, body=document.body;
-  root.classList.add('js');
-
-  /* idioma */
-  var btn=document.getElementById('langBtn'), saved=null;
-  try{saved=localStorage.getItem('lang')}catch(e){}
-  var initial=saved||((navigator.language||'es').toLowerCase().indexOf('es')===0?'es':'en');
-  var titles={es:'Joaquín Borja León, ingeniero de software',en:'Joaquín Borja León, software engineer'};
-  var imgs=document.querySelectorAll('img[data-en]');
-  imgs.forEach(function(i){i.setAttribute('data-es',i.getAttribute('alt'))});
-  function set(l){
-    body.setAttribute('data-lang',l); root.lang=l; document.title=titles[l];
-    btn.textContent=l==='es'?'EN':'ES';
-    btn.setAttribute('aria-label',l==='es'?'Switch to English':'Cambiar a español');
-    imgs.forEach(function(i){i.setAttribute('alt',i.getAttribute('data-'+l))});
-    try{localStorage.setItem('lang',l)}catch(e){}
-  }
-  btn.addEventListener('click',function(){set(body.getAttribute('data-lang')==='es'?'en':'es')});
-  set(initial);
-  document.getElementById('y').textContent=new Date().getFullYear();
-
-  /* cabecera: borde al bajar y nombre cuando sale la portada */
-  var top=document.querySelector('.top'), brand=document.querySelector('.brand');
-  function onScroll(){top.classList.toggle('scrolled',window.scrollY>8)}
-  onScroll(); window.addEventListener('scroll',onScroll,{passive:true});
-  if('IntersectionObserver' in window){
-    new IntersectionObserver(function(e){brand.classList.toggle('hidden',e[0].isIntersecting)},{rootMargin:'-68px 0px 0px 0px'}).observe(document.getElementById('name'));
-    var io=new IntersectionObserver(function(entries){
-      entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}});
-    },{rootMargin:'0px 0px -8% 0px',threshold:.08});
-    document.querySelectorAll('.reveal,.chart').forEach(function(el){io.observe(el)});
-  }else{
-    brand.classList.remove('hidden');
-    document.querySelectorAll('.reveal,.chart').forEach(function(el){el.classList.add('in')});
-  }
-})();
-</script>
+<script src="/assets/site.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es" data-title-es="Sports Value Detector, proyecto de Joaquín Borja León" data-title-en="Sports Value Detector, a project by Joaquín Borja León">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sports Value Detector, proyecto de Joaquín Borja León</title>
+<meta name="description" content="Modelos de fútbol y tenis medidos contra la cuota de cierre, con una conclusión honesta.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="Sports Value Detector, proyecto de Joaquín Borja León">
+<meta property="og:description" content="Modelos de fútbol y tenis medidos contra la cuota de cierre, con una conclusión honesta.">
+<meta property="og:url" content="https://joaquinborjaleon.com/proyectos/sports-value-detector/">
+<meta property="og:image" content="https://joaquinborjaleon.com/img/covers/sports-value-detector.webp">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://joaquinborjaleon.com/proyectos/sports-value-detector/">
+<link rel="icon" href="/photo.jpg">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=gambarino@400&f[]=general-sans@400,500,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body data-lang="es">
+<a class="skip" href="#main"><span lang="es">Saltar al contenido</span><span lang="en">Skip to content</span></a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/">Joaquín Borja León</a>
+    <a class="crumb" href="/#proyectos"><span aria-hidden="true">←</span> <span lang="es">Proyectos</span><span lang="en">Projects</span></a>
+    <nav aria-label="Secciones">
+      <a href="/#proyectos"><span lang="es">Proyectos</span><span lang="en">Projects</span></a>
+      <a href="/#experiencia"><span lang="es">Experiencia</span><span lang="en">Experience</span></a>
+      <a href="/#formacion"><span lang="es">Formación</span><span lang="en">Education</span></a>
+      <a href="/#contacto"><span lang="es">Contacto</span><span lang="en">Contact</span></a>
+    </nav>
+    <button class="lang" id="langBtn" type="button" aria-label="Switch to English">EN</button>
+  </div>
+</header>
+<main id="main" class="project-page">
+  <section class="p-hero">
+    <div class="wrap">
+      <h1>Sports Value Detector</h1>
+      <p class="p-lead"><span lang="es">Calcula sus propias probabilidades para mercados de fútbol y tenis y las compara con la cuota de cierre de casas de referencia, el listón más exigente. Ningún modelo la bate de forma consistente, y el proyecto lo cuenta tal cual.</span><span lang="en">It prices football and tennis markets with its own models and compares them with the closing odds of sharp bookmakers, the toughest bar there is. No model beats it consistently, and the project says so plainly.</span></p>
+      <p class="p-meta"><span class="i"><span lang="es">Proyecto personal</span><span lang="en">Personal project</span></span><span class="i">2026</span></p>
+      <div class="p-links"><a class="btn primary" href="https://github.com/JoaquinBorjaLeon/sports-analyzer" target="_blank" rel="noopener"><span lang="es">Código en GitHub</span><span lang="en">Code on GitHub</span> <span class="arr" aria-hidden="true">↗</span></a></div>
+      <dl class="p-facts"><div><dt><span lang="es">Periodo</span><span lang="en">Period</span></dt><dd>2026</dd></div><div><dt><span lang="es">Equipo</span><span lang="en">Team</span></dt><dd><span lang="es">Proyecto personal</span><span lang="en">Personal project</span></dd></div><div><dt><span lang="es">Contexto</span><span lang="en">Context</span></dt><dd><span lang="es">Datos gratuitos, validación temporal y backtests</span><span lang="en">Free data, temporal validation and backtests</span></dd></div><div><dt><span lang="es">Mi papel</span><span lang="en">My role</span></dt><dd><span lang="es">Todo: datos, modelos, backtests y panel</span><span lang="en">Everything: data, models, backtests and dashboard</span></dd></div></dl>
+    </div>
+  </section>
+  <div class="wrap">
+      <figure class="stage reveal">
+        <div data-ui class="chart" id="chart">
+          <h4><span lang="es">Distancia a la línea de cierre</span><span lang="en">Distance to the closing line</span></h4>
+          <p class="sub"><span lang="es">Log loss del modelo menos log loss de la cuota de cierre. Cuanto más corta la barra, más cerca del mercado.</span><span lang="en">Model log loss minus closing-line log loss. The shorter the bar, the closer to the market.</span></p>
+          <table>
+            <thead><tr><th scope="col"><span lang="es">Mercado</span><span lang="en">Market</span></th><th scope="col"><span lang="es">Distancia</span><span lang="en">Gap</span></th><th scope="col"></th><th scope="col" class="ll"><span lang="es">Modelo y cierre</span><span lang="en">Model and close</span></th></tr></thead>
+            <tbody>
+              <tr><th scope="row"><span lang="es">Más/menos 2,5 goles</span><span lang="en">Over/under 2.5 goals</span><small><span lang="es">Fútbol, 5 ligas</span><span lang="en">Football, 5 leagues</span></small></th><td class="bar"><i style="width:34.6%"></i></td><td class="gap"><span lang="es">+0,009</span><span lang="en">+0.009</span></td><td class="ll"><span lang="es">0,683 frente a 0,674</span><span lang="en">0.683 vs 0.674</span></td></tr>
+              <tr><th scope="row">1X2<small><span lang="es">Fútbol, 5 ligas</span><span lang="en">Football, 5 leagues</span></small></th><td class="bar"><i style="width:57.7%"></i></td><td class="gap"><span lang="es">+0,015</span><span lang="en">+0.015</span></td><td class="ll"><span lang="es">0,993 frente a 0,978</span><span lang="en">0.993 vs 0.978</span></td></tr>
+              <tr><th scope="row"><span lang="es">Ganador del partido</span><span lang="en">Match winner</span><small><span lang="es">Tenis, ATP</span><span lang="en">Tennis, ATP</span></small></th><td class="bar"><i style="width:100%"></i></td><td class="gap"><span lang="es">+0,026</span><span lang="en">+0.026</span></td><td class="ll"><span lang="es">0,626 frente a 0,604</span><span lang="en">0.626 vs 0.604</span></td></tr>
+            </tbody>
+          </table>
+          <p class="verdict"><span><b><span lang="es">Lectura:</span><span lang="en">Takeaway:</span></b> <span lang="es">cuanto más líquido es un mercado, más difícil es acercarse a él. Si hay margen, está en los mercados con menos volumen.</span><span lang="en">the more liquid a market, the harder it is to approach. Any edge lives in lower-volume markets.</span></span></p>
+          <p class="note"><span lang="es">Validación fuera de muestra: fútbol 2025/26 contra el cierre de Bet365 y tenis 2025 contra el de Pinnacle.</span><span lang="en">Out-of-sample validation: football 2025/26 against the Bet365 close and tennis 2025 against the Pinnacle close.</span></p>
+        </div>
+        <figcaption><span lang="es">Resultados reales del proyecto, recogidos en su README.</span><span lang="en">Real results from the project, as reported in its README.</span></figcaption>
+      </figure>
+      <section class="p-sec reveal">
+        <h2><span lang="es">Qué hace</span><span lang="en">What it does</span></h2>
+        <div><ul class="points single"><li><span lang="es">Reúne 5 ligas de fútbol en 5 temporadas (unos 8.900 partidos) y unos 13.000 partidos de la ATP, cruzando dos fuentes con un 99,8 % de coincidencia.</span><span lang="en">Gathers 5 football leagues over 5 seasons (about 8,900 matches) and about 13,000 ATP matches, joining two sources with a 99.8% match rate.</span></li><li><span lang="es">Calcula probabilidades con modelos propios y las compara con la cuota de cierre.</span><span lang="en">Computes probabilities with its own models and compares them with the closing odds.</span></li><li><span lang="es">Registra cuotas de mercados sin histórico gratuito, como córners y tarjetas, para construir uno propio.</span><span lang="en">Logs odds for markets with no free history, such as corners and cards, to build its own.</span></li><li><span lang="es">Un panel con FastAPI y React para explorar partidos, backtests y calibración.</span><span lang="en">A FastAPI and React dashboard to explore matches, backtests and calibration.</span></li></ul></div>
+      </section>
+      <section class="p-sec reveal">
+        <h2><span lang="es">Cómo está hecho</span><span lang="en">How it is built</span></h2>
+        <div><ul class="points single"><li><span lang="es"><b>Sin fugas de información.</b> Las variables se calculan en una sola pasada cronológica, y hay tests que truncan y alteran el futuro para comprobar que el pasado no cambia.</span><span lang="en"><b>No leakage.</b> Features are computed in a single chronological pass, and tests truncate and perturb the future to check the past does not change.</span></li><li><span lang="es"><b>Validación temporal</b> con dos temporadas distintas fuera de muestra, para no elegir un modelo por suerte.</span><span lang="en"><b>Temporal validation</b> on two separate held-out seasons, so no model is picked by luck.</span></li><li><span lang="es"><b>Modelos:</b> regresión logística para el 1X2, Dixon-Coles para los goles y Elo por superficie con regresión logística para el tenis.</span><span lang="en"><b>Models:</b> logistic regression for 1X2, Dixon-Coles for goals and surface Elo with logistic regression for tennis.</span></li><li><span lang="es"><b>Escepticismo con los aciertos:</b> un backtest con un ROI del +1,0 % resultó ser ruido (+0,24 sigmas) y se descartó.</span><span lang="en"><b>Skeptical of wins:</b> a backtest with a +1.0% ROI turned out to be noise (+0.24 sigma) and was discarded.</span></li></ul></div>
+      </section>
+      <section class="p-sec reveal">
+        <h2><span lang="es">En cifras</span><span lang="en">In numbers</span></h2>
+        <div><dl class="stats"><div><dt><span lang="es">distancia mínima al cierre</span><span lang="en">smallest gap to the close</span></dt><dd><span lang="es">+0,009</span><span lang="en">+0.009</span></dd></div><div><dt><span lang="es">partidos analizados</span><span lang="en">matches analysed</span></dt><dd><span lang="es">~22.000</span><span lang="en">~22,000</span></dd></div><div><dt><span lang="es">tests automáticos</span><span lang="en">automated tests</span></dt><dd>86</dd></div></dl></div>
+      </section>
+      <section class="p-sec reveal">
+        <h2>Stack</h2>
+        <div><ul class="stack" aria-label="Stack"><li>Python</li><li>pandas</li><li>NumPy</li><li>scikit-learn</li><li>SQLite</li><li>FastAPI</li><li>React</li><li>pytest</li></ul></div>
+      </section>
+      <section class="p-gallery" aria-label="Galería">
+        <h2><span lang="es">Galería</span><span lang="en">Gallery</span></h2>
+        <div class="gallery"><figure class="reveal wide">
+            <div data-ui class="shot"><img src="/img/sports-value-detector/calibracion.webp" width="1189" height="390" decoding="async" alt="Diagrama de calibración del modelo 1X2 frente a la diagonal y casos por intervalo" data-en="Reliability diagram of the 1X2 model against the diagonal and cases per bin"></div>
+            <figcaption><span lang="es">Calibración del modelo 1X2: lo que predice se cumple con la frecuencia esperada.</span><span lang="en">Calibration of the 1X2 model: its predictions come true at the expected rate.</span></figcaption>
+          </figure><figure class="reveal wide">
+            <div data-ui class="shot"><img src="/img/sports-value-detector/equity.webp" width="875" height="374" decoding="async" alt="Curva de beneficio acumulado de una estrategia que pierde" data-en="Cumulative profit curve of a losing strategy"></div>
+            <figcaption><span lang="es">Backtest con cuotas de apertura y valor esperado mayor del 5 %: pierde, coherente con la conclusión.</span><span lang="en">Backtest with opening odds and expected value above 5%: it loses, consistent with the conclusion.</span></figcaption>
+          </figure><figure class="reveal wide">
+            <div data-ui class="shot"><img src="/img/sports-value-detector/eda-futbol.webp" width="1289" height="390" decoding="async" alt="Distribución de goles por partido y media de goles por liga" data-en="Goals per match distribution and average goals by league"></div>
+            <figcaption><span lang="es">Análisis exploratorio del fútbol: goles por partido y por liga.</span><span lang="en">Football exploratory analysis: goals per match and by league.</span></figcaption>
+          </figure><figure class="reveal wide">
+            <div data-ui class="shot"><img src="/img/sports-value-detector/eda-tenis.webp" width="1289" height="390" decoding="async" alt="Partidos de tenis por superficie y por categoría de torneo" data-en="Tennis matches by surface and tournament series"></div>
+            <figcaption><span lang="es">Análisis exploratorio del tenis: partidos por superficie y categoría.</span><span lang="en">Tennis exploratory analysis: matches by surface and series.</span></figcaption>
+          </figure></div>
+      </section>
+      <nav class="pager reveal" aria-label="Más proyectos">
+        <a class="prev" href="/proyectos/vecinus/"><small><span lang="es">Anterior</span><span lang="en">Previous</span></small><strong>VecinUs</strong></a>
+        <a class="next" href="/proyectos/recuerdamed/"><small><span lang="es">Siguiente</span><span lang="en">Next</span></small><strong>RecuerdaMed</strong></a>
+      </nav>
+    </div>
+  </div>
+  <section class="block contact" id="contacto" aria-labelledby="h-contact">
+    <div class="wrap grid">
+      <div class="reveal">
+        <h2 id="h-contact"><span lang="es">¿Hablamos?</span><span lang="en">Let’s talk</span></h2>
+        <p class="intro"><span lang="es">Soy de Sevilla y ahora vivo en Madrid. Me gusta que las cosas funcionen de principio a fin: diseñar el sistema, escribir el código, desplegarlo y medir si de verdad responde bien.</span><span lang="en">I’m from Seville and now live in Madrid. I like things to work end to end: designing the system, writing the code, deploying it and measuring whether it really holds up.</span></p>
+        <p class="intro"><span lang="es">Si buscas a alguien para backend, datos o IA aplicada, escríbeme y te respondo.</span><span lang="en">If you’re looking for someone for backend, data or applied AI work, write to me and I’ll get back to you.</span></p>
+      </div>
+      <ul class="channels reveal">
+        <li><a href="mailto:hola@joaquinborjaleon.com"><span class="ch-k"><span lang="es">Correo</span><span lang="en">Email</span></span><span class="ch-v">hola@joaquinborjaleon.com</span></a></li>
+        <li><a href="https://www.linkedin.com/in/joaquinborjaleon" target="_blank" rel="noopener"><span class="ch-k">LinkedIn</span><span class="ch-v">in/joaquinborjaleon</span></a></li>
+        <li><a href="https://github.com/JoaquinBorjaLeon" target="_blank" rel="noopener"><span class="ch-k">GitHub</span><span class="ch-v">JoaquinBorjaLeon</span></a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap">
+    <p>© <span id="y">2026</span> Joaquín Borja León</p>
+    <p><a href="mailto:hola@joaquinborjaleon.com">hola@joaquinborjaleon.com</a></p>
+  </div>
+</footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

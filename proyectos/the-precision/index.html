@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es" data-title-es="The Precision, proyecto de Joaquín Borja León" data-title-en="The Precision, a project by Joaquín Borja León">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Precision, proyecto de Joaquín Borja León</title>
+<meta name="description" content="Reservas para una peluquería. Hice el frontend completo y la API de gestión del negocio.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="The Precision, proyecto de Joaquín Borja León">
+<meta property="og:description" content="Reservas para una peluquería. Hice el frontend completo y la API de gestión del negocio.">
+<meta property="og:url" content="https://joaquinborjaleon.com/proyectos/the-precision/">
+<meta property="og:image" content="https://joaquinborjaleon.com/img/covers/the-precision.webp">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://joaquinborjaleon.com/proyectos/the-precision/">
+<link rel="icon" href="/photo.jpg">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=gambarino@400&f[]=general-sans@400,500,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body data-lang="es">
+<a class="skip" href="#main"><span lang="es">Saltar al contenido</span><span lang="en">Skip to content</span></a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/">Joaquín Borja León</a>
+    <a class="crumb" href="/#proyectos"><span aria-hidden="true">←</span> <span lang="es">Proyectos</span><span lang="en">Projects</span></a>
+    <nav aria-label="Secciones">
+      <a href="/#proyectos"><span lang="es">Proyectos</span><span lang="en">Projects</span></a>
+      <a href="/#experiencia"><span lang="es">Experiencia</span><span lang="en">Experience</span></a>
+      <a href="/#formacion"><span lang="es">Formación</span><span lang="en">Education</span></a>
+      <a href="/#contacto"><span lang="es">Contacto</span><span lang="en">Contact</span></a>
+    </nav>
+    <button class="lang" id="langBtn" type="button" aria-label="Switch to English">EN</button>
+  </div>
+</header>
+<main id="main" class="project-page">
+  <section class="p-hero">
+    <div class="wrap">
+      <h1>The Precision</h1>
+      <p class="p-lead"><span lang="es">Una aplicación web para una peluquería: el cliente reserva servicio, profesional y hora en tres pasos, y el negocio gestiona su agenda desde un panel de administración.</span><span lang="en">A web app for a hair salon: clients book a service, a stylist and a time in three steps, and the business runs its calendar from an admin panel.</span></p>
+      <p class="p-meta"><span class="i"><span lang="es">Proyecto en pareja</span><span lang="en">Two-person project</span></span><span class="i">2026</span></p>
+      <div class="p-links"><a class="btn primary" href="https://github.com/ArielEC/mern-peluqueria" target="_blank" rel="noopener"><span lang="es">Código en GitHub</span><span lang="en">Code on GitHub</span> <span class="arr" aria-hidden="true">↗</span></a><a class="btn" href="https://arielec-dev.vercel.app/work/salon-booking-system/#demo" target="_blank" rel="noopener"><span lang="es">Vídeo de la demo</span><span lang="en">Demo video</span> <span class="arr" aria-hidden="true">↗</span></a></div>
+      <dl class="p-facts"><div><dt><span lang="es">Periodo</span><span lang="en">Period</span></dt><dd><span lang="es">Abr. 2026</span><span lang="en">Apr 2026</span></dd></div><div><dt><span lang="es">Equipo</span><span lang="en">Team</span></dt><dd><span lang="es">Dos personas, con Ariel Escobar</span><span lang="en">Two people, with Ariel Escobar</span></dd></div><div><dt><span lang="es">Contexto</span><span lang="en">Context</span></dt><dd><span lang="es">Académico, inspirado en un salón familiar</span><span lang="en">Academic, inspired by a family-run salon</span></dd></div><div><dt><span lang="es">Mi papel</span><span lang="en">My role</span></dt><dd><span lang="es">Frontend completo, API de gestión y despliegue</span><span lang="en">Whole frontend, management API and deployment</span></dd></div></dl>
+    </div>
+  </section>
+  <div class="wrap">
+      <figure class="stage reveal">
+        <div class="pair"><div data-ui class="shot"><img src="/img/the-precision/inicio.webp" width="1300" height="645" fetchpriority="high" decoding="async" alt="Página de inicio de The Precision con el botón de reservar cita" data-en="The Precision home page with the book button"></div><div data-ui class="shot"><img src="/img/the-precision/paso-hora.webp" width="1245" height="888" decoding="async" alt="Paso de elección de fecha y hora, con los huecos libres de cada profesional" data-en="Date and time step, with each stylist’s free slots"></div></div>
+        <figcaption><span lang="es">Inicio y reserva del cliente, con datos de prueba.</span><span lang="en">Home page and client booking, with test data.</span></figcaption>
+      </figure>
+      <section class="p-sec reveal">
+        <h2><span lang="es">Mi parte</span><span lang="en">My part</span></h2>
+        <div><ul class="points single"><li><span lang="es"><b>Todo el frontend</b> con React, Vite y Tailwind: web pública, autenticación, asistente de reserva, «Mis citas» y el panel de administración completo.</span><span lang="en"><b>The whole frontend</b> with React, Vite and Tailwind: public site, authentication, booking wizard, “My appointments” and the full admin panel.</span></li><li><span lang="es">Estado y datos con Zustand y TanStack Query, y el calendario de administración con FullCalendar.</span><span lang="en">State and data with Zustand and TanStack Query, and the admin calendar with FullCalendar.</span></li><li><span lang="es"><b>En la API:</b> endpoints de citas, profesionales, servicios, bloqueos, notas y ajustes, con un middleware genérico de validación, ajustes en caché y fechas normalizadas por zona horaria.</span><span lang="en"><b>In the API:</b> endpoints for appointments, stylists, services, time blocks, notes and settings, with a generic validation middleware, cached settings and timezone-safe dates.</span></li><li><span lang="es">Descansos, bloqueos, vista móvil y despliegue.</span><span lang="en">Breaks, time blocks, mobile view and deployment.</span></li><li><span lang="es">Ariel se encargó del modelo de datos, la autenticación y las reglas de reserva.</span><span lang="en">Ariel took care of the data model, authentication and booking rules.</span></li></ul></div>
+      </section>
+      <section class="p-sec reveal">
+        <h2><span lang="es">Qué hace la app</span><span lang="en">What the app does</span></h2>
+        <div><ul class="points single"><li><span lang="es">Reserva guiada en tres pasos: servicio, hora con los huecos libres reales y confirmación.</span><span lang="en">A guided three-step booking: service, a time from the real free slots, and confirmation.</span></li><li><span lang="es">Área de cliente con próximas citas, historial y cancelación.</span><span lang="en">A client area with upcoming appointments, history and cancellation.</span></li><li><span lang="es">Panel del negocio con resumen del día, calendario, servicios, profesionales, bloqueos y ajustes.</span><span lang="en">A business panel with the day’s summary, calendar, services, staff, time blocks and settings.</span></li></ul></div>
+      </section>
+      <section class="p-sec reveal">
+        <h2>Stack</h2>
+        <div><ul class="stack" aria-label="Stack"><li>React</li><li>Vite</li><li>Tailwind CSS</li><li>Zustand</li><li>TanStack Query</li><li>FullCalendar</li><li>Node.js</li><li>Express</li><li>MongoDB</li><li>JWT</li></ul></div>
+      </section>
+      <section class="p-gallery" aria-label="Galería">
+        <h2><span lang="es">Galería</span><span lang="en">Gallery</span></h2>
+        <div class="gallery"><figure class="reveal">
+            <div data-ui class="shot"><img src="/img/the-precision/paso-servicio.webp" width="1245" height="888" decoding="async" alt="Primer paso de la reserva: elección del servicio" data-en="First booking step: choosing the service"></div>
+            <figcaption><span lang="es">Paso 1: elegir servicio.</span><span lang="en">Step 1: choose a service.</span></figcaption>
+          </figure><figure class="reveal">
+            <div data-ui class="shot"><img src="/img/the-precision/paso-resumen.webp" width="1245" height="888" decoding="async" alt="Último paso de la reserva con el resumen y el precio" data-en="Last booking step with the summary and price"></div>
+            <figcaption><span lang="es">Paso 3: confirmar la cita.</span><span lang="en">Step 3: confirm the appointment.</span></figcaption>
+          </figure><figure class="reveal">
+            <div data-ui class="shot"><img src="/img/the-precision/mis-citas.webp" width="1245" height="888" decoding="async" alt="Área de cliente con las próximas citas" data-en="Client area with upcoming appointments"></div>
+            <figcaption><span lang="es">«Mis citas» del cliente.</span><span lang="en">The client’s “My appointments”.</span></figcaption>
+          </figure><figure class="reveal">
+            <div data-ui class="shot"><img src="/img/the-precision/admin-dashboard.webp" width="1245" height="888" decoding="async" alt="Panel de administración con las citas del día y los ingresos previstos" data-en="Admin dashboard with today’s appointments and expected revenue"></div>
+            <figcaption><span lang="es">Resumen del negocio.</span><span lang="en">Business dashboard.</span></figcaption>
+          </figure><figure class="reveal">
+            <div data-ui class="shot"><img src="/img/the-precision/admin-calendario.webp" width="1245" height="888" decoding="async" alt="Calendario semanal del panel de administración" data-en="Weekly calendar in the admin panel"></div>
+            <figcaption><span lang="es">Calendario semanal con FullCalendar.</span><span lang="en">Weekly calendar with FullCalendar.</span></figcaption>
+          </figure><figure class="reveal">
+            <div data-ui class="shot"><img src="/img/the-precision/admin-servicios.webp" width="1245" height="888" decoding="async" alt="Gestión del catálogo de servicios" data-en="Service catalogue management"></div>
+            <figcaption><span lang="es">Gestión de servicios.</span><span lang="en">Service management.</span></figcaption>
+          </figure></div>
+      </section>
+      <nav class="pager reveal" aria-label="Más proyectos">
+        <a class="prev" href="/proyectos/analista-incansable/"><small><span lang="es">Anterior</span><span lang="en">Previous</span></small><strong>Analista incansable</strong></a>
+        <a class="next" href="/proyectos/poke-hub/"><small><span lang="es">Siguiente</span><span lang="en">Next</span></small><strong>Poké-Hub</strong></a>
+      </nav>
+    </div>
+  </div>
+  <section class="block contact" id="contacto" aria-labelledby="h-contact">
+    <div class="wrap grid">
+      <div class="reveal">
+        <h2 id="h-contact"><span lang="es">¿Hablamos?</span><span lang="en">Let’s talk</span></h2>
+        <p class="intro"><span lang="es">Soy de Sevilla y ahora vivo en Madrid. Me gusta que las cosas funcionen de principio a fin: diseñar el sistema, escribir el código, desplegarlo y medir si de verdad responde bien.</span><span lang="en">I’m from Seville and now live in Madrid. I like things to work end to end: designing the system, writing the code, deploying it and measuring whether it really holds up.</span></p>
+        <p class="intro"><span lang="es">Si buscas a alguien para backend, datos o IA aplicada, escríbeme y te respondo.</span><span lang="en">If you’re looking for someone for backend, data or applied AI work, write to me and I’ll get back to you.</span></p>
+      </div>
+      <ul class="channels reveal">
+        <li><a href="mailto:hola@joaquinborjaleon.com"><span class="ch-k"><span lang="es">Correo</span><span lang="en">Email</span></span><span class="ch-v">hola@joaquinborjaleon.com</span></a></li>
+        <li><a href="https://www.linkedin.com/in/joaquinborjaleon" target="_blank" rel="noopener"><span class="ch-k">LinkedIn</span><span class="ch-v">in/joaquinborjaleon</span></a></li>
+        <li><a href="https://github.com/JoaquinBorjaLeon" target="_blank" rel="noopener"><span class="ch-k">GitHub</span><span class="ch-v">JoaquinBorjaLeon</span></a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap">
+    <p>© <span id="y">2026</span> Joaquín Borja León</p>
+    <p><a href="mailto:hola@joaquinborjaleon.com">hola@joaquinborjaleon.com</a></p>
+  </div>
+</footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

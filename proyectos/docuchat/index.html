@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es" data-title-es="DocuChat, proyecto de Joaquín Borja León" data-title-en="DocuChat, a project by Joaquín Borja León">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DocuChat, proyecto de Joaquín Borja León</title>
+<meta name="description" content="Asistente RAG que responde sobre tus PDF y cita la fuente de cada respuesta.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="DocuChat, proyecto de Joaquín Borja León">
+<meta property="og:description" content="Asistente RAG que responde sobre tus PDF y cita la fuente de cada respuesta.">
+<meta property="og:url" content="https://joaquinborjaleon.com/proyectos/docuchat/">
+<meta property="og:image" content="https://joaquinborjaleon.com/img/covers/docuchat.webp">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://joaquinborjaleon.com/proyectos/docuchat/">
+<link rel="icon" href="/photo.jpg">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=gambarino@400&f[]=general-sans@400,500,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body data-lang="es">
+<a class="skip" href="#main"><span lang="es">Saltar al contenido</span><span lang="en">Skip to content</span></a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/">Joaquín Borja León</a>
+    <a class="crumb" href="/#proyectos"><span aria-hidden="true">←</span> <span lang="es">Proyectos</span><span lang="en">Projects</span></a>
+    <nav aria-label="Secciones">
+      <a href="/#proyectos"><span lang="es">Proyectos</span><span lang="en">Projects</span></a>
+      <a href="/#experiencia"><span lang="es">Experiencia</span><span lang="en">Experience</span></a>
+      <a href="/#formacion"><span lang="es">Formación</span><span lang="en">Education</span></a>
+      <a href="/#contacto"><span lang="es">Contacto</span><span lang="en">Contact</span></a>
+    </nav>
+    <button class="lang" id="langBtn" type="button" aria-label="Switch to English">EN</button>
+  </div>
+</header>
+<main id="main" class="project-page">
+  <section class="p-hero">
+    <div class="wrap">
+      <h1>DocuChat</h1>
+      <p class="p-lead"><span lang="es">Un asistente que responde preguntas sobre tus PDF con generación aumentada por recuperación (RAG) y te enseña de qué documento sale cada respuesta. Si algo no está en tus documentos, lo dice.</span><span lang="en">An assistant that answers questions about your PDFs with retrieval-augmented generation (RAG) and shows which document each answer comes from. If something is not in your documents, it says so.</span></p>
+      <p class="p-meta"><span class="i"><span lang="es">Proyecto personal</span><span lang="en">Personal project</span></span><span class="i">2026</span></p>
+      <div class="p-links"><a class="btn primary" href="https://github.com/JoaquinBorjaLeon/docuchat" target="_blank" rel="noopener"><span lang="es">Código en GitHub</span><span lang="en">Code on GitHub</span> <span class="arr" aria-hidden="true">↗</span></a></div>
+      <dl class="p-facts"><div><dt><span lang="es">Periodo</span><span lang="en">Period</span></dt><dd>2026</dd></div><div><dt><span lang="es">Equipo</span><span lang="en">Team</span></dt><dd><span lang="es">Proyecto personal</span><span lang="en">Personal project</span></dd></div><div><dt><span lang="es">Contexto</span><span lang="en">Context</span></dt><dd><span lang="es">Proyecto propio, desplegado con Docker Compose</span><span lang="en">Own project, deployed with Docker Compose</span></dd></div><div><dt><span lang="es">Mi papel</span><span lang="en">My role</span></dt><dd><span lang="es">Todo: backend, búsqueda, agente, evaluación e interfaz</span><span lang="en">Everything: backend, search, agent, evaluation and interface</span></dd></div></dl>
+    </div>
+  </section>
+  <div class="wrap">
+      <figure class="stage reveal">
+        <div data-ui class="shot solo"><img src="/img/docuchat/interfaz.webp" width="1120" height="866" fetchpriority="high" decoding="async" alt="Interfaz de DocuChat respondiendo qué es el PMBOK, con los documentos de origen citados debajo" data-en="DocuChat answering what the PMBOK is, with the source documents listed below"></div>
+        <figcaption><span lang="es">La interfaz responde sobre apuntes de gestión de proyectos y enumera las fuentes.</span><span lang="en">The interface answers questions about project management notes and lists the sources.</span></figcaption>
+      </figure>
+      <section class="p-sec reveal">
+        <h2><span lang="es">Qué hace</span><span lang="en">What it does</span></h2>
+        <div><ul class="points single"><li><span lang="es">Trocea tus PDF, calcula sus embeddings con nomic-embed-text y los guarda en PostgreSQL con pgvector.</span><span lang="en">Splits your PDFs, embeds them with nomic-embed-text and stores them in PostgreSQL with pgvector.</span></li><li><span lang="es">Respondes en lenguaje natural y cada respuesta cita los documentos de origen.</span><span lang="en">You ask in plain language and every answer cites its source documents.</span></li><li><span lang="es">Funciona entero en local con Ollama o con Gemini en la nube, según una variable de entorno.</span><span lang="en">It runs fully locally with Ollama or with Gemini in the cloud, switched by an environment variable.</span></li></ul></div>
+      </section>
+      <section class="p-sec reveal">
+        <h2><span lang="es">Cómo está hecho</span><span lang="en">How it is built</span></h2>
+        <div><ul class="points single"><li><span lang="es"><b>Búsqueda híbrida.</b> La búsqueda vectorial fallaba con preguntas cortas como «¿Qué es el PMBOK?»: el fragmento correcto ni entraba en el top-k. Al combinarla con la búsqueda de texto completo de PostgreSQL y fusionar ambas con Reciprocal Rank Fusion, ese fragmento pasó al primer puesto.</span><span lang="en"><b>Hybrid search.</b> Vector search failed on short questions like “What is the PMBOK?”: the right passage did not even make the top-k. Combining it with PostgreSQL full-text search and fusing both with Reciprocal Rank Fusion moved that passage to first place.</span></li><li><span lang="es"><b>Agente con herramientas.</b> En cada pregunta el modelo decide si busca en los documentos o consulta la fecha. Comparé Ollama y Gemini: los dos eligen bien; Ollama es gratis y privado, Gemini pule algo más las respuestas.</span><span lang="en"><b>Tool-calling agent.</b> For each question the model decides whether to search the documents or check the date. I compared Ollama and Gemini: both choose well; Ollama is free and private, Gemini polishes answers a little more.</span></li><li><span lang="es"><b>Observabilidad.</b> Cada consulta guarda proveedor, herramientas, fragmentos recuperados y latencia, para medir en vez de suponer.</span><span lang="en"><b>Observability.</b> Every query stores provider, tools, retrieved passages and latency, to measure instead of guess.</span></li></ul></div>
+      </section>
+      <section class="p-sec reveal">
+        <h2><span lang="es">Resultados</span><span lang="en">Results</span></h2>
+        <div><dl class="stats"><div><dt><span lang="es">recall@8 honesto</span><span lang="en">honest recall@8</span></dt><dd>60 %</dd></div><div><dt><span lang="es">preguntas de evaluación</span><span lang="en">evaluation questions</span></dt><dd>15</dd></div><div><dt><span lang="es">la cifra inflada que corregí</span><span lang="en">the inflated figure I corrected</span></dt><dd>93 %</dd></div></dl></div>
+      </section>
+      <section class="p-sec reveal">
+        <h2>Stack</h2>
+        <div><ul class="stack" aria-label="Stack"><li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>pgvector</li><li>Ollama</li><li>Gemini</li><li>React</li><li>Docker Compose</li></ul></div>
+      </section>
+      <blockquote class="pull reveal"><p><span lang="es">Una métrica mal diseñada es peor que no tener ninguna: da una confianza falsa.</span><span lang="en">A badly designed metric is worse than none: it gives false confidence.</span></p></blockquote>
+      <section class="p-gallery" aria-label="Galería">
+        <h2><span lang="es">Galería</span><span lang="en">Gallery</span></h2>
+        <div class="gallery"><figure class="reveal wide">
+            <div data-ui class="shot"><img src="/img/docuchat/evaluacion.webp" width="1400" height="709" decoding="async" alt="Terminal con la evaluación de recall@8 sobre 15 preguntas" data-en="Terminal with the recall@8 evaluation over 15 questions"></div>
+            <figcaption><span lang="es">Evaluación: 9 de 15 preguntas recuperan su fuente (recall@8 del 60 %).</span><span lang="en">Evaluation: 9 out of 15 questions retrieve their source (60% recall@8).</span></figcaption>
+          </figure><figure class="reveal wide">
+            <div data-ui class="shot"><img src="/img/docuchat/agente.webp" width="1400" height="494" decoding="async" alt="Terminal del agente llamando a sus herramientas" data-en="Agent terminal calling its tools"></div>
+            <figcaption><span lang="es">El agente decide qué herramienta usar en cada pregunta.</span><span lang="en">The agent decides which tool to use for each question.</span></figcaption>
+          </figure><figure class="reveal wide">
+            <div data-ui class="shot"><img src="/img/docuchat/api.webp" width="1400" height="636" decoding="async" alt="Documentación interactiva de la API generada por FastAPI" data-en="Interactive API docs generated by FastAPI"></div>
+            <figcaption><span lang="es">API documentada automáticamente por FastAPI.</span><span lang="en">API documented automatically by FastAPI.</span></figcaption>
+          </figure></div>
+      </section>
+      <nav class="pager reveal" aria-label="Más proyectos">
+        <a class="prev" href="/proyectos/poke-hub/"><small><span lang="es">Anterior</span><span lang="en">Previous</span></small><strong>Poké-Hub</strong></a>
+        <a class="next" href="/proyectos/vecinus/"><small><span lang="es">Siguiente</span><span lang="en">Next</span></small><strong>VecinUs</strong></a>
+      </nav>
+    </div>
+  </div>
+  <section class="block contact" id="contacto" aria-labelledby="h-contact">
+    <div class="wrap grid">
+      <div class="reveal">
+        <h2 id="h-contact"><span lang="es">¿Hablamos?</span><span lang="en">Let’s talk</span></h2>
+        <p class="intro"><span lang="es">Soy de Sevilla y ahora vivo en Madrid. Me gusta que las cosas funcionen de principio a fin: diseñar el sistema, escribir el código, desplegarlo y medir si de verdad responde bien.</span><span lang="en">I’m from Seville and now live in Madrid. I like things to work end to end: designing the system, writing the code, deploying it and measuring whether it really holds up.</span></p>
+        <p class="intro"><span lang="es">Si buscas a alguien para backend, datos o IA aplicada, escríbeme y te respondo.</span><span lang="en">If you’re looking for someone for backend, data or applied AI work, write to me and I’ll get back to you.</span></p>
+      </div>
+      <ul class="channels reveal">
+        <li><a href="mailto:hola@joaquinborjaleon.com"><span class="ch-k"><span lang="es">Correo</span><span lang="en">Email</span></span><span class="ch-v">hola@joaquinborjaleon.com</span></a></li>
+        <li><a href="https://www.linkedin.com/in/joaquinborjaleon" target="_blank" rel="noopener"><span class="ch-k">LinkedIn</span><span class="ch-v">in/joaquinborjaleon</span></a></li>
+        <li><a href="https://github.com/JoaquinBorjaLeon" target="_blank" rel="noopener"><span class="ch-k">GitHub</span><span class="ch-v">JoaquinBorjaLeon</span></a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap">
+    <p>© <span id="y">2026</span> Joaquín Borja León</p>
+    <p><a href="mailto:hola@joaquinborjaleon.com">hola@joaquinborjaleon.com</a></p>
+  </div>
+</footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>
