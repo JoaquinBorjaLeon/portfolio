@@ -1,302 +1,272 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Joaquín Borja León — Software Engineer</title>
-<meta name="description" content="Joaquín Borja León — Software Engineer focused on backend, data and applied AI. Digital Governance Trainee at Airbus Defence and Space.">
-<meta property="og:title" content="Joaquín Borja León — Software Engineer">
-<meta property="og:description" content="Backend, data and applied AI. Projects, experience and contact.">
+<title>Joaquín Borja León · Software Engineer</title>
+<meta name="description" content="Joaquín Borja León, ingeniero de software especializado en backend, datos e IA aplicada. Digital Governance Trainee en Airbus Defence and Space.">
+<meta property="og:title" content="Joaquín Borja León · Software Engineer">
+<meta property="og:description" content="Backend, datos e IA aplicada. Proyectos, experiencia y contacto.">
 <meta property="og:url" content="https://joaquinborjaleon.com">
-<meta property="og:type" content="website">
+<meta property="og:image" content="https://joaquinborjaleon.com/photo.jpg">
+<meta property="og:type" content="profile">
 <link rel="canonical" href="https://joaquinborjaleon.com">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23b4232c'/><text x='32' y='42' font-family='Georgia,serif' font-size='28' fill='white' text-anchor='middle'>JB</text></svg>">
+<link rel="icon" href="photo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#f7f5f1; --surface:#ffffff; --ink:#1b1a18; --muted:#5f5b55; --line:#e4dfd7;
-    --accent:#b4232c; --accent-soft:#f6e3e2; --chip:#efebe4;
-    --serif:"Fraunces",Georgia,serif; --sans:"Inter",system-ui,-apple-system,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+    --bg:#ffffff; --ink:#111418; --text:#3b4149; --muted:#6b727b; --line:#e7e9ec; --soft:#f6f7f8;
+    --accent:#1f4fd1;
   }
   @media (prefers-color-scheme:dark){
-    :root{ --bg:#141312; --surface:#1c1b19; --ink:#efebe5; --muted:#a39d94; --line:#2e2c29; --accent:#e5575f; --accent-soft:#3a1e20; --chip:#262421; }
+    :root{ --bg:#0e1013; --ink:#f2f4f6; --text:#c5cad1; --muted:#8a919a; --line:#22262c; --soft:#16191d; --accent:#7ea2ff; }
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--ink);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
-  a{color:inherit}
-  .wrap{max-width:960px;margin:0 auto;padding:0 24px}
+  body{background:var(--bg);color:var(--text);font:16px/1.7 "Inter",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px;text-decoration-thickness:1px}
+  a:hover{text-decoration-color:var(--ink)}
+  .wrap{max-width:860px;margin:0 auto;padding:0 28px}
 
-  /* nav */
-  nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
-  .brand{font-family:var(--serif);font-weight:650;font-size:1.1rem;text-decoration:none}
-  .brand span{color:var(--accent)}
-  .links{display:flex;gap:22px;align-items:center;font-size:.92rem}
-  .links a{text-decoration:none;color:var(--muted)}
-  .links a:hover{color:var(--ink)}
-  .lang{font:500 .78rem var(--mono);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:4px 10px;cursor:pointer}
-  @media (max-width:680px){ .links a.hide-m{display:none} }
+  /* top bar */
+  .top{display:flex;justify-content:space-between;align-items:center;padding:28px 0}
+  .top .name{font-weight:600;color:var(--ink);text-decoration:none}
+  .top nav{display:flex;gap:24px;align-items:center;font-size:.94rem}
+  .top nav a{text-decoration:none;color:var(--muted)}
+  .top nav a:hover{color:var(--ink)}
+  .lang{font:inherit;font-size:.85rem;font-weight:500;color:var(--ink);background:none;border:1px solid var(--line);border-radius:6px;padding:3px 9px;cursor:pointer}
+  .lang:hover{border-color:var(--muted)}
+  @media (max-width:640px){ .top nav a{display:none} }
 
-  /* hero */
-  header.hero{padding:96px 0 72px}
-  .kicker{font:500 .8rem var(--mono);color:var(--accent);letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:10px}
-  .dot{width:8px;height:8px;border-radius:50%;background:#2fa36b;box-shadow:0 0 0 4px color-mix(in srgb,#2fa36b 22%,transparent)}
-  h1{font-family:var(--serif);font-weight:650;font-size:clamp(2.6rem,7vw,4.6rem);line-height:1.02;letter-spacing:-.02em}
-  .role{font-family:var(--serif);font-weight:500;font-size:clamp(1.25rem,2.6vw,1.65rem);color:var(--muted);margin-top:14px;max-width:30ch}
-  .lead{max-width:62ch;margin-top:26px;font-size:1.06rem}
-  .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
-  .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:10px;font-weight:600;font-size:.94rem;text-decoration:none;border:1px solid var(--line);background:var(--surface)}
-  .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
-  .btn:hover{transform:translateY(-1px)}
-  .btn svg{width:17px;height:17px}
+  /* intro */
+  .intro{display:grid;grid-template-columns:132px 1fr;gap:36px;align-items:center;padding:56px 0 64px}
+  .intro img{width:132px;height:132px;border-radius:50%;object-fit:cover;display:block}
+  h1{font-size:2.35rem;line-height:1.2;font-weight:700;color:var(--ink);letter-spacing:-.02em}
+  .tagline{font-size:1.15rem;line-height:1.5;color:var(--text);margin-top:10px}
+  .meta{display:flex;flex-wrap:wrap;gap:6px 22px;margin-top:18px;font-size:.95rem;color:var(--muted)}
+  .meta a{color:var(--muted)}
+  .meta a:hover{color:var(--ink)}
+  @media (max-width:640px){
+    .intro{grid-template-columns:1fr;gap:22px;padding:28px 0 44px}
+    .intro img{width:104px;height:104px}
+    h1{font-size:1.95rem}
+  }
 
-  section{padding:64px 0;border-top:1px solid var(--line)}
-  h2{font-family:var(--serif);font-weight:650;font-size:1.9rem;letter-spacing:-.01em;margin-bottom:8px}
-  .sub{color:var(--muted);margin-bottom:34px}
+  /* sections */
+  section{display:grid;grid-template-columns:170px 1fr;gap:32px;padding:44px 0;border-top:1px solid var(--line)}
+  section > h2{font-size:.95rem;font-weight:600;color:var(--ink);line-height:1.6}
+  @media (max-width:640px){ section{grid-template-columns:1fr;gap:16px;padding:36px 0} }
+  .about p + p{margin-top:14px}
 
-  /* projects */
-  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-  @media (max-width:760px){ .grid{grid-template-columns:1fr} }
-  .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column}
-  .card.feature{grid-column:1/-1;border-color:color-mix(in srgb,var(--accent) 40%,var(--line))}
-  .card .tag{font:500 .72rem var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.06em}
-  .card h3{font-family:var(--serif);font-weight:650;font-size:1.35rem;margin:6px 0 10px}
-  .card p{color:var(--muted);font-size:.96rem}
-  .card ul{margin:12px 0 0 18px;color:var(--muted);font-size:.94rem}
-  .card ul li{margin:3px 0}
-  .stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
-  .chip{font:400 .76rem var(--mono);background:var(--chip);border-radius:6px;padding:3px 8px}
-  .card .more{margin-top:auto;padding-top:18px;font-weight:600;font-size:.92rem;color:var(--accent);text-decoration:none}
-  .card .more:hover{text-decoration:underline}
+  .entry + .entry{margin-top:30px}
+  .entry-head{display:block}
+  .entry h3{font-size:1rem;font-weight:600;color:var(--ink);line-height:1.45}
+  .entry .where{color:var(--text);font-weight:400}
+  .entry .date{display:block;margin-top:1px;font-size:.9rem;color:var(--muted);font-variant-numeric:tabular-nums}
+  .entry p{margin-top:6px}
+  .entry ul{margin-top:6px;padding-left:18px}
+  .entry li{margin:3px 0}
+  .tech{margin-top:8px;font-size:.9rem;color:var(--muted)}
+  .entry .link{display:inline-block;margin-top:8px;font-size:.93rem;font-weight:500}
 
-  /* timeline */
-  .tl{display:grid;gap:28px}
-  .item{display:grid;grid-template-columns:170px 1fr;gap:24px}
-  @media (max-width:640px){ .item{grid-template-columns:1fr;gap:4px} }
-  .when{font:400 .84rem var(--mono);color:var(--muted);padding-top:3px}
-  .item h3{font-size:1.06rem;font-weight:600}
-  .org{color:var(--accent);font-weight:500}
-  .item p,.item ul{color:var(--muted);font-size:.95rem;margin-top:6px}
-  .item ul{margin-left:18px}
+  .skills dl{display:grid;grid-template-columns:150px 1fr;gap:10px 20px}
+  .skills dt{color:var(--ink);font-weight:500}
+  @media (max-width:640px){ .skills dl{grid-template-columns:1fr;gap:2px} .skills dd{margin-bottom:10px} }
 
-  /* skills */
-  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
-  .skills .card h3{font-family:var(--sans);font-size:.95rem;font-weight:600;margin:0 0 10px}
-  .langs{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  footer{border-top:1px solid var(--line);padding:32px 0 48px;font-size:.88rem;color:var(--muted)}
 
-  /* contact */
-  .contact{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:44px;text-align:center}
-  .contact h2{margin-bottom:10px}
-  .contact .mail{font-family:var(--serif);font-size:clamp(1.3rem,3.4vw,1.9rem);color:var(--accent);text-decoration:none;display:inline-block;margin:14px 0 26px;word-break:break-all}
-  .contact .mail:hover{text-decoration:underline}
-  .contact .cta{justify-content:center;margin-top:0}
-
-  footer{padding:36px 0 48px;color:var(--muted);font-size:.85rem;text-align:center}
-
-  /* i18n */
-  [data-lang="en"] [lang="es"]{display:none}
-  [data-lang="es"] [lang="en"]{display:none}
+  /* idioma */
+  [data-lang="en"] [lang="es"]{display:none !important}
+  [data-lang="es"] [lang="en"]{display:none !important}
 </style>
 </head>
-<body data-lang="en">
+<body data-lang="es">
+<div class="wrap">
 
-<nav>
-  <div class="wrap">
-    <a class="brand" href="#top">Joaquín<span>.</span></a>
-    <div class="links">
-      <a href="#projects" class="hide-m"><span lang="en">Projects</span><span lang="es">Proyectos</span></a>
-      <a href="#experience" class="hide-m"><span lang="en">Experience</span><span lang="es">Experiencia</span></a>
-      <a href="#contact"><span lang="en">Contact</span><span lang="es">Contacto</span></a>
-      <button class="lang" id="langBtn" aria-label="Switch language">ES</button>
-    </div>
-  </div>
-</nav>
-
-<main class="wrap" id="top">
-
-  <header class="hero">
-    <div class="kicker"><span class="dot"></span><span lang="en">Madrid, Spain · Open to opportunities</span><span lang="es">Madrid · Abierto a oportunidades</span></div>
-    <h1>Joaquín Borja León</h1>
-    <p class="role"><span lang="en">Software Engineer — backend, data &amp; applied AI.</span><span lang="es">Ingeniero de Software — backend, datos e IA aplicada.</span></p>
-    <p class="lead">
-      <span lang="en">Software Engineer from Universidad de Sevilla, currently a Digital Governance Trainee at <strong>Airbus Defence and Space</strong> while completing a master's in Cloud, Data &amp; IT Management. I like building things end to end — from RAG assistants with LLM agents to sports-analytics and quantitative platforms — running on infrastructure I operate myself.</span>
-      <span lang="es">Ingeniero de Software por la Universidad de Sevilla. Ahora mismo soy Digital Governance Trainee en <strong>Airbus Defence and Space</strong> mientras curso un máster en Cloud, Datos y Gestión TI. Me gusta construir cosas de principio a fin — desde asistentes RAG con agentes LLM hasta plataformas de analítica deportiva y cuantitativa — sobre infraestructura que gestiono yo mismo.</span>
-    </p>
-    <div class="cta">
-      <a class="btn primary" href="#projects"><span lang="en">See projects</span><span lang="es">Ver proyectos</span></a>
-      <a class="btn" href="https://github.com/JoaquinBorjaLeon" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>
-        GitHub</a>
-      <a class="btn" href="https://www.linkedin.com/in/joaquinborjaleon" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6h.1c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.5H3.6V9h3.5v11.5zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z"/></svg>
-        LinkedIn</a>
-    </div>
+  <header class="top">
+    <a class="name" href="#">Joaquín Borja León</a>
+    <nav>
+      <a href="#experiencia"><span lang="es">Experiencia</span><span lang="en">Experience</span></a>
+      <a href="#proyectos"><span lang="es">Proyectos</span><span lang="en">Projects</span></a>
+      <a href="#contacto"><span lang="es">Contacto</span><span lang="en">Contact</span></a>
+      <button class="lang" id="langBtn" type="button">EN</button>
+    </nav>
   </header>
 
-  <section id="projects">
-    <h2><span lang="en">Selected projects</span><span lang="es">Proyectos destacados</span></h2>
-    <p class="sub"><span lang="en">Things I've designed, built and shipped.</span><span lang="es">Cosas que he diseñado, construido y desplegado.</span></p>
+  <div class="intro">
+    <img src="photo.jpg" alt="Joaquín Borja León" width="132" height="132">
+    <div>
+      <h1>Joaquín Borja León</h1>
+      <p class="tagline">
+        <span lang="es">Ingeniero de software especializado en backend, datos e IA aplicada.</span>
+        <span lang="en">Software engineer focused on backend, data and applied AI.</span>
+      </p>
+      <div class="meta">
+        <span>Madrid, <span lang="es">España</span><span lang="en">Spain</span></span>
+        <a href="mailto:hola@joaquinborjaleon.com">hola@joaquinborjaleon.com</a>
+        <a href="https://www.linkedin.com/in/joaquinborjaleon" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/JoaquinBorjaLeon" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
 
-    <div class="grid">
-      <article class="card feature">
-        <span class="tag">Applied AI · RAG</span>
+  <section class="about">
+    <h2><span lang="es">Sobre mí</span><span lang="en">About</span></h2>
+    <div>
+      <p lang="es">Soy graduado en Ingeniería del Software por la Universidad de Sevilla. Actualmente trabajo como Digital Governance Trainee en Airbus Defence and Space, dentro del programa Airbus Discover, y lo compagino con el Máster en Ingeniería del Software: Cloud, Datos y Gestión TI.</p>
+      <p lang="en">I hold a degree in Software Engineering from the University of Seville. I currently work as a Digital Governance Trainee at Airbus Defence and Space through the Airbus Discover programme, alongside a Master's in Software Engineering focused on cloud, data and IT management.</p>
+      <p lang="es">Fuera del trabajo desarrollo mis propios proyectos de principio a fin, desde asistentes RAG con agentes LLM hasta plataformas de analítica deportiva y cuantitativa, y los despliego en un servidor propio que administro yo mismo.</p>
+      <p lang="en">Outside of work I build my own projects end to end, from RAG assistants with LLM agents to sports and quantitative analytics platforms, and deploy them on a home server that I run myself.</p>
+    </div>
+  </section>
+
+  <section id="experiencia">
+    <h2><span lang="es">Experiencia</span><span lang="en">Experience</span></h2>
+    <div>
+      <div class="entry">
+        <div class="entry-head">
+          <h3>Digital Governance Trainee <span class="where">· Airbus Defence and Space</span></h3>
+          <span class="date"><span lang="es">Oct. 2026 a la actualidad</span><span lang="en">Oct 2026 to present</span></span>
+        </div>
+        <p lang="es">Getafe, Madrid. Programa Airbus Discover, en el equipo de Digital Governance de Air Power Services. Apoyo en iniciativas de gobierno del dato y gobernanza digital de la unidad de negocio y en el desarrollo de soluciones de IA.</p>
+        <p lang="en">Getafe, Madrid. Airbus Discover programme, in the Digital Governance team of Air Power Services. Supporting data and digital governance initiatives across the business unit and the development of AI solutions.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <h3><span lang="es">Cofundador y responsable de software</span><span lang="en">Co-founder &amp; Software Lead</span> <span class="where">· Byolux</span></h3>
+          <span class="date"><span lang="es">Abr. a jun. 2026</span><span lang="en">Apr to Jun 2026</span></span>
+        </div>
+        <p lang="es">Startup de software para la optimización de bioprocesos, seleccionada en la aceleradora Fusión Startups. Dirigí la parte técnica, definí el producto junto a un cofundador biotecnólogo y llevé a cabo la validación con clientes del sector.</p>
+        <p lang="en">Software startup for bioprocess optimisation, selected for the Fusión Startups accelerator. I led the technical side, defined the product with a biotech co-founder and ran customer discovery in the target sector.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <h3><span lang="es">Ingeniero de software en prácticas</span><span lang="en">Software Engineering Intern</span> <span class="where">· ITAS, Ayuntamiento de Sevilla</span></h3>
+          <span class="date"><span lang="es">Ene. a mar. 2026</span><span lang="en">Jan to Mar 2026</span></span>
+        </div>
+        <p lang="es">Desarrollo de widgets y de la gestión de alertas de la plataforma Smart City de Sevilla a partir de datos de dispositivos IoT, colaborando en la integración entre backend y frontend en producción.</p>
+        <p lang="en">Built widgets and alert management for the Seville Smart City platform using data from IoT devices, working on backend and frontend integration in production.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <h3><span lang="es">Camarero, programa J-1</span><span lang="en">Server, J-1 programme</span> <span class="where">· Grand Hyatt Deer Valley</span></h3>
+          <span class="date"><span lang="es">Jun. a sept. 2025</span><span lang="en">Jun to Sep 2025</span></span>
+        </div>
+        <p lang="es">Park City, Utah. Atención al cliente en un resort de cinco estrellas, en un entorno multicultural y en inglés.</p>
+        <p lang="en">Park City, Utah. Guest service at a five-star resort in a fast-paced, multicultural, English-speaking environment.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="proyectos">
+    <h2><span lang="es">Proyectos</span><span lang="en">Projects</span></h2>
+    <div>
+      <div class="entry">
         <h3>DocuChat</h3>
-        <p><span lang="en">A conversational assistant for asking questions about your own documents, built and deployed end to end.</span><span lang="es">Asistente conversacional para hacer preguntas sobre tus propios documentos, construido y desplegado de principio a fin.</span></p>
-        <ul>
-          <li lang="en">Hybrid retrieval: pgvector similarity + PostgreSQL full-text search, fused with Reciprocal Rank Fusion.</li>
-          <li lang="es">Recuperación híbrida: similitud vectorial (pgvector) + búsqueda full-text de PostgreSQL, fusionadas con Reciprocal Rank Fusion.</li>
-          <li lang="en">Agent layer with multi-provider tool calling (Ollama / Gemini).</li>
-          <li lang="es">Capa de agentes con tool calling multi-proveedor (Ollama / Gemini).</li>
-          <li lang="en">Query observability (latency, tools, chunks) and a recall@k evaluation framework.</li>
-          <li lang="es">Observabilidad de consultas (latencia, herramientas, chunks) y framework de evaluación recall@k.</li>
-        </ul>
-        <div class="stack"><span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">PostgreSQL</span><span class="chip">pgvector</span><span class="chip">Ollama</span><span class="chip">React</span><span class="chip">Docker Compose</span></div>
-        <a class="more" href="https://github.com/JoaquinBorjaLeon/docuchat" target="_blank" rel="noopener"><span lang="en">View on GitHub →</span><span lang="es">Ver en GitHub →</span></a>
-      </article>
-
-      <article class="card">
-        <span class="tag">Data · Modelling</span>
-        <h3><span lang="en">Sports Analytics Platform</span><span lang="es">Plataforma de analítica deportiva</span></h3>
-        <p><span lang="en">Football and tennis analytics covering 16+ leagues and the ATP/WTA circuits, with Dixon-Coles, Poisson, surface-specific Elo and logistic-regression models, plus a live odds logger building a historical closing-line dataset.</span><span lang="es">Analítica de fútbol y tenis con más de 16 ligas y los circuitos ATP/WTA: modelos Dixon-Coles, Poisson, Elo por superficie y regresión logística, más un registrador de cuotas en vivo que construye un histórico de líneas de cierre.</span></p>
-        <div class="stack"><span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">React</span><span class="chip">PostgreSQL</span><span class="chip">Ubuntu Server</span></div>
-        <a class="more" href="https://github.com/JoaquinBorjaLeon/sports-analyzer" target="_blank" rel="noopener"><span lang="en">View on GitHub →</span><span lang="es">Ver en GitHub →</span></a>
-      </article>
-
-      <article class="card">
-        <span class="tag">Data · Automation</span>
-        <h3><span lang="en">Quantitative Stock Scoring Engine</span><span lang="es">Motor cuantitativo de scoring bursátil</span></h3>
-        <p><span lang="en">Fundamental-analysis scoring engine (P/E, ROE, Debt/EBITDA, net margin) with automated Telegram alerts orchestrated through n8n and a FastAPI dashboard.</span><span lang="es">Motor de scoring por análisis fundamental (PER, ROE, Deuda/EBITDA, margen neto) con alertas automáticas por Telegram orquestadas con n8n y un dashboard en FastAPI.</span></p>
-        <div class="stack"><span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">n8n</span><span class="chip">Telegram API</span></div>
-      </article>
-
-      <article class="card">
-        <span class="tag"><span lang="en">Bachelor's thesis · Mobile</span><span lang="es">TFG · Móvil</span></span>
+        <p lang="es">Asistente conversacional para consultar documentos propios. Combina búsqueda vectorial con pgvector y búsqueda de texto completo en PostgreSQL mediante Reciprocal Rank Fusion. Incluye una capa de agentes con llamadas a herramientas en varios proveedores (Ollama y Gemini), métricas de cada consulta y un sistema de evaluación recall@k.</p>
+        <p lang="en">Conversational assistant for querying your own documents. It combines pgvector similarity search with PostgreSQL full-text search through Reciprocal Rank Fusion, and adds an agent layer with multi-provider tool calling (Ollama and Gemini), per-query observability and a recall@k evaluation framework.</p>
+        <p class="tech">Python, FastAPI, PostgreSQL, pgvector, Ollama, React, Docker Compose</p>
+        <a class="link" href="https://github.com/JoaquinBorjaLeon/docuchat" target="_blank" rel="noopener"><span lang="es">Ver código</span><span lang="en">View code</span></a>
+      </div>
+      <div class="entry">
+        <h3><span lang="es">Plataforma de analítica deportiva</span><span lang="en">Sports analytics platform</span></h3>
+        <p lang="es">Sistema de análisis de fútbol y tenis que cubre más de 16 ligas y los circuitos ATP y WTA, con modelos Dixon-Coles, Poisson, Elo por superficie y regresión logística. Registra cuotas en tiempo real para construir un histórico de líneas de cierre.</p>
+        <p lang="en">Football and tennis analytics covering more than 16 leagues and the ATP and WTA tours, with Dixon-Coles, Poisson, surface-specific Elo and logistic regression models. A live odds logger builds a historical closing-line dataset.</p>
+        <p class="tech">Python, FastAPI, React, PostgreSQL, Ubuntu Server</p>
+        <a class="link" href="https://github.com/JoaquinBorjaLeon/sports-analyzer" target="_blank" rel="noopener"><span lang="es">Ver código</span><span lang="en">View code</span></a>
+      </div>
+      <div class="entry">
+        <h3><span lang="es">Motor de scoring bursátil</span><span lang="en">Stock scoring engine</span></h3>
+        <p lang="es">Puntúa empresas a partir de su análisis fundamental (PER, ROE, deuda/EBITDA y margen neto), envía alertas automáticas por Telegram mediante n8n y muestra los resultados en un panel web.</p>
+        <p lang="en">Scores companies on fundamentals (P/E, ROE, debt/EBITDA and net margin), sends automated Telegram alerts through n8n and presents results in a web dashboard.</p>
+        <p class="tech">Python, FastAPI, n8n</p>
+      </div>
+      <div class="entry">
         <h3>RecuerdaMed</h3>
-        <p><span lang="en">Cross-platform medication-adherence app for patients and caregivers: reminders, intake tracking and caregiver notifications.</span><span lang="es">App multiplataforma de adherencia a la medicación para pacientes y cuidadores: recordatorios, seguimiento de tomas y avisos a cuidadores.</span></p>
-        <div class="stack"><span class="chip">React Native</span><span class="chip">Expo</span><span class="chip">TypeScript</span><span class="chip">Firebase</span></div>
-        <a class="more" href="https://github.com/JoaquinBorjaLeon/RecuerdaMed" target="_blank" rel="noopener"><span lang="en">View on GitHub →</span><span lang="es">Ver en GitHub →</span></a>
-      </article>
-
-      <article class="card">
-        <span class="tag"><span lang="en">Team lead · Product</span><span lang="es">Liderazgo · Producto</span></span>
-        <h3><span lang="en">Neighbourhood Community App</span><span lang="es">App para comunidades de vecinos</span></h3>
-        <p><span lang="en">University capstone (ISPP) where I was project manager of an 18-person team: incident reporting, shared-space booking, voice-recorded meeting minutes with transcription and a residents' chat. I also ran the weekly investor-style pitches.</span><span lang="es">Proyecto de la asignatura ISPP donde fui project manager de un equipo de 18 personas: reporte de incidencias, reserva de zonas comunes, actas por grabación de voz con transcripción y chat de vecinos. También hacía los pitches semanales en formato inversor.</span></p>
-        <div class="stack"><span class="chip">Project management</span><span class="chip">Agile</span><span class="chip">Pitching</span></div>
-      </article>
-    </div>
-  </section>
-
-  <section id="experience">
-    <h2><span lang="en">Experience</span><span lang="es">Experiencia</span></h2>
-    <p class="sub"><span lang="en">Where I've worked.</span><span lang="es">Dónde he trabajado.</span></p>
-    <div class="tl">
-      <div class="item">
-        <div class="when">Oct 2026 — <span lang="en">now</span><span lang="es">hoy</span></div>
-        <div>
-          <h3>Digital Governance Trainee · <span class="org">Airbus Defence and Space</span></h3>
-          <p><span lang="en">Getafe, Madrid · Airbus Discover programme, Digital Governance team of Air Power Services.</span><span lang="es">Getafe, Madrid · Programa Airbus Discover, equipo de Digital Governance de Air Power Services.</span></p>
-          <ul>
-            <li lang="en">Supporting data and digital governance initiatives across the business unit.</li>
-            <li lang="es">Apoyo en iniciativas de gobierno del dato y gobernanza digital en la unidad de negocio.</li>
-            <li lang="en">Supporting the development of AI solutions.</li>
-            <li lang="es">Apoyo en el desarrollo de soluciones de IA.</li>
-          </ul>
-        </div>
+        <p lang="es">Trabajo de fin de grado. Aplicación móvil multiplataforma para la adherencia a la medicación, con recordatorios para el paciente y avisos a sus cuidadores.</p>
+        <p lang="en">Bachelor's thesis. Cross-platform mobile app for medication adherence, with reminders for patients and notifications for their caregivers.</p>
+        <p class="tech">React Native, Expo, TypeScript, Firebase</p>
+        <a class="link" href="https://github.com/JoaquinBorjaLeon/RecuerdaMed" target="_blank" rel="noopener"><span lang="es">Ver código</span><span lang="en">View code</span></a>
       </div>
-      <div class="item">
-        <div class="when">Apr — Jun 2026</div>
-        <div>
-          <h3>Co-founder &amp; Software Lead · <span class="org">Byolux</span></h3>
-          <p><span lang="en">Sevilla · Bioprocess-optimization software startup selected for the Fusión Startups accelerator. Led the technical side of a two-person team, defined the product with a biotech co-founder and ran customer discovery and go-to-market work.</span><span lang="es">Sevilla · Startup de software para optimización de bioprocesos, seleccionada en la aceleradora Fusión Startups. Lideré la parte técnica de un equipo de dos, definí el producto junto a un cofundador biotecnólogo e hice customer discovery y trabajo de go-to-market.</span></p>
-        </div>
-      </div>
-      <div class="item">
-        <div class="when">Jan — Mar 2026</div>
-        <div>
-          <h3><span lang="en">Software Engineering Intern</span><span lang="es">Ingeniero de Software en prácticas</span> · <span class="org">ITAS — Ayuntamiento de Sevilla</span></h3>
-          <p><span lang="en">Built frontend widgets and alert-management features for the Sevilla Smart City platform using data from distributed IoT devices, collaborating on backend–frontend integration in production.</span><span lang="es">Desarrollo de widgets frontend y gestión de alertas para la plataforma Smart City de Sevilla con datos de dispositivos IoT distribuidos, colaborando en la integración backend–frontend en producción.</span></p>
-        </div>
-      </div>
-      <div class="item">
-        <div class="when">Jun — Sep 2025</div>
-        <div>
-          <h3><span lang="en">Server, J-1 Work &amp; Travel</span><span lang="es">Camarero, programa J-1 Work &amp; Travel</span> · <span class="org">Grand Hyatt Deer Valley</span></h3>
-          <p><span lang="en">Park City, Utah · Fast-paced, multicultural, English-speaking five-star resort.</span><span lang="es">Park City, Utah · Resort de cinco estrellas, entorno multicultural y en inglés, a ritmo alto.</span></p>
-        </div>
+      <div class="entry">
+        <h3><span lang="es">Aplicación para comunidades de vecinos</span><span lang="en">Residents' community app</span></h3>
+        <p lang="es">Proyecto de la asignatura ISPP en el que fui jefe de proyecto de un equipo de 18 personas. Permitía gestionar incidencias, reservar zonas comunes, transcribir actas a partir de grabaciones de voz y chatear entre vecinos. También presentaba cada semana los avances en formato pitch.</p>
+        <p lang="en">University project (ISPP) where I was project manager of an 18-person team. It handled incident reports, shared-space bookings, meeting minutes transcribed from voice recordings and a residents' chat. I also presented progress every week in pitch format.</p>
       </div>
     </div>
   </section>
 
-  <section id="education">
-    <h2><span lang="en">Education</span><span lang="es">Formación</span></h2>
-    <p class="sub"><span lang="en">Degrees and programmes.</span><span lang="es">Titulaciones y programas.</span></p>
-    <div class="tl">
-      <div class="item">
-        <div class="when">2026 — 2028</div>
-        <div>
-          <h3><span lang="en">MSc Software Engineering: Cloud, Data &amp; IT Management</span><span lang="es">Máster en Ingeniería del Software: Cloud, Datos y Gestión TI</span> · <span class="org">Universidad de Sevilla</span></h3>
-          <p><span lang="en">Big Data, ML engineering, cloud operations, advanced testing, IT governance and cybersecurity.</span><span lang="es">Big Data, ML engineering, operación cloud, testing avanzado, gobierno TI y ciberseguridad.</span></p>
+  <section>
+    <h2><span lang="es">Formación</span><span lang="en">Education</span></h2>
+    <div>
+      <div class="entry">
+        <div class="entry-head">
+          <h3><span lang="es">Máster en Ingeniería del Software: Cloud, Datos y Gestión TI</span><span lang="en">MSc Software Engineering: Cloud, Data and IT Management</span></h3>
+          <span class="date"><span lang="es">2026 a 2028</span><span lang="en">2026 to 2028</span></span>
         </div>
+        <p>Universidad de Sevilla</p>
       </div>
-      <div class="item">
-        <div class="when">2026 — 2027</div>
-        <div>
-          <h3><span lang="en">Master's in Organizational Management in Digital Environments &amp; Data Analytics</span><span lang="es">Máster en Gestión Organizacional en Entornos Digitales y Analítica de Datos</span> · <span class="org">Universidad Camilo José Cela</span></h3>
-          <p><span lang="en">Python, SQL, Power BI, ETL and applied AI for business, combined with the Airbus Discover programme.</span><span lang="es">Python, SQL, Power BI, ETL e IA aplicada a negocio, combinado con el programa Airbus Discover.</span></p>
+      <div class="entry">
+        <div class="entry-head">
+          <h3><span lang="es">Máster en Gestión Organizacional en Entornos Digitales y Analítica de Datos</span><span lang="en">Master's in Organisational Management in Digital Environments and Data Analytics</span></h3>
+          <span class="date"><span lang="es">2026 a 2027</span><span lang="en">2026 to 2027</span></span>
         </div>
+        <p>Universidad Camilo José Cela</p>
       </div>
-      <div class="item">
-        <div class="when">2022 — 2026</div>
-        <div>
-          <h3><span lang="en">BSc Software Engineering</span><span lang="es">Grado en Ingeniería del Software</span> · <span class="org">Universidad de Sevilla</span></h3>
-          <p><span lang="en">Backend development, mobile applications and software architecture.</span><span lang="es">Desarrollo backend, aplicaciones móviles y arquitectura software.</span></p>
+      <div class="entry">
+        <div class="entry-head">
+          <h3><span lang="es">Grado en Ingeniería del Software</span><span lang="en">BSc Software Engineering</span></h3>
+          <span class="date"><span lang="es">2022 a 2026</span><span lang="en">2022 to 2026</span></span>
         </div>
+        <p>Universidad de Sevilla</p>
       </div>
     </div>
   </section>
 
-  <section id="skills">
-    <h2><span lang="en">Toolbox</span><span lang="es">Herramientas</span></h2>
-    <p class="sub"><span lang="en">What I work with day to day.</span><span lang="es">Con lo que trabajo en el día a día.</span></p>
-    <div class="skills">
-      <div class="card"><h3><span lang="en">Languages &amp; frameworks</span><span lang="es">Lenguajes y frameworks</span></h3><div class="stack"><span class="chip">Python</span><span class="chip">Java</span><span class="chip">TypeScript</span><span class="chip">SQL</span><span class="chip">FastAPI</span><span class="chip">Spring Boot</span><span class="chip">React</span><span class="chip">React Native</span></div></div>
-      <div class="card"><h3><span lang="en">Data &amp; AI</span><span lang="es">Datos e IA</span></h3><div class="stack"><span class="chip">PostgreSQL</span><span class="chip">pgvector</span><span class="chip">Pandas</span><span class="chip">RAG</span><span class="chip">LLM agents</span><span class="chip">Embeddings</span><span class="chip">Power BI</span><span class="chip">Statistical modelling</span></div></div>
-      <div class="card"><h3><span lang="en">Infrastructure</span><span lang="es">Infraestructura</span></h3><div class="stack"><span class="chip">Ubuntu Server</span><span class="chip">Docker</span><span class="chip">Docker Compose</span><span class="chip">Tailscale</span><span class="chip">Cloudflare</span><span class="chip">n8n</span><span class="chip">Ollama</span><span class="chip">Git</span></div></div>
-    </div>
-    <div class="langs">
-      <span class="chip"><span lang="en">Spanish — native</span><span lang="es">Español — nativo</span></span>
-      <span class="chip"><span lang="en">English — C1 (TOEFL iBT)</span><span lang="es">Inglés — C1 (TOEFL iBT)</span></span>
-      <span class="chip"><span lang="en">German — B1</span><span lang="es">Alemán — B1</span></span>
+  <section class="skills">
+    <h2><span lang="es">Conocimientos</span><span lang="en">Skills</span></h2>
+    <dl>
+      <dt><span lang="es">Lenguajes</span><span lang="en">Languages</span></dt>
+      <dd>Python, Java, TypeScript, SQL</dd>
+      <dt>Frameworks</dt>
+      <dd>FastAPI, Spring Boot, React, React Native</dd>
+      <dt><span lang="es">Datos e IA</span><span lang="en">Data and AI</span></dt>
+      <dd>PostgreSQL, pgvector, Pandas, Power BI, RAG, <span lang="es">agentes LLM, modelos estadísticos</span><span lang="en">LLM agents, statistical modelling</span></dd>
+      <dt><span lang="es">Infraestructura</span><span lang="en">Infrastructure</span></dt>
+      <dd>Ubuntu Server, Docker, Tailscale, Cloudflare, n8n, Ollama, Git</dd>
+      <dt><span lang="es">Idiomas</span><span lang="en">Spoken</span></dt>
+      <dd><span lang="es">Español nativo, inglés C1 (TOEFL iBT), alemán B1</span><span lang="en">Spanish (native), English C1 (TOEFL iBT), German B1</span></dd>
+    </dl>
+  </section>
+
+  <section id="contacto">
+    <h2><span lang="es">Contacto</span><span lang="en">Contact</span></h2>
+    <div>
+      <p lang="es">Estoy abierto a oportunidades en backend, datos e IA. La forma más rápida de contactarme es por correo en <a href="mailto:hola@joaquinborjaleon.com">hola@joaquinborjaleon.com</a> o a través de <a href="https://www.linkedin.com/in/joaquinborjaleon" target="_blank" rel="noopener">LinkedIn</a>.</p>
+      <p lang="en">I'm open to opportunities in backend, data and AI. The quickest way to reach me is by email at <a href="mailto:hola@joaquinborjaleon.com">hola@joaquinborjaleon.com</a> or on <a href="https://www.linkedin.com/in/joaquinborjaleon" target="_blank" rel="noopener">LinkedIn</a>.</p>
     </div>
   </section>
 
-  <section id="contact">
-    <div class="contact">
-      <h2><span lang="en">Let's talk</span><span lang="es">Hablemos</span></h2>
-      <p class="sub" style="margin-bottom:0"><span lang="en">Open to backend, data and AI engineering opportunities. Drop me a line.</span><span lang="es">Abierto a oportunidades en backend, datos e IA. Escríbeme.</span></p>
-      <a class="mail" href="mailto:hola@joaquinborjaleon.com">hola@joaquinborjaleon.com</a>
-      <div class="cta">
-        <a class="btn" href="https://www.linkedin.com/in/joaquinborjaleon" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn" href="https://github.com/JoaquinBorjaLeon" target="_blank" rel="noopener">GitHub</a>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer>© <span id="y">2026</span> Joaquín Borja León</footer>
+  <footer>© <span id="y">2026</span> Joaquín Borja León</footer>
+</div>
 
 <script>
   (function(){
     var body=document.body, btn=document.getElementById('langBtn');
     var saved=null; try{saved=localStorage.getItem('lang')}catch(e){}
-    var initial=saved||((navigator.language||'en').toLowerCase().indexOf('es')===0?'es':'en');
-    function set(l){body.setAttribute('data-lang',l);document.documentElement.lang=l;btn.textContent=l==='en'?'ES':'EN';try{localStorage.setItem('lang',l)}catch(e){}}
+    var nav=(navigator.language||'es').toLowerCase();
+    var initial=saved||(nav.indexOf('es')===0?'es':'en');
+    function set(l){
+      body.setAttribute('data-lang',l);
+      document.documentElement.lang=l;
+      btn.textContent=l==='es'?'EN':'ES';
+      btn.setAttribute('aria-label',l==='es'?'View in English':'Ver en español');
+      try{localStorage.setItem('lang',l)}catch(e){}
+    }
     set(initial);
-    btn.addEventListener('click',function(){set(body.getAttribute('data-lang')==='en'?'es':'en')});
+    btn.addEventListener('click',function(){set(body.getAttribute('data-lang')==='es'?'en':'es')});
     document.getElementById('y').textContent=new Date().getFullYear();
   })();
 </script>
