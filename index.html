@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Joaquín Borja León · Software Engineer</title>
-<meta name="description" content="Joaquín Borja León, ingeniero de software especializado en backend, datos e IA aplicada. Digital Governance Trainee en Airbus Defence and Space.">
-<meta property="og:title" content="Joaquín Borja León · Software Engineer">
-<meta property="og:description" content="Backend, datos e IA aplicada. Proyectos, experiencia y contacto.">
+<title>Joaquín Borja León, ingeniero de software</title>
+<meta name="description" content="Portfolio de Joaquín Borja León: proyectos de datos, IA aplicada y backend.">
+<meta property="og:title" content="Joaquín Borja León, ingeniero de software">
+<meta property="og:description" content="Proyectos de datos, IA aplicada y backend.">
 <meta property="og:url" content="https://joaquinborjaleon.com">
 <meta property="og:image" content="https://joaquinborjaleon.com/photo.jpg">
 <meta property="og:type" content="profile">
@@ -14,70 +14,151 @@
 <link rel="icon" href="photo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#ffffff; --ink:#111418; --text:#3b4149; --muted:#6b727b; --line:#e7e9ec; --soft:#f6f7f8;
-    --accent:#1f4fd1;
-  }
-  @media (prefers-color-scheme:dark){
-    :root{ --bg:#0e1013; --ink:#f2f4f6; --text:#c5cad1; --muted:#8a919a; --line:#22262c; --soft:#16191d; --accent:#7ea2ff; }
+    --paper:#ffffff;
+    --ink:#14212e;
+    --text:#38444f;
+    --slate:#66727e;
+    --line:#dde4e8;
+    --panel:#eef3f2;
+    --field:#2c7a57;
+    --field-soft:#d6eadf;
+    --sky:#3a6ea5;
+    --radius:16px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--text);font:16px/1.7 "Inter",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
-  a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px;text-decoration-thickness:1px}
-  a:hover{text-decoration-color:var(--ink)}
-  .wrap{max-width:860px;margin:0 auto;padding:0 28px}
+  @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} *{transition:none !important;animation:none !important} }
+  body{background:var(--paper);color:var(--text);font:17px/1.65 "Schibsted Grotesk",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--ink)}
+  :focus-visible{outline:2px solid var(--sky);outline-offset:3px;border-radius:4px}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+  @media (max-width:640px){ .wrap{padding:0 20px} body{font-size:16px} }
 
-  /* top bar */
-  .top{display:flex;justify-content:space-between;align-items:center;padding:28px 0}
-  .top .name{font-weight:600;color:var(--ink);text-decoration:none}
-  .top nav{display:flex;gap:24px;align-items:center;font-size:.94rem}
-  .top nav a{text-decoration:none;color:var(--muted)}
-  .top nav a:hover{color:var(--ink)}
-  .lang{font:inherit;font-size:.85rem;font-weight:500;color:var(--ink);background:none;border:1px solid var(--line);border-radius:6px;padding:3px 9px;cursor:pointer}
-  .lang:hover{border-color:var(--muted)}
-  @media (max-width:640px){ .top nav a{display:none} }
+  /* barra superior */
+  .bar{display:flex;justify-content:space-between;align-items:center;padding:26px 0}
+  .bar a.home{font-weight:700;color:var(--ink);text-decoration:none;font-size:1.02rem}
+  .bar nav{display:flex;align-items:center;gap:26px;font-size:.95rem}
+  .bar nav a{color:var(--slate);text-decoration:none}
+  .bar nav a:hover{color:var(--ink)}
+  .lang{font:inherit;font-size:.88rem;font-weight:600;color:var(--ink);background:var(--panel);border:0;border-radius:999px;padding:5px 12px;cursor:pointer}
+  @media (max-width:720px){ .bar nav a{display:none} }
 
-  /* intro */
-  .intro{display:grid;grid-template-columns:132px 1fr;gap:36px;align-items:center;padding:56px 0 64px}
-  .intro img{width:132px;height:132px;border-radius:50%;object-fit:cover;display:block}
-  h1{font-size:2.35rem;line-height:1.2;font-weight:700;color:var(--ink);letter-spacing:-.02em}
-  .tagline{font-size:1.15rem;line-height:1.5;color:var(--text);margin-top:10px}
-  .meta{display:flex;flex-wrap:wrap;gap:6px 22px;margin-top:18px;font-size:.95rem;color:var(--muted)}
-  .meta a{color:var(--muted)}
-  .meta a:hover{color:var(--ink)}
-  @media (max-width:640px){
-    .intro{grid-template-columns:1fr;gap:22px;padding:28px 0 44px}
-    .intro img{width:104px;height:104px}
-    h1{font-size:1.95rem}
+  /* portada */
+  .hero{padding:72px 0 96px;display:grid;grid-template-columns:1fr 260px;gap:64px;align-items:end}
+  .hero h1{font-size:clamp(2.3rem,5.4vw,4.1rem);line-height:1.08;font-weight:700;color:var(--ink);letter-spacing:-.025em;max-width:16ch}
+  .hero p{font-size:1.2rem;line-height:1.6;max-width:44ch;margin-top:28px}
+  .hero .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+  .pill{display:inline-block;padding:10px 18px;border-radius:999px;background:var(--ink);color:#fff;text-decoration:none;font-weight:600;font-size:.97rem}
+  .pill.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+  .pill.ghost:hover{box-shadow:inset 0 0 0 1.5px var(--ink)}
+  .portrait{width:260px;height:auto;aspect-ratio:1;border-radius:50%;object-fit:cover;display:block}
+  .portrait-cap{font-size:.92rem;color:var(--slate);margin-top:16px;text-align:center}
+  @media (max-width:820px){
+    .hero{grid-template-columns:1fr;gap:28px;padding:32px 0 64px}
+    .hero figure{order:-1}
+    .portrait{width:120px}
+    .portrait-cap{text-align:left}
   }
 
-  /* sections */
-  section{display:grid;grid-template-columns:170px 1fr;gap:32px;padding:44px 0;border-top:1px solid var(--line)}
-  section > h2{font-size:.95rem;font-weight:600;color:var(--ink);line-height:1.6}
-  @media (max-width:640px){ section{grid-template-columns:1fr;gap:16px;padding:36px 0} }
-  .about p + p{margin-top:14px}
+  /* proyectos */
+  .work-intro{padding:8px 0 24px;border-top:1.5px solid var(--ink)}
+  .work-intro h2,.block h2{font-size:1.6rem;font-weight:700;color:var(--ink);letter-spacing:-.01em;margin-top:28px}
+  .work-intro p{max-width:58ch;margin-top:10px;color:var(--slate)}
 
-  .entry + .entry{margin-top:30px}
-  .entry-head{display:block}
-  .entry h3{font-size:1rem;font-weight:600;color:var(--ink);line-height:1.45}
-  .entry .where{color:var(--text);font-weight:400}
-  .entry .date{display:block;margin-top:1px;font-size:.9rem;color:var(--muted);font-variant-numeric:tabular-nums}
-  .entry p{margin-top:6px}
-  .entry ul{margin-top:6px;padding-left:18px}
-  .entry li{margin:3px 0}
-  .tech{margin-top:8px;font-size:.9rem;color:var(--muted)}
-  .entry .link{display:inline-block;margin-top:8px;font-size:.93rem;font-weight:500}
+  .project{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px;padding:64px 0;border-bottom:1px solid var(--line);align-items:start}
+  .project:last-of-type{border-bottom:0}
+  @media (max-width:900px){ .project{grid-template-columns:1fr;gap:28px;padding:48px 0} }
+  .project h3{font-size:2rem;line-height:1.15;font-weight:700;color:var(--ink);letter-spacing:-.02em}
+  .project .lede{font-size:1.15rem;color:var(--ink);margin-top:12px;max-width:40ch}
+  .project p.body{margin-top:18px;max-width:52ch}
+  .project ul{list-style:none;margin-top:20px;display:grid;gap:10px;max-width:52ch}
+  .project ul li{padding-left:22px;position:relative}
+  .project ul li::before{content:"";position:absolute;left:0;top:.68em;width:9px;height:9px;border-radius:50%;background:var(--field)}
+  .stack{margin-top:22px;color:var(--slate);font-size:.95rem;max-width:52ch}
+  .project .more{display:inline-block;margin-top:18px;font-weight:600;text-underline-offset:4px}
 
-  .skills dl{display:grid;grid-template-columns:150px 1fr;gap:10px 20px}
-  .skills dt{color:var(--ink);font-weight:500}
-  @media (max-width:640px){ .skills dl{grid-template-columns:1fr;gap:2px} .skills dd{margin-bottom:10px} }
+  /* figuras */
+  .fig{background:var(--panel);border-radius:var(--radius);padding:26px}
+  .fig-title{font-weight:600;color:var(--ink)}
+  .fig-note{font-size:.9rem;color:var(--slate);margin-top:4px}
+  .seg{display:inline-flex;background:#fff;border-radius:999px;padding:4px;margin-top:18px;gap:2px;flex-wrap:wrap}
+  .seg button{font:inherit;font-size:.9rem;font-weight:500;border:0;background:none;color:var(--slate);padding:6px 14px;border-radius:999px;cursor:pointer}
+  .seg button[aria-pressed="true"]{background:var(--ink);color:#fff}
 
-  footer{border-top:1px solid var(--line);padding:32px 0 48px;font-size:.88rem;color:var(--muted)}
+  .query{margin-top:18px;background:#fff;border-radius:12px;padding:12px 16px;color:var(--ink);font-weight:500}
+  .ranks{list-style:none;margin-top:14px;position:relative}
+  .ranks li{display:grid;grid-template-columns:28px 1fr 64px;gap:12px;align-items:center;background:#fff;border-radius:10px;padding:10px 14px;margin-top:8px;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+  .ranks .pos{font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+  .ranks .txt{font-size:.94rem;line-height:1.4}
+  .ranks .txt small{display:block;color:var(--slate);font-size:.82rem;margin-top:2px}
+  .ranks .rbar{height:8px;border-radius:4px;background:var(--line);overflow:hidden}
+  .ranks .rbar i{display:block;height:100%;background:var(--field);transition:width .45s}
+  .ranks li.hit .txt{color:var(--ink);font-weight:500}
 
-  /* idioma */
+  .poisson{display:grid;grid-template-columns:1fr 210px;gap:24px;margin-top:18px;align-items:start}
+  @media (max-width:520px){ .poisson{grid-template-columns:1fr} }
+  .grid6{display:grid;grid-template-columns:22px repeat(6,1fr);gap:3px;font-size:.78rem;font-variant-numeric:tabular-nums}
+  .grid6 .h{color:var(--slate);display:flex;align-items:center;justify-content:center}
+  .grid6 .c{aspect-ratio:1;border-radius:5px;display:flex;align-items:center;justify-content:center;color:var(--ink)}
+  .axis{font-size:.82rem;color:var(--slate);margin-top:8px}
+  .ctl label{display:block;font-size:.9rem;color:var(--ink);font-weight:500;margin-top:14px}
+  .ctl label:first-child{margin-top:0}
+  .ctl input{width:100%;accent-color:var(--field);margin-top:6px}
+  .ctl output{float:right;font-variant-numeric:tabular-nums;color:var(--slate);font-weight:400}
+  .probs{margin-top:20px;display:grid;gap:8px}
+  .probs div{display:grid;grid-template-columns:70px 1fr 44px;gap:8px;align-items:center;font-size:.88rem}
+  .probs .t{height:10px;border-radius:5px;background:#fff;overflow:hidden}
+  .probs .t i{display:block;height:100%;background:var(--sky);transition:width .3s}
+  .probs span:last-child{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink);font-weight:600}
+
+  .score{margin-top:18px;display:grid;gap:12px}
+  .metric{background:#fff;border-radius:10px;padding:12px 14px;display:grid;grid-template-columns:120px 1fr 54px;gap:12px;align-items:center;font-size:.92rem}
+  .metric b{color:var(--ink);font-weight:600}
+  .metric .t{height:8px;border-radius:4px;background:var(--line);overflow:hidden}
+  .metric .t i{display:block;height:100%;background:var(--field)}
+  .metric span{text-align:right;font-variant-numeric:tabular-nums}
+  .alert{margin-top:16px;display:flex;gap:12px;align-items:flex-start}
+  .alert .avatar{width:34px;height:34px;border-radius:50%;background:var(--sky);flex:none}
+  .alert .msg{background:#fff;border-radius:4px 14px 14px 14px;padding:10px 14px;font-size:.92rem;color:var(--ink)}
+  .alert .msg small{display:block;color:var(--slate);margin-top:4px}
+
+  .phone{width:260px;margin:18px auto 0;background:var(--ink);border-radius:34px;padding:12px}
+  .screen{background:#fff;border-radius:24px;padding:20px 16px 18px;min-height:380px}
+  .screen .day{font-weight:700;color:var(--ink);font-size:1.1rem}
+  .screen .sub{font-size:.82rem;color:var(--slate)}
+  .dose{display:grid;grid-template-columns:46px 1fr auto;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line);font-size:.88rem}
+  .dose:last-of-type{border-bottom:0}
+  .dose time{font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
+  .dose em{font-style:normal;font-size:.76rem;font-weight:600;padding:3px 9px;border-radius:999px}
+  .ok{background:var(--field-soft);color:var(--field)}
+  .wait{background:#e6eef7;color:var(--sky)}
+  .care{margin-top:14px;background:var(--panel);border-radius:12px;padding:10px 12px;font-size:.8rem;color:var(--ink)}
+
+  /* bloques inferiores */
+  .block{padding:72px 0;border-top:1.5px solid var(--ink)}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-top:24px}
+  @media (max-width:820px){ .two{grid-template-columns:1fr;gap:36px} }
+  .now p{max-width:56ch}
+  .now p + p{margin-top:14px}
+  .path{list-style:none}
+  .path li{padding:14px 0;border-bottom:1px solid var(--line)}
+  .path li:first-child{padding-top:0}
+  .path b{color:var(--ink);font-weight:600}
+  .path .sub{display:block;color:var(--slate);font-size:.93rem}
+  .others{margin-top:40px;padding-bottom:72px;max-width:70ch}
+  .others h3{font-size:1.15rem;color:var(--ink)}
+  .others p{margin-top:8px}
+
+  .contact{padding:96px 0 72px;border-top:1.5px solid var(--ink)}
+  .contact p{font-size:1.2rem;max-width:40ch}
+  .contact a.mail{display:inline-block;margin-top:18px;font-size:clamp(1.6rem,4.6vw,3rem);font-weight:700;letter-spacing:-.02em;color:var(--ink);text-decoration-thickness:3px;text-underline-offset:8px;text-decoration-color:var(--field);word-break:break-word}
+  .contact .links{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
+  footer{padding:28px 0 40px;font-size:.88rem;color:var(--slate)}
+
+  @media (max-width:640px){ .fig{padding:16px} .seg button{padding:6px 11px} .ranks li{grid-template-columns:18px 1fr 36px;gap:10px;padding:10px 12px} .metric{grid-template-columns:96px 1fr 44px} }
   [data-lang="en"] [lang="es"]{display:none !important}
   [data-lang="es"] [lang="en"]{display:none !important}
 </style>
@@ -85,167 +166,196 @@
 <body data-lang="es">
 <div class="wrap">
 
-  <header class="top">
-    <a class="name" href="#">Joaquín Borja León</a>
+  <header class="bar">
+    <a class="home" href="#">Joaquín Borja León</a>
     <nav>
-      <a href="#experiencia"><span lang="es">Experiencia</span><span lang="en">Experience</span></a>
-      <a href="#proyectos"><span lang="es">Proyectos</span><span lang="en">Projects</span></a>
+      <a href="#proyectos"><span lang="es">Proyectos</span><span lang="en">Work</span></a>
+      <a href="#ahora"><span lang="es">Sobre mí</span><span lang="en">About</span></a>
       <a href="#contacto"><span lang="es">Contacto</span><span lang="en">Contact</span></a>
-      <button class="lang" id="langBtn" type="button">EN</button>
+      <button class="lang" id="langBtn" type="button">English</button>
     </nav>
   </header>
 
-  <div class="intro">
-    <img src="photo.jpg" alt="Joaquín Borja León" width="132" height="132">
+  <section class="hero">
     <div>
-      <h1>Joaquín Borja León</h1>
-      <p class="tagline">
-        <span lang="es">Ingeniero de software especializado en backend, datos e IA aplicada.</span>
-        <span lang="en">Software engineer focused on backend, data and applied AI.</span>
-      </p>
-      <div class="meta">
-        <span>Madrid, <span lang="es">España</span><span lang="en">Spain</span></span>
-        <a href="mailto:hola@joaquinborjaleon.com">hola@joaquinborjaleon.com</a>
-        <a href="https://www.linkedin.com/in/joaquinborjaleon" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/JoaquinBorjaLeon" target="_blank" rel="noopener">GitHub</a>
+      <h1>
+        <span lang="es">Construyo sistemas de datos e IA y me gusta llevarlos hasta producción.</span>
+        <span lang="en">I build data and AI systems and I like taking them all the way to production.</span>
+      </h1>
+      <p lang="es">Soy Joaquín, ingeniero de software por la Universidad de Sevilla. Ahora trabajo en Airbus Defence and Space y, en mi tiempo libre, diseño, programo y despliego mis propios proyectos en un servidor que administro yo mismo.</p>
+      <p lang="en">I'm Joaquín, a software engineer from the University of Seville. I currently work at Airbus Defence and Space, and in my spare time I design, build and deploy my own projects on a server I run myself.</p>
+      <div class="links">
+        <a class="pill" href="#proyectos"><span lang="es">Ver proyectos</span><span lang="en">See my work</span></a>
+        <a class="pill ghost" href="https://github.com/JoaquinBorjaLeon" target="_blank" rel="noopener">GitHub</a>
+        <a class="pill ghost" href="https://www.linkedin.com/in/joaquinborjaleon" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
+    <figure>
+      <img class="portrait" src="photo.jpg" alt="Joaquín Borja León" width="260" height="260">
+      <figcaption class="portrait-cap"><span lang="es">Madrid, España</span><span lang="en">Madrid, Spain</span></figcaption>
+    </figure>
+  </section>
+
+  <div class="work-intro" id="proyectos">
+    <h2><span lang="es">Proyectos</span><span lang="en">Selected work</span></h2>
+    <p lang="es">Cada figura de esta sección funciona con la misma lógica que el proyecto real. Puedes tocarlas.</p>
+    <p lang="en">Every figure in this section runs on the same logic as the real project. Feel free to play with them.</p>
   </div>
 
-  <section class="about">
-    <h2><span lang="es">Sobre mí</span><span lang="en">About</span></h2>
+  <!-- DocuChat -->
+  <article class="project">
     <div>
-      <p lang="es">Soy graduado en Ingeniería del Software por la Universidad de Sevilla. Actualmente trabajo como Digital Governance Trainee en Airbus Defence and Space, dentro del programa Airbus Discover, y lo compagino con el Máster en Ingeniería del Software: Cloud, Datos y Gestión TI.</p>
-      <p lang="en">I hold a degree in Software Engineering from the University of Seville. I currently work as a Digital Governance Trainee at Airbus Defence and Space through the Airbus Discover programme, alongside a Master's in Software Engineering focused on cloud, data and IT management.</p>
-      <p lang="es">Fuera del trabajo desarrollo mis propios proyectos de principio a fin, desde asistentes RAG con agentes LLM hasta plataformas de analítica deportiva y cuantitativa, y los despliego en un servidor propio que administro yo mismo.</p>
-      <p lang="en">Outside of work I build my own projects end to end, from RAG assistants with LLM agents to sports and quantitative analytics platforms, and deploy them on a home server that I run myself.</p>
+      <h3>DocuChat</h3>
+      <p class="lede" lang="es">Un asistente que responde preguntas sobre tus propios documentos y te dice de dónde ha sacado cada respuesta.</p>
+      <p class="lede" lang="en">An assistant that answers questions about your own documents and tells you where each answer came from.</p>
+      <p class="body" lang="es">La búsqueda vectorial entiende el significado pero se le escapan los términos exactos. La búsqueda de texto completo hace justo lo contrario. DocuChat lanza las dos en paralelo y combina sus rankings con Reciprocal Rank Fusion, de modo que arriba quedan los fragmentos en los que ambas coinciden.</p>
+      <p class="body" lang="en">Vector search understands meaning but misses exact terms. Full-text search does the opposite. DocuChat runs both in parallel and merges their rankings with Reciprocal Rank Fusion, so the passages both agree on rise to the top.</p>
+      <ul>
+        <li lang="es">Capa de agentes con llamadas a herramientas, compatible con Ollama en local y con Gemini.</li>
+        <li lang="en">Agent layer with tool calling that works with local Ollama models and with Gemini.</li>
+        <li lang="es">Cada consulta registra latencia, herramientas usadas y fragmentos recuperados.</li>
+        <li lang="en">Every query logs latency, tools used and passages retrieved.</li>
+        <li lang="es">Evaluación con recall@k para medir si los cambios mejoran de verdad la recuperación.</li>
+        <li lang="en">Recall@k evaluation to check whether changes actually improve retrieval.</li>
+      </ul>
+      <p class="stack">Python, FastAPI, PostgreSQL, pgvector, Ollama, React, Docker Compose</p>
+      <a class="more" href="https://github.com/JoaquinBorjaLeon/docuchat" target="_blank" rel="noopener"><span lang="es">Ver el código en GitHub</span><span lang="en">View the code on GitHub</span></a>
+    </div>
+    <div class="fig" id="rrf">
+      <div class="fig-title"><span lang="es">Cómo se ordenan los resultados</span><span lang="en">How results get ranked</span></div>
+      <div class="fig-note"><span lang="es">Fragmentos de una política de RR. HH. de ejemplo. RRF con k = 60.</span><span lang="en">Passages from a sample HR policy. RRF with k = 60.</span></div>
+      <div class="seg" role="group">
+        <button type="button" data-mode="vec"><span lang="es">Vectorial</span><span lang="en">Vector</span></button>
+        <button type="button" data-mode="fts"><span lang="es">Texto completo</span><span lang="en">Full text</span></button>
+        <button type="button" data-mode="rrf" aria-pressed="true"><span lang="es">Fusión RRF</span><span lang="en">RRF fusion</span></button>
+      </div>
+      <div class="query"><span lang="es">¿Cuántos días de vacaciones me corresponden?</span><span lang="en">How many days of holiday am I entitled to?</span></div>
+      <ol class="ranks"></ol>
+    </div>
+  </article>
+
+  <!-- Analítica deportiva -->
+  <article class="project">
+    <div>
+      <h3><span lang="es">Analítica deportiva</span><span lang="en">Sports analytics</span></h3>
+      <p class="lede" lang="es">Modelos de probabilidad para fútbol y tenis, con datos de más de 16 ligas y de los circuitos ATP y WTA.</p>
+      <p class="lede" lang="en">Probability models for football and tennis, with data from more than 16 leagues and the ATP and WTA tours.</p>
+      <p class="body" lang="es">Para fútbol uso Poisson y Dixon-Coles: estimo los goles esperados de cada equipo y de ahí sale la probabilidad de cada marcador. En tenis, un Elo separado por superficie y una regresión logística. Además, un proceso guarda las cuotas en tiempo real para construir un histórico de líneas de cierre con el que validar los modelos.</p>
+      <p class="body" lang="en">For football I use Poisson and Dixon-Coles: estimate each team's expected goals and derive the probability of every scoreline. For tennis, a surface-specific Elo and logistic regression. A separate process logs live odds to build a closing-line history to validate the models against.</p>
+      <p class="stack">Python, FastAPI, React, PostgreSQL, Ubuntu Server</p>
+      <a class="more" href="https://github.com/JoaquinBorjaLeon/sports-analyzer" target="_blank" rel="noopener"><span lang="es">Ver el código en GitHub</span><span lang="en">View the code on GitHub</span></a>
+    </div>
+    <div class="fig">
+      <div class="fig-title"><span lang="es">Probabilidad de cada marcador</span><span lang="en">Probability of every scoreline</span></div>
+      <div class="fig-note"><span lang="es">Modelo de Poisson independiente. Mueve los goles esperados.</span><span lang="en">Independent Poisson model. Adjust the expected goals.</span></div>
+      <div class="poisson">
+        <div>
+          <div class="grid6" id="grid"></div>
+          <div class="axis"><span lang="es">Filas: goles del local. Columnas: goles del visitante.</span><span lang="en">Rows: home goals. Columns: away goals.</span></div>
+        </div>
+        <div class="ctl">
+          <label><span lang="es">Local</span><span lang="en">Home</span> <output id="lhOut"></output><input id="lh" type="range" min="0.3" max="3.5" step="0.05" value="1.65"></label>
+          <label><span lang="es">Visitante</span><span lang="en">Away</span> <output id="laOut"></output><input id="la" type="range" min="0.3" max="3.5" step="0.05" value="1.10"></label>
+          <div class="probs">
+            <div><span lang="es">Local</span><span lang="en">Home</span><span class="t"><i id="p1"></i></span><span id="p1v"></span></div>
+            <div><span lang="es">Empate</span><span lang="en">Draw</span><span class="t"><i id="px"></i></span><span id="pxv"></span></div>
+            <div><span lang="es">Visitante</span><span lang="en">Away</span><span class="t"><i id="p2"></i></span><span id="p2v"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Scoring bursátil -->
+  <article class="project">
+    <div>
+      <h3><span lang="es">Scoring bursátil</span><span lang="en">Stock scoring engine</span></h3>
+      <p class="lede" lang="es">Un motor que puntúa empresas por sus fundamentales y me avisa por Telegram cuando alguna merece una segunda mirada.</p>
+      <p class="lede" lang="en">An engine that scores companies on their fundamentals and pings me on Telegram when one deserves a second look.</p>
+      <p class="body" lang="es">Combina PER, ROE, deuda sobre EBITDA y margen neto en una única nota. Un flujo de n8n lanza el análisis de forma periódica, manda las alertas y deja los resultados en un panel hecho con FastAPI.</p>
+      <p class="body" lang="en">It combines P/E, ROE, debt to EBITDA and net margin into a single score. An n8n workflow runs the analysis on a schedule, sends the alerts and publishes results to a FastAPI dashboard.</p>
+      <p class="stack">Python, FastAPI, n8n, Telegram</p>
+    </div>
+    <div class="fig">
+      <div class="fig-title"><span lang="es">Desglose de una puntuación</span><span lang="en">Breaking down a score</span></div>
+      <div class="fig-note"><span lang="es">Empresa ficticia, valores ilustrativos.</span><span lang="en">Fictional company, illustrative values.</span></div>
+      <div class="score">
+        <div class="metric"><b>PER</b><span class="t"><i style="width:72%"></i></span><span><span lang="es">12,4</span><span lang="en">12.4</span></span></div>
+        <div class="metric"><b>ROE</b><span class="t"><i style="width:81%"></i></span><span><span lang="es">18 %</span><span lang="en">18%</span></span></div>
+        <div class="metric"><b><span lang="es">Deuda / EBITDA</span><span lang="en">Debt / EBITDA</span></b><span class="t"><i style="width:64%"></i></span><span><span lang="es">1,6</span><span lang="en">1.6</span></span></div>
+        <div class="metric"><b><span lang="es">Margen neto</span><span lang="en">Net margin</span></b><span class="t"><i style="width:58%"></i></span><span><span lang="es">11 %</span><span lang="en">11%</span></span></div>
+      </div>
+      <div class="alert">
+        <span class="avatar" aria-hidden="true"></span>
+        <div class="msg">
+          <span lang="es">Nueva oportunidad: Empresa Ejemplo obtiene 7,8 sobre 10, por encima de tu umbral de 7.</span>
+          <span lang="en">New candidate: Example Corp scores 7.8 out of 10, above your threshold of 7.</span>
+          <small><span lang="es">Alerta automática por Telegram</span><span lang="en">Automated Telegram alert</span></small>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- RecuerdaMed -->
+  <article class="project">
+    <div>
+      <h3>RecuerdaMed</h3>
+      <p class="lede" lang="es">Mi trabajo de fin de grado: una app que ayuda a los pacientes a no olvidar su medicación y mantiene informados a sus cuidadores.</p>
+      <p class="lede" lang="en">My bachelor's thesis: an app that helps patients keep up with their medication and keeps their caregivers informed.</p>
+      <p class="body" lang="es">El paciente recibe un aviso a cada hora de toma y la marca con un solo gesto. Si una toma se queda sin confirmar, la persona que le cuida recibe una notificación. Funciona en Android e iOS desde un único código.</p>
+      <p class="body" lang="en">Patients get a reminder at each dose time and confirm it with a single tap. If a dose goes unconfirmed, their caregiver gets a notification. It runs on Android and iOS from a single codebase.</p>
+      <p class="stack">React Native, Expo, TypeScript, Firebase</p>
+      <a class="more" href="https://github.com/JoaquinBorjaLeon/RecuerdaMed" target="_blank" rel="noopener"><span lang="es">Ver el código en GitHub</span><span lang="en">View the code on GitHub</span></a>
+    </div>
+    <div class="fig">
+      <div class="phone" aria-hidden="true">
+        <div class="screen">
+          <div class="day"><span lang="es">Hoy</span><span lang="en">Today</span></div>
+          <div class="sub"><span lang="es">3 tomas programadas</span><span lang="en">3 doses scheduled</span></div>
+          <div style="margin-top:12px">
+            <div class="dose"><time>08:00</time><span>Enalapril 10 mg</span><em class="ok"><span lang="es">Tomada</span><span lang="en">Taken</span></em></div>
+            <div class="dose"><time>14:00</time><span>Metformina 850 mg</span><em class="ok"><span lang="es">Tomada</span><span lang="en">Taken</span></em></div>
+            <div class="dose"><time>21:00</time><span>Atorvastatina 20 mg</span><em class="wait"><span lang="es">Pendiente</span><span lang="en">Due</span></em></div>
+          </div>
+          <div class="care"><span lang="es">Si no se confirma a las 21:30, se avisará a María (cuidadora).</span><span lang="en">If not confirmed by 21:30, María (caregiver) will be notified.</span></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <div class="others">
+    <h3><span lang="es">También he liderado equipos</span><span lang="en">I've also led teams</span></h3>
+    <p lang="es">En la asignatura de Ingeniería del Software y Práctica Profesional fui jefe de proyecto de un equipo de 18 personas. Construimos una app para comunidades de vecinos con gestión de incidencias, reserva de zonas comunes, actas transcritas a partir de grabaciones de voz y chat entre vecinos, y cada semana presentaba los avances en formato pitch. Antes de eso cofundé Byolux, una startup de software para la optimización de bioprocesos que entró en la aceleradora Fusión Startups.</p>
+    <p lang="en">In my Software Engineering and Professional Practice course I was project manager of an 18-person team. We built an app for residents' associations with incident reporting, shared-space booking, meeting minutes transcribed from voice recordings and a residents' chat, and I pitched our progress every week. I also co-founded Byolux, a software startup for bioprocess optimisation that joined the Fusión Startups accelerator.</p>
+  </div>
+
+  <section class="block" id="ahora">
+    <h2><span lang="es">Sobre mí</span><span lang="en">About me</span></h2>
+    <div class="two">
+      <div class="now">
+        <p lang="es">Ahora mismo estoy en Getafe como Digital Governance Trainee en Airbus Defence and Space, dentro del programa Airbus Discover. Apoyo iniciativas de gobierno del dato en Air Power Services y colaboro en el desarrollo de soluciones de IA.</p>
+        <p lang="en">I'm currently in Getafe as a Digital Governance Trainee at Airbus Defence and Space, part of the Airbus Discover programme. I support data governance initiatives in Air Power Services and help develop AI solutions.</p>
+        <p lang="es">Lo compagino con el Máster en Ingeniería del Software de la Universidad de Sevilla, centrado en cloud, datos y gestión TI, y con un máster en analítica de datos de la Universidad Camilo José Cela.</p>
+        <p lang="en">Alongside it I'm studying the Master's in Software Engineering at the University of Seville, focused on cloud, data and IT management, and a Master's in data analytics at Camilo José Cela University.</p>
+        <p lang="es">Hablo español, inglés con nivel C1 y alemán con nivel B1. Antes de todo esto pasé un verano trabajando en un resort de Utah y otro dando clases de surf en Cantabria.</p>
+        <p lang="en">I speak Spanish, English at C1 level and German at B1. Before all this I spent a summer working at a resort in Utah and another one teaching surf in Cantabria.</p>
+      </div>
+      <ol class="path">
+        <li><b>Airbus Defence and Space</b><span class="sub"><span lang="es">Digital Governance Trainee, desde octubre de 2026</span><span lang="en">Digital Governance Trainee, since October 2026</span></span></li>
+        <li><b>Byolux</b><span class="sub"><span lang="es">Cofundador y responsable de software, 2026</span><span lang="en">Co-founder and software lead, 2026</span></span></li>
+        <li><b><span lang="es">Ayuntamiento de Sevilla (ITAS)</span><span lang="en">Seville City Council (ITAS)</span></b><span class="sub"><span lang="es">Prácticas en la plataforma Smart City, 2026</span><span lang="en">Internship on the Smart City platform, 2026</span></span></li>
+        <li><b>Universidad de Sevilla</b><span class="sub"><span lang="es">Grado en Ingeniería del Software, 2022 a 2026</span><span lang="en">BSc Software Engineering, 2022 to 2026</span></span></li>
+      </ol>
     </div>
   </section>
 
-  <section id="experiencia">
-    <h2><span lang="es">Experiencia</span><span lang="en">Experience</span></h2>
-    <div>
-      <div class="entry">
-        <div class="entry-head">
-          <h3>Digital Governance Trainee <span class="where">· Airbus Defence and Space</span></h3>
-          <span class="date"><span lang="es">Oct. 2026 a la actualidad</span><span lang="en">Oct 2026 to present</span></span>
-        </div>
-        <p lang="es">Getafe, Madrid. Programa Airbus Discover, en el equipo de Digital Governance de Air Power Services. Apoyo en iniciativas de gobierno del dato y gobernanza digital de la unidad de negocio y en el desarrollo de soluciones de IA.</p>
-        <p lang="en">Getafe, Madrid. Airbus Discover programme, in the Digital Governance team of Air Power Services. Supporting data and digital governance initiatives across the business unit and the development of AI solutions.</p>
-      </div>
-      <div class="entry">
-        <div class="entry-head">
-          <h3><span lang="es">Cofundador y responsable de software</span><span lang="en">Co-founder &amp; Software Lead</span> <span class="where">· Byolux</span></h3>
-          <span class="date"><span lang="es">Abr. a jun. 2026</span><span lang="en">Apr to Jun 2026</span></span>
-        </div>
-        <p lang="es">Startup de software para la optimización de bioprocesos, seleccionada en la aceleradora Fusión Startups. Dirigí la parte técnica, definí el producto junto a un cofundador biotecnólogo y llevé a cabo la validación con clientes del sector.</p>
-        <p lang="en">Software startup for bioprocess optimisation, selected for the Fusión Startups accelerator. I led the technical side, defined the product with a biotech co-founder and ran customer discovery in the target sector.</p>
-      </div>
-      <div class="entry">
-        <div class="entry-head">
-          <h3><span lang="es">Ingeniero de software en prácticas</span><span lang="en">Software Engineering Intern</span> <span class="where">· ITAS, Ayuntamiento de Sevilla</span></h3>
-          <span class="date"><span lang="es">Ene. a mar. 2026</span><span lang="en">Jan to Mar 2026</span></span>
-        </div>
-        <p lang="es">Desarrollo de widgets y de la gestión de alertas de la plataforma Smart City de Sevilla a partir de datos de dispositivos IoT, colaborando en la integración entre backend y frontend en producción.</p>
-        <p lang="en">Built widgets and alert management for the Seville Smart City platform using data from IoT devices, working on backend and frontend integration in production.</p>
-      </div>
-      <div class="entry">
-        <div class="entry-head">
-          <h3><span lang="es">Camarero, programa J-1</span><span lang="en">Server, J-1 programme</span> <span class="where">· Grand Hyatt Deer Valley</span></h3>
-          <span class="date"><span lang="es">Jun. a sept. 2025</span><span lang="en">Jun to Sep 2025</span></span>
-        </div>
-        <p lang="es">Park City, Utah. Atención al cliente en un resort de cinco estrellas, en un entorno multicultural y en inglés.</p>
-        <p lang="en">Park City, Utah. Guest service at a five-star resort in a fast-paced, multicultural, English-speaking environment.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="proyectos">
-    <h2><span lang="es">Proyectos</span><span lang="en">Projects</span></h2>
-    <div>
-      <div class="entry">
-        <h3>DocuChat</h3>
-        <p lang="es">Asistente conversacional para consultar documentos propios. Combina búsqueda vectorial con pgvector y búsqueda de texto completo en PostgreSQL mediante Reciprocal Rank Fusion. Incluye una capa de agentes con llamadas a herramientas en varios proveedores (Ollama y Gemini), métricas de cada consulta y un sistema de evaluación recall@k.</p>
-        <p lang="en">Conversational assistant for querying your own documents. It combines pgvector similarity search with PostgreSQL full-text search through Reciprocal Rank Fusion, and adds an agent layer with multi-provider tool calling (Ollama and Gemini), per-query observability and a recall@k evaluation framework.</p>
-        <p class="tech">Python, FastAPI, PostgreSQL, pgvector, Ollama, React, Docker Compose</p>
-        <a class="link" href="https://github.com/JoaquinBorjaLeon/docuchat" target="_blank" rel="noopener"><span lang="es">Ver código</span><span lang="en">View code</span></a>
-      </div>
-      <div class="entry">
-        <h3><span lang="es">Plataforma de analítica deportiva</span><span lang="en">Sports analytics platform</span></h3>
-        <p lang="es">Sistema de análisis de fútbol y tenis que cubre más de 16 ligas y los circuitos ATP y WTA, con modelos Dixon-Coles, Poisson, Elo por superficie y regresión logística. Registra cuotas en tiempo real para construir un histórico de líneas de cierre.</p>
-        <p lang="en">Football and tennis analytics covering more than 16 leagues and the ATP and WTA tours, with Dixon-Coles, Poisson, surface-specific Elo and logistic regression models. A live odds logger builds a historical closing-line dataset.</p>
-        <p class="tech">Python, FastAPI, React, PostgreSQL, Ubuntu Server</p>
-        <a class="link" href="https://github.com/JoaquinBorjaLeon/sports-analyzer" target="_blank" rel="noopener"><span lang="es">Ver código</span><span lang="en">View code</span></a>
-      </div>
-      <div class="entry">
-        <h3><span lang="es">Motor de scoring bursátil</span><span lang="en">Stock scoring engine</span></h3>
-        <p lang="es">Puntúa empresas a partir de su análisis fundamental (PER, ROE, deuda/EBITDA y margen neto), envía alertas automáticas por Telegram mediante n8n y muestra los resultados en un panel web.</p>
-        <p lang="en">Scores companies on fundamentals (P/E, ROE, debt/EBITDA and net margin), sends automated Telegram alerts through n8n and presents results in a web dashboard.</p>
-        <p class="tech">Python, FastAPI, n8n</p>
-      </div>
-      <div class="entry">
-        <h3>RecuerdaMed</h3>
-        <p lang="es">Trabajo de fin de grado. Aplicación móvil multiplataforma para la adherencia a la medicación, con recordatorios para el paciente y avisos a sus cuidadores.</p>
-        <p lang="en">Bachelor's thesis. Cross-platform mobile app for medication adherence, with reminders for patients and notifications for their caregivers.</p>
-        <p class="tech">React Native, Expo, TypeScript, Firebase</p>
-        <a class="link" href="https://github.com/JoaquinBorjaLeon/RecuerdaMed" target="_blank" rel="noopener"><span lang="es">Ver código</span><span lang="en">View code</span></a>
-      </div>
-      <div class="entry">
-        <h3><span lang="es">Aplicación para comunidades de vecinos</span><span lang="en">Residents' community app</span></h3>
-        <p lang="es">Proyecto de la asignatura ISPP en el que fui jefe de proyecto de un equipo de 18 personas. Permitía gestionar incidencias, reservar zonas comunes, transcribir actas a partir de grabaciones de voz y chatear entre vecinos. También presentaba cada semana los avances en formato pitch.</p>
-        <p lang="en">University project (ISPP) where I was project manager of an 18-person team. It handled incident reports, shared-space bookings, meeting minutes transcribed from voice recordings and a residents' chat. I also presented progress every week in pitch format.</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2><span lang="es">Formación</span><span lang="en">Education</span></h2>
-    <div>
-      <div class="entry">
-        <div class="entry-head">
-          <h3><span lang="es">Máster en Ingeniería del Software: Cloud, Datos y Gestión TI</span><span lang="en">MSc Software Engineering: Cloud, Data and IT Management</span></h3>
-          <span class="date"><span lang="es">2026 a 2028</span><span lang="en">2026 to 2028</span></span>
-        </div>
-        <p>Universidad de Sevilla</p>
-      </div>
-      <div class="entry">
-        <div class="entry-head">
-          <h3><span lang="es">Máster en Gestión Organizacional en Entornos Digitales y Analítica de Datos</span><span lang="en">Master's in Organisational Management in Digital Environments and Data Analytics</span></h3>
-          <span class="date"><span lang="es">2026 a 2027</span><span lang="en">2026 to 2027</span></span>
-        </div>
-        <p>Universidad Camilo José Cela</p>
-      </div>
-      <div class="entry">
-        <div class="entry-head">
-          <h3><span lang="es">Grado en Ingeniería del Software</span><span lang="en">BSc Software Engineering</span></h3>
-          <span class="date"><span lang="es">2022 a 2026</span><span lang="en">2022 to 2026</span></span>
-        </div>
-        <p>Universidad de Sevilla</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="skills">
-    <h2><span lang="es">Conocimientos</span><span lang="en">Skills</span></h2>
-    <dl>
-      <dt><span lang="es">Lenguajes</span><span lang="en">Languages</span></dt>
-      <dd>Python, Java, TypeScript, SQL</dd>
-      <dt>Frameworks</dt>
-      <dd>FastAPI, Spring Boot, React, React Native</dd>
-      <dt><span lang="es">Datos e IA</span><span lang="en">Data and AI</span></dt>
-      <dd>PostgreSQL, pgvector, Pandas, Power BI, RAG, <span lang="es">agentes LLM, modelos estadísticos</span><span lang="en">LLM agents, statistical modelling</span></dd>
-      <dt><span lang="es">Infraestructura</span><span lang="en">Infrastructure</span></dt>
-      <dd>Ubuntu Server, Docker, Tailscale, Cloudflare, n8n, Ollama, Git</dd>
-      <dt><span lang="es">Idiomas</span><span lang="en">Spoken</span></dt>
-      <dd><span lang="es">Español nativo, inglés C1 (TOEFL iBT), alemán B1</span><span lang="en">Spanish (native), English C1 (TOEFL iBT), German B1</span></dd>
-    </dl>
-  </section>
-
-  <section id="contacto">
-    <h2><span lang="es">Contacto</span><span lang="en">Contact</span></h2>
-    <div>
-      <p lang="es">Estoy abierto a oportunidades en backend, datos e IA. La forma más rápida de contactarme es por correo en <a href="mailto:hola@joaquinborjaleon.com">hola@joaquinborjaleon.com</a> o a través de <a href="https://www.linkedin.com/in/joaquinborjaleon" target="_blank" rel="noopener">LinkedIn</a>.</p>
-      <p lang="en">I'm open to opportunities in backend, data and AI. The quickest way to reach me is by email at <a href="mailto:hola@joaquinborjaleon.com">hola@joaquinborjaleon.com</a> or on <a href="https://www.linkedin.com/in/joaquinborjaleon" target="_blank" rel="noopener">LinkedIn</a>.</p>
+  <section class="contact" id="contacto">
+    <p lang="es">Si tienes un proyecto o una oferta en backend, datos o IA, me encantará hablar contigo.</p>
+    <p lang="en">If you have a project or a role in backend, data or AI, I'd love to hear from you.</p>
+    <a class="mail" href="mailto:hola@joaquinborjaleon.com">hola@joaquinborjaleon.com</a>
+    <div class="links">
+      <a class="pill ghost" href="https://www.linkedin.com/in/joaquinborjaleon" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="pill ghost" href="https://github.com/JoaquinBorjaLeon" target="_blank" rel="noopener">GitHub</a>
     </div>
   </section>
 
@@ -253,22 +363,93 @@
 </div>
 
 <script>
-  (function(){
-    var body=document.body, btn=document.getElementById('langBtn');
-    var saved=null; try{saved=localStorage.getItem('lang')}catch(e){}
-    var nav=(navigator.language||'es').toLowerCase();
-    var initial=saved||(nav.indexOf('es')===0?'es':'en');
-    function set(l){
-      body.setAttribute('data-lang',l);
-      document.documentElement.lang=l;
-      btn.textContent=l==='es'?'EN':'ES';
-      btn.setAttribute('aria-label',l==='es'?'View in English':'Ver en español');
-      try{localStorage.setItem('lang',l)}catch(e){}
-    }
-    set(initial);
-    btn.addEventListener('click',function(){set(body.getAttribute('data-lang')==='es'?'en':'es')});
-    document.getElementById('y').textContent=new Date().getFullYear();
-  })();
+(function(){
+  var body=document.body, btn=document.getElementById('langBtn');
+  function lang(){return body.getAttribute('data-lang')}
+
+  /* ---------- RRF ---------- */
+  var docs=[
+    {id:'A',es:'Los empleados disponen de 23 días laborables de vacaciones al año.',en:'Employees are entitled to 23 working days of holiday per year.',s:{es:'Política de vacaciones, art. 4',en:'Holiday policy, art. 4'}},
+    {id:'B',es:'El descanso anual se calcula de forma proporcional al tiempo trabajado.',en:'Annual leave is prorated according to time worked.',s:{es:'Política de vacaciones, art. 5',en:'Holiday policy, art. 5'}},
+    {id:'C',es:'Las solicitudes de vacaciones se tramitan desde el portal del empleado.',en:'Holiday requests are submitted through the employee portal.',s:{es:'Procedimientos, sección 2',en:'Procedures, section 2'}},
+    {id:'D',es:'Los días de libre disposición no se acumulan al año siguiente.',en:'Personal days do not carry over to the following year.',s:{es:'Permisos retribuidos',en:'Paid leave'}},
+    {id:'E',es:'El horario de verano se aplica del 15 de junio al 15 de septiembre.',en:'Summer hours apply from 15 June to 15 September.',s:{es:'Jornada laboral',en:'Working hours'}}
+  ];
+  var vecRank=['B','A','D','E','C'];   // entiende "descanso anual" ≈ vacaciones
+  var ftsRank=['C','A','D','B','E'];   // coincide con la palabra "vacaciones"
+  var K=60;
+  function rrf(){
+    var sc={}; docs.forEach(function(d){sc[d.id]=1/(K+vecRank.indexOf(d.id)+1)+1/(K+ftsRank.indexOf(d.id)+1)});
+    return docs.map(function(d){return d.id}).sort(function(a,b){return sc[b]-sc[a]}).map(function(id){return {id:id,v:sc[id]}});
+  }
+  var mode='rrf', list=document.querySelector('#rrf .ranks');
+  function order(){
+    if(mode==='vec') return vecRank.map(function(id,i){return {id:id,v:1-i*0.16}});
+    if(mode==='fts') return ftsRank.map(function(id,i){return {id:id,v:1-i*0.18}});
+    return rrf();
+  }
+  function renderRRF(){
+    var o=order(), max=o[0].v, min=o[o.length-1].v, L=lang();
+    var first={}; Array.prototype.forEach.call(list.children,function(li){first[li.dataset.id]=li.getBoundingClientRect().top});
+    list.innerHTML='';
+    o.forEach(function(r,i){
+      var d=docs.filter(function(x){return x.id===r.id})[0];
+      var li=document.createElement('li'); li.dataset.id=r.id; if(r.id==='A') li.className='hit';
+      li.innerHTML='<span class="pos">'+(i+1)+'</span><span class="txt">'+d[L]+'<small>'+d.s[L]+'</small></span><span class="rbar"><i style="width:'+Math.round(18+82*(r.v-min)/(max-min))+'%"></i></span>';
+      list.appendChild(li);
+    });
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    Array.prototype.forEach.call(list.children,function(li){
+      var f=first[li.dataset.id]; if(f===undefined) return;
+      var dy=f-li.getBoundingClientRect().top; if(!dy) return;
+      li.style.transition='none'; li.style.transform='translateY('+dy+'px)';
+      requestAnimationFrame(function(){requestAnimationFrame(function(){li.style.transition='';li.style.transform=''})});
+    });
+  }
+  document.querySelectorAll('#rrf .seg button').forEach(function(b){
+    b.addEventListener('click',function(){
+      mode=b.dataset.mode;
+      document.querySelectorAll('#rrf .seg button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+      renderRRF();
+    });
+  });
+
+  /* ---------- Poisson ---------- */
+  var grid=document.getElementById('grid'), lh=document.getElementById('lh'), la=document.getElementById('la');
+  function fact(n){var r=1;for(var i=2;i<=n;i++)r*=i;return r}
+  function pois(k,l){return Math.exp(-l)*Math.pow(l,k)/fact(k)}
+  function pct(x){var L=lang();var s=(x*100).toFixed(1);return (L==='es'?s.replace('.',','):s)+' %'}
+  function renderPoisson(){
+    var a=+lh.value,b=+la.value,N=6,p1=0,px=0,p2=0,m=[],max=0;
+    for(var i=0;i<12;i++)for(var j=0;j<12;j++){var p=pois(i,a)*pois(j,b); if(i>j)p1+=p; else if(i===j)px+=p; else p2+=p; if(i<N&&j<N){m.push([i,j,p]); if(p>max)max=p;}}
+    var t=p1+px+p2; p1/=t;px/=t;p2/=t;
+    var h='<span></span>'; for(var j=0;j<N;j++) h+='<span class="h">'+j+'</span>';
+    for(var i=0;i<N;i++){ h+='<span class="h">'+i+'</span>';
+      for(var j=0;j<N;j++){ var p=m[i*N+j][2], k=p/max;
+        var bg='rgba(44,122,87,'+(0.08+k*0.85).toFixed(3)+')';
+        h+='<span class="c" style="background:'+bg+';color:'+(k>0.55?'#fff':'#14212e')+'" title="'+i+'-'+j+'">'+(p>=0.005?Math.round(p*100):'')+'</span>';
+      }}
+    grid.innerHTML=h;
+    var fmt=function(v){var s=v.toFixed(2);return lang()==='es'?s.replace('.',','):s};
+    document.getElementById('lhOut').textContent=fmt(a);
+    document.getElementById('laOut').textContent=fmt(b);
+    [['p1',p1],['px',px],['p2',p2]].forEach(function(r){document.getElementById(r[0]).style.width=(r[1]*100)+'%';document.getElementById(r[0]+'v').textContent=Math.round(r[1]*100)+(lang()==='es'?' %':'%')});
+  }
+  lh.addEventListener('input',renderPoisson); la.addEventListener('input',renderPoisson);
+
+  /* ---------- idioma ---------- */
+  var saved=null; try{saved=localStorage.getItem('lang')}catch(e){}
+  var initial=saved||((navigator.language||'es').toLowerCase().indexOf('es')===0?'es':'en');
+  function set(l){
+    body.setAttribute('data-lang',l); document.documentElement.lang=l;
+    btn.textContent=l==='es'?'English':'Español';
+    try{localStorage.setItem('lang',l)}catch(e){}
+    renderRRF(); renderPoisson();
+  }
+  btn.addEventListener('click',function(){set(lang()==='es'?'en':'es')});
+  set(initial);
+  document.getElementById('y').textContent=new Date().getFullYear();
+})();
 </script>
 </body>
 </html>
