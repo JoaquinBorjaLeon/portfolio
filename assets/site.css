@@ -118,7 +118,7 @@ section.block{padding:clamp(48px,6vw,88px) 0}
 .timeline>li:last-child>div::before{display:none}
 .timeline>li>div::after{content:"";position:absolute;left:-31px;top:5px;width:14px;height:14px;border-radius:50%;background:#fff;border:2px solid var(--ink-2)} /* taste-skill-ignore: timeline dot */
 .timeline>li:has(.now)>div::after{background:var(--accent);border-color:var(--accent)}
-@media (min-width:761px){.timeline .when{text-align:right}}
+@media (min-width:761px){.timeline>li{grid-template-columns:8.75rem minmax(0,1fr)}.timeline .when{text-align:right;white-space:nowrap}}
 @media (max-width:760px){
   .timeline>li{padding-left:30px}
   .timeline>li>div{position:static}
