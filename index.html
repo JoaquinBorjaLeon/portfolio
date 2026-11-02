@@ -4,401 +4,534 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Joaquín Borja León, ingeniero de software</title>
-<meta name="description" content="Portfolio de Joaquín Borja León: proyectos de datos, IA aplicada y backend.">
+<meta name="description" content="Portfolio de Joaquín Borja León, ingeniero de software en Madrid. Sistemas de datos e IA aplicada: DocuChat, modelos de probabilidad deportiva, scoring bursátil y RecuerdaMed.">
+<meta name="theme-color" content="#ffffff">
 <meta property="og:title" content="Joaquín Borja León, ingeniero de software">
-<meta property="og:description" content="Proyectos de datos, IA aplicada y backend.">
+<meta property="og:description" content="Sistemas de datos e IA aplicada, de la idea a producción.">
 <meta property="og:url" content="https://joaquinborjaleon.com">
 <meta property="og:image" content="https://joaquinborjaleon.com/photo.jpg">
 <meta property="og:type" content="profile">
 <link rel="canonical" href="https://joaquinborjaleon.com">
 <link rel="icon" href="photo.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=gambarino@400&f[]=general-sans@400,401,500,600&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --paper:#ffffff;
-    --ink:#14212e;
-    --text:#38444f;
-    --slate:#66727e;
-    --line:#dde4e8;
-    --panel:#eef3f2;
-    --field:#2c7a57;
-    --field-soft:#d6eadf;
-    --sky:#3a6ea5;
-    --radius:16px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} *{transition:none !important;animation:none !important} }
-  body{background:var(--paper);color:var(--text);font:17px/1.65 "Schibsted Grotesk",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-  a{color:var(--ink)}
-  :focus-visible{outline:2px solid var(--sky);outline-offset:3px;border-radius:4px}
-  .wrap{max-width:1120px;margin:0 auto;padding:0 32px}
-  @media (max-width:640px){ .wrap{padding:0 20px} body{font-size:16px} }
+:root{
+  --bg:#ffffff; --surface:#f4f4f2; --ink:#1f2b4d; --muted:#5f6679; --accent:#f7941d;
+  --field-1:#05070a; --field-1-ink:#ffffff; --field-2:#e3e1dc;
+  --green:#2f7a58; --green-ink:#1f5c41; --blue-ink:#2c4a86; --green-soft:#dcebe2; --blue:#3b5fa8; --blue-soft:#e3e9f5;
+  --display:"Gambarino",Georgia,serif;
+  --text:"General Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --step-small:clamp(.8125rem,.79rem + .1vw,.875rem);
+  --step-body:clamp(1.0625rem,1rem + .25vw,1.1875rem);
+  --step-lead:clamp(1.25rem,1.1rem + .7vw,1.625rem);
+  --step-head:clamp(2rem,1.3rem + 3.2vw,4rem);
+  --m:12px;
+  --ease-out:cubic-bezier(.22,1,.36,1); --ease-expo:cubic-bezier(.16,1,.3,1); --ease-soft:cubic-bezier(.33,1,.68,1);
+  --t-press:140ms; --t-hover:180ms; --t-ui:240ms; --t-reveal:800ms;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font:400 var(--step-body)/1.5 var(--text);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:1px;transition:color var(--t-hover) ease,text-decoration-color var(--t-hover) ease}
+a:hover{color:var(--blue)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+::selection{background:var(--accent);color:var(--ink)}
+.skip{position:absolute;left:-9999px;top:8px;background:var(--ink);color:#fff;padding:10px 14px;z-index:20}
+.skip:focus{left:12px}
+h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:-.02em;line-height:.98}
+h2,h3{scroll-margin-top:24px}
+[data-lang="en"] [lang="es"],[data-lang="es"] [lang="en"]{display:none !important}
 
-  /* barra superior */
-  .bar{display:flex;justify-content:space-between;align-items:center;padding:26px 0}
-  .bar a.home{font-weight:700;color:var(--ink);text-decoration:none;font-size:1.02rem}
-  .bar nav{display:flex;align-items:center;gap:26px;font-size:.95rem}
-  .bar nav a{color:var(--slate);text-decoration:none}
-  .bar nav a:hover{color:var(--ink)}
-  .lang{font:inherit;font-size:.88rem;font-weight:600;color:var(--ink);background:var(--panel);border:0;border-radius:999px;padding:5px 12px;cursor:pointer}
-  @media (max-width:720px){ .bar nav a{display:none} }
+/* ---------- barra ---------- */
+.bar{position:absolute;top:calc(var(--m) + 64px);left:var(--m);z-index:10;width:calc(50% - var(--m) * 1.5);display:flex;justify-content:space-between;align-items:center;padding:0 clamp(24px,3.4vw,56px);height:56px;pointer-events:none}
+.bar > *{pointer-events:auto}
+.bar nav{display:flex;gap:22px;align-items:center;font-size:var(--step-small);font-weight:500}
+.bar nav a{text-decoration:none}
+.lang{font:inherit;font-weight:600;color:var(--ink);background:var(--bg);border:0;padding:6px 10px;cursor:pointer;transition:background-color var(--t-hover) ease,transform var(--t-press) var(--ease-out)}
+.lang:hover{background:var(--field-2)}
+.lang:active{transform:scale(.96)}
 
-  /* portada */
-  .hero{padding:72px 0 96px;display:grid;grid-template-columns:1fr 260px;gap:64px;align-items:end}
-  .hero h1{font-size:clamp(2.3rem,5.4vw,4.1rem);line-height:1.08;font-weight:700;color:var(--ink);letter-spacing:-.025em;max-width:16ch}
-  .hero p{font-size:1.2rem;line-height:1.6;max-width:44ch;margin-top:28px}
-  .hero .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
-  .pill{display:inline-block;padding:10px 18px;border-radius:999px;background:var(--ink);color:#fff;text-decoration:none;font-weight:600;font-size:.97rem}
-  .pill.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
-  .pill.ghost:hover{box-shadow:inset 0 0 0 1.5px var(--ink)}
-  .portrait{width:260px;height:auto;aspect-ratio:1;border-radius:50%;object-fit:cover;display:block}
-  .portrait-cap{font-size:.92rem;color:var(--slate);margin-top:16px;text-align:center}
-  @media (max-width:820px){
-    .hero{grid-template-columns:1fr;gap:28px;padding:32px 0 64px}
-    .hero figure{order:-1}
-    .portrait{width:120px}
-    .portrait-cap{text-align:left}
-  }
+/* ---------- escenario dividido ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:var(--m);padding:var(--m)}
+.read{min-width:0}
+.stage{position:sticky;top:var(--m);height:calc(100svh - var(--m) * 2);background:var(--surface);overflow:hidden}
+.panel{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:clamp(28px,4vw,72px);opacity:0;visibility:hidden;transform:translateY(110%);z-index:1;transition:opacity 260ms ease,visibility 0s linear 260ms,transform 0s linear 260ms}
+.panel.on{opacity:1;visibility:visible;transform:none;z-index:2;transition:opacity 900ms ease 120ms,visibility 0s,transform 0s}
+.panel.me{padding:0;background:#eae5d5}
+.panel.me img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;transform:scale(1.42);transform-origin:50% 42%;animation:drift 18s var(--ease-soft) infinite alternate}
+@keyframes drift{to{transform:scale(1.5) translateY(-1.2%)}}
+.panel .slot{width:100%;max-width:560px}
+.panel.dark{background:var(--field-1)}
 
-  /* proyectos */
-  .work-intro{padding:8px 0 24px;border-top:1.5px solid var(--ink)}
-  .work-intro h2,.block h2{font-size:1.6rem;font-weight:700;color:var(--ink);letter-spacing:-.01em;margin-top:28px}
-  .work-intro p{max-width:58ch;margin-top:10px;color:var(--slate)}
+/* ---------- tarjeta de portada ---------- */
+.card{background:var(--surface);min-height:calc(100svh - var(--m) * 2);display:flex;flex-direction:column}
+.band{height:56px;display:flex;align-items:flex-end;gap:0;overflow:hidden;background:var(--surface)}
+.band i{flex:1;background:var(--ink);transform-origin:bottom;animation:grow 1100ms var(--ease-expo) both}
+.band i:nth-child(even){background:transparent}
+@keyframes grow{from{transform:scaleY(0)}}
+.card-body{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px clamp(24px,4vw,64px) 40px}
+.card .who{font-weight:500;font-size:var(--step-small);color:var(--muted)}
+.card h1{font-size:clamp(2.75rem,4.3vw,4.6rem);margin-top:22px;max-width:13ch}
+.card .say{max-width:36ch;margin-top:32px;color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:10px;margin-top:36px;background:var(--ink);color:#fff;text-decoration:none;font-weight:500;padding:15px 24px;border:0;cursor:pointer;font:inherit;font-weight:500;transition:background-color var(--t-hover) ease,transform var(--t-press) var(--ease-out)}
+.btn:hover{background:var(--blue);color:#fff}
+.btn:active{transform:scale(.97)}
+.card .links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;padding:0 24px 28px;font-size:var(--step-small);font-weight:500}
+.mobile-photo{display:none}
 
-  .project{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px;padding:64px 0;border-bottom:1px solid var(--line);align-items:start}
-  .project:last-of-type{border-bottom:0}
-  @media (max-width:900px){ .project{grid-template-columns:1fr;gap:28px;padding:48px 0} }
-  .project h3{font-size:2rem;line-height:1.15;font-weight:700;color:var(--ink);letter-spacing:-.02em}
-  .project .lede{font-size:1.15rem;color:var(--ink);margin-top:12px;max-width:40ch}
-  .project p.body{margin-top:18px;max-width:52ch}
-  .project ul{list-style:none;margin-top:20px;display:grid;gap:10px;max-width:52ch}
-  .project ul li{padding-left:22px;position:relative}
-  .project ul li::before{content:"";position:absolute;left:0;top:.68em;width:9px;height:9px;border-radius:50%;background:var(--field)}
-  .stack{margin-top:22px;color:var(--slate);font-size:.95rem;max-width:52ch}
-  .project .more{display:inline-block;margin-top:18px;font-weight:600;text-underline-offset:4px}
+/* ---------- columna de lectura ---------- */
+.col{padding:clamp(96px,11vw,176px) clamp(24px,4vw,72px) 0;max-width:calc(46ch + 2 * clamp(24px,4vw,72px))}
+.col h2{font-size:var(--step-head)}
+.intro p{margin-top:18px;color:var(--muted);max-width:44ch}
+.intro p.first{color:var(--ink);font-weight:500;margin-top:28px}
 
-  /* figuras */
-  .fig{background:var(--panel);border-radius:var(--radius);padding:26px}
-  .fig-title{font-weight:600;color:var(--ink)}
-  .fig-note{font-size:.9rem;color:var(--slate);margin-top:4px}
-  .seg{display:inline-flex;background:#fff;border-radius:999px;padding:4px;margin-top:18px;gap:2px;flex-wrap:wrap}
-  .seg button{font:inherit;font-size:.9rem;font-weight:500;border:0;background:none;color:var(--slate);padding:6px 14px;border-radius:999px;cursor:pointer}
-  .seg button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.ledger{list-style:none;margin-top:36px}
+.ledger a{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;padding:12px 0;text-decoration:none;transition:color var(--t-hover) ease,opacity var(--t-hover) ease}
+.ledger b{font-weight:500}
+.ledger span{color:var(--muted);font-size:var(--step-small)}
+.ledger:hover a{opacity:.42}
+.ledger:hover a:hover,.ledger a:focus-visible{opacity:1}
 
-  .query{margin-top:18px;background:#fff;border-radius:12px;padding:12px 16px;color:var(--ink);font-weight:500}
-  .ranks{list-style:none;margin-top:14px;position:relative}
-  .ranks li{display:grid;grid-template-columns:28px 1fr 64px;gap:12px;align-items:center;background:#fff;border-radius:10px;padding:10px 14px;margin-top:8px;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
-  .ranks .pos{font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
-  .ranks .txt{font-size:.94rem;line-height:1.4}
-  .ranks .txt small{display:block;color:var(--slate);font-size:.82rem;margin-top:2px}
-  .ranks .rbar{height:8px;border-radius:4px;background:var(--line);overflow:hidden}
-  .ranks .rbar i{display:block;height:100%;background:var(--field);transition:width .45s}
-  .ranks li.hit .txt{color:var(--ink);font-weight:500}
+.project{padding-top:clamp(96px,11vw,168px)}
+.project h3{font-size:clamp(2.4rem,1.6rem + 2.6vw,3.6rem)}
+.project .kind{font-size:var(--step-small);color:var(--muted);font-weight:500;margin-top:14px}
+.project .lede{font-size:var(--step-lead);line-height:1.35;margin-top:22px}
+.project p.body{margin-top:18px}
+.project ul{margin-top:18px;padding-left:1.1em}
+.project li{margin-top:8px}
+.project li::marker{color:var(--accent)}
+.stack{margin-top:22px;font-size:var(--step-small);color:var(--muted)}
+.project .go{display:inline-block;margin-top:18px;font-weight:500}
+.models{width:100%;border-collapse:collapse;margin-top:24px;font-size:var(--step-small)}
+.models th{text-align:left;font-weight:600;padding:10px 0;color:var(--ink)}
+.models td{padding:10px 0;border-top:1px solid var(--field-2);color:var(--ink)}
+.models td:first-child{width:34%;font-weight:500}
+.inline-fig{margin-top:36px}
 
-  .poisson{display:grid;grid-template-columns:1fr 210px;gap:24px;margin-top:18px;align-items:start}
-  @media (max-width:520px){ .poisson{grid-template-columns:1fr} }
-  .grid6{display:grid;grid-template-columns:22px repeat(6,1fr);gap:3px;font-size:.78rem;font-variant-numeric:tabular-nums}
-  .grid6 .h{color:var(--slate);display:flex;align-items:center;justify-content:center}
-  .grid6 .c{aspect-ratio:1;border-radius:5px;display:flex;align-items:center;justify-content:center;color:var(--ink)}
-  .axis{font-size:.82rem;color:var(--slate);margin-top:8px}
-  .ctl label{display:block;font-size:.9rem;color:var(--ink);font-weight:500;margin-top:14px}
-  .ctl label:first-child{margin-top:0}
-  .ctl input{width:100%;accent-color:var(--field);margin-top:6px}
-  .ctl output{float:right;font-variant-numeric:tabular-nums;color:var(--slate);font-weight:400}
-  .probs{margin-top:20px;display:grid;gap:8px}
-  .probs div{display:grid;grid-template-columns:70px 1fr 44px;gap:8px;align-items:center;font-size:.88rem}
-  .probs .t{height:10px;border-radius:5px;background:#fff;overflow:hidden}
-  .probs .t i{display:block;height:100%;background:var(--sky);transition:width .3s}
-  .probs span:last-child{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink);font-weight:600}
+/* ---------- figuras (fragmentos de interfaz) ---------- */
+.ui{background:var(--bg);color:var(--ink);font-size:.95rem}
+.ui-pad{padding:22px}
+.ui-title{font-family:var(--display);font-size:1.8rem;line-height:1.05}
+.ui-note{font-size:var(--step-small);color:var(--muted);margin-top:6px}
+.seg{display:flex;gap:2px;margin-top:18px;background:var(--surface);padding:4px;width:max-content;max-width:100%;flex-wrap:wrap}
+.seg button{font:inherit;font-size:var(--step-small);font-weight:500;color:var(--muted);background:none;border:0;padding:8px 14px;cursor:pointer;transition:background-color var(--t-hover) ease,color var(--t-hover) ease}
+.seg button:hover{color:var(--ink)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.q{margin-top:16px;background:var(--surface);padding:12px 14px;font-weight:500}
+.ranks{list-style:none;margin-top:10px}
+.ranks li{display:grid;grid-template-columns:22px 1fr 64px;gap:12px;align-items:center;padding:10px 2px;border-top:1px solid var(--surface);transition:transform 520ms var(--ease-expo)} /* taste-skill-ignore: interface fragment / table / focus ring */
+.ranks .n{font-weight:600;font-variant-numeric:tabular-nums}
+.ranks .t{font-size:.92rem;line-height:1.35}
+.ranks .t small{display:block;color:var(--muted);font-size:.8rem;margin-top:2px}
+.ranks .m{height:8px;background:var(--surface)}
+.ranks .m i{display:block;height:100%;background:var(--green);transition:width 520ms var(--ease-out)}
+.ranks li.top .t{font-weight:500}
 
-  .score{margin-top:18px;display:grid;gap:12px}
-  .metric{background:#fff;border-radius:10px;padding:12px 14px;display:grid;grid-template-columns:120px 1fr 54px;gap:12px;align-items:center;font-size:.92rem}
-  .metric b{color:var(--ink);font-weight:600}
-  .metric .t{height:8px;border-radius:4px;background:var(--line);overflow:hidden}
-  .metric .t i{display:block;height:100%;background:var(--field)}
-  .metric span{text-align:right;font-variant-numeric:tabular-nums}
-  .alert{margin-top:16px;display:flex;gap:12px;align-items:flex-start}
-  .alert .avatar{width:34px;height:34px;border-radius:50%;background:var(--sky);flex:none}
-  .alert .msg{background:#fff;border-radius:4px 14px 14px 14px;padding:10px 14px;font-size:.92rem;color:var(--ink)}
-  .alert .msg small{display:block;color:var(--slate);margin-top:4px}
+.pois{display:grid;grid-template-columns:1fr 190px;gap:22px;margin-top:18px;align-items:start}
+.g{display:grid;grid-template-columns:20px repeat(6,1fr);gap:3px;font-size:.76rem;font-variant-numeric:tabular-nums}
+.g .h{display:flex;align-items:center;justify-content:center;color:var(--muted)}
+.g .c{aspect-ratio:1;display:flex;align-items:center;justify-content:center;transition:background-color 200ms ease}
+.axis{font-size:.8rem;color:var(--muted);margin-top:8px}
+.ctl label{display:block;font-size:.88rem;font-weight:500;margin-top:14px}
+.ctl label:first-child{margin-top:0}
+.ctl output{float:right;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:400}
+.ctl input{width:100%;accent-color:var(--green);margin-top:8px;height:24px}
+.p3{margin-top:18px}
+.p3 div{display:grid;grid-template-columns:64px 1fr 40px;gap:8px;align-items:center;font-size:.84rem;margin-top:8px}
+.p3 .tr{height:10px;background:var(--surface)}
+.p3 .tr i{display:block;height:100%;background:var(--blue);transition:width 260ms var(--ease-out)}
+.p3 b{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
 
-  .phone{width:260px;margin:18px auto 0;background:var(--ink);border-radius:34px;padding:12px}
-  .screen{background:#fff;border-radius:24px;padding:20px 16px 18px;min-height:380px}
-  .screen .day{font-weight:700;color:var(--ink);font-size:1.1rem}
-  .screen .sub{font-size:.82rem;color:var(--slate)}
-  .dose{display:grid;grid-template-columns:46px 1fr auto;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line);font-size:.88rem}
-  .dose:last-of-type{border-bottom:0}
-  .dose time{font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
-  .dose em{font-style:normal;font-size:.76rem;font-weight:600;padding:3px 9px;border-radius:999px}
-  .ok{background:var(--field-soft);color:var(--field)}
-  .wait{background:#e6eef7;color:var(--sky)}
-  .care{margin-top:14px;background:var(--panel);border-radius:12px;padding:10px 12px;font-size:.8rem;color:var(--ink)}
+.score-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-top:18px}
+.big{font-family:var(--display);font-size:4.6rem;line-height:.85}
+.big small{font-family:var(--text);font-size:1rem;color:var(--muted)}
+.met{display:grid;grid-template-columns:118px 1fr 52px;gap:12px;align-items:center;padding:11px 0;border-top:1px solid var(--surface);font-size:.9rem} /* taste-skill-ignore: interface fragment / table / focus ring */
+.met:first-of-type{margin-top:16px}
+.met .tr{height:8px;background:var(--surface)}
+.met .tr i{display:block;height:100%;background:var(--green)}
+.met span:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.tg{margin-top:18px;background:#dfe9f5;padding:12px 14px;font-size:.9rem;max-width:88%}
+.tg small{display:block;color:var(--muted);font-size:.78rem;margin-top:4px}
 
-  /* bloques inferiores */
-  .block{padding:72px 0;border-top:1.5px solid var(--ink)}
-  .two{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-top:24px}
-  @media (max-width:820px){ .two{grid-template-columns:1fr;gap:36px} }
-  .now p{max-width:56ch}
-  .now p + p{margin-top:14px}
-  .path{list-style:none}
-  .path li{padding:14px 0;border-bottom:1px solid var(--line)}
-  .path li:first-child{padding-top:0}
-  .path b{color:var(--ink);font-weight:600}
-  .path .sub{display:block;color:var(--slate);font-size:.93rem}
-  .others{margin-top:40px;padding-bottom:72px;max-width:70ch}
-  .others h3{font-size:1.15rem;color:var(--ink)}
-  .others p{margin-top:8px}
+.phone{width:min(290px,100%);margin:0 auto;background:var(--field-1);padding:12px;border-radius:38px}
+.screen{background:#fff;border-radius:28px;padding:22px 18px;min-height:440px}
+.screen .d{font-family:var(--display);font-size:2rem;line-height:1}
+.screen .s{font-size:.8rem;color:var(--muted);margin-top:4px}
+.dose{display:grid;grid-template-columns:48px 1fr auto;gap:10px;align-items:center;padding:13px 0;border-top:1px solid var(--surface);font-size:.86rem} /* taste-skill-ignore: interface fragment / table / focus ring */
+.dose:first-of-type{margin-top:16px}
+.dose time{font-weight:600;font-variant-numeric:tabular-nums}
+.pill{font-size:.72rem;font-weight:600;padding:4px 9px;border-radius:99px}
+.ok{background:var(--green-soft);color:var(--green-ink)}
+.due{background:var(--blue-soft);color:var(--blue-ink)}
+.care{margin-top:16px;background:var(--surface);padding:12px;font-size:.8rem;border-radius:12px}
 
-  .contact{padding:96px 0 72px;border-top:1.5px solid var(--ink)}
-  .contact p{font-size:1.2rem;max-width:40ch}
-  .contact a.mail{display:inline-block;margin-top:18px;font-size:clamp(1.6rem,4.6vw,3rem);font-weight:700;letter-spacing:-.02em;color:var(--ink);text-decoration-thickness:3px;text-underline-offset:8px;text-decoration-color:var(--field);word-break:break-word}
-  .contact .links{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
-  footer{padding:28px 0 40px;font-size:.88rem;color:var(--slate)}
+.board .row{display:grid;grid-template-columns:1fr auto;gap:10px;padding:12px 0;border-top:1px solid var(--surface);font-size:.9rem} /* taste-skill-ignore: interface fragment / table / focus ring */
+.board .row:first-of-type{margin-top:16px}
+.board .row small{display:block;color:var(--muted);font-size:.78rem}
+.who-team{display:flex;margin-top:18px}
+.who-team span{width:30px;height:30px;border-radius:50%;margin-right:-8px;border:2px solid #fff;background:var(--field-2)}
+.who-team span:nth-child(3n){background:var(--green-soft)}.who-team span:nth-child(3n+1){background:var(--blue-soft)}
+.who-team em{font-style:normal;font-size:.82rem;color:var(--muted);margin-left:18px;align-self:center;white-space:nowrap}
 
-  @media (max-width:640px){ .fig{padding:16px} .seg button{padding:6px 11px} .ranks li{grid-template-columns:18px 1fr 36px;gap:10px;padding:10px 12px} .metric{grid-template-columns:96px 1fr 44px} }
-  [data-lang="en"] [lang="es"]{display:none !important}
-  [data-lang="es"] [lang="en"]{display:none !important}
+/* ---------- carta (rompe el split) ---------- */
+.letter{background:var(--field-2);margin:clamp(96px,11vw,176px) var(--m) 0;padding:clamp(120px,14vw,200px) 24px}
+.letter-in{max-width:540px;margin:0 auto}
+.letter h2{font-size:var(--step-head)}
+.letter .face{width:56px;height:56px;border-radius:50%;object-fit:cover;display:block;margin-top:32px}
+.letter p{margin-top:20px;line-height:1.6}
+.letter mark{background:var(--accent);color:var(--ink);padding:0 3px}
+.sign{margin-top:36px;font-style:italic;font-size:var(--step-lead)}
+.sign small{display:block;font-style:normal;font-size:var(--step-small);color:var(--muted);margin-top:2px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1080px;margin:clamp(72px,8vw,112px) auto 0}
+.facts b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,3.4vw,3.4rem);line-height:1}
+.facts span{display:block;margin-top:10px;font-size:var(--step-small);color:var(--ink)}
+
+/* ---------- contacto ---------- */
+.contact{background:var(--field-1);color:var(--field-1-ink);margin:var(--m);padding:clamp(140px,15vw,220px) 24px clamp(120px,12vw,160px)}
+.contact-in{max-width:560px;margin:0 auto}
+.contact h2{font-family:var(--text);font-weight:500;font-size:clamp(1.5rem,1.2rem + 1vw,1.85rem);letter-spacing:0;line-height:1.25}
+.contact h2 .soft{color:#9aa3b5}
+.field{position:relative;margin-top:28px}
+.field input{width:100%;height:64px;border:0;background:#fff;color:var(--ink);font:inherit;padding:0 64px 0 20px;outline:0}
+.field input::placeholder{color:#7b8296}
+.field input:focus-visible{box-shadow:inset 0 0 0 2px var(--accent)} /* taste-skill-ignore: interface fragment / table / focus ring */
+.field button{position:absolute;right:8px;top:8px;width:48px;height:48px;border:0;background:var(--accent);color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform var(--t-press) var(--ease-out),background-color var(--t-hover) ease}
+.field button:hover{background:#ffab45}
+.field button:active{transform:scale(.94)}
+.help{font-size:var(--step-small);color:#b9c0cf;margin-top:14px}
+.rows{margin-top:72px;display:grid;gap:14px;font-size:var(--step-small)}
+.rows div{display:grid;grid-template-columns:110px 1fr;gap:12px}
+.rows dt{color:#9aa3b5}
+.rows a{color:#fff}
+.rows a:hover{color:var(--accent)}
+
+/* ---------- pie ---------- */
+.stripe{height:8px;margin:0 var(--m);display:flex}
+.stripe i{flex:1;background:var(--ink)}.stripe i:nth-child(even){background:transparent}
+footer{padding:28px var(--m) 20px;overflow:hidden}
+footer .name{font-family:var(--display);font-size:clamp(3rem,10.6vw,12.5rem);line-height:.9;letter-spacing:-.03em;white-space:nowrap;display:block}
+footer .meta{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:var(--step-small);color:var(--muted);margin-top:18px;padding:0 4px}
+
+/* ---------- entradas ---------- */
+@media (prefers-reduced-motion:no-preference){
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity var(--t-reveal) var(--ease-expo),transform var(--t-reveal) var(--ease-expo);transition-delay:calc(var(--i,0) * 80ms)}
+.js .rv.in{opacity:1;transform:none}
+}
+
+/* ---------- móvil ---------- */
+@media (max-width:980px){
+  .split{display:block}
+  .stage{display:none}
+  .bar{width:auto;right:var(--m);top:calc(var(--m) + 8px);padding:0 8px;background:transparent}
+  .bar .home{display:none}
+  .bar nav{margin-left:auto;background:var(--bg);padding:6px 10px}
+  .mobile-photo{display:block;height:52svh;overflow:hidden}
+  .mobile-photo{background:#eae5d5}.mobile-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 38%;transform:scale(1.3);transform-origin:50% 40%}
+  .card{min-height:0;margin-top:-24px;position:relative}
+  .card-body{padding:64px 22px 36px}
+  .card h1{font-size:clamp(2.4rem,10.5vw,3.4rem)}
+  .col{padding:96px 10px 0;max-width:none}
+  .project{padding-top:96px}
+  .inline-fig{background:var(--surface);padding:14px;margin-left:-10px;margin-right:-10px}
+  .facts{grid-template-columns:1fr;gap:28px}
+}
+@media (max-width:520px){
+  .pois{grid-template-columns:1fr}
+  .ranks li{grid-template-columns:18px 1fr 38px;gap:10px}
+  .met{grid-template-columns:96px 1fr 44px}
+  .rows div{grid-template-columns:1fr;gap:2px}
+  footer .name{font-size:13.2vw}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none !important;transition-duration:1ms !important;transition-delay:0ms !important}
+  .js .rv{opacity:1;transform:none}
+}
 </style>
 </head>
 <body data-lang="es">
-<div class="wrap">
+<a class="skip" href="#main"><span lang="es">Saltar al contenido</span><span lang="en">Skip to content</span></a>
 
-  <header class="bar">
-    <a class="home" href="#">Joaquín Borja León</a>
-    <nav>
-      <a href="#proyectos"><span lang="es">Proyectos</span><span lang="en">Work</span></a>
-      <a href="#ahora"><span lang="es">Sobre mí</span><span lang="en">About</span></a>
-      <a href="#contacto"><span lang="es">Contacto</span><span lang="en">Contact</span></a>
-      <button class="lang" id="langBtn" type="button">English</button>
-    </nav>
-  </header>
+<header class="bar">
+  <a class="home" href="#top" style="text-decoration:none;font-weight:600;font-size:var(--step-small)">JBL</a>
+  <nav aria-label="Principal">
+    <a href="#proyectos"><span lang="es">Proyectos</span><span lang="en">Work</span></a>
+    <a href="#sobre-mi"><span lang="es">Sobre mí</span><span lang="en">About</span></a>
+    <a href="#contacto"><span lang="es">Contacto</span><span lang="en">Contact</span></a>
+    <button class="lang" id="langBtn" type="button" aria-label="Switch to English">EN</button>
+  </nav>
+</header>
 
-  <section class="hero">
-    <div>
-      <h1>
-        <span lang="es">Construyo sistemas de datos e IA y me gusta llevarlos hasta producción.</span>
-        <span lang="en">I build data and AI systems and I like taking them all the way to production.</span>
-      </h1>
-      <p lang="es">Soy Joaquín, ingeniero de software por la Universidad de Sevilla. Ahora trabajo en Airbus Defence and Space y, en mi tiempo libre, diseño, programo y despliego mis propios proyectos en un servidor que administro yo mismo.</p>
-      <p lang="en">I'm Joaquín, a software engineer from the University of Seville. I currently work at Airbus Defence and Space, and in my spare time I design, build and deploy my own projects on a server I run myself.</p>
+<div class="split" id="top">
+  <main class="read" id="main">
+
+    <div class="mobile-photo"><img src="portrait.jpg" alt="Retrato de Joaquín Borja León" width="1200" height="1200"></div>
+
+    <section class="card" data-stage="me" aria-labelledby="t-hero">
+      <div class="band" aria-hidden="true" id="band"></div>
+      <div class="card-body">
+        <h1 id="t-hero" class="rv" style="--i:1">Joaquín Borja León</h1>
+        <p class="say rv" style="--i:2">
+          <span lang="es">Ingeniero de software en Madrid. Construyo sistemas de datos e IA y los llevo de la idea a producción. Ahora trabajo en Airbus Defence and Space.</span>
+          <span lang="en">Software engineer in Madrid. I build data and AI systems and take them from idea to production. I currently work at Airbus Defence and Space.</span>
+        </p>
+        <a class="btn rv" style="--i:3" href="#proyectos"><span lang="es">Ver proyectos</span><span lang="en">See my work</span></a>
+      </div>
       <div class="links">
-        <a class="pill" href="#proyectos"><span lang="es">Ver proyectos</span><span lang="en">See my work</span></a>
-        <a class="pill ghost" href="https://github.com/JoaquinBorjaLeon" target="_blank" rel="noopener">GitHub</a>
-        <a class="pill ghost" href="https://www.linkedin.com/in/joaquinborjaleon" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/JoaquinBorjaLeon" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/joaquinborjaleon" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:hola@joaquinborjaleon.com">hola@joaquinborjaleon.com</a>
       </div>
-    </div>
-    <figure>
-      <img class="portrait" src="photo.jpg" alt="Joaquín Borja León" width="260" height="260">
-      <figcaption class="portrait-cap"><span lang="es">Madrid, España</span><span lang="en">Madrid, Spain</span></figcaption>
-    </figure>
-  </section>
+    </section>
 
-  <div class="work-intro" id="proyectos">
-    <h2><span lang="es">Proyectos</span><span lang="en">Selected work</span></h2>
-    <p lang="es">Cada figura de esta sección funciona con la misma lógica que el proyecto real. Puedes tocarlas.</p>
-    <p lang="en">Every figure in this section runs on the same logic as the real project. Feel free to play with them.</p>
-  </div>
+    <div class="col">
+      <section class="intro" data-stage="me" aria-labelledby="t-intro">
+        <h2 id="t-intro" class="rv"><span lang="es">Qué hago</span><span lang="en">What I do</span></h2>
+        <p class="first rv" style="--i:1"><span lang="es">Me gusta que las cosas funcionen de principio a fin: diseñar el sistema, escribir el código, desplegarlo y medir si de verdad responde bien.</span><span lang="en">I like things to work end to end: designing the system, writing the code, deploying it and measuring whether it really performs.</span></p>
+        <p class="rv" style="--i:2"><span lang="es">La mayoría de mis proyectos viven en un servidor Ubuntu que administro en casa, con Docker, Tailscale y modelos de lenguaje que corren en local con Ollama.</span><span lang="en">Most of my projects live on an Ubuntu server I run at home, with Docker, Tailscale and language models running locally through Ollama.</span></p>
+        <p class="rv" style="--i:3"><span lang="es">Trabajo sobre todo con Python, FastAPI y PostgreSQL, y con React cuando hace falta una interfaz.</span><span lang="en">I mostly work with Python, FastAPI and PostgreSQL, plus React when a project needs an interface.</span></p>
+        <p class="rv" style="--i:4"><span lang="es">Cada proyecto de esta página viene con una figura que funciona con su lógica real. Puedes tocarlas.</span><span lang="en">Every project on this page comes with a figure that runs on its real logic. Go ahead and play with them.</span></p>
+      </section>
 
-  <!-- DocuChat -->
-  <article class="project">
-    <div>
-      <h3>DocuChat</h3>
-      <p class="lede" lang="es">Un asistente que responde preguntas sobre tus propios documentos y te dice de dónde ha sacado cada respuesta.</p>
-      <p class="lede" lang="en">An assistant that answers questions about your own documents and tells you where each answer came from.</p>
-      <p class="body" lang="es">La búsqueda vectorial entiende el significado pero se le escapan los términos exactos. La búsqueda de texto completo hace justo lo contrario. DocuChat lanza las dos en paralelo y combina sus rankings con Reciprocal Rank Fusion, de modo que arriba quedan los fragmentos en los que ambas coinciden.</p>
-      <p class="body" lang="en">Vector search understands meaning but misses exact terms. Full-text search does the opposite. DocuChat runs both in parallel and merges their rankings with Reciprocal Rank Fusion, so the passages both agree on rise to the top.</p>
-      <ul>
-        <li lang="es">Capa de agentes con llamadas a herramientas, compatible con Ollama en local y con Gemini.</li>
-        <li lang="en">Agent layer with tool calling that works with local Ollama models and with Gemini.</li>
-        <li lang="es">Cada consulta registra latencia, herramientas usadas y fragmentos recuperados.</li>
-        <li lang="en">Every query logs latency, tools used and passages retrieved.</li>
-        <li lang="es">Evaluación con recall@k para medir si los cambios mejoran de verdad la recuperación.</li>
-        <li lang="en">Recall@k evaluation to check whether changes actually improve retrieval.</li>
-      </ul>
-      <p class="stack">Python, FastAPI, PostgreSQL, pgvector, Ollama, React, Docker Compose</p>
-      <a class="more" href="https://github.com/JoaquinBorjaLeon/docuchat" target="_blank" rel="noopener"><span lang="es">Ver el código en GitHub</span><span lang="en">View the code on GitHub</span></a>
-    </div>
-    <div class="fig" id="rrf">
-      <div class="fig-title"><span lang="es">Cómo se ordenan los resultados</span><span lang="en">How results get ranked</span></div>
-      <div class="fig-note"><span lang="es">Fragmentos de una política de RR. HH. de ejemplo. RRF con k = 60.</span><span lang="en">Passages from a sample HR policy. RRF with k = 60.</span></div>
-      <div class="seg" role="group">
-        <button type="button" data-mode="vec"><span lang="es">Vectorial</span><span lang="en">Vector</span></button>
-        <button type="button" data-mode="fts"><span lang="es">Texto completo</span><span lang="en">Full text</span></button>
-        <button type="button" data-mode="rrf" aria-pressed="true"><span lang="es">Fusión RRF</span><span lang="en">RRF fusion</span></button>
-      </div>
-      <div class="query"><span lang="es">¿Cuántos días de vacaciones me corresponden?</span><span lang="en">How many days of holiday am I entitled to?</span></div>
-      <ol class="ranks"></ol>
-    </div>
-  </article>
+      <section id="proyectos" data-stage="docu" aria-labelledby="t-work" style="padding-top:clamp(96px,11vw,168px)">
+        <h2 id="t-work" class="rv"><span lang="es">Proyectos</span><span lang="en">Work</span></h2>
+        <ul class="ledger">
+          <li class="rv" style="--i:1"><a href="#docuchat" data-preview="docu"><b>DocuChat</b><span><span lang="es">IA aplicada, búsqueda híbrida</span><span lang="en">Applied AI, hybrid search</span></span></a></li>
+          <li class="rv" style="--i:2"><a href="#deportes" data-preview="sport"><b><span lang="es">Analítica deportiva</span><span lang="en">Sports analytics</span></b><span><span lang="es">Modelos de probabilidad</span><span lang="en">Probability models</span></span></a></li>
+          <li class="rv" style="--i:3"><a href="#bolsa" data-preview="stock"><b><span lang="es">Scoring bursátil</span><span lang="en">Stock scoring</span></b><span><span lang="es">Datos y automatización</span><span lang="en">Data and automation</span></span></a></li>
+          <li class="rv" style="--i:4"><a href="#recuerdamed" data-preview="med"><b>RecuerdaMed</b><span><span lang="es">App móvil, trabajo de fin de grado</span><span lang="en">Mobile app, bachelor's thesis</span></span></a></li>
+          <li class="rv" style="--i:5"><a href="#comunidad" data-preview="team"><b><span lang="es">App de comunidades</span><span lang="en">Community app</span></b><span><span lang="es">Jefe de proyecto, 18 personas</span><span lang="en">Project manager, 18 people</span></span></a></li>
+        </ul>
+      </section>
 
-  <!-- Analítica deportiva -->
-  <article class="project">
-    <div>
-      <h3><span lang="es">Analítica deportiva</span><span lang="en">Sports analytics</span></h3>
-      <p class="lede" lang="es">Modelos de probabilidad para fútbol y tenis, con datos de más de 16 ligas y de los circuitos ATP y WTA.</p>
-      <p class="lede" lang="en">Probability models for football and tennis, with data from more than 16 leagues and the ATP and WTA tours.</p>
-      <p class="body" lang="es">Para fútbol uso Poisson y Dixon-Coles: estimo los goles esperados de cada equipo y de ahí sale la probabilidad de cada marcador. En tenis, un Elo separado por superficie y una regresión logística. Además, un proceso guarda las cuotas en tiempo real para construir un histórico de líneas de cierre con el que validar los modelos.</p>
-      <p class="body" lang="en">For football I use Poisson and Dixon-Coles: estimate each team's expected goals and derive the probability of every scoreline. For tennis, a surface-specific Elo and logistic regression. A separate process logs live odds to build a closing-line history to validate the models against.</p>
-      <p class="stack">Python, FastAPI, React, PostgreSQL, Ubuntu Server</p>
-      <a class="more" href="https://github.com/JoaquinBorjaLeon/sports-analyzer" target="_blank" rel="noopener"><span lang="es">Ver el código en GitHub</span><span lang="en">View the code on GitHub</span></a>
-    </div>
-    <div class="fig">
-      <div class="fig-title"><span lang="es">Probabilidad de cada marcador</span><span lang="en">Probability of every scoreline</span></div>
-      <div class="fig-note"><span lang="es">Modelo de Poisson independiente. Mueve los goles esperados.</span><span lang="en">Independent Poisson model. Adjust the expected goals.</span></div>
-      <div class="poisson">
-        <div>
-          <div class="grid6" id="grid"></div>
-          <div class="axis"><span lang="es">Filas: goles del local. Columnas: goles del visitante.</span><span lang="en">Rows: home goals. Columns: away goals.</span></div>
-        </div>
-        <div class="ctl">
-          <label><span lang="es">Local</span><span lang="en">Home</span> <output id="lhOut"></output><input id="lh" type="range" min="0.3" max="3.5" step="0.05" value="1.65"></label>
-          <label><span lang="es">Visitante</span><span lang="en">Away</span> <output id="laOut"></output><input id="la" type="range" min="0.3" max="3.5" step="0.05" value="1.10"></label>
-          <div class="probs">
-            <div><span lang="es">Local</span><span lang="en">Home</span><span class="t"><i id="p1"></i></span><span id="p1v"></span></div>
-            <div><span lang="es">Empate</span><span lang="en">Draw</span><span class="t"><i id="px"></i></span><span id="pxv"></span></div>
-            <div><span lang="es">Visitante</span><span lang="en">Away</span><span class="t"><i id="p2"></i></span><span id="p2v"></span></div>
+      <!-- DocuChat -->
+      <article class="project" id="docuchat" data-stage="docu" aria-labelledby="t-docu">
+        <h3 id="t-docu" class="rv">DocuChat</h3>
+        <p class="kind rv" style="--i:1"><span lang="es">Asistente sobre documentos con búsqueda híbrida y agentes</span><span lang="en">Document assistant with hybrid search and agents</span></p>
+        <p class="lede rv" style="--i:2"><span lang="es">Responde preguntas sobre tus propios documentos y te enseña de dónde ha sacado cada respuesta.</span><span lang="en">It answers questions about your own documents and shows where each answer came from.</span></p>
+        <p class="body rv" style="--i:3"><span lang="es">La búsqueda vectorial entiende el significado pero pierde los términos exactos; la de texto completo hace lo contrario. DocuChat lanza las dos y fusiona sus rankings con Reciprocal Rank Fusion, así que arriba quedan los fragmentos en los que ambas coinciden. Prueba los tres modos en la figura.</span><span lang="en">Vector search understands meaning but misses exact terms; full-text search does the opposite. DocuChat runs both and fuses their rankings with Reciprocal Rank Fusion, so the passages both agree on rise to the top. Try the three modes in the figure.</span></p>
+        <ul class="rv" style="--i:4">
+          <li><span lang="es">Agentes con llamadas a herramientas sobre Ollama en local o Gemini.</span><span lang="en">Agents with tool calling on local Ollama or Gemini.</span></li>
+          <li><span lang="es">Cada consulta registra latencia, herramientas y fragmentos usados.</span><span lang="en">Every query logs latency, tools and passages used.</span></li>
+          <li><span lang="es">Evaluación recall@k para saber si un cambio mejora de verdad.</span><span lang="en">Recall@k evaluation to know whether a change really helps.</span></li>
+        </ul>
+        <p class="stack">Python, FastAPI, PostgreSQL, pgvector, Ollama, React, Docker Compose</p>
+        <a class="go" href="https://github.com/JoaquinBorjaLeon/docuchat" target="_blank" rel="noopener"><span lang="es">Código en GitHub</span><span lang="en">Code on GitHub</span></a>
+        <div class="inline-fig" data-fig="docu">
+          <div class="ui ui-pad" id="rrf" data-ui>
+            <div class="ui-title"><span lang="es">Cómo se ordenan los resultados</span><span lang="en">How results get ranked</span></div>
+            <div class="ui-note"><span lang="es">Política de RR. HH. de ejemplo, RRF con k = 60</span><span lang="en">Sample HR policy, RRF with k = 60</span></div>
+            <div class="seg" role="group" aria-label="Modo de búsqueda">
+              <button type="button" data-mode="vec" aria-pressed="false"><span lang="es">Vectorial</span><span lang="en">Vector</span></button>
+              <button type="button" data-mode="fts" aria-pressed="false"><span lang="es">Texto completo</span><span lang="en">Full text</span></button>
+              <button type="button" data-mode="rrf" aria-pressed="true"><span lang="es">Fusión RRF</span><span lang="en">RRF fusion</span></button>
+            </div>
+            <div class="q"><span lang="es">¿Cuántos días de vacaciones me corresponden?</span><span lang="en">How many days of holiday am I entitled to?</span></div>
+            <ol class="ranks" aria-live="polite"></ol>
           </div>
         </div>
-      </div>
-    </div>
-  </article>
+      </article>
 
-  <!-- Scoring bursátil -->
-  <article class="project">
-    <div>
-      <h3><span lang="es">Scoring bursátil</span><span lang="en">Stock scoring engine</span></h3>
-      <p class="lede" lang="es">Un motor que puntúa empresas por sus fundamentales y me avisa por Telegram cuando alguna merece una segunda mirada.</p>
-      <p class="lede" lang="en">An engine that scores companies on their fundamentals and pings me on Telegram when one deserves a second look.</p>
-      <p class="body" lang="es">Combina PER, ROE, deuda sobre EBITDA y margen neto en una única nota. Un flujo de n8n lanza el análisis de forma periódica, manda las alertas y deja los resultados en un panel hecho con FastAPI.</p>
-      <p class="body" lang="en">It combines P/E, ROE, debt to EBITDA and net margin into a single score. An n8n workflow runs the analysis on a schedule, sends the alerts and publishes results to a FastAPI dashboard.</p>
-      <p class="stack">Python, FastAPI, n8n, Telegram</p>
-    </div>
-    <div class="fig">
-      <div class="fig-title"><span lang="es">Desglose de una puntuación</span><span lang="en">Breaking down a score</span></div>
-      <div class="fig-note"><span lang="es">Empresa ficticia, valores ilustrativos.</span><span lang="en">Fictional company, illustrative values.</span></div>
-      <div class="score">
-        <div class="metric"><b>PER</b><span class="t"><i style="width:72%"></i></span><span><span lang="es">12,4</span><span lang="en">12.4</span></span></div>
-        <div class="metric"><b>ROE</b><span class="t"><i style="width:81%"></i></span><span><span lang="es">18 %</span><span lang="en">18%</span></span></div>
-        <div class="metric"><b><span lang="es">Deuda / EBITDA</span><span lang="en">Debt / EBITDA</span></b><span class="t"><i style="width:64%"></i></span><span><span lang="es">1,6</span><span lang="en">1.6</span></span></div>
-        <div class="metric"><b><span lang="es">Margen neto</span><span lang="en">Net margin</span></b><span class="t"><i style="width:58%"></i></span><span><span lang="es">11 %</span><span lang="en">11%</span></span></div>
-      </div>
-      <div class="alert">
-        <span class="avatar" aria-hidden="true"></span>
-        <div class="msg">
-          <span lang="es">Nueva oportunidad: Empresa Ejemplo obtiene 7,8 sobre 10, por encima de tu umbral de 7.</span>
-          <span lang="en">New candidate: Example Corp scores 7.8 out of 10, above your threshold of 7.</span>
-          <small><span lang="es">Alerta automática por Telegram</span><span lang="en">Automated Telegram alert</span></small>
-        </div>
-      </div>
-    </div>
-  </article>
-
-  <!-- RecuerdaMed -->
-  <article class="project">
-    <div>
-      <h3>RecuerdaMed</h3>
-      <p class="lede" lang="es">Mi trabajo de fin de grado: una app que ayuda a los pacientes a no olvidar su medicación y mantiene informados a sus cuidadores.</p>
-      <p class="lede" lang="en">My bachelor's thesis: an app that helps patients keep up with their medication and keeps their caregivers informed.</p>
-      <p class="body" lang="es">El paciente recibe un aviso a cada hora de toma y la marca con un solo gesto. Si una toma se queda sin confirmar, la persona que le cuida recibe una notificación. Funciona en Android e iOS desde un único código.</p>
-      <p class="body" lang="en">Patients get a reminder at each dose time and confirm it with a single tap. If a dose goes unconfirmed, their caregiver gets a notification. It runs on Android and iOS from a single codebase.</p>
-      <p class="stack">React Native, Expo, TypeScript, Firebase</p>
-      <a class="more" href="https://github.com/JoaquinBorjaLeon/RecuerdaMed" target="_blank" rel="noopener"><span lang="es">Ver el código en GitHub</span><span lang="en">View the code on GitHub</span></a>
-    </div>
-    <div class="fig">
-      <div class="phone" aria-hidden="true">
-        <div class="screen">
-          <div class="day"><span lang="es">Hoy</span><span lang="en">Today</span></div>
-          <div class="sub"><span lang="es">3 tomas programadas</span><span lang="en">3 doses scheduled</span></div>
-          <div style="margin-top:12px">
-            <div class="dose"><time>08:00</time><span>Enalapril 10 mg</span><em class="ok"><span lang="es">Tomada</span><span lang="en">Taken</span></em></div>
-            <div class="dose"><time>14:00</time><span>Metformina 850 mg</span><em class="ok"><span lang="es">Tomada</span><span lang="en">Taken</span></em></div>
-            <div class="dose"><time>21:00</time><span>Atorvastatina 20 mg</span><em class="wait"><span lang="es">Pendiente</span><span lang="en">Due</span></em></div>
+      <!-- Deportes -->
+      <article class="project" id="deportes" data-stage="sport" aria-labelledby="t-sport">
+        <h3 id="t-sport" class="rv"><span lang="es">Analítica deportiva</span><span lang="en">Sports analytics</span></h3>
+        <p class="kind rv" style="--i:1"><span lang="es">Más de 16 ligas de fútbol y los circuitos ATP y WTA</span><span lang="en">16+ football leagues and the ATP and WTA tours</span></p>
+        <p class="lede rv" style="--i:2"><span lang="es">Estimo los goles esperados de cada equipo y de ahí sale la probabilidad de cada marcador.</span><span lang="en">I estimate each team's expected goals and derive the probability of every scoreline.</span></p>
+        <p class="body rv" style="--i:3"><span lang="es">Un proceso registra las cuotas en tiempo real para construir un histórico de líneas de cierre, que es contra lo que valido los modelos. Mueve los goles esperados de la figura y verás cómo cambia todo el reparto.</span><span lang="en">A separate process logs live odds to build a closing-line history, which is what I validate the models against. Move the expected goals in the figure and watch the whole distribution change.</span></p>
+        <table class="models rv" style="--i:4">
+          <thead><tr><th scope="col"><span lang="es">Deporte</span><span lang="en">Sport</span></th><th scope="col"><span lang="es">Modelos</span><span lang="en">Models</span></th></tr></thead>
+          <tbody>
+            <tr><td><span lang="es">Fútbol</span><span lang="en">Football</span></td><td>Poisson, Dixon-Coles</td></tr>
+            <tr><td><span lang="es">Tenis</span><span lang="en">Tennis</span></td><td><span lang="es">Elo por superficie, regresión logística</span><span lang="en">Surface Elo, logistic regression</span></td></tr>
+            <tr><td><span lang="es">Mercado</span><span lang="en">Market</span></td><td><span lang="es">Registro de cuotas y líneas de cierre</span><span lang="en">Odds logging and closing lines</span></td></tr>
+          </tbody>
+        </table>
+        <p class="stack">Python, FastAPI, React, PostgreSQL, Ubuntu Server</p>
+        <a class="go" href="https://github.com/JoaquinBorjaLeon/sports-analyzer" target="_blank" rel="noopener"><span lang="es">Código en GitHub</span><span lang="en">Code on GitHub</span></a>
+        <div class="inline-fig" data-fig="sport">
+          <div class="ui ui-pad" data-ui>
+            <div class="ui-title"><span lang="es">Probabilidad de cada marcador</span><span lang="en">Probability of every scoreline</span></div>
+            <div class="ui-note"><span lang="es">Poisson independiente, en porcentaje</span><span lang="en">Independent Poisson, in percent</span></div>
+            <div class="pois">
+              <div>
+                <div class="g" id="grid"></div>
+                <div class="axis"><span lang="es">Filas: goles del local. Columnas: del visitante.</span><span lang="en">Rows: home goals. Columns: away goals.</span></div>
+              </div>
+              <div class="ctl">
+                <label for="lh"><span lang="es">Goles esperados local</span><span lang="en">Home expected goals</span> <output id="lhOut" for="lh"></output></label>
+                <input id="lh" type="range" min="0.3" max="3.5" step="0.05" value="1.65">
+                <label for="la"><span lang="es">Goles esperados visitante</span><span lang="en">Away expected goals</span> <output id="laOut" for="la"></output></label>
+                <input id="la" type="range" min="0.3" max="3.5" step="0.05" value="1.10">
+                <div class="p3">
+                  <div><span lang="es">Local</span><span lang="en">Home</span><span class="tr"><i id="p1"></i></span><b id="p1v"></b></div>
+                  <div><span lang="es">Empate</span><span lang="en">Draw</span><span class="tr"><i id="px"></i></span><b id="pxv"></b></div>
+                  <div><span lang="es">Visitante</span><span lang="en">Away</span><span class="tr"><i id="p2"></i></span><b id="p2v"></b></div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="care"><span lang="es">Si no se confirma a las 21:30, se avisará a María (cuidadora).</span><span lang="en">If not confirmed by 21:30, María (caregiver) will be notified.</span></div>
         </div>
-      </div>
+      </article>
+
+      <!-- Bolsa -->
+      <article class="project" id="bolsa" data-stage="stock" aria-labelledby="t-stock">
+        <h3 id="t-stock" class="rv"><span lang="es">Scoring bursátil</span><span lang="en">Stock scoring</span></h3>
+        <p class="kind rv" style="--i:1"><span lang="es">Análisis fundamental automatizado con n8n</span><span lang="en">Automated fundamental analysis with n8n</span></p>
+        <p class="lede rv" style="--i:2"><span lang="es">Puntúa empresas por sus fundamentales y me avisa por Telegram cuando alguna merece una segunda mirada.</span><span lang="en">It scores companies on fundamentals and pings me on Telegram when one deserves a second look.</span></p>
+        <p class="body rv" style="--i:3"><span lang="es">Combina PER, ROE, deuda sobre EBITDA y margen neto en una sola nota. Un flujo de n8n lanza el análisis de forma periódica, envía las alertas y deja los resultados en un panel hecho con FastAPI. La empresa de la figura es ficticia.</span><span lang="en">It combines P/E, ROE, debt to EBITDA and net margin into a single score. An n8n workflow runs the analysis on a schedule, sends the alerts and publishes results to a FastAPI dashboard. The company in the figure is fictional.</span></p>
+        <p class="stack">Python, FastAPI, n8n, Telegram</p>
+        <div class="inline-fig" data-fig="stock">
+          <div class="ui ui-pad" data-ui>
+            <div class="ui-title"><span lang="es">Empresa Ejemplo</span><span lang="en">Example Corp</span></div>
+            <div class="ui-note"><span lang="es">Nota compuesta sobre 10</span><span lang="en">Composite score out of 10</span></div>
+            <div class="score-head"><span class="big"><span lang="es">7,8</span><span lang="en">7.8</span> <small>/ 10</small></span><span class="pill ok"><span lang="es">Supera tu umbral</span><span lang="en">Above threshold</span></span></div>
+            <div class="met"><span>PER</span><span class="tr"><i style="width:72%"></i></span><span><span lang="es">12,4</span><span lang="en">12.4</span></span></div>
+            <div class="met"><span>ROE</span><span class="tr"><i style="width:81%"></i></span><span><span lang="es">18 %</span><span lang="en">18%</span></span></div>
+            <div class="met"><span><span lang="es">Deuda / EBITDA</span><span lang="en">Debt / EBITDA</span></span><span class="tr"><i style="width:64%"></i></span><span><span lang="es">1,6</span><span lang="en">1.6</span></span></div>
+            <div class="met"><span><span lang="es">Margen neto</span><span lang="en">Net margin</span></span><span class="tr"><i style="width:58%"></i></span><span><span lang="es">11 %</span><span lang="en">11%</span></span></div>
+            <div class="tg"><span lang="es">Empresa Ejemplo obtiene 7,8 y supera tu umbral de 7. Ver detalle en el panel.</span><span lang="en">Example Corp scores 7.8, above your threshold of 7. See details in the dashboard.</span><small><span lang="es">Telegram, alerta automática</span><span lang="en">Telegram, automated alert</span></small></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- RecuerdaMed -->
+      <article class="project" id="recuerdamed" data-stage="med" aria-labelledby="t-med">
+        <h3 id="t-med" class="rv">RecuerdaMed</h3>
+        <p class="kind rv" style="--i:1"><span lang="es">Trabajo de fin de grado, Android e iOS</span><span lang="en">Bachelor's thesis, Android and iOS</span></p>
+        <p class="lede rv" style="--i:2"><span lang="es">Ayuda a los pacientes a no olvidar su medicación y mantiene informados a quienes les cuidan.</span><span lang="en">It helps patients keep up with their medication and keeps their caregivers informed.</span></p>
+        <p class="body rv" style="--i:3"><span lang="es">El paciente recibe un aviso a cada hora de toma y la confirma con un toque. Si una toma se queda sin confirmar, su cuidador recibe una notificación. Un único código para las dos plataformas.</span><span lang="en">Patients get a reminder at each dose and confirm it with one tap. If a dose goes unconfirmed, their caregiver is notified. One codebase for both platforms.</span></p>
+        <p class="stack">React Native, Expo, TypeScript, Firebase</p>
+        <a class="go" href="https://github.com/JoaquinBorjaLeon/RecuerdaMed" target="_blank" rel="noopener"><span lang="es">Código en GitHub</span><span lang="en">Code on GitHub</span></a>
+        <div class="inline-fig" data-fig="med">
+          <div class="phone" data-ui>
+            <div class="screen">
+              <div class="d"><span lang="es">Hoy</span><span lang="en">Today</span></div>
+              <div class="s"><span lang="es">3 tomas programadas</span><span lang="en">3 doses scheduled</span></div>
+              <div class="dose"><time>08:00</time><span>Enalapril 10 mg</span><span class="pill ok"><span lang="es">Tomada</span><span lang="en">Taken</span></span></div>
+              <div class="dose"><time>14:00</time><span>Metformina 850 mg</span><span class="pill ok"><span lang="es">Tomada</span><span lang="en">Taken</span></span></div>
+              <div class="dose"><time>21:00</time><span>Atorvastatina 20 mg</span><span class="pill due"><span lang="es">Pendiente</span><span lang="en">Due</span></span></div>
+              <div class="care"><span lang="es">Si no se confirma a las 21:30, avisaremos a María, su cuidadora.</span><span lang="en">If not confirmed by 21:30, we'll notify María, the caregiver.</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Comunidad -->
+      <article class="project" id="comunidad" data-stage="team" aria-labelledby="t-team" style="padding-bottom:clamp(40px,6vw,96px)">
+        <h3 id="t-team" class="rv"><span lang="es">App de comunidades</span><span lang="en">Community app</span></h3>
+        <p class="kind rv" style="--i:1"><span lang="es">Ingeniería del Software y Práctica Profesional</span><span lang="en">Software Engineering and Professional Practice</span></p>
+        <p class="lede rv" style="--i:2"><span lang="es">Fui jefe de proyecto de un equipo de 18 personas y presentaba los avances cada semana en formato pitch.</span><span lang="en">I was project manager of an 18-person team and pitched our progress every week.</span></p>
+        <p class="body rv" style="--i:3"><span lang="es">La aplicación permitía a los vecinos reportar incidencias, reservar zonas comunes, chatear entre ellos y obtener las actas de las reuniones transcritas a partir de una grabación de voz.</span><span lang="en">The app let residents report incidents, book shared spaces, chat with each other and get meeting minutes transcribed from a voice recording.</span></p>
+        <div class="inline-fig" data-fig="team">
+          <div class="ui ui-pad board" data-ui>
+            <div class="ui-title"><span lang="es">Comunidad Los Olivos</span><span lang="en">Los Olivos residents</span></div>
+            <div class="ui-note"><span lang="es">Comunidad de ejemplo</span><span lang="en">Sample community</span></div>
+            <div class="row"><span><span lang="es">Fuga de agua en el garaje</span><span lang="en">Water leak in the garage</span><small><span lang="es">Incidencia, abierta hace 2 h</span><span lang="en">Incident, opened 2 h ago</span></small></span><span class="pill due"><span lang="es">En curso</span><span lang="en">In progress</span></span></div>
+            <div class="row"><span><span lang="es">Pista de pádel, sábado 11:00</span><span lang="en">Padel court, Saturday 11:00</span><small><span lang="es">Reserva de zona común</span><span lang="en">Shared space booking</span></small></span><span class="pill ok"><span lang="es">Confirmada</span><span lang="en">Confirmed</span></span></div>
+            <div class="row"><span><span lang="es">Acta de la junta de octubre</span><span lang="en">October meeting minutes</span><small><span lang="es">Transcrita desde la grabación</span><span lang="en">Transcribed from the recording</span></small></span><span class="pill ok"><span lang="es">Lista</span><span lang="en">Ready</span></span></div>
+            <div class="who-team" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><em><span lang="es">18 personas en el equipo</span><span lang="en">18 people on the team</span></em></div>
+          </div>
+        </div>
+      </article>
     </div>
-  </article>
+  </main>
 
-  <div class="others">
-    <h3><span lang="es">También he liderado equipos</span><span lang="en">I've also led teams</span></h3>
-    <p lang="es">En la asignatura de Ingeniería del Software y Práctica Profesional fui jefe de proyecto de un equipo de 18 personas. Construimos una app para comunidades de vecinos con gestión de incidencias, reserva de zonas comunes, actas transcritas a partir de grabaciones de voz y chat entre vecinos, y cada semana presentaba los avances en formato pitch. Antes de eso cofundé Byolux, una startup de software para la optimización de bioprocesos que entró en la aceleradora Fusión Startups.</p>
-    <p lang="en">In my Software Engineering and Professional Practice course I was project manager of an 18-person team. We built an app for residents' associations with incident reporting, shared-space booking, meeting minutes transcribed from voice recordings and a residents' chat, and I pitched our progress every week. I also co-founded Byolux, a software startup for bioprocess optimisation that joined the Fusión Startups accelerator.</p>
-  </div>
-
-  <section class="block" id="ahora">
-    <h2><span lang="es">Sobre mí</span><span lang="en">About me</span></h2>
-    <div class="two">
-      <div class="now">
-        <p lang="es">Ahora mismo estoy en Getafe como Digital Governance Trainee en Airbus Defence and Space, dentro del programa Airbus Discover. Apoyo iniciativas de gobierno del dato en Air Power Services y colaboro en el desarrollo de soluciones de IA.</p>
-        <p lang="en">I'm currently in Getafe as a Digital Governance Trainee at Airbus Defence and Space, part of the Airbus Discover programme. I support data governance initiatives in Air Power Services and help develop AI solutions.</p>
-        <p lang="es">Lo compagino con el Máster en Ingeniería del Software de la Universidad de Sevilla, centrado en cloud, datos y gestión TI, y con un máster en analítica de datos de la Universidad Camilo José Cela.</p>
-        <p lang="en">Alongside it I'm studying the Master's in Software Engineering at the University of Seville, focused on cloud, data and IT management, and a Master's in data analytics at Camilo José Cela University.</p>
-        <p lang="es">Hablo español, inglés con nivel C1 y alemán con nivel B1. Antes de todo esto pasé un verano trabajando en un resort de Utah y otro dando clases de surf en Cantabria.</p>
-        <p lang="en">I speak Spanish, English at C1 level and German at B1. Before all this I spent a summer working at a resort in Utah and another one teaching surf in Cantabria.</p>
-      </div>
-      <ol class="path">
-        <li><b>Airbus Defence and Space</b><span class="sub"><span lang="es">Digital Governance Trainee, desde octubre de 2026</span><span lang="en">Digital Governance Trainee, since October 2026</span></span></li>
-        <li><b>Byolux</b><span class="sub"><span lang="es">Cofundador y responsable de software, 2026</span><span lang="en">Co-founder and software lead, 2026</span></span></li>
-        <li><b><span lang="es">Ayuntamiento de Sevilla (ITAS)</span><span lang="en">Seville City Council (ITAS)</span></b><span class="sub"><span lang="es">Prácticas en la plataforma Smart City, 2026</span><span lang="en">Internship on the Smart City platform, 2026</span></span></li>
-        <li><b>Universidad de Sevilla</b><span class="sub"><span lang="es">Grado en Ingeniería del Software, 2022 a 2026</span><span lang="en">BSc Software Engineering, 2022 to 2026</span></span></li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="contact" id="contacto">
-    <p lang="es">Si tienes un proyecto o una oferta en backend, datos o IA, me encantará hablar contigo.</p>
-    <p lang="en">If you have a project or a role in backend, data or AI, I'd love to hear from you.</p>
-    <a class="mail" href="mailto:hola@joaquinborjaleon.com">hola@joaquinborjaleon.com</a>
-    <div class="links">
-      <a class="pill ghost" href="https://www.linkedin.com/in/joaquinborjaleon" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="pill ghost" href="https://github.com/JoaquinBorjaLeon" target="_blank" rel="noopener">GitHub</a>
-    </div>
-  </section>
-
-  <footer>© <span id="y">2026</span> Joaquín Borja León</footer>
+  <aside class="stage" aria-hidden="true">
+    <div class="panel me on" data-panel="me"><img src="portrait.jpg" alt="" width="1200" height="1200" fetchpriority="high"></div>
+    <div class="panel" data-panel="docu"><div class="slot"></div></div>
+    <div class="panel" data-panel="sport"><div class="slot"></div></div>
+    <div class="panel" data-panel="stock"><div class="slot"></div></div>
+    <div class="panel" data-panel="med"><div class="slot"></div></div>
+    <div class="panel" data-panel="team"><div class="slot"></div></div>
+  </aside>
 </div>
+
+<section class="letter" id="sobre-mi" aria-labelledby="t-about">
+  <div class="letter-in">
+    <h2 id="t-about" class="rv"><span lang="es">Sobre mí</span><span lang="en">About me</span></h2>
+    <img class="face rv" style="--i:1" src="photo.jpg" alt="" width="56" height="56" loading="lazy">
+    <p class="rv" style="--i:2"><span lang="es">Soy de Sevilla y me gradué en Ingeniería del Software en su universidad. Ahora vivo en Madrid y trabajo como Digital Governance Trainee en Airbus Defence and Space, dentro del programa Airbus Discover, apoyando el gobierno del dato y el desarrollo de soluciones de IA.</span><span lang="en">I'm from Seville, where I graduated in Software Engineering. I now live in Madrid and work as a Digital Governance Trainee at Airbus Defence and Space, part of the Airbus Discover programme, supporting data governance and the development of AI solutions.</span></p>
+    <p class="rv" style="--i:3"><span lang="es">Lo compagino con dos másteres: Ingeniería del Software con foco en cloud, datos y gestión TI en la Universidad de Sevilla, y analítica de datos en la Universidad Camilo José Cela.</span><span lang="en">Alongside it I'm doing two master's degrees: Software Engineering focused on cloud, data and IT management at the University of Seville, and data analytics at Camilo José Cela University.</span></p>
+    <p class="rv" style="--i:4"><span lang="es">Antes cofundé Byolux, una startup de optimización de bioprocesos que entró en la aceleradora Fusión Startups, e hice prácticas en la plataforma Smart City del Ayuntamiento de Sevilla. También pasé un verano trabajando en un resort de Utah y otro dando clases de surf en Cantabria.</span><span lang="en">Before that I co-founded Byolux, a bioprocess optimisation startup that joined the Fusión Startups accelerator, and interned on Seville City Council's Smart City platform. I also spent a summer working at a resort in Utah and another teaching surf in Cantabria.</span></p>
+    <p class="rv" style="--i:5"><span lang="es">Busco seguir construyendo <mark>sistemas de datos e IA que se usen de verdad</mark>. Si tienes algo así entre manos, escríbeme.</span><span lang="en">I want to keep building <mark>data and AI systems that people actually use</mark>. If you're working on something like that, write to me.</span></p>
+    <p class="sign rv" style="--i:6">Joaquín Borja León<small><span lang="es">Ingeniero de software, Madrid</span><span lang="en">Software engineer, Madrid</span></small></p>
+  </div>
+  <div class="facts">
+    <div class="rv"><b>18</b><span><span lang="es">personas en el equipo que dirigí</span><span lang="en">people on the team I led</span></span></div>
+    <div class="rv" style="--i:1"><b>16+</b><span><span lang="es">ligas que cubren mis modelos</span><span lang="en">leagues my models cover</span></span></div>
+    <div class="rv" style="--i:2"><b>3</b><span><span lang="es">idiomas: español, inglés C1 y alemán B1</span><span lang="en">languages: Spanish, English C1, German B1</span></span></div>
+  </div>
+</section>
+
+<section class="contact" id="contacto" aria-labelledby="t-contact">
+  <div class="contact-in">
+    <h2 id="t-contact" class="rv"><span class="soft"><span lang="es">¿Tienes un proyecto o una oferta?</span><span lang="en">Got a project or a role?</span></span><br><span lang="es">Cuéntamelo en una línea.</span><span lang="en">Tell me in one line.</span></h2>
+    <form class="field rv" style="--i:1" id="msgForm" action="mailto:hola@joaquinborjaleon.com" method="get">
+      <label for="msg" class="skip" style="position:absolute;left:-9999px"><span lang="es">Tu mensaje</span><span lang="en">Your message</span></label>
+      <input id="msg" name="body" type="text" autocomplete="off" placeholder="Hola Joaquín, me gustaría hablar sobre…">
+      <button type="submit" aria-label="Enviar por correo"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+    </form>
+    <p class="help rv" style="--i:2"><span lang="es">Se abrirá tu aplicación de correo con el mensaje listo para enviar.</span><span lang="en">Your email app will open with the message ready to send.</span></p>
+    <dl class="rows rv" style="--i:3">
+      <div><dt><span lang="es">Correo</span><span lang="en">Email</span></dt><dd><a href="mailto:hola@joaquinborjaleon.com">hola@joaquinborjaleon.com</a></dd></div>
+      <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/joaquinborjaleon" target="_blank" rel="noopener">linkedin.com/in/joaquinborjaleon</a></dd></div>
+      <div><dt>GitHub</dt><dd><a href="https://github.com/JoaquinBorjaLeon" target="_blank" rel="noopener">github.com/JoaquinBorjaLeon</a></dd></div>
+    </dl>
+  </div>
+</section>
+
+<div class="stripe" aria-hidden="true" id="stripe"></div>
+<footer>
+  <p class="name">Joaquín Borja León</p>
+  <div class="meta"><span>© <span id="y">2026</span></span><span>Madrid</span></div>
+</footer>
 
 <script>
 (function(){
-  var body=document.body, btn=document.getElementById('langBtn');
-  function lang(){return body.getAttribute('data-lang')}
+  var root=document.documentElement, body=document.body;
+  root.classList.add('js');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function L(){return body.getAttribute('data-lang')}
 
-  /* ---------- RRF ---------- */
+  /* bandas: barras de un ranking */
+  [['band',28],['stripe',60]].forEach(function(b){
+    var el=document.getElementById(b[0]); var n=b[1], h='';
+    for(var i=0;i<n;i++){
+      var ht=b[0]==='band'? (30+Math.round(70*Math.abs(Math.sin(i*1.7+.4))))+'%':'100%';
+      h+='<i style="height:'+ht+';animation-delay:'+(i*18)+'ms"></i>';
+    }
+    el.innerHTML=h;
+  });
+
+  /* RRF */
   var docs=[
-    {id:'A',es:'Los empleados disponen de 23 días laborables de vacaciones al año.',en:'Employees are entitled to 23 working days of holiday per year.',s:{es:'Política de vacaciones, art. 4',en:'Holiday policy, art. 4'}},
-    {id:'B',es:'El descanso anual se calcula de forma proporcional al tiempo trabajado.',en:'Annual leave is prorated according to time worked.',s:{es:'Política de vacaciones, art. 5',en:'Holiday policy, art. 5'}},
-    {id:'C',es:'Las solicitudes de vacaciones se tramitan desde el portal del empleado.',en:'Holiday requests are submitted through the employee portal.',s:{es:'Procedimientos, sección 2',en:'Procedures, section 2'}},
-    {id:'D',es:'Los días de libre disposición no se acumulan al año siguiente.',en:'Personal days do not carry over to the following year.',s:{es:'Permisos retribuidos',en:'Paid leave'}},
-    {id:'E',es:'El horario de verano se aplica del 15 de junio al 15 de septiembre.',en:'Summer hours apply from 15 June to 15 September.',s:{es:'Jornada laboral',en:'Working hours'}}
+    {id:'A',es:'Los empleados disponen de 23 días laborables de vacaciones al año.',en:'Employees get 23 working days of holiday per year.',s:{es:'Política de vacaciones, art. 4',en:'Holiday policy, art. 4'}},
+    {id:'B',es:'El descanso anual se calcula en proporción al tiempo trabajado.',en:'Annual leave is prorated by time worked.',s:{es:'Política de vacaciones, art. 5',en:'Holiday policy, art. 5'}},
+    {id:'C',es:'Las vacaciones se solicitan desde el portal del empleado.',en:'Holiday requests go through the employee portal.',s:{es:'Procedimientos, sección 2',en:'Procedures, section 2'}},
+    {id:'D',es:'Los días de libre disposición no pasan al año siguiente.',en:'Personal days do not carry over.',s:{es:'Permisos retribuidos',en:'Paid leave'}},
+    {id:'E',es:'El horario de verano va del 15 de junio al 15 de septiembre.',en:'Summer hours run 15 June to 15 September.',s:{es:'Jornada laboral',en:'Working hours'}}
   ];
-  var vecRank=['B','A','D','E','C'];   // entiende "descanso anual" ≈ vacaciones
-  var ftsRank=['C','A','D','B','E'];   // coincide con la palabra "vacaciones"
-  var K=60;
-  function rrf(){
-    var sc={}; docs.forEach(function(d){sc[d.id]=1/(K+vecRank.indexOf(d.id)+1)+1/(K+ftsRank.indexOf(d.id)+1)});
+  var vec=['B','A','D','E','C'], fts=['C','A','D','B','E'], K=60, mode='rrf';
+  var list=document.querySelector('#rrf .ranks');
+  function order(){
+    if(mode==='vec') return vec.map(function(id,i){return {id:id,v:5-i}});
+    if(mode==='fts') return fts.map(function(id,i){return {id:id,v:5-i}});
+    var sc={}; docs.forEach(function(d){sc[d.id]=1/(K+vec.indexOf(d.id)+1)+1/(K+fts.indexOf(d.id)+1)});
     return docs.map(function(d){return d.id}).sort(function(a,b){return sc[b]-sc[a]}).map(function(id){return {id:id,v:sc[id]}});
   }
-  var mode='rrf', list=document.querySelector('#rrf .ranks');
-  function order(){
-    if(mode==='vec') return vecRank.map(function(id,i){return {id:id,v:1-i*0.16}});
-    if(mode==='fts') return ftsRank.map(function(id,i){return {id:id,v:1-i*0.18}});
-    return rrf();
-  }
   function renderRRF(){
-    var o=order(), max=o[0].v, min=o[o.length-1].v, L=lang();
-    var first={}; Array.prototype.forEach.call(list.children,function(li){first[li.dataset.id]=li.getBoundingClientRect().top});
+    var o=order(), mx=o[0].v, mn=o[o.length-1].v, l=L(), first={};
+    Array.prototype.forEach.call(list.children,function(li){first[li.dataset.id]=li.getBoundingClientRect().top});
     list.innerHTML='';
     o.forEach(function(r,i){
-      var d=docs.filter(function(x){return x.id===r.id})[0];
-      var li=document.createElement('li'); li.dataset.id=r.id; if(r.id==='A') li.className='hit';
-      li.innerHTML='<span class="pos">'+(i+1)+'</span><span class="txt">'+d[L]+'<small>'+d.s[L]+'</small></span><span class="rbar"><i style="width:'+Math.round(18+82*(r.v-min)/(max-min))+'%"></i></span>';
+      var d=docs.filter(function(x){return x.id===r.id})[0], li=document.createElement('li');
+      li.dataset.id=r.id; if(r.id==='A') li.className='top';
+      li.innerHTML='<span class="n">'+(i+1)+'</span><span class="t">'+d[l]+'<small>'+d.s[l]+'</small></span><span class="m"><i style="width:'+Math.round(18+82*(r.v-mn)/(mx-mn))+'%"></i></span>';
       list.appendChild(li);
     });
-    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if(reduce) return;
     Array.prototype.forEach.call(list.children,function(li){
       var f=first[li.dataset.id]; if(f===undefined) return;
       var dy=f-li.getBoundingClientRect().top; if(!dy) return;
@@ -414,41 +547,96 @@
     });
   });
 
-  /* ---------- Poisson ---------- */
+  /* Poisson */
   var grid=document.getElementById('grid'), lh=document.getElementById('lh'), la=document.getElementById('la');
-  function fact(n){var r=1;for(var i=2;i<=n;i++)r*=i;return r}
-  function pois(k,l){return Math.exp(-l)*Math.pow(l,k)/fact(k)}
-  function pct(x){var L=lang();var s=(x*100).toFixed(1);return (L==='es'?s.replace('.',','):s)+' %'}
+  function f(n){var r=1;for(var i=2;i<=n;i++)r*=i;return r}
+  function P(k,l){return Math.exp(-l)*Math.pow(l,k)/f(k)}
+  function num(v,d){var s=v.toFixed(d);return L()==='es'?s.replace('.',','):s}
   function renderPoisson(){
-    var a=+lh.value,b=+la.value,N=6,p1=0,px=0,p2=0,m=[],max=0;
-    for(var i=0;i<12;i++)for(var j=0;j<12;j++){var p=pois(i,a)*pois(j,b); if(i>j)p1+=p; else if(i===j)px+=p; else p2+=p; if(i<N&&j<N){m.push([i,j,p]); if(p>max)max=p;}}
-    var t=p1+px+p2; p1/=t;px/=t;p2/=t;
-    var h='<span></span>'; for(var j=0;j<N;j++) h+='<span class="h">'+j+'</span>';
-    for(var i=0;i<N;i++){ h+='<span class="h">'+i+'</span>';
-      for(var j=0;j<N;j++){ var p=m[i*N+j][2], k=p/max;
-        var bg='rgba(44,122,87,'+(0.08+k*0.85).toFixed(3)+')';
-        h+='<span class="c" style="background:'+bg+';color:'+(k>0.55?'#fff':'#14212e')+'" title="'+i+'-'+j+'">'+(p>=0.005?Math.round(p*100):'')+'</span>';
-      }}
+    var a=+lh.value,b=+la.value,N=6,p1=0,px=0,p2=0,m=[],mx=0;
+    for(var i=0;i<12;i++)for(var j=0;j<12;j++){var p=P(i,a)*P(j,b);if(i>j)p1+=p;else if(i===j)px+=p;else p2+=p;if(i<N&&j<N){m.push(p);if(p>mx)mx=p}}
+    var t=p1+px+p2;p1/=t;px/=t;p2/=t;
+    var h='<span></span>';for(var j=0;j<N;j++)h+='<span class="h">'+j+'</span>';
+    for(var i=0;i<N;i++){h+='<span class="h">'+i+'</span>';
+      for(var j=0;j<N;j++){var p=m[i*N+j],k=p/mx;
+        h+='<span class="c" style="background:rgba(47,122,88,'+(.07+k*.88).toFixed(3)+');color:'+(k>.5?'#fff':'#1f2b4d')+'" title="'+i+'-'+j+'">'+(p>=.005?Math.round(p*100):'')+'</span>'}}
     grid.innerHTML=h;
-    var fmt=function(v){var s=v.toFixed(2);return lang()==='es'?s.replace('.',','):s};
-    document.getElementById('lhOut').textContent=fmt(a);
-    document.getElementById('laOut').textContent=fmt(b);
-    [['p1',p1],['px',px],['p2',p2]].forEach(function(r){document.getElementById(r[0]).style.width=(r[1]*100)+'%';document.getElementById(r[0]+'v').textContent=Math.round(r[1]*100)+(lang()==='es'?' %':'%')});
+    document.getElementById('lhOut').textContent=num(a,2);
+    document.getElementById('laOut').textContent=num(b,2);
+    var pc=L()==='es'?' %':'%';
+    [['p1',p1],['px',px],['p2',p2]].forEach(function(r){document.getElementById(r[0]).style.width=(r[1]*100)+'%';document.getElementById(r[0]+'v').textContent=Math.round(r[1]*100)+pc});
   }
   lh.addEventListener('input',renderPoisson); la.addEventListener('input',renderPoisson);
 
-  /* ---------- idioma ---------- */
-  var saved=null; try{saved=localStorage.getItem('lang')}catch(e){}
+  /* escenario: mover figuras al panel fijo en escritorio */
+  var mq=window.matchMedia('(min-width: 981px)');
+  function place(){
+    document.querySelectorAll('[data-fig]').forEach(function(holder){
+      var key=holder.dataset.fig, fig=holder.__fig||(holder.__fig=holder.firstElementChild);
+      var slot=document.querySelector('[data-panel="'+key+'"] .slot');
+      if(mq.matches){ if(fig.parentNode!==slot) slot.appendChild(fig); holder.style.display='none'; }
+      else { if(fig.parentNode!==holder) holder.appendChild(fig); holder.style.display=''; }
+    });
+    var stage=document.querySelector('.stage'); stage.setAttribute('aria-hidden',mq.matches?'false':'true');
+  }
+  mq.addEventListener?mq.addEventListener('change',place):mq.addListener(place);
+  place();
+
+  var panels=document.querySelectorAll('[data-panel]'), current='me', lock=null;
+  function show(key){
+    if(key===current) return; current=key;
+    panels.forEach(function(p){p.classList.toggle('on',p.dataset.panel===key)});
+  }
+  var watched=document.querySelectorAll('.read [data-stage]');
+  var io=new IntersectionObserver(function(es){
+    if(lock) return;
+    var best=null;
+    watched.forEach(function(el){var r=el.getBoundingClientRect();if(r.top<window.innerHeight*.55&&r.bottom>window.innerHeight*.45)best=el});
+    if(best) show(best.dataset.stage);
+  },{rootMargin:'-45% 0px -45% 0px',threshold:0});
+  watched.forEach(function(el){io.observe(el)});
+  document.querySelectorAll('.ledger a').forEach(function(a){
+    a.addEventListener('mouseenter',function(){lock=a.dataset.preview;show(lock)});
+    a.addEventListener('focus',function(){lock=a.dataset.preview;show(lock)});
+    a.addEventListener('mouseleave',function(){lock=null});
+    a.addEventListener('blur',function(){lock=null});
+  });
+
+  /* entradas */
+  if(!reduce && 'IntersectionObserver' in window){
+    var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.rv').forEach(function(el){ro.observe(el)});
+    setTimeout(function(){document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in')})},6000);
+  } else { document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in')}); }
+
+  /* formulario: abre el correo */
+  document.getElementById('msgForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    var v=document.getElementById('msg').value.trim();
+    var subj=L()==='es'?'Contacto desde joaquinborjaleon.com':'Hello from joaquinborjaleon.com';
+    location.href='mailto:hola@joaquinborjaleon.com?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(v);
+  });
+
+  /* idioma */
+  var btn=document.getElementById('langBtn'), saved=null; try{saved=localStorage.getItem('lang')}catch(e){}
   var initial=saved||((navigator.language||'es').toLowerCase().indexOf('es')===0?'es':'en');
   function set(l){
-    body.setAttribute('data-lang',l); document.documentElement.lang=l;
-    btn.textContent=l==='es'?'English':'Español';
+    body.setAttribute('data-lang',l); root.lang=l;
+    btn.textContent=l==='es'?'EN':'ES'; btn.setAttribute('aria-label',l==='es'?'Switch to English':'Cambiar a español');
+    document.getElementById('msg').placeholder=l==='es'?'Hola Joaquín, me gustaría hablar sobre…':'Hi Joaquín, I would like to talk about…';
+    document.querySelector('.field button').setAttribute('aria-label',l==='es'?'Enviar por correo':'Send by email');
     try{localStorage.setItem('lang',l)}catch(e){}
     renderRRF(); renderPoisson();
   }
-  btn.addEventListener('click',function(){set(lang()==='es'?'en':'es')});
+  btn.addEventListener('click',function(){set(L()==='es'?'en':'es')});
   set(initial);
   document.getElementById('y').textContent=new Date().getFullYear();
+
+  /* el nombre del pie ocupa todo el ancho */
+  var nm=document.querySelector('footer .name');
+  function fit(){nm.style.fontSize='100px';var w=nm.parentElement.clientWidth-8;nm.style.fontSize=Math.floor(100*w/nm.scrollWidth)+'px'}
+  fit(); if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fit);
+  window.addEventListener('resize',fit);
 })();
 </script>
 </body>
