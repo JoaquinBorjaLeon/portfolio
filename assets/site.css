@@ -271,3 +271,6 @@ footer a:hover{color:var(--link)}
   .js .chart.in .bar i{transform:scaleX(1)}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* página 404: ocupa la ventana para que el pie quede abajo */
+.nf{min-height:calc(100svh - 140px)}
