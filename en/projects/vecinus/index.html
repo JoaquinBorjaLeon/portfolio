@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VecinUs, a project by Joaquín Borja León</title>
+<meta name="description" content="An app for residents’ communities. I was the project manager and set up continuous integration and repository security.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1524" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="VecinUs, a project by Joaquín Borja León">
+<meta property="og:description" content="An app for residents’ communities. I was the project manager and set up continuous integration and repository security.">
+<meta property="og:url" content="https://joaquinborjaleon.com/en/projects/vecinus/">
+<meta property="og:image" content="https://joaquinborjaleon.com/img/covers/vecinus.webp">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://joaquinborjaleon.com/en/projects/vecinus/">
+<link rel="alternate" hreflang="es" href="https://joaquinborjaleon.com/proyectos/vecinus/">
+<link rel="alternate" hreflang="en" href="https://joaquinborjaleon.com/en/projects/vecinus/">
+<link rel="alternate" hreflang="x-default" href="https://joaquinborjaleon.com/proyectos/vecinus/">
+<link rel="icon" href="/favicon-32.png?v=f190a0a1" sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon.svg?v=8d760703" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=02a6b525">
+<link rel="preload" href="/assets/fonts/general-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/gambarino-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css?v=bd0e678c">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/en/">Joaquín Borja León</a>
+    <a class="crumb" href="/en/#projects"><span aria-hidden="true">←</span> Projects</a>
+    <nav aria-label="Sections">
+      <a href="/en/#projects">Projects</a>
+      <a href="/en/#experience">Experience</a>
+      <a href="/en/#education">Education</a>
+      <a href="/en/#contact">Contact</a>
+    </nav>
+    <a class="lang" href="/proyectos/vecinus/" hreflang="es" lang="es" data-switch="es" aria-label="Leer en español">ES</a>
+  </div>
+</header>
+<main id="main" class="project-page">
+  <section class="p-hero">
+    <div class="wrap">
+      <h1>VecinUs</h1>
+      <p class="p-lead">An app to run the day-to-day of a residents’ community: incidents, bookings, votes, chat, an assistant that knows the community rules and minutes generated from the meeting recording.</p>
+      <p class="p-meta"><span class="i">Team project</span><span class="i">15 people</span><span class="i">2026</span></p>
+      <div class="p-links"><a class="btn primary" href="#video">Watch the demo video <span class="arr" aria-hidden="true">↓</span></a><a class="btn" href="https://github.com/Vecinus/vecinus" target="_blank" rel="noopener">Code on GitHub <span class="arr" aria-hidden="true">↗</span></a><a class="btn" href="https://landing-vecinus.onrender.com/" target="_blank" rel="noopener">Project website <span class="arr" aria-hidden="true">↗</span></a></div>
+      <dl class="p-facts"><div><dt>Period</dt><dd>Feb to May 2026</dd></div><div><dt>Team</dt><dd>15 people</dd></div><div><dt>Context</dt><dd>Course that simulates building and launching a startup</dd></div><div><dt>My role</dt><dd>Project manager, continuous integration and security</dd></div><div class="p-tech"><dt>Tech stack</dt><dd><ul class="stack" aria-label="Tech stack"><li>FastAPI</li><li>Supabase</li><li>PostgreSQL</li><li>React Native</li><li>Expo</li><li>Gemini</li><li>Pinecone</li><li>GitHub Actions</li><li>Render</li></ul></dd></div></dl>
+    </div>
+  </section>
+  <div class="wrap">
+      <figure class="stage reveal">
+        <div class="trio"><div data-ui class="shot"><img src="/img/vecinus/asistente.webp?v=4ae95e60" width="1200" height="585" fetchpriority="high" decoding="async" alt="Community assistant answering whether renovation work is allowed, based on the uploaded rules"></div><div data-ui class="shot"><img src="/img/vecinus/reservas.webp?v=96be34ba" width="1200" height="585" decoding="async" alt="Booking calendar for a shared space with the available slots"></div><div data-ui class="shot"><img src="/img/vecinus/acta.webp?v=b1a52fd2" width="1200" height="585" decoding="async" alt="Minutes summary generated from a meeting recording"></div></div>
+        <figcaption>Community assistant, bookings and minutes. Stills from the demo video, with test data.</figcaption>
+      </figure>
+      <section class="p-sec reveal">
+        <h2>My part</h2>
+        <div><ul class="points single"><li><b>Project manager</b> of a 15-person team: coordination, sprint planning and weekly progress pitches.</li><li><b>Integration:</b> I reviewed and merged more than 80 pull requests and prepared the release for every milestone.</li><li><b>Continuous integration:</b> lint workflows for backend and frontend and commit message validation.</li><li><b>Security:</b> static analysis (SAST), dependency scanning with Dependabot and an automated monthly security review.</li><li><b>Dependencies</b> pinned with pip-compile, plus a guide so the whole team handled them the same way.</li></ul></div>
+      </section>
+      <section class="p-sec reveal">
+        <h2>What the app does</h2>
+        <div><ul class="points single"><li>Incident reports with status tracking.</li><li>Shared-space bookings with a calendar and a QR pass.</li><li>Votes weighted by property share.</li><li>An assistant that answers from the community rules and documents.</li><li>Minutes summarised from the meeting recording, and chat between residents.</li></ul></div>
+      </section>
+      <section class="p-sec reveal">
+        <h2>In numbers</h2>
+        <div><dl class="stats"><div><dt>people on the team</dt><dd>15</dd></div><div><dt>pull requests merged</dt><dd>+80</dd></div><div><dt>CI and security workflows</dt><dd>5</dd></div></dl></div>
+      </section>
+      <section class="p-video reveal" id="video" aria-labelledby="h-video">
+        <h2 id="h-video">Demo video</h2>
+        <div class="yt" data-yt="asrHzVENuS0" data-title="Demo video of VecinUs">
+          <img src="/img/vecinus/asistente.webp?v=4ae95e60" alt="" width="1200" height="585" loading="lazy" decoding="async">
+          <a class="yt-play" href="https://www.youtube.com/watch?v=asrHzVENuS0" target="_blank" rel="noopener"><span class="yt-icon" aria-hidden="true"></span>Play the video</a>
+        </div>
+        <p class="cap">Loads from YouTube when you press play.</p>
+      </section>
+      <section class="p-gallery" aria-label="Gallery">
+        <h2>Gallery</h2>
+        <div class="gallery"><figure class="reveal wide">
+            <div data-ui class="shot"><img src="/img/vecinus/ci.webp?v=b53e8dcc" width="1568" height="548" decoding="async" alt="Successful runs of the security and Dependabot workflows on GitHub Actions"></div>
+            <figcaption>What I set up: the monthly security review and Dependabot updates, still running and green.</figcaption>
+          </figure><figure class="reveal">
+            <div data-ui class="shot"><img src="/img/vecinus/pase-qr.webp?v=0aaf63a5" width="1200" height="585" decoding="async" alt="QR pass for a pool booking"></div>
+            <figcaption>QR pass for a booking.</figcaption>
+          </figure><figure class="reveal">
+            <div data-ui class="shot"><img src="/img/vecinus/votacion.webp?v=c382fd58" width="1200" height="585" decoding="async" alt="Creating a vote with property shares"></div>
+            <figcaption>New vote with property shares.</figcaption>
+          </figure><figure class="reveal">
+            <div data-ui class="shot"><img src="/img/vecinus/comunidad.webp?v=9a2c49bc" width="1200" height="583" decoding="async" alt="Community screen with residents and invitations"></div>
+            <figcaption>Community management.</figcaption>
+          </figure><figure class="reveal">
+            <div data-ui class="shot"><img src="/img/vecinus/incidencias.webp?v=124f9594" width="1200" height="583" decoding="async" alt="Incident list with status filters"></div>
+            <figcaption>Incidents by status.</figcaption>
+          </figure></div>
+      </section>
+      <nav class="pager reveal" aria-label="More projects">
+        <a class="prev" href="/en/projects/docuchat/"><small>Previous</small><strong>DocuChat</strong></a>
+        <a class="next" href="/en/projects/sports-value-detector/"><small>Next</small><strong>Sports Value Detector</strong></a>
+      </nav>
+    </div>
+  </div>
+  <section class="block contact" id="contact" aria-labelledby="h-contact">
+    <div class="wrap grid">
+      <div class="reveal">
+        <h2 id="h-contact">Let’s talk</h2>
+        <p class="intro">I’m from Seville and now live in Madrid. I like things to work end to end: designing the system, writing the code, deploying it and measuring whether it really holds up.</p>
+        <p class="intro">If you’re looking for someone for backend, data or applied AI work, write to me and I’ll get back to you.</p>
+      </div>
+      <ul class="channels reveal">
+        <li><a href="mailto:hola@joaquinborjaleon.com"><span class="ch-k">Email</span><span class="ch-v">hola@joaquinborjaleon.com</span></a></li>
+        <li><a href="https://www.linkedin.com/in/joaquinborjaleon" target="_blank" rel="noopener"><span class="ch-k">LinkedIn</span><span class="ch-v">in/joaquinborjaleon</span></a></li>
+        <li><a href="https://github.com/JoaquinBorjaLeon" target="_blank" rel="noopener"><span class="ch-k">GitHub</span><span class="ch-v">JoaquinBorjaLeon</span></a></li>
+        <li><a href="/cv/joaquin-borja-leon-cv-en.pdf?v=19974f0e" download><span class="ch-k">CV</span><span class="ch-v">Download PDF</span></a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap">
+    <p>© <span id="y">2026</span> Joaquín Borja León</p>
+    <p><a href="mailto:hola@joaquinborjaleon.com">hola@joaquinborjaleon.com</a></p>
+  </div>
+</footer>
+<script src="/assets/site.js?v=6e88e24b" defer></script>
+</body>
+</html>

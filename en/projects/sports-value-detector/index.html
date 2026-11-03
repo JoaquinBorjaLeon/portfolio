@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sports Value Detector, a project by Joaquín Borja León</title>
+<meta name="description" content="Football and tennis models measured against the closing odds, with an honest conclusion.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1524" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Sports Value Detector, a project by Joaquín Borja León">
+<meta property="og:description" content="Football and tennis models measured against the closing odds, with an honest conclusion.">
+<meta property="og:url" content="https://joaquinborjaleon.com/en/projects/sports-value-detector/">
+<meta property="og:image" content="https://joaquinborjaleon.com/img/covers/sports-value-detector.webp">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://joaquinborjaleon.com/en/projects/sports-value-detector/">
+<link rel="alternate" hreflang="es" href="https://joaquinborjaleon.com/proyectos/sports-value-detector/">
+<link rel="alternate" hreflang="en" href="https://joaquinborjaleon.com/en/projects/sports-value-detector/">
+<link rel="alternate" hreflang="x-default" href="https://joaquinborjaleon.com/proyectos/sports-value-detector/">
+<link rel="icon" href="/favicon-32.png?v=f190a0a1" sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon.svg?v=8d760703" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=02a6b525">
+<link rel="preload" href="/assets/fonts/general-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/gambarino-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css?v=bd0e678c">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/en/">Joaquín Borja León</a>
+    <a class="crumb" href="/en/#projects"><span aria-hidden="true">←</span> Projects</a>
+    <nav aria-label="Sections">
+      <a href="/en/#projects">Projects</a>
+      <a href="/en/#experience">Experience</a>
+      <a href="/en/#education">Education</a>
+      <a href="/en/#contact">Contact</a>
+    </nav>
+    <a class="lang" href="/proyectos/sports-value-detector/" hreflang="es" lang="es" data-switch="es" aria-label="Leer en español">ES</a>
+  </div>
+</header>
+<main id="main" class="project-page">
+  <section class="p-hero">
+    <div class="wrap">
+      <h1>Sports Value Detector</h1>
+      <p class="p-lead">It prices football and tennis markets with its own models and compares them with the closing odds of sharp bookmakers, the toughest bar there is. No model beats it consistently, and the project says so plainly.</p>
+      <p class="p-meta"><span class="i">Personal project</span><span class="i">2026</span></p>
+      <div class="p-links"><a class="btn primary" href="https://github.com/JoaquinBorjaLeon/sports-analyzer" target="_blank" rel="noopener">Code on GitHub <span class="arr" aria-hidden="true">↗</span></a></div>
+      <dl class="p-facts"><div><dt>Period</dt><dd>2026</dd></div><div><dt>Team</dt><dd>Personal project</dd></div><div><dt>Context</dt><dd>Free data, temporal validation and backtests</dd></div><div><dt>My role</dt><dd>Everything: data, models, backtests and dashboard</dd></div><div class="p-tech"><dt>Tech stack</dt><dd><ul class="stack" aria-label="Tech stack"><li>Python</li><li>pandas</li><li>NumPy</li><li>scikit-learn</li><li>SQLite</li><li>FastAPI</li><li>React</li><li>pytest</li></ul></dd></div></dl>
+    </div>
+  </section>
+  <div class="wrap">
+      <figure class="stage reveal">
+        <div data-ui class="chart" id="chart">
+          <h4>Distance to the closing line</h4>
+          <p class="sub">Model log loss minus closing-line log loss. The shorter the bar, the closer to the market.</p>
+          <table>
+            <thead><tr><th scope="col">Market</th><th scope="col">Gap</th><th scope="col"></th><th scope="col" class="ll">Model and close</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Over/under 2.5 goals<small>Football, 5 leagues</small></th><td class="bar"><i style="width:34.6%"></i></td><td class="gap">+0.009</td><td class="ll">0.683 vs 0.674</td></tr>
+              <tr><th scope="row">1X2<small>Football, 5 leagues</small></th><td class="bar"><i style="width:57.7%"></i></td><td class="gap">+0.015</td><td class="ll">0.993 vs 0.978</td></tr>
+              <tr><th scope="row">Match winner<small>Tennis, ATP</small></th><td class="bar"><i style="width:100%"></i></td><td class="gap">+0.026</td><td class="ll">0.626 vs 0.604</td></tr>
+            </tbody>
+          </table>
+          <p class="verdict"><span><b>Takeaway:</b> the more liquid a market, the harder it is to approach. Any edge lives in lower-volume markets.</span></p>
+          <p class="note">Out-of-sample validation: football 2025/26 against the Bet365 close and tennis 2025 against the Pinnacle close.</p>
+        </div>
+        <figcaption>Real results from the project, as reported in its README.</figcaption>
+      </figure>
+      <section class="p-sec reveal">
+        <h2>What it does</h2>
+        <div><ul class="points single"><li>Gathers 5 football leagues over 5 seasons (about 8,900 matches) and about 13,000 ATP matches, joining two sources with a 99.8% match rate.</li><li>Computes probabilities with its own models and compares them with the closing odds.</li><li>Logs odds for markets with no free history, such as corners and cards, to build its own.</li><li>A FastAPI and React dashboard to explore matches, backtests and calibration.</li></ul></div>
+      </section>
+      <section class="p-sec reveal">
+        <h2>How it is built</h2>
+        <div><ul class="points single"><li><b>No leakage.</b> Features are computed in a single chronological pass, and tests truncate and perturb the future to check the past does not change.</li><li><b>Temporal validation</b> on two separate held-out seasons, so no model is picked by luck.</li><li><b>Models:</b> logistic regression for 1X2, Dixon-Coles for goals and surface Elo with logistic regression for tennis.</li><li><b>Skeptical of wins:</b> a backtest with a +1.0% ROI turned out to be noise (+0.24 sigma) and was discarded.</li></ul></div>
+      </section>
+      <section class="p-sec reveal">
+        <h2>In numbers</h2>
+        <div><dl class="stats"><div><dt>smallest gap to the close</dt><dd>+0.009</dd></div><div><dt>matches analysed</dt><dd>~22,000</dd></div><div><dt>automated tests</dt><dd>86</dd></div></dl></div>
+      </section>
+      <section class="p-gallery" aria-label="Gallery">
+        <h2>Gallery</h2>
+        <div class="gallery"><figure class="reveal wide">
+            <div data-ui class="shot"><img src="/img/sports-value-detector/calibracion.webp?v=f49eb8ec" width="1189" height="390" decoding="async" alt="Reliability diagram of the 1X2 model against the diagonal and cases per bin"></div>
+            <figcaption>Calibration of the 1X2 model: its predictions come true at the expected rate.</figcaption>
+          </figure><figure class="reveal wide">
+            <div data-ui class="shot"><img src="/img/sports-value-detector/equity.webp?v=1c96670f" width="875" height="374" decoding="async" alt="Cumulative profit curve of a losing strategy"></div>
+            <figcaption>Backtest with opening odds and expected value above 5%: it loses, consistent with the conclusion.</figcaption>
+          </figure><figure class="reveal wide">
+            <div data-ui class="shot"><img src="/img/sports-value-detector/eda-futbol.webp?v=ac3f9d68" width="1289" height="390" decoding="async" alt="Goals per match distribution and average goals by league"></div>
+            <figcaption>Football exploratory analysis: goals per match and by league.</figcaption>
+          </figure><figure class="reveal wide">
+            <div data-ui class="shot"><img src="/img/sports-value-detector/eda-tenis.webp?v=f0206cd1" width="1289" height="390" decoding="async" alt="Tennis matches by surface and tournament series"></div>
+            <figcaption>Tennis exploratory analysis: matches by surface and series.</figcaption>
+          </figure></div>
+      </section>
+      <nav class="pager reveal" aria-label="More projects">
+        <a class="prev" href="/en/projects/vecinus/"><small>Previous</small><strong>VecinUs</strong></a>
+        <a class="next" href="/en/projects/recuerdamed/"><small>Next</small><strong>RecuerdaMed</strong></a>
+      </nav>
+    </div>
+  </div>
+  <section class="block contact" id="contact" aria-labelledby="h-contact">
+    <div class="wrap grid">
+      <div class="reveal">
+        <h2 id="h-contact">Let’s talk</h2>
+        <p class="intro">I’m from Seville and now live in Madrid. I like things to work end to end: designing the system, writing the code, deploying it and measuring whether it really holds up.</p>
+        <p class="intro">If you’re looking for someone for backend, data or applied AI work, write to me and I’ll get back to you.</p>
+      </div>
+      <ul class="channels reveal">
+        <li><a href="mailto:hola@joaquinborjaleon.com"><span class="ch-k">Email</span><span class="ch-v">hola@joaquinborjaleon.com</span></a></li>
+        <li><a href="https://www.linkedin.com/in/joaquinborjaleon" target="_blank" rel="noopener"><span class="ch-k">LinkedIn</span><span class="ch-v">in/joaquinborjaleon</span></a></li>
+        <li><a href="https://github.com/JoaquinBorjaLeon" target="_blank" rel="noopener"><span class="ch-k">GitHub</span><span class="ch-v">JoaquinBorjaLeon</span></a></li>
+        <li><a href="/cv/joaquin-borja-leon-cv-en.pdf?v=19974f0e" download><span class="ch-k">CV</span><span class="ch-v">Download PDF</span></a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap">
+    <p>© <span id="y">2026</span> Joaquín Borja León</p>
+    <p><a href="mailto:hola@joaquinborjaleon.com">hola@joaquinborjaleon.com</a></p>
+  </div>
+</footer>
+<script src="/assets/site.js?v=6e88e24b" defer></script>
+</body>
+</html>

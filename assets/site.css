@@ -1,3 +1,7 @@
+@font-face{font-family:"Gambarino";src:url("/assets/fonts/gambarino-400.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"General Sans";src:url("/assets/fonts/general-sans-400.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"General Sans";src:url("/assets/fonts/general-sans-500.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"General Sans";src:url("/assets/fonts/general-sans-600.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap}
 :root{
   --bg:#ffffff; --surface:#f3f4f6; --surface-2:#e7e9ee; --line:#e2e4ea;
   --ink:#1f2b4d; --ink-2:#36415f; --muted:#5d6478; --accent:#f7941d; --link:#2c4a86;
@@ -18,7 +22,6 @@ img{display:block;max-width:100%;height:auto}
 a{color:inherit;text-decoration-thickness:1px;text-underline-offset:.22em}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
 ::selection{background:#fde3c2;color:var(--ink)}
-[data-lang="en"] [lang="es"],[data-lang="es"] [lang="en"]{display:none !important}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
 .skip{position:absolute;left:-9999px;top:10px;z-index:30;background:var(--ink);color:#fff;padding:10px 14px;border-radius:8px}
 .skip:focus{left:12px}
@@ -38,7 +41,7 @@ b{font-weight:600;color:var(--ink)}
 @media (max-width:520px){.top .brand{display:none}}
 .top nav a{font-size:.875rem;font-weight:500;color:var(--ink-2);text-decoration:none;padding:8px 12px;border-radius:999px;transition:background-color .18s ease,color .18s ease}
 .top nav a:hover{background:var(--surface);color:var(--ink)}
-.lang{font:600 .8125rem/1 var(--text);letter-spacing:.04em;color:var(--ink);background:var(--surface);border:0;border-radius:999px;padding:10px 14px;cursor:pointer;transition:background-color .18s ease}
+.lang{display:inline-flex;align-items:center;font:600 .8125rem/1 var(--text);letter-spacing:.04em;color:var(--ink);background:var(--surface);border:0;border-radius:999px;padding:10px 14px;cursor:pointer;text-decoration:none;transition:background-color .18s ease}
 .lang:hover{background:var(--surface-2)}
 @media (max-width:760px){.top nav{display:none}.lang{margin-left:auto}}
 /* en las páginas de proyecto la miga ya lleva a Proyectos; en tablet se quita el menú para que quepa todo */
@@ -98,6 +101,8 @@ section.block:not(.contact)>.wrap::before{content:"";position:absolute;left:var(
 .card h3{font-size:clamp(1.75rem,1.5rem + 1vw,2.25rem);line-height:1.08}
 .card-sum{color:var(--ink-2);margin-top:8px;max-width:46ch}
 .card .p-meta{margin-top:12px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin-top:12px}
+.tags li{font-size:.8125rem;font-weight:500;line-height:1.3;color:var(--ink-2);background:var(--surface);border-radius:999px;padding:4px 11px}
 .go{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-weight:600;font-size:1rem}
 .card:hover h3{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.14em}
 .featured{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,4vw,56px);align-items:center}
@@ -274,3 +279,45 @@ footer a:hover{color:var(--link)}
 
 /* página 404: ocupa la ventana para que el pie quede abajo */
 .nf{min-height:calc(100svh - 140px)}
+
+/* vídeo en la cabecera de un proyecto */
+.shot video{display:block;width:100%;height:auto;background:#0b0f1a}
+
+/* vídeo de YouTube: se carga solo al pulsar */
+.p-video{margin-top:clamp(48px,6vw,80px);padding-top:clamp(32px,4vw,52px);border-top:1px solid var(--line)} /* taste-skill-ignore: section dividers requested by the owner */
+.p-video h2{font-size:clamp(1.75rem,1.45rem + 1.2vw,2.5rem);line-height:1.1;margin-bottom:clamp(20px,2.4vw,28px)}
+.yt{position:relative;max-width:920px;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#0b0f1a}
+.yt img{width:100%;height:100%;object-fit:cover;opacity:.55}
+.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt-play{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#fff;font-weight:600;text-decoration:none}
+.yt-icon{width:72px;height:72px;border-radius:50%;background:var(--accent);position:relative;transition:transform .2s var(--ease)}
+.yt-icon::after{content:"";position:absolute;left:29px;top:22px;border-style:solid;border-width:14px 0 14px 22px;border-color:transparent transparent transparent #fff}
+.yt-play:hover .yt-icon{transform:scale(1.06)}
+.p-video .cap{font-size:.875rem;color:var(--muted);margin-top:12px}
+
+/* visor para ampliar capturas */
+.js .stage img,.js .gallery img,.js .phone-gallery img{cursor:zoom-in}
+.lightbox{padding:0;border:0;background:transparent;max-width:96vw;max-height:94vh;margin:auto;overflow:visible}
+.lightbox::backdrop{background:rgba(10,14,24,.88)}
+.lightbox img{display:block;max-width:96vw;max-height:94vh;width:auto;height:auto;border-radius:10px;cursor:zoom-out}
+.lb-close{position:fixed;top:14px;right:16px;width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.16);color:#fff;font:400 28px/1 var(--text);cursor:pointer}
+.lb-close:hover{background:rgba(255,255,255,.28)}
+
+/* modo oscuro según el sistema */
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0f1524;--surface:#172034;--surface-2:#202b42;--line:#2a3550;--ink:#e9edf6;--ink-2:#c5ccdb;--muted:#9ba4b9;--link:#a9c1f5}
+  ::selection{background:#6b4a1c;color:#fff}
+  .top{background:rgba(15,21,36,.92)}
+  .top.scrolled{box-shadow:0 1px 0 rgba(255,255,255,.06),0 10px 26px -18px rgba(0,0,0,.7)} /* taste-skill-ignore: sticky bar */
+  .btn.primary{background:#e9edf6;color:#0f1524}
+  .btn.primary:hover{background:#ffffff}
+  .skip{color:#0f1524}
+  .channels a,.p-facts .stack li{background:var(--surface-2)}
+  .timeline>li>div::before{background:#34415f}
+  .timeline>li>div::after{background:var(--bg)}
+  .shot{background:#0b0f1a;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 18px 40px -24px rgba(0,0,0,.8)} /* taste-skill-ignore: screenshots of real interfaces */
+  .phone{background:#0b0f1a;box-shadow:0 0 0 1px rgba(255,255,255,.1),0 24px 48px -28px rgba(0,0,0,.8)} /* taste-skill-ignore: phone screenshots */
+  .chart{background:var(--surface-2)}
+  .pull,.verdict{background:#2a2316}
+  .media img{filter:brightness(.92)}
+}

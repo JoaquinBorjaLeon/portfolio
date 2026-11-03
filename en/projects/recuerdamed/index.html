@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RecuerdaMed, a project by Joaquín Borja León</title>
+<meta name="description" content="A medication app for patients and caregivers, with a public demo.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1524" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="RecuerdaMed, a project by Joaquín Borja León">
+<meta property="og:description" content="A medication app for patients and caregivers, with a public demo.">
+<meta property="og:url" content="https://joaquinborjaleon.com/en/projects/recuerdamed/">
+<meta property="og:image" content="https://joaquinborjaleon.com/img/covers/recuerdamed.webp">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://joaquinborjaleon.com/en/projects/recuerdamed/">
+<link rel="alternate" hreflang="es" href="https://joaquinborjaleon.com/proyectos/recuerdamed/">
+<link rel="alternate" hreflang="en" href="https://joaquinborjaleon.com/en/projects/recuerdamed/">
+<link rel="alternate" hreflang="x-default" href="https://joaquinborjaleon.com/proyectos/recuerdamed/">
+<link rel="icon" href="/favicon-32.png?v=f190a0a1" sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon.svg?v=8d760703" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=02a6b525">
+<link rel="preload" href="/assets/fonts/general-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/gambarino-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css?v=bd0e678c">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/en/">Joaquín Borja León</a>
+    <a class="crumb" href="/en/#projects"><span aria-hidden="true">←</span> Projects</a>
+    <nav aria-label="Sections">
+      <a href="/en/#projects">Projects</a>
+      <a href="/en/#experience">Experience</a>
+      <a href="/en/#education">Education</a>
+      <a href="/en/#contact">Contact</a>
+    </nav>
+    <a class="lang" href="/proyectos/recuerdamed/" hreflang="es" lang="es" data-switch="es" aria-label="Leer en español">ES</a>
+  </div>
+</header>
+<main id="main" class="project-page">
+  <section class="p-hero">
+    <div class="wrap">
+      <h1>RecuerdaMed</h1>
+      <p class="p-lead">A cross-platform app that helps older people on several medications not to miss a dose, and alerts caregivers and family when one is missed.</p>
+      <p class="p-meta"><span class="i">Bachelor’s thesis</span><span class="i">2026</span></p>
+      <div class="p-links"><a class="btn primary" href="https://recuerda-med.vercel.app" target="_blank" rel="noopener">Try the demo <span class="arr" aria-hidden="true">↗</span></a><a class="btn" href="https://github.com/JoaquinBorjaLeon/RecuerdaMed" target="_blank" rel="noopener">Code on GitHub <span class="arr" aria-hidden="true">↗</span></a></div>
+      <dl class="p-facts"><div><dt>Period</dt><dd>Sep 2025 to May 2026</dd></div><div><dt>Team</dt><dd>Individual project</dd></div><div><dt>Context</dt><dd>Bachelor’s thesis, University of Seville</dd></div><div><dt>My role</dt><dd>Everything, from user interviews to deployment</dd></div><div class="p-tech"><dt>Tech stack</dt><dd><ul class="stack" aria-label="Tech stack"><li>React Native</li><li>Expo</li><li>TypeScript</li><li>Firebase</li><li>Jest</li><li>GitHub Actions</li><li>Vercel</li></ul></dd></div></dl>
+    </div>
+  </section>
+  <div class="wrap">
+      <figure class="stage reveal">
+        <div class="phones n3"><div data-ui class="phone"><img src="/img/recuerdamed/medicaciones.webp?v=29bda0cf" width="780" height="1688" fetchpriority="high" decoding="async" alt="My medications screen with three medicines, their photos and quick actions"></div><div data-ui class="phone"><img src="/img/recuerdamed/tomas.webp?v=71d71fab" width="780" height="1688" fetchpriority="high" decoding="async" alt="My doses screen with expired, confirmed, pending and scheduled doses"></div><div data-ui class="phone"><img src="/img/recuerdamed/nueva-medicacion.webp?v=a14834dc" width="780" height="1688" fetchpriority="high" decoding="async" alt="New medication form with a reference photo"></div></div>
+        <figcaption>The patient app: medications, today’s doses and adding a medication with a photo. Test data.</figcaption>
+      </figure>
+      <section class="p-sec reveal">
+        <h2>What it does</h2>
+        <div><ul class="points single"><li>Each medication stores dose, form, notes and an optional reference photo, taken with the camera or from the gallery.</li><li>Daily, weekday or every-X-hours schedules. Each dose moves through scheduled, pending, confirmed or expired according to its time window.</li><li>Local reminder, warning and expiry notifications, plus push alerts to linked users.</li><li>Three roles: patients invite caregivers and family, decide who sees their doses and can revoke access at any time.</li><li>An adherence history of confirmed and expired doses.</li></ul></div>
+      </section>
+      <section class="p-sec reveal">
+        <h2>How it is built</h2>
+        <div><ul class="points single"><li>React Native with Expo and TypeScript: one codebase for Android, iOS and web.</li><li>Firebase with access control enforced in the database security rules and 11 composite indexes.</li><li>Business logic split by entity and pure functions covered by 18 unit tests.</li><li>Continuous integration with GitHub Actions and web deployment on Vercel.</li></ul></div>
+      </section>
+      <section class="p-sec reveal">
+        <h2>In numbers</h2>
+        <div><dl class="stats"><div><dt>roles with their own permissions</dt><dd>3</dd></div><div><dt>unit tests</dt><dd>18</dd></div><div><dt>codebase for mobile and web</dt><dd>1</dd></div></dl></div>
+      </section>
+      <section class="p-gallery" aria-label="Gallery">
+        <h2>Gallery</h2>
+        <div class="phone-gallery"><figure class="reveal">
+            <div data-ui class="phone"><img src="/img/recuerdamed/accesos.webp?v=1f116202" width="780" height="1688" decoding="async" alt="Screen to manage caregiver and family access"></div>
+            <figcaption>Patients control who sees their doses.</figcaption>
+          </figure><figure class="reveal">
+            <div data-ui class="phone"><img src="/img/recuerdamed/cuidador.webp?v=1f04de97" width="780" height="1688" decoding="async" alt="Caregiver panel with patients and invitations"></div>
+            <figcaption>Caregiver panel.</figcaption>
+          </figure><figure class="reveal">
+            <div data-ui class="phone"><img src="/img/recuerdamed/familiar.webp?v=209be843" width="780" height="1688" decoding="async" alt="Family panel for follow-up"></div>
+            <figcaption>Family panel.</figcaption>
+          </figure><figure class="reveal">
+            <div data-ui class="phone"><img src="/img/recuerdamed/login.webp?v=5351e632" width="780" height="1688" decoding="async" alt="RecuerdaMed sign-in screen"></div>
+            <figcaption>Signing in.</figcaption>
+          </figure></div>
+      </section>
+      <nav class="pager reveal" aria-label="More projects">
+        <a class="prev" href="/en/projects/sports-value-detector/"><small>Previous</small><strong>Sports Value Detector</strong></a>
+        <a class="next" href="/en/projects/analista-incansable/"><small>Next</small><strong>Analista incansable</strong></a>
+      </nav>
+    </div>
+  </div>
+  <section class="block contact" id="contact" aria-labelledby="h-contact">
+    <div class="wrap grid">
+      <div class="reveal">
+        <h2 id="h-contact">Let’s talk</h2>
+        <p class="intro">I’m from Seville and now live in Madrid. I like things to work end to end: designing the system, writing the code, deploying it and measuring whether it really holds up.</p>
+        <p class="intro">If you’re looking for someone for backend, data or applied AI work, write to me and I’ll get back to you.</p>
+      </div>
+      <ul class="channels reveal">
+        <li><a href="mailto:hola@joaquinborjaleon.com"><span class="ch-k">Email</span><span class="ch-v">hola@joaquinborjaleon.com</span></a></li>
+        <li><a href="https://www.linkedin.com/in/joaquinborjaleon" target="_blank" rel="noopener"><span class="ch-k">LinkedIn</span><span class="ch-v">in/joaquinborjaleon</span></a></li>
+        <li><a href="https://github.com/JoaquinBorjaLeon" target="_blank" rel="noopener"><span class="ch-k">GitHub</span><span class="ch-v">JoaquinBorjaLeon</span></a></li>
+        <li><a href="/cv/joaquin-borja-leon-cv-en.pdf?v=19974f0e" download><span class="ch-k">CV</span><span class="ch-v">Download PDF</span></a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap">
+    <p>© <span id="y">2026</span> Joaquín Borja León</p>
+    <p><a href="mailto:hola@joaquinborjaleon.com">hola@joaquinborjaleon.com</a></p>
+  </div>
+</footer>
+<script src="/assets/site.js?v=6e88e24b" defer></script>
+</body>
+</html>

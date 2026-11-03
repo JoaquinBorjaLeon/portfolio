@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analista incansable, a project by Joaquín Borja León</title>
+<meta name="description" content="A fundamental screener that scores companies every day and alerts on Telegram.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1524" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Analista incansable, a project by Joaquín Borja León">
+<meta property="og:description" content="A fundamental screener that scores companies every day and alerts on Telegram.">
+<meta property="og:url" content="https://joaquinborjaleon.com/en/projects/analista-incansable/">
+<meta property="og:image" content="https://joaquinborjaleon.com/img/covers/analista-incansable.webp">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://joaquinborjaleon.com/en/projects/analista-incansable/">
+<link rel="alternate" hreflang="es" href="https://joaquinborjaleon.com/proyectos/analista-incansable/">
+<link rel="alternate" hreflang="en" href="https://joaquinborjaleon.com/en/projects/analista-incansable/">
+<link rel="alternate" hreflang="x-default" href="https://joaquinborjaleon.com/proyectos/analista-incansable/">
+<link rel="icon" href="/favicon-32.png?v=f190a0a1" sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon.svg?v=8d760703" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=02a6b525">
+<link rel="preload" href="/assets/fonts/general-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/gambarino-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css?v=bd0e678c">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/en/">Joaquín Borja León</a>
+    <a class="crumb" href="/en/#projects"><span aria-hidden="true">←</span> Projects</a>
+    <nav aria-label="Sections">
+      <a href="/en/#projects">Projects</a>
+      <a href="/en/#experience">Experience</a>
+      <a href="/en/#education">Education</a>
+      <a href="/en/#contact">Contact</a>
+    </nav>
+    <a class="lang" href="/proyectos/analista-incansable/" hreflang="es" lang="es" data-switch="es" aria-label="Leer en español">ES</a>
+  </div>
+</header>
+<main id="main" class="project-page">
+  <section class="p-hero">
+    <div class="wrap">
+      <h1>Analista incansable</h1>
+      <p class="p-lead">Every day it watches a list of stocks, scores each company on its fundamentals and flags anything worth a second look. It analyses and watches; it never predicts or trades.</p>
+      <p class="p-meta"><span class="i">Personal project</span><span class="i">2026</span></p>
+      <div class="p-links"><a class="btn primary" href="https://github.com/JoaquinBorjaLeon/analista-incansable" target="_blank" rel="noopener">Code on GitHub <span class="arr" aria-hidden="true">↗</span></a></div>
+      <dl class="p-facts"><div><dt>Period</dt><dd>2026</dd></div><div><dt>Team</dt><dd>Personal project</dd></div><div><dt>Context</dt><dd>Runs on my Ubuntu server, inside a private network</dd></div><div><dt>My role</dt><dd>The whole project</dd></div><div class="p-tech"><dt>Tech stack</dt><dd><ul class="stack" aria-label="Tech stack"><li>Python</li><li>pandas</li><li>yfinance</li><li>SQLite</li><li>FastAPI</li><li>Jinja2</li><li>n8n</li><li>Telegram</li></ul></dd></div></dl>
+    </div>
+  </section>
+  <div class="wrap">
+      <figure class="stage reveal">
+        <div class="phones n2"><div data-ui class="phone"><img src="/img/analista-incansable/watchlist.webp?v=c8e71a75" width="780" height="1688" fetchpriority="high" decoding="async" alt="Watchlist sorted by distance to the entry zone, with each company’s score"></div><div data-ui class="phone"><img src="/img/analista-incansable/detalle.webp?v=6c2b6aaa" width="780" height="1688" fetchpriority="high" decoding="async" alt="Company detail with price, zone, RSI, moving averages and score breakdown"></div></div>
+        <figcaption>Read-only web panel designed for the phone, with synthetic demo data.</figcaption>
+      </figure>
+      <section class="p-sec reveal">
+        <h2>What it does</h2>
+        <div><ul class="points single"><li>Downloads daily prices and annual statements into SQLite. Missing data is shown as “n/a”: it is never invented.</li><li>Scores each company from 0 to 100 on eight criteria and lists red flags separately.</li><li>Alerts when a stock enters its zone or gets within 3%, crosses the 200-day average or gets a new red flag.</li><li>Every zone alert includes the latest headlines and the manual note for the stock.</li></ul></div>
+      </section>
+      <section class="p-sec reveal">
+        <h2>How it is built</h2>
+        <div><ul class="points single"><li>Weights and thresholds in YAML, to tune the method without touching code.</li><li>An anti-spam table stops the same alert repeating for 5 days.</li><li>JSON output for an n8n workflow, or straight to the Telegram API.</li><li>A FastAPI panel with no write endpoints and a demo mode with synthetic data.</li></ul></div>
+      </section>
+      <section class="p-sec reveal">
+        <h2>The score</h2>
+        <div><div data-ui class="chart score">
+          <table>
+            <thead><tr><th scope="col">Criterion</th><th scope="col">Green</th><th scope="col">Amber</th><th scope="col" class="ll">Weight</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Revenue growth</th><td>&gt; 20 %</td><td>10 to 20%</td><td class="ll">20</td></tr>
+              <tr><th scope="row">Gross margin</th><td>&gt; 50 %</td><td>35 to 50%</td><td class="ll">10</td></tr>
+              <tr><th scope="row">Free cash flow</th><td>positive and growing</td><td>positive</td><td class="ll">20</td></tr>
+              <tr><th scope="row">FCF margin</th><td>&gt; 10 %</td><td>5 to 10%</td><td class="ll">10</td></tr>
+              <tr><th scope="row">Net debt / EBITDA</th><td>&lt; 1x or net cash</td><td>1 to 3x</td><td class="ll">10</td></tr>
+              <tr><th scope="row">ROE</th><td>&gt; 15 %</td><td>8 to 15%</td><td class="ll">10</td></tr>
+              <tr><th scope="row">Annual dilution</th><td>&lt; 2 %</td><td>2 to 5%</td><td class="ll">10</td></tr>
+              <tr><th scope="row">Earnings keep up</th><td>grow with revenue</td><td>positive but slower</td><td class="ll">10</td></tr>
+            </tbody>
+          </table>
+          <p class="note">Green earns the full weight, amber half, and red or missing data zero. Red flags are listed separately and never averaged away.</p>
+        </div></div>
+      </section>
+      <section class="p-gallery" aria-label="Gallery">
+        <h2>Gallery</h2>
+        <div class="gallery"><figure class="reveal wide">
+            <div data-ui class="shot"><img src="/img/analista-incansable/informe.webp?v=06931aed" width="2272" height="416" decoding="async" alt="Daily report output in the terminal with zone, distance, RSI and moving averages for each stock"></div>
+            <figcaption>Daily report in the terminal, with synthetic data.</figcaption>
+          </figure><figure class="reveal">
+            <div data-ui class="shot"><img src="/img/analista-incansable/puntuacion.webp?v=0d54b0d0" width="1370" height="992" decoding="async" alt="Score breakdown of a fictional company with its red flags"></div>
+            <figcaption>Score breakdown and red flags of a fictional company.</figcaption>
+          </figure><figure class="reveal">
+            <div data-ui class="shot"><img src="/img/analista-incansable/alertas.webp?v=269eaee6" width="1334" height="608" decoding="async" alt="Alerts generated by the system with the manual note for each stock"></div>
+            <figcaption>Zone alerts ready to send on Telegram.</figcaption>
+          </figure></div>
+      </section>
+      <nav class="pager reveal" aria-label="More projects">
+        <a class="prev" href="/en/projects/recuerdamed/"><small>Previous</small><strong>RecuerdaMed</strong></a>
+        <a class="next" href="/en/projects/reservas-peluqueria/"><small>Next</small><strong>Hair salon booking app</strong></a>
+      </nav>
+    </div>
+  </div>
+  <section class="block contact" id="contact" aria-labelledby="h-contact">
+    <div class="wrap grid">
+      <div class="reveal">
+        <h2 id="h-contact">Let’s talk</h2>
+        <p class="intro">I’m from Seville and now live in Madrid. I like things to work end to end: designing the system, writing the code, deploying it and measuring whether it really holds up.</p>
+        <p class="intro">If you’re looking for someone for backend, data or applied AI work, write to me and I’ll get back to you.</p>
+      </div>
+      <ul class="channels reveal">
+        <li><a href="mailto:hola@joaquinborjaleon.com"><span class="ch-k">Email</span><span class="ch-v">hola@joaquinborjaleon.com</span></a></li>
+        <li><a href="https://www.linkedin.com/in/joaquinborjaleon" target="_blank" rel="noopener"><span class="ch-k">LinkedIn</span><span class="ch-v">in/joaquinborjaleon</span></a></li>
+        <li><a href="https://github.com/JoaquinBorjaLeon" target="_blank" rel="noopener"><span class="ch-k">GitHub</span><span class="ch-v">JoaquinBorjaLeon</span></a></li>
+        <li><a href="/cv/joaquin-borja-leon-cv-en.pdf?v=19974f0e" download><span class="ch-k">CV</span><span class="ch-v">Download PDF</span></a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap">
+    <p>© <span id="y">2026</span> Joaquín Borja León</p>
+    <p><a href="mailto:hola@joaquinborjaleon.com">hola@joaquinborjaleon.com</a></p>
+  </div>
+</footer>
+<script src="/assets/site.js?v=6e88e24b" defer></script>
+</body>
+</html>

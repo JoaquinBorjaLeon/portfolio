@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orderflow Terminal, a project by Joaquín Borja León</title>
+<meta name="description" content="A market terminal with options flow, gamma exposure and SEC fundamentals, on real, free data.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1524" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Orderflow Terminal, a project by Joaquín Borja León">
+<meta property="og:description" content="A market terminal with options flow, gamma exposure and SEC fundamentals, on real, free data.">
+<meta property="og:url" content="https://joaquinborjaleon.com/en/projects/orderflow-terminal/">
+<meta property="og:image" content="https://joaquinborjaleon.com/img/covers/orderflow-terminal.webp">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://joaquinborjaleon.com/en/projects/orderflow-terminal/">
+<link rel="alternate" hreflang="es" href="https://joaquinborjaleon.com/proyectos/orderflow-terminal/">
+<link rel="alternate" hreflang="en" href="https://joaquinborjaleon.com/en/projects/orderflow-terminal/">
+<link rel="alternate" hreflang="x-default" href="https://joaquinborjaleon.com/proyectos/orderflow-terminal/">
+<link rel="icon" href="/favicon-32.png?v=f190a0a1" sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon.svg?v=8d760703" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=02a6b525">
+<link rel="preload" href="/assets/fonts/general-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/gambarino-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css?v=bd0e678c">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/en/">Joaquín Borja León</a>
+    <a class="crumb" href="/en/#projects"><span aria-hidden="true">←</span> Projects</a>
+    <nav aria-label="Sections">
+      <a href="/en/#projects">Projects</a>
+      <a href="/en/#experience">Experience</a>
+      <a href="/en/#education">Education</a>
+      <a href="/en/#contact">Contact</a>
+    </nav>
+    <a class="lang" href="/proyectos/orderflow-terminal/" hreflang="es" lang="es" data-switch="es" aria-label="Leer en español">ES</a>
+  </div>
+</header>
+<main id="main" class="project-page">
+  <section class="p-hero">
+    <div class="wrap">
+      <h1>Orderflow Terminal</h1>
+      <p class="p-lead">A personal terminal to study the options market and company financials in one place: flow and gamma exposure from the full chain, price structure, fundamentals read straight from the SEC and an AI summary whose every number is checked against the data.</p>
+      <p class="p-meta"><span class="i">Personal project</span><span class="i">2026</span></p>
+      <div class="p-links"><a class="btn primary" href="https://github.com/JoaquinBorjaLeon/orderflow-terminal" target="_blank" rel="noopener">Code on GitHub <span class="arr" aria-hidden="true">↗</span></a></div>
+      <dl class="p-facts"><div><dt>Period</dt><dd>Sep 2026</dd></div><div><dt>Team</dt><dd>Personal project</dd></div><div><dt>Context</dt><dd>Personal use, locally and on my server, inside a private network</dd></div><div><dt>My role</dt><dd>The whole project</dd></div><div class="p-tech"><dt>Tech stack</dt><dd><ul class="stack" aria-label="Tech stack"><li>TypeScript</li><li>Next.js</li><li>React</li><li>Fastify</li><li>uWebSockets.js</li><li>Zod</li><li>TanStack Query</li><li>lightweight-charts</li><li>Tailwind CSS</li><li>Vitest</li><li>Playwright</li><li>Docker</li></ul></dd></div></dl>
+    </div>
+  </section>
+  <div class="wrap">
+      <figure class="stage reveal">
+        <div data-ui class="shot solo"><video src="/media/orderflow.mp4?v=3d49f81a" poster="/img/orderflow-terminal/flujo.webp?v=56e7907a" width="1440" height="900" autoplay muted loop playsinline preload="metadata" aria-label="Video of the Flow tab with NVDA: price, structure and gamma views, and the side panel with heatmap, gamma profile and flow tape"></video></div>
+        <figcaption>The Flow tab with real data: the CBOE options chain, delayed about 15 minutes, and Yahoo Finance prices.</figcaption>
+      </figure>
+      <section class="p-sec reveal">
+        <h2>What it does</h2>
+        <div><ul class="points single"><li><b>Flow:</b> the stock chart with gamma levels (call wall, put wall and zero gamma), supply and demand zones, structure breaks and Fibonacci, next to the options chain and the net call and put premium.</li><li><b>Gamma exposure</b> by strike and expiry, with a heatmap that compares each level with the day’s first snapshot.</li><li><b>Quarterly fundamentals</b> from the SEC, a bear, base and bull valuation from a DCF and the company’s own historical multiples, and an earnings simulator.</li><li><b>On-demand AI analysis</b> that sums up gamma, structure, technicals and consensus, and checks that every number in the text exists in the app’s data.</li><li><b>Market overview:</b> sector map, top movers, market regime and SEC catalysts.</li></ul></div>
+      </section>
+      <section class="p-sec reveal">
+        <h2>How it is built</h2>
+        <div><ul class="points single"><li>A TypeScript pnpm monorepo: a Fastify and uWebSockets.js gateway and a Next.js 15 and React 19 web app that share types and Zod schemas.</li><li>Provider-agnostic ingestion: free CBOE data by default, or Interactive Brokers and Schwab for real time, watching for connections that stop receiving data and reconnecting automatically.</li><li>Under load, quotes are dropped before trades, and charts render on canvas at 60 fps by batching ticks per frame.</li><li>No made-up data: if a source fails, the UI says so; a missing value is shown as a dash, never as zero, and every figure keeps its provenance.</li><li>Deployed with Docker on my server and reachable only from my private Tailscale network.</li></ul></div>
+      </section>
+      <section class="p-sec reveal">
+        <h2>In numbers</h2>
+        <div><dl class="stats"><div><dt>automated tests</dt><dd>356</dd></div><div><dt>Playwright UI journeys</dt><dd>10</dd></div><div><dt>spent on data</dt><dd>0 €</dd></div></dl></div>
+      </section>
+      <section class="p-gallery" aria-label="Gallery">
+        <h2>Gallery</h2>
+        <div class="gallery"><figure class="reveal wide">
+            <div data-ui class="shot"><img src="/img/orderflow-terminal/analisis-ia.webp?v=f50158cf" width="1400" height="875" decoding="async" alt="AI analysis of NVDA with situation, key levels, scenarios and risks, next to gamma exposure by strike"></div>
+            <figcaption>On-demand AI analysis. At the bottom, the check that every number in the text exists in the app’s data.</figcaption>
+          </figure><figure class="reveal">
+            <div data-ui class="shot"><img src="/img/orderflow-terminal/fundamentales.webp?v=72be1d32" width="1400" height="875" decoding="async" alt="NVIDIA quarterly table with revenue, margins, EBITDA and cash flow, next to the earnings simulator"></div>
+            <figcaption>Quarters from the SEC. Q4 is the full year minus Q1 to Q3, because the SEC does not publish it separately.</figcaption>
+          </figure><figure class="reveal">
+            <div data-ui class="shot"><img src="/img/orderflow-terminal/macro.webp?v=90a9f02c" width="1400" height="875" decoding="async" alt="Sector map with the eleven sectors, top gainers and losers and market regime"></div>
+            <figcaption>Market overview: sectors, the day’s movers and market regime.</figcaption>
+          </figure><figure class="reveal wide">
+            <div data-ui class="shot"><img src="/img/orderflow-terminal/valoracion.webp?v=4a60e2d3" width="1400" height="464" decoding="async" alt="NVDA valuation in bear, base and bull scenarios, with the analyst consensus"></div>
+            <figcaption>Valuation in three scenarios from a DCF and the company’s own historical multiples, next to the analyst consensus.</figcaption>
+          </figure></div>
+      </section>
+      <section class="p-gallery" aria-label="On the phone">
+        <h2>On the phone</h2>
+        <div class="phone-gallery"><figure class="reveal">
+            <div data-ui class="phone"><img src="/img/orderflow-terminal/movil-inicio.webp?v=7c22b2de" width="780" height="1688" decoding="async" alt="Flow view on the phone with the tabs, the search box and the NVDA price"></div>
+            <figcaption>The same tabs on the phone.</figcaption>
+          </figure><figure class="reveal">
+            <div data-ui class="phone"><img src="/img/orderflow-terminal/movil-grafico.webp?v=a1d5a163" width="780" height="1688" decoding="async" alt="NVDA intraday chart and options chain on the phone"></div>
+            <figcaption>Chart and options chain.</figcaption>
+          </figure><figure class="reveal">
+            <div data-ui class="phone"><img src="/img/orderflow-terminal/movil-fundamentales.webp?v=1776bcc1" width="780" height="1688" decoding="async" alt="NVIDIA quarterly table on the phone"></div>
+            <figcaption>Fundamentals with horizontal scrolling.</figcaption>
+          </figure><figure class="reveal">
+            <div data-ui class="phone"><img src="/img/orderflow-terminal/movil-analisis.webp?v=3674fc9b" width="780" height="1688" decoding="async" alt="Technical signal, analyst consensus and volatility ranges on the phone"></div>
+            <figcaption>Signals and implied volatility ranges.</figcaption>
+          </figure></div>
+      </section>
+      <nav class="pager reveal" aria-label="More projects">
+        <a class="prev" href="/en/projects/poke-hub/"><small>Previous</small><strong>Poké-Hub</strong></a>
+        <a class="next" href="/en/projects/docuchat/"><small>Next</small><strong>DocuChat</strong></a>
+      </nav>
+    </div>
+  </div>
+  <section class="block contact" id="contact" aria-labelledby="h-contact">
+    <div class="wrap grid">
+      <div class="reveal">
+        <h2 id="h-contact">Let’s talk</h2>
+        <p class="intro">I’m from Seville and now live in Madrid. I like things to work end to end: designing the system, writing the code, deploying it and measuring whether it really holds up.</p>
+        <p class="intro">If you’re looking for someone for backend, data or applied AI work, write to me and I’ll get back to you.</p>
+      </div>
+      <ul class="channels reveal">
+        <li><a href="mailto:hola@joaquinborjaleon.com"><span class="ch-k">Email</span><span class="ch-v">hola@joaquinborjaleon.com</span></a></li>
+        <li><a href="https://www.linkedin.com/in/joaquinborjaleon" target="_blank" rel="noopener"><span class="ch-k">LinkedIn</span><span class="ch-v">in/joaquinborjaleon</span></a></li>
+        <li><a href="https://github.com/JoaquinBorjaLeon" target="_blank" rel="noopener"><span class="ch-k">GitHub</span><span class="ch-v">JoaquinBorjaLeon</span></a></li>
+        <li><a href="/cv/joaquin-borja-leon-cv-en.pdf?v=19974f0e" download><span class="ch-k">CV</span><span class="ch-v">Download PDF</span></a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap">
+    <p>© <span id="y">2026</span> Joaquín Borja León</p>
+    <p><a href="mailto:hola@joaquinborjaleon.com">hola@joaquinborjaleon.com</a></p>
+  </div>
+</footer>
+<script src="/assets/site.js?v=6e88e24b" defer></script>
+</body>
+</html>

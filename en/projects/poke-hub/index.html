@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Poké-Hub, a project by Joaquín Borja León</title>
+<meta name="description" content="A data model repository. I built the public profile with each user’s datasets and almost half of the tests.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1524" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Poké-Hub, a project by Joaquín Borja León">
+<meta property="og:description" content="A data model repository. I built the public profile with each user’s datasets and almost half of the tests.">
+<meta property="og:url" content="https://joaquinborjaleon.com/en/projects/poke-hub/">
+<meta property="og:image" content="https://joaquinborjaleon.com/img/covers/poke-hub.webp">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://joaquinborjaleon.com/en/projects/poke-hub/">
+<link rel="alternate" hreflang="es" href="https://joaquinborjaleon.com/proyectos/poke-hub/">
+<link rel="alternate" hreflang="en" href="https://joaquinborjaleon.com/en/projects/poke-hub/">
+<link rel="alternate" hreflang="x-default" href="https://joaquinborjaleon.com/proyectos/poke-hub/">
+<link rel="icon" href="/favicon-32.png?v=f190a0a1" sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon.svg?v=8d760703" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=02a6b525">
+<link rel="preload" href="/assets/fonts/general-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/gambarino-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css?v=bd0e678c">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/en/">Joaquín Borja León</a>
+    <a class="crumb" href="/en/#projects"><span aria-hidden="true">←</span> Projects</a>
+    <nav aria-label="Sections">
+      <a href="/en/#projects">Projects</a>
+      <a href="/en/#experience">Experience</a>
+      <a href="/en/#education">Education</a>
+      <a href="/en/#contact">Contact</a>
+    </nav>
+    <a class="lang" href="/proyectos/poke-hub/" hreflang="es" lang="es" data-switch="es" aria-label="Leer en español">ES</a>
+  </div>
+</header>
+<main id="main" class="project-page">
+  <section class="p-hero">
+    <div class="wrap">
+      <h1>Poké-Hub</h1>
+      <p class="p-lead">A platform to publish and download model datasets, built on uvlhub, where the process mattered most: branching, code review, continuous integration and deployment.</p>
+      <p class="p-meta"><span class="i">Team project</span><span class="i">12 people</span><span class="i">2025</span></p>
+      <div class="p-links"><a class="btn primary" href="https://github.com/poke-hub/poke-hub" target="_blank" rel="noopener">Code on GitHub <span class="arr" aria-hidden="true">↗</span></a></div>
+      <dl class="p-facts"><div><dt>Period</dt><dd>2025</dd></div><div><dt>Team</dt><dd>12 people, two teams of 6</dd></div><div><dt>Context</dt><dd>Configuration Evolution and Management course</dd></div><div><dt>My role</dt><dd>User profile, tests and deployment guide</dd></div><div class="p-tech"><dt>Tech stack</dt><dd><ul class="stack" aria-label="Tech stack"><li>Python</li><li>Flask</li><li>SQLAlchemy</li><li>Docker</li><li>Vagrant</li><li>GitHub Actions</li><li>Render</li></ul></dd></div></dl>
+    </div>
+  </section>
+  <div class="wrap">
+      <figure class="stage reveal">
+        <div data-ui class="shot solo"><img src="/img/poke-hub/perfil-publico.webp?v=84533197" width="1440" height="700" fetchpriority="high" decoding="async" alt="Public profile of a Poké-Hub user with their details and the datasets they uploaded"></div>
+        <figcaption>Public user profile with their datasets, the part I built. App run locally with test data and without its themed decoration.</figcaption>
+      </figure>
+      <section class="p-sec reveal">
+        <h2>My part</h2>
+        <div><ul class="points single"><li><b>The public profile of every user</b>, with their details and the datasets they uploaded, paginated.</li><li>On every dataset page, the uploader’s name links to that profile.</li><li><b>43 of the team’s 98 tests</b>, unit and integration, covering profiles, models and downloading your own dataset.</li><li>The deployment and usage guide with Vagrant.</li></ul></div>
+      </section>
+      <section class="p-sec reveal">
+        <h2>In numbers</h2>
+        <div><dl class="stats"><div><dt>of the team’s 98 tests</dt><dd>43</dd></div><div><dt>people on my team</dt><dd>6</dd></div><div><dt>people on the project</dt><dd>12</dd></div></dl></div>
+      </section>
+      <section class="p-sec reveal">
+        <h2>How we worked</h2>
+        <div><ul class="points single"><li>Tasks in GitHub Projects with an owner and a status.</li><li>Our own branching flow with peer code review.</li><li>GitHub Actions for lint, tests and deployment on Render.</li></ul></div>
+      </section>
+      <section class="p-gallery" aria-label="Gallery">
+        <h2>Gallery</h2>
+        <div class="gallery"><figure class="reveal wide">
+            <div data-ui class="shot"><img src="/img/poke-hub/dataset.webp?v=a9da499e" width="1440" height="900" decoding="async" alt="Dataset page with its details, the linked uploader and its models"></div>
+            <figcaption>Dataset page: the uploader links to their profile.</figcaption>
+          </figure><figure class="reveal">
+            <div data-ui class="shot"><img src="/img/poke-hub/inicio.webp?v=2f375d2a" width="1440" height="900" decoding="async" alt="Poké-Hub home with the latest datasets and statistics"></div>
+            <figcaption>Home page with the latest datasets.</figcaption>
+          </figure><figure class="reveal">
+            <div data-ui class="shot"><img src="/img/poke-hub/mis-datasets.webp?v=631c4470" width="1440" height="620" decoding="async" alt="The user’s dataset list with view and download options"></div>
+            <figcaption>The user’s datasets.</figcaption>
+          </figure><figure class="reveal">
+            <div data-ui class="shot"><img src="/img/poke-hub/tablero.webp?v=9b118419" width="1400" height="905" decoding="async" alt="GitHub Projects board with the team’s tasks by status"></div>
+            <figcaption>The team board with everyone’s tasks.</figcaption>
+          </figure><figure class="reveal">
+            <div data-ui class="shot"><img src="/img/poke-hub/actions.webp?v=869da629" width="1600" height="608" decoding="async" alt="List of GitHub Actions runs in the repository"></div>
+            <figcaption>Continuous integration runs.</figcaption>
+          </figure></div>
+      </section>
+      <nav class="pager reveal" aria-label="More projects">
+        <a class="prev" href="/en/projects/reservas-peluqueria/"><small>Previous</small><strong>Hair salon booking app</strong></a>
+        <a class="next" href="/en/projects/orderflow-terminal/"><small>Next</small><strong>Orderflow Terminal</strong></a>
+      </nav>
+    </div>
+  </div>
+  <section class="block contact" id="contact" aria-labelledby="h-contact">
+    <div class="wrap grid">
+      <div class="reveal">
+        <h2 id="h-contact">Let’s talk</h2>
+        <p class="intro">I’m from Seville and now live in Madrid. I like things to work end to end: designing the system, writing the code, deploying it and measuring whether it really holds up.</p>
+        <p class="intro">If you’re looking for someone for backend, data or applied AI work, write to me and I’ll get back to you.</p>
+      </div>
+      <ul class="channels reveal">
+        <li><a href="mailto:hola@joaquinborjaleon.com"><span class="ch-k">Email</span><span class="ch-v">hola@joaquinborjaleon.com</span></a></li>
+        <li><a href="https://www.linkedin.com/in/joaquinborjaleon" target="_blank" rel="noopener"><span class="ch-k">LinkedIn</span><span class="ch-v">in/joaquinborjaleon</span></a></li>
+        <li><a href="https://github.com/JoaquinBorjaLeon" target="_blank" rel="noopener"><span class="ch-k">GitHub</span><span class="ch-v">JoaquinBorjaLeon</span></a></li>
+        <li><a href="/cv/joaquin-borja-leon-cv-en.pdf?v=19974f0e" download><span class="ch-k">CV</span><span class="ch-v">Download PDF</span></a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap">
+    <p>© <span id="y">2026</span> Joaquín Borja León</p>
+    <p><a href="mailto:hola@joaquinborjaleon.com">hola@joaquinborjaleon.com</a></p>
+  </div>
+</footer>
+<script src="/assets/site.js?v=6e88e24b" defer></script>
+</body>
+</html>

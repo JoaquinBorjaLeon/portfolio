@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DocuChat, a project by Joaquín Borja León</title>
+<meta name="description" content="A RAG assistant that answers from your PDFs and cites the source of every answer.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1524" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="DocuChat, a project by Joaquín Borja León">
+<meta property="og:description" content="A RAG assistant that answers from your PDFs and cites the source of every answer.">
+<meta property="og:url" content="https://joaquinborjaleon.com/en/projects/docuchat/">
+<meta property="og:image" content="https://joaquinborjaleon.com/img/covers/docuchat.webp">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://joaquinborjaleon.com/en/projects/docuchat/">
+<link rel="alternate" hreflang="es" href="https://joaquinborjaleon.com/proyectos/docuchat/">
+<link rel="alternate" hreflang="en" href="https://joaquinborjaleon.com/en/projects/docuchat/">
+<link rel="alternate" hreflang="x-default" href="https://joaquinborjaleon.com/proyectos/docuchat/">
+<link rel="icon" href="/favicon-32.png?v=f190a0a1" sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon.svg?v=8d760703" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=02a6b525">
+<link rel="preload" href="/assets/fonts/general-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/gambarino-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css?v=bd0e678c">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/en/">Joaquín Borja León</a>
+    <a class="crumb" href="/en/#projects"><span aria-hidden="true">←</span> Projects</a>
+    <nav aria-label="Sections">
+      <a href="/en/#projects">Projects</a>
+      <a href="/en/#experience">Experience</a>
+      <a href="/en/#education">Education</a>
+      <a href="/en/#contact">Contact</a>
+    </nav>
+    <a class="lang" href="/proyectos/docuchat/" hreflang="es" lang="es" data-switch="es" aria-label="Leer en español">ES</a>
+  </div>
+</header>
+<main id="main" class="project-page">
+  <section class="p-hero">
+    <div class="wrap">
+      <h1>DocuChat</h1>
+      <p class="p-lead">An assistant that answers questions about your PDFs with retrieval-augmented generation (RAG) and shows which document each answer comes from. If something is not in your documents, it says so.</p>
+      <p class="p-meta"><span class="i">Personal project</span><span class="i">2026</span></p>
+      <div class="p-links"><a class="btn primary" href="https://github.com/JoaquinBorjaLeon/docuchat" target="_blank" rel="noopener">Code on GitHub <span class="arr" aria-hidden="true">↗</span></a></div>
+      <dl class="p-facts"><div><dt>Period</dt><dd>2026</dd></div><div><dt>Team</dt><dd>Personal project</dd></div><div><dt>Context</dt><dd>Own project, deployed with Docker Compose</dd></div><div><dt>My role</dt><dd>Everything: backend, search, agent, evaluation and interface</dd></div><div class="p-tech"><dt>Tech stack</dt><dd><ul class="stack" aria-label="Tech stack"><li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>pgvector</li><li>Ollama</li><li>Gemini</li><li>React</li><li>Docker Compose</li></ul></dd></div></dl>
+    </div>
+  </section>
+  <div class="wrap">
+      <figure class="stage reveal">
+        <div data-ui class="shot solo"><img src="/img/docuchat/interfaz.webp?v=6b0b62f2" width="1120" height="866" fetchpriority="high" decoding="async" alt="DocuChat answering what the PMBOK is, with the source documents listed below"></div>
+        <figcaption>The interface answers questions about project management notes and lists the sources.</figcaption>
+      </figure>
+      <section class="p-sec reveal">
+        <h2>What it does</h2>
+        <div><ul class="points single"><li>Splits your PDFs, embeds them with nomic-embed-text and stores them in PostgreSQL with pgvector.</li><li>You ask in plain language and every answer cites its source documents.</li><li>It runs fully locally with Ollama or with Gemini in the cloud, switched by an environment variable.</li></ul></div>
+      </section>
+      <section class="p-sec reveal">
+        <h2>How it is built</h2>
+        <div><ul class="points single"><li><b>Hybrid search.</b> Vector search failed on short questions like “What is the PMBOK?”: the right passage did not even make the top-k. Combining it with PostgreSQL full-text search and fusing both with Reciprocal Rank Fusion moved that passage to first place.</li><li><b>Tool-calling agent.</b> For each question the model decides whether to search the documents or check the date. I compared Ollama and Gemini: both choose well; Ollama is free and private, Gemini polishes answers a little more.</li><li><b>Observability.</b> Every query stores provider, tools, retrieved passages and latency, to measure instead of guess.</li></ul></div>
+      </section>
+      <section class="p-sec reveal">
+        <h2>Results</h2>
+        <div><dl class="stats"><div><dt>recall@8: the right source shows up in the top 8 passages</dt><dd>60 %</dd></div><div><dt>questions in the evaluation set</dt><dd>15</dd></div><div><dt>model providers: local Ollama and Gemini</dt><dd>2</dd></div></dl><p class="stats-note">A first version of the evaluation gave 93%, but it counted generic passages that did not answer the question as hits. Once corrected, the real figure is 60%, with failures concentrated in broad conceptual questions.</p></div>
+      </section>
+      <section class="p-gallery" aria-label="Gallery">
+        <h2>Gallery</h2>
+        <div class="gallery"><figure class="reveal wide">
+            <div data-ui class="shot"><img src="/img/docuchat/evaluacion.webp?v=f9e9df05" width="1400" height="709" decoding="async" alt="Terminal with the recall@8 evaluation over 15 questions"></div>
+            <figcaption>Evaluation: 9 out of 15 questions retrieve their source (60% recall@8).</figcaption>
+          </figure><figure class="reveal wide">
+            <div data-ui class="shot"><img src="/img/docuchat/agente.webp?v=32ef39bb" width="1400" height="494" decoding="async" alt="Agent terminal calling its tools"></div>
+            <figcaption>The agent decides which tool to use for each question.</figcaption>
+          </figure><figure class="reveal wide">
+            <div data-ui class="shot"><img src="/img/docuchat/api.webp?v=5bcc79c7" width="1400" height="636" decoding="async" alt="Interactive API docs generated by FastAPI"></div>
+            <figcaption>API documented automatically by FastAPI.</figcaption>
+          </figure></div>
+      </section>
+      <nav class="pager reveal" aria-label="More projects">
+        <a class="prev" href="/en/projects/orderflow-terminal/"><small>Previous</small><strong>Orderflow Terminal</strong></a>
+        <a class="next" href="/en/projects/vecinus/"><small>Next</small><strong>VecinUs</strong></a>
+      </nav>
+    </div>
+  </div>
+  <section class="block contact" id="contact" aria-labelledby="h-contact">
+    <div class="wrap grid">
+      <div class="reveal">
+        <h2 id="h-contact">Let’s talk</h2>
+        <p class="intro">I’m from Seville and now live in Madrid. I like things to work end to end: designing the system, writing the code, deploying it and measuring whether it really holds up.</p>
+        <p class="intro">If you’re looking for someone for backend, data or applied AI work, write to me and I’ll get back to you.</p>
+      </div>
+      <ul class="channels reveal">
+        <li><a href="mailto:hola@joaquinborjaleon.com"><span class="ch-k">Email</span><span class="ch-v">hola@joaquinborjaleon.com</span></a></li>
+        <li><a href="https://www.linkedin.com/in/joaquinborjaleon" target="_blank" rel="noopener"><span class="ch-k">LinkedIn</span><span class="ch-v">in/joaquinborjaleon</span></a></li>
+        <li><a href="https://github.com/JoaquinBorjaLeon" target="_blank" rel="noopener"><span class="ch-k">GitHub</span><span class="ch-v">JoaquinBorjaLeon</span></a></li>
+        <li><a href="/cv/joaquin-borja-leon-cv-en.pdf?v=19974f0e" download><span class="ch-k">CV</span><span class="ch-v">Download PDF</span></a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap">
+    <p>© <span id="y">2026</span> Joaquín Borja León</p>
+    <p><a href="mailto:hola@joaquinborjaleon.com">hola@joaquinborjaleon.com</a></p>
+  </div>
+</footer>
+<script src="/assets/site.js?v=6e88e24b" defer></script>
+</body>
+</html>
