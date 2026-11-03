@@ -321,3 +321,10 @@ footer a:hover{color:var(--link)}
   .pull,.verdict{background:#2a2316}
   .media img{filter:brightness(.92)}
 }
+
+/* cambio de idioma: la otra versión se muestra ya en el punto de lectura, sin animaciones de entrada */
+.hold body{visibility:hidden;animation:unhold 0s 1s forwards}
+@keyframes unhold{to{visibility:visible}}
+html.hold,html.still{scroll-behavior:auto}
+.still *,.still *::before,.still *::after{transition:none!important}
+.kept .hero .wrap>*,.kept .hero-grid>*,.kept .p-hero .wrap>*{animation:none}
