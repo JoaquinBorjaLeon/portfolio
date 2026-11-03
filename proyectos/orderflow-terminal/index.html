@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es" data-title-es="Orderflow Terminal, proyecto de Joaquín Borja León" data-title-en="Orderflow Terminal, a project by Joaquín Borja León">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orderflow Terminal, proyecto de Joaquín Borja León</title>
+<meta name="description" content="Terminal de bolsa con flujo de opciones, exposición gamma y fundamentales de la SEC, con datos reales y gratuitos.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="Orderflow Terminal, proyecto de Joaquín Borja León">
+<meta property="og:description" content="Terminal de bolsa con flujo de opciones, exposición gamma y fundamentales de la SEC, con datos reales y gratuitos.">
+<meta property="og:url" content="https://joaquinborjaleon.com/proyectos/orderflow-terminal/">
+<meta property="og:image" content="https://joaquinborjaleon.com/img/covers/orderflow-terminal.webp">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://joaquinborjaleon.com/proyectos/orderflow-terminal/">
+<link rel="icon" href="/photo.jpg">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=gambarino@400&f[]=general-sans@400,500,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css?v=855a15ae">
+</head>
+<body data-lang="es">
+<a class="skip" href="#main"><span lang="es">Saltar al contenido</span><span lang="en">Skip to content</span></a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/">Joaquín Borja León</a>
+    <a class="crumb" href="/#proyectos"><span aria-hidden="true">←</span> <span lang="es">Proyectos</span><span lang="en">Projects</span></a>
+    <nav aria-label="Secciones">
+      <a href="/#proyectos"><span lang="es">Proyectos</span><span lang="en">Projects</span></a>
+      <a href="/#experiencia"><span lang="es">Experiencia</span><span lang="en">Experience</span></a>
+      <a href="/#formacion"><span lang="es">Formación</span><span lang="en">Education</span></a>
+      <a href="/#contacto"><span lang="es">Contacto</span><span lang="en">Contact</span></a>
+    </nav>
+    <button class="lang" id="langBtn" type="button" aria-label="Switch to English">EN</button>
+  </div>
+</header>
+<main id="main" class="project-page">
+  <section class="p-hero">
+    <div class="wrap">
+      <h1>Orderflow Terminal</h1>
+      <p class="p-lead"><span lang="es">Una terminal personal para estudiar en un solo sitio el mercado de opciones y las cuentas de las empresas: flujo y exposición gamma de la cadena completa, estructura del precio, fundamentales leídos directamente de la SEC y un resumen con IA en el que cada cifra se comprueba contra los datos.</span><span lang="en">A personal terminal to study the options market and company financials in one place: flow and gamma exposure from the full chain, price structure, fundamentals read straight from the SEC and an AI summary whose every number is checked against the data.</span></p>
+      <p class="p-meta"><span class="i"><span lang="es">Proyecto personal</span><span lang="en">Personal project</span></span><span class="i">2026</span></p>
+      <div class="p-links"><a class="btn primary" href="https://github.com/JoaquinBorjaLeon/orderflow-terminal" target="_blank" rel="noopener"><span lang="es">Código en GitHub</span><span lang="en">Code on GitHub</span> <span class="arr" aria-hidden="true">↗</span></a></div>
+      <dl class="p-facts"><div><dt><span lang="es">Periodo</span><span lang="en">Period</span></dt><dd><span lang="es">Sept. 2026</span><span lang="en">Sep 2026</span></dd></div><div><dt><span lang="es">Equipo</span><span lang="en">Team</span></dt><dd><span lang="es">Proyecto personal</span><span lang="en">Personal project</span></dd></div><div><dt><span lang="es">Contexto</span><span lang="en">Context</span></dt><dd><span lang="es">Uso personal, en local y en mi servidor, dentro de una red privada</span><span lang="en">Personal use, locally and on my server, inside a private network</span></dd></div><div><dt><span lang="es">Mi papel</span><span lang="en">My role</span></dt><dd><span lang="es">Todo el proyecto</span><span lang="en">The whole project</span></dd></div><div class="p-tech"><dt><span lang="es">Tecnologías</span><span lang="en">Tech stack</span></dt><dd><ul class="stack" aria-label="Stack"><li>TypeScript</li><li>Next.js</li><li>React</li><li>Fastify</li><li>uWebSockets.js</li><li>Zod</li><li>TanStack Query</li><li>lightweight-charts</li><li>Tailwind CSS</li><li>Vitest</li><li>Playwright</li><li>Docker</li></ul></dd></div></dl>
+    </div>
+  </section>
+  <div class="wrap">
+      <figure class="stage reveal">
+        <div data-ui class="shot solo"><img src="/img/orderflow-terminal/flujo.webp?v=56e7907a" width="1600" height="1000" fetchpriority="high" decoding="async" alt="Pestaña Flujo con NVDA: velas diarias con zonas de oferta y demanda, Fibonacci, resistencias y niveles de gamma, junto al heatmap de gamma por vencimiento" data-en="Flow tab with NVDA: daily candles with supply and demand zones, Fibonacci, resistances and gamma levels, next to the gamma heatmap by expiry"></div>
+        <figcaption><span lang="es">Pestaña Flujo con datos reales: cadena de opciones de CBOE, diferida unos 15 minutos, y precios de Yahoo Finance.</span><span lang="en">Flow tab with real data: the CBOE options chain, delayed about 15 minutes, and Yahoo Finance prices.</span></figcaption>
+      </figure>
+      <section class="p-sec reveal">
+        <h2><span lang="es">Qué hace</span><span lang="en">What it does</span></h2>
+        <div><ul class="points single"><li><span lang="es"><b>Flujo:</b> gráfico de la acción con niveles de gamma (muro de calls, muro de puts y gamma cero), zonas de oferta y demanda, rupturas de estructura y Fibonacci, junto a la cadena de opciones y la prima neta de calls y puts.</span><span lang="en"><b>Flow:</b> the stock chart with gamma levels (call wall, put wall and zero gamma), supply and demand zones, structure breaks and Fibonacci, next to the options chain and the net call and put premium.</span></li><li><span lang="es"><b>Exposición gamma</b> por strike y vencimiento, con un heatmap que compara cada nivel con la primera foto del día.</span><span lang="en"><b>Gamma exposure</b> by strike and expiry, with a heatmap that compares each level with the day’s first snapshot.</span></li><li><span lang="es"><b>Fundamentales</b> trimestrales de la SEC, valoración bajista, base y alcista con DCF y múltiplos históricos de la propia empresa, y un simulador de resultados.</span><span lang="en"><b>Quarterly fundamentals</b> from the SEC, a bear, base and bull valuation from a DCF and the company’s own historical multiples, and an earnings simulator.</span></li><li><span lang="es"><b>Análisis con IA</b> bajo demanda que resume gamma, estructura, técnico y consenso, y comprueba que cada cifra del texto está en los datos de la app.</span><span lang="en"><b>On-demand AI analysis</b> that sums up gamma, structure, technicals and consensus, and checks that every number in the text exists in the app’s data.</span></li><li><span lang="es"><b>Panorama de mercado:</b> mapa sectorial, mayores movimientos, régimen de mercado y catalizadores de la SEC.</span><span lang="en"><b>Market overview:</b> sector map, top movers, market regime and SEC catalysts.</span></li></ul></div>
+      </section>
+      <section class="p-sec reveal">
+        <h2><span lang="es">Cómo está hecho</span><span lang="en">How it is built</span></h2>
+        <div><ul class="points single"><li><span lang="es">Monorepo TypeScript con pnpm: un gateway con Fastify y uWebSockets.js y una web con Next.js 15 y React 19, que comparten tipos y esquemas Zod.</span><span lang="en">A TypeScript pnpm monorepo: a Fastify and uWebSockets.js gateway and a Next.js 15 and React 19 web app that share types and Zod schemas.</span></li><li><span lang="es">Ingesta independiente del proveedor: CBOE gratis por defecto, o Interactive Brokers y Schwab para tiempo real, con vigilancia de conexiones que dejan de recibir datos y reconexión automática.</span><span lang="en">Provider-agnostic ingestion: free CBOE data by default, or Interactive Brokers and Schwab for real time, watching for connections that stop receiving data and reconnecting automatically.</span></li><li><span lang="es">Bajo carga se descartan antes las cotizaciones que las operaciones, y los gráficos se pintan en canvas a 60 fps agrupando los datos por fotograma.</span><span lang="en">Under load, quotes are dropped before trades, and charts render on canvas at 60 fps by batching ticks per frame.</span></li><li><span lang="es">Sin datos inventados: si una fuente falla, la interfaz lo dice; un dato que falta se pinta como guion, nunca como cero, y cada cifra conserva su procedencia.</span><span lang="en">No made-up data: if a source fails, the UI says so; a missing value is shown as a dash, never as zero, and every figure keeps its provenance.</span></li><li><span lang="es">Desplegado con Docker en mi servidor y accesible solo desde mi red privada de Tailscale.</span><span lang="en">Deployed with Docker on my server and reachable only from my private Tailscale network.</span></li></ul></div>
+      </section>
+      <section class="p-sec reveal">
+        <h2><span lang="es">En cifras</span><span lang="en">In numbers</span></h2>
+        <div><dl class="stats"><div><dt><span lang="es">tests automáticos</span><span lang="en">automated tests</span></dt><dd>356</dd></div><div><dt><span lang="es">recorridos de interfaz con Playwright</span><span lang="en">Playwright UI journeys</span></dt><dd>21</dd></div><div><dt><span lang="es">de coste en datos</span><span lang="en">spent on data</span></dt><dd>0 €</dd></div></dl></div>
+      </section>
+      <section class="p-gallery" aria-label="Galería">
+        <h2><span lang="es">Galería</span><span lang="en">Gallery</span></h2>
+        <div class="gallery"><figure class="reveal wide">
+            <div data-ui class="shot"><img src="/img/orderflow-terminal/analisis-ia.webp?v=f50158cf" width="1400" height="875" decoding="async" alt="Análisis con IA de NVDA con situación, niveles clave, escenarios y riesgos, junto a la exposición gamma por strike" data-en="AI analysis of NVDA with situation, key levels, scenarios and risks, next to gamma exposure by strike"></div>
+            <figcaption><span lang="es">Análisis con IA bajo demanda. Al pie, la comprobación de que todas las cifras del texto están en los datos de la app.</span><span lang="en">On-demand AI analysis. At the bottom, the check that every number in the text exists in the app’s data.</span></figcaption>
+          </figure><figure class="reveal">
+            <div data-ui class="shot"><img src="/img/orderflow-terminal/fundamentales.webp?v=72be1d32" width="1400" height="875" decoding="async" alt="Tabla de trimestres de NVIDIA con ingresos, márgenes, EBITDA y flujo de caja, junto al simulador de resultados" data-en="NVIDIA quarterly table with revenue, margins, EBITDA and cash flow, next to the earnings simulator"></div>
+            <figcaption><span lang="es">Trimestres de la SEC. El cuarto se calcula como el año menos los tres primeros, porque la SEC no lo publica por separado.</span><span lang="en">Quarters from the SEC. Q4 is the full year minus Q1 to Q3, because the SEC does not publish it separately.</span></figcaption>
+          </figure><figure class="reveal">
+            <div data-ui class="shot"><img src="/img/orderflow-terminal/macro.webp?v=90a9f02c" width="1400" height="875" decoding="async" alt="Mapa sectorial con los once sectores, mayores subidas y bajadas y régimen de mercado" data-en="Sector map with the eleven sectors, top gainers and losers and market regime"></div>
+            <figcaption><span lang="es">Panorama de mercado: sectores, movimientos del día y régimen de mercado.</span><span lang="en">Market overview: sectors, the day’s movers and market regime.</span></figcaption>
+          </figure><figure class="reveal wide">
+            <div data-ui class="shot"><img src="/img/orderflow-terminal/valoracion.webp?v=4a60e2d3" width="1400" height="464" decoding="async" alt="Valoración de NVDA en escenarios bajista, base y alcista, con el consenso de analistas" data-en="NVDA valuation in bear, base and bull scenarios, with the analyst consensus"></div>
+            <figcaption><span lang="es">Valoración en tres escenarios con DCF y múltiplos históricos de la propia empresa, al lado del consenso de analistas.</span><span lang="en">Valuation in three scenarios from a DCF and the company’s own historical multiples, next to the analyst consensus.</span></figcaption>
+          </figure></div>
+      </section>
+      <section class="p-gallery" aria-label="En el móvil">
+        <h2><span lang="es">En el móvil</span><span lang="en">On the phone</span></h2>
+        <div class="phone-gallery"><figure class="reveal">
+            <div data-ui class="phone"><img src="/img/orderflow-terminal/movil-inicio.webp?v=7c22b2de" width="780" height="1688" decoding="async" alt="Vista Flujo en el móvil con las pestañas, el buscador y el precio de NVDA" data-en="Flow view on the phone with the tabs, the search box and the NVDA price"></div>
+            <figcaption><span lang="es">Las mismas pestañas en el móvil.</span><span lang="en">The same tabs on the phone.</span></figcaption>
+          </figure><figure class="reveal">
+            <div data-ui class="phone"><img src="/img/orderflow-terminal/movil-grafico.webp?v=a1d5a163" width="780" height="1688" decoding="async" alt="Gráfico intradía de NVDA y cadena de opciones en el móvil" data-en="NVDA intraday chart and options chain on the phone"></div>
+            <figcaption><span lang="es">Gráfico y cadena de opciones.</span><span lang="en">Chart and options chain.</span></figcaption>
+          </figure><figure class="reveal">
+            <div data-ui class="phone"><img src="/img/orderflow-terminal/movil-fundamentales.webp?v=1776bcc1" width="780" height="1688" decoding="async" alt="Tabla de trimestres de NVIDIA en el móvil" data-en="NVIDIA quarterly table on the phone"></div>
+            <figcaption><span lang="es">Fundamentales con desplazamiento horizontal.</span><span lang="en">Fundamentals with horizontal scrolling.</span></figcaption>
+          </figure><figure class="reveal">
+            <div data-ui class="phone"><img src="/img/orderflow-terminal/movil-analisis.webp?v=3674fc9b" width="780" height="1688" decoding="async" alt="Señal técnica, consenso de analistas y rangos por volatilidad en el móvil" data-en="Technical signal, analyst consensus and volatility ranges on the phone"></div>
+            <figcaption><span lang="es">Señales y rangos por volatilidad implícita.</span><span lang="en">Signals and implied volatility ranges.</span></figcaption>
+          </figure></div>
+      </section>
+      <nav class="pager reveal" aria-label="Más proyectos">
+        <a class="prev" href="/proyectos/poke-hub/"><small><span lang="es">Anterior</span><span lang="en">Previous</span></small><strong>Poké-Hub</strong></a>
+        <a class="next" href="/proyectos/docuchat/"><small><span lang="es">Siguiente</span><span lang="en">Next</span></small><strong>DocuChat</strong></a>
+      </nav>
+    </div>
+  </div>
+  <section class="block contact" id="contacto" aria-labelledby="h-contact">
+    <div class="wrap grid">
+      <div class="reveal">
+        <h2 id="h-contact"><span lang="es">¿Hablamos?</span><span lang="en">Let’s talk</span></h2>
+        <p class="intro"><span lang="es">Soy de Sevilla y ahora vivo en Madrid. Me gusta que las cosas funcionen de principio a fin: diseñar el sistema, escribir el código, desplegarlo y medir si de verdad responde bien.</span><span lang="en">I’m from Seville and now live in Madrid. I like things to work end to end: designing the system, writing the code, deploying it and measuring whether it really holds up.</span></p>
+        <p class="intro"><span lang="es">Si buscas a alguien para backend, datos o IA aplicada, escríbeme y te respondo.</span><span lang="en">If you’re looking for someone for backend, data or applied AI work, write to me and I’ll get back to you.</span></p>
+      </div>
+      <ul class="channels reveal">
+        <li><a href="mailto:hola@joaquinborjaleon.com"><span class="ch-k"><span lang="es">Correo</span><span lang="en">Email</span></span><span class="ch-v">hola@joaquinborjaleon.com</span></a></li>
+        <li><a href="https://www.linkedin.com/in/joaquinborjaleon" target="_blank" rel="noopener"><span class="ch-k">LinkedIn</span><span class="ch-v">in/joaquinborjaleon</span></a></li>
+        <li><a href="https://github.com/JoaquinBorjaLeon" target="_blank" rel="noopener"><span class="ch-k">GitHub</span><span class="ch-v">JoaquinBorjaLeon</span></a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap">
+    <p>© <span id="y">2026</span> Joaquín Borja León</p>
+    <p><a href="mailto:hola@joaquinborjaleon.com">hola@joaquinborjaleon.com</a></p>
+  </div>
+</footer>
+<script src="/assets/site.js?v=e9460e8a" defer></script>
+</body>
+</html>
