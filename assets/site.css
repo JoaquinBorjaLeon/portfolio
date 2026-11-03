@@ -120,7 +120,7 @@ section.block:not(.contact)>.wrap::before{content:"";position:absolute;left:var(
 .timeline>li>div,.timeline>li{position:relative}
 .timeline>li>div::before{content:"";position:absolute;left:-25px;top:12px;bottom:calc(-1 * var(--row-gap) - 12px);width:2px;background:#d3d8e2} /* taste-skill-ignore: timeline track */
 .timeline>li:last-child>div::before{display:none}
-.timeline>li>div::after{content:"";position:absolute;left:-31px;top:5px;width:14px;height:14px;border-radius:50%;background:#fff;border:2px solid var(--ink-2)} /* taste-skill-ignore: timeline dot */
+.timeline>li>div::after{content:"";position:absolute;left:-31px;top:5px;width:14px;height:14px;box-sizing:border-box;border-radius:50%;background:#fff;border:2px solid var(--ink-2)} /* taste-skill-ignore: timeline dot */
 .timeline>li:has(.now)>div::after{background:var(--accent);border-color:var(--accent)}
 @media (min-width:761px){.timeline>li{grid-template-columns:8.75rem minmax(0,1fr)}.timeline .when{text-align:right;white-space:nowrap}}
 @media (max-width:760px){
