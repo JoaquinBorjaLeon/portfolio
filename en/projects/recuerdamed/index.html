@@ -8,7 +8,7 @@
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0f1524" media="(prefers-color-scheme: dark)">
-<script>(function(d){var c=d.documentElement.classList,t;try{if(sessionStorage.getItem('pos'))c.add('hold','kept')}catch(e){}try{t=localStorage.getItem('theme')}catch(e){}var o=t==='dark'||t==='light';if(!o)t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';c.add(t);if(o)d.querySelectorAll('meta[name="theme-color"]').forEach(function(m){m.content=t==='dark'?'#0f1524':'#ffffff'})})(document)</script>
+<script>(function(d){var c=d.documentElement.classList,t;try{if(sessionStorage.getItem('pos'))c.add('hold','kept')}catch(e){}try{t=sessionStorage.getItem('theme')}catch(e){}var o=t==='dark'||t==='light';if(!o)t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';c.add(t);if(o)d.querySelectorAll('meta[name="theme-color"]').forEach(function(m){m.content=t==='dark'?'#0f1524':'#ffffff'})})(document)</script>
 <meta property="og:title" content="RecuerdaMed, a project by Joaquín Borja León">
 <meta property="og:description" content="A medication app for patients and caregivers, with a public demo.">
 <meta property="og:url" content="https://joaquinborjaleon.com/en/projects/recuerdamed/">
@@ -122,6 +122,6 @@
     <p><a href="mailto:hola@joaquinborjaleon.com">hola@joaquinborjaleon.com</a></p>
   </div>
 </footer>
-<script src="/assets/site.js?v=a50f924b" defer></script>
+<script src="/assets/site.js?v=48197668" defer></script>
 </body>
 </html>

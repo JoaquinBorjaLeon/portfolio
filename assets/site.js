@@ -113,13 +113,14 @@
     });
   }
 
-  /* tema: sigue al del sistema hasta que eliges el contrario, y esa elección se recuerda.
-     El script de la cabecera ya puso html.dark o html.light antes de pintar. */
+  /* tema: cada visita empieza con el del dispositivo; si eliges el otro con el botón, se mantiene
+     durante la visita (todas las páginas y los dos idiomas). El script de la cabecera ya puso
+     html.dark o html.light antes de pintar. */
   var scheme = window.matchMedia ? matchMedia('(prefers-color-scheme: dark)') : null;
   var toggle = document.querySelector('.theme');
   var tint = { light: '#ffffff', dark: '#0f1524' };
   function chosen() {
-    try { var t = localStorage.getItem('theme'); return t === 'dark' || t === 'light' ? t : null; } catch (x) { return null; }
+    try { var t = sessionStorage.getItem('theme'); return t === 'dark' || t === 'light' ? t : null; } catch (x) { return null; }
   }
   function system() { return scheme && scheme.matches ? 'dark' : 'light'; }
   function shown() { return root.classList.contains('dark') ? 'dark' : 'light'; }
@@ -169,7 +170,7 @@
     var other = function () { return want === 'dark' ? 'light' : 'dark'; };
     toggle.addEventListener('click', function () {
       var t = other();
-      try { if (t === system()) localStorage.removeItem('theme'); else localStorage.setItem('theme', t); } catch (x) {}
+      try { if (t === system()) sessionStorage.removeItem('theme'); else sessionStorage.setItem('theme', t); } catch (x) {}
       swap(t);
     });
     ['pointerenter', 'focus', 'touchstart'].forEach(function (ev) {
@@ -181,13 +182,6 @@
     if (scheme.addEventListener) scheme.addEventListener('change', follow);
     else if (scheme.addListener) scheme.addListener(follow);
   }
-  /* si se cambia en otra pestaña, aquí se aplica al momento, sin fundido */
-  window.addEventListener('storage', function (e) {
-    if (e.key !== 'theme') return;
-    want = chosen() || system();
-    root.classList.add('still'); paint(want); void root.offsetHeight;
-    if (!busy) root.classList.remove('still');
-  });
 
   /* el nombre de la cabecera: en la portada sube arriba con suavidad en vez de recargar */
   if (brand) {
