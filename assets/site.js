@@ -155,7 +155,8 @@
       if (want !== t) return;
       if (shown() === t) { paint(t); return; }
       var go = function () { busy++; root.classList.add('still'); paint(t); };
-      var done = function () { requestAnimationFrame(function () { if (--busy <= 0) { busy = 0; root.classList.remove('still'); } }); };
+      /* los estilos nuevos ya están calculados (con las transiciones apagadas), así que se pueden reactivar sin esperar a otro fotograma */
+      var done = function () { if (--busy <= 0) { busy = 0; root.classList.remove('still'); } };
       var calm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (document.startViewTransition && !calm && !document.hidden) {
         var vt = document.startViewTransition(go);
