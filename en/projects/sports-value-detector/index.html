@@ -3,20 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>try{if(sessionStorage.getItem('pos'))document.documentElement.classList.add('hold','kept')}catch(e){}</script>
 <title>Sports Value Detector, a project by Joaquín Borja León</title>
 <meta name="description" content="Football and tennis models measured against the closing odds, with an honest conclusion.">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0f1524" media="(prefers-color-scheme: dark)">
+<script>(function(d){var c=d.documentElement.classList,t;try{if(sessionStorage.getItem('pos'))c.add('hold','kept')}catch(e){}try{t=localStorage.getItem('theme')}catch(e){}var o=t==='dark'||t==='light';if(!o)t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';c.add(t);if(o)d.querySelectorAll('meta[name="theme-color"]').forEach(function(m){m.content=t==='dark'?'#0f1524':'#ffffff'})})(document)</script>
 <meta property="og:title" content="Sports Value Detector, a project by Joaquín Borja León">
 <meta property="og:description" content="Football and tennis models measured against the closing odds, with an honest conclusion.">
 <meta property="og:url" content="https://joaquinborjaleon.com/en/projects/sports-value-detector/">
-<meta property="og:image" content="https://joaquinborjaleon.com/img/covers/sports-value-detector.webp">
+<meta property="og:image" content="https://joaquinborjaleon.com/img/og/sports-value-detector.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Charts of goals by league and the model’s calibration diagram">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="es_ES">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image:alt" content="Charts of goals by league and the model’s calibration diagram">
 <link rel="canonical" href="https://joaquinborjaleon.com/en/projects/sports-value-detector/">
 <link rel="alternate" hreflang="es" href="https://joaquinborjaleon.com/proyectos/sports-value-detector/">
 <link rel="alternate" hreflang="en" href="https://joaquinborjaleon.com/en/projects/sports-value-detector/">
@@ -26,7 +30,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=02a6b525">
 <link rel="preload" href="/assets/fonts/general-sans-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/gambarino-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/site.css?v=96ef8609">
+<link rel="stylesheet" href="/assets/site.css?v=47c994a1">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -34,13 +38,16 @@
   <div class="wrap">
     <a class="brand" href="/en/">Joaquín Borja León</a>
     <a class="crumb" href="/en/#projects"><span aria-hidden="true">←</span> Projects</a>
-    <button class="menu" type="button" aria-expanded="false" aria-controls="nav" data-close="Close">Menu</button>
-    <nav id="nav" aria-label="Sections">
-      <a href="/en/#projects">Projects</a>
-      <a href="/en/#experience">Experience</a>
-      <a href="/en/#education">Education</a>
-      <a href="/en/#contact">Contact</a>
-    </nav>
+    <button class="menu" type="button" aria-expanded="false" aria-controls="panel" data-close="Close">Menu</button>
+    <div class="panel" id="panel">
+      <nav id="nav" aria-label="Sections">
+        <a href="/en/#projects">Projects</a>
+        <a href="/en/#experience">Experience</a>
+        <a href="/en/#education">Education</a>
+        <a href="/en/#contact">Contact</a>
+      </nav>
+      <button class="theme" type="button" aria-pressed="false"><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13.5A8.5 8.5 0 1 1 10.5 3.5a8 8 0 0 0 10 10Z"/></svg><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.8v2M12 19.2v2M5.5 5.5l1.4 1.4M17.1 17.1l1.4 1.4M2.8 12h2M19.2 12h2M5.5 18.5l1.4-1.4M17.1 6.9l1.4-1.4"/></svg><span class="t-label">Dark mode</span><span class="t-switch" aria-hidden="true"></span></button>
+    </div>
     <a class="lang" href="/proyectos/sports-value-detector/" hreflang="es" lang="es" data-switch="es" aria-label="ES, leer en español">ES</a>
   </div>
 </header>
@@ -78,7 +85,7 @@
       </section>
       <section class="p-sec reveal">
         <h2>How it is built</h2>
-        <div><ul class="points single"><li><b>No leakage.</b> Features are computed in a single chronological pass, and tests truncate and perturb the future to check the past does not change.</li><li><b>Temporal validation</b> on two separate held-out seasons, so no model is picked by luck.</li><li><b>Models:</b> logistic regression for 1X2, Dixon-Coles for goals and surface Elo with logistic regression for tennis.</li><li><b>Skeptical of wins:</b> a backtest with a +1.0% ROI turned out to be noise (+0.24 sigma) and was discarded.</li></ul></div>
+        <div><ul class="points single"><li><b>No leakage.</b> Features are computed in a single chronological pass, and tests truncate and perturb the future to check that the past does not change.</li><li><b>Temporal validation</b> on two separate held-out seasons, so no model is picked by luck.</li><li><b>Models:</b> logistic regression for 1X2, Dixon-Coles for goals and surface-specific Elo with logistic regression for tennis.</li><li><b>Sceptical of wins:</b> a backtest with a +1.0% ROI turned out to be noise (+0.24 sigma) and was discarded.</li></ul></div>
       </section>
       <section class="p-sec reveal">
         <h2>In numbers</h2>
@@ -94,10 +101,10 @@
             <figcaption>Backtest with opening odds and expected value above 5%: it loses, consistent with the conclusion.</figcaption>
           </figure><figure class="reveal wide">
             <div data-ui class="shot"><img src="/img/sports-value-detector/eda-futbol.webp?v=ac3f9d68" width="1289" height="390" decoding="async" alt="Goals per match distribution and average goals by league"></div>
-            <figcaption>Football exploratory analysis: goals per match and by league.</figcaption>
+            <figcaption>Exploratory analysis of football: goals per match and by league.</figcaption>
           </figure><figure class="reveal wide">
-            <div data-ui class="shot"><img src="/img/sports-value-detector/eda-tenis.webp?v=f0206cd1" width="1289" height="390" decoding="async" alt="Tennis matches by surface and tournament series"></div>
-            <figcaption>Tennis exploratory analysis: matches by surface and series.</figcaption>
+            <div data-ui class="shot"><img src="/img/sports-value-detector/eda-tenis.webp?v=f0206cd1" width="1289" height="390" decoding="async" alt="Tennis matches by surface and tournament tier"></div>
+            <figcaption>Exploratory analysis of tennis: matches by surface and tournament tier.</figcaption>
           </figure></div>
       </section>
       <nav class="pager reveal" aria-label="More projects">
@@ -117,7 +124,7 @@
         <li><a href="mailto:hola@joaquinborjaleon.com"><span class="ch-k">Email</span><span class="ch-v">hola@joaquinborjaleon.com</span></a></li>
         <li><a href="https://www.linkedin.com/in/joaquinborjaleon" target="_blank" rel="noopener"><span class="ch-k">LinkedIn</span><span class="ch-v">in/joaquinborjaleon</span></a></li>
         <li><a href="https://github.com/JoaquinBorjaLeon" target="_blank" rel="noopener"><span class="ch-k">GitHub</span><span class="ch-v">JoaquinBorjaLeon</span></a></li>
-        <li><a href="/cv/joaquin-borja-leon-cv-en.pdf?v=ca919203" download><span class="ch-k">CV</span><span class="ch-v">Download PDF</span></a></li>
+        <li><a href="/cv/joaquin-borja-leon-cv-en.pdf?v=4576b515" download><span class="ch-k">CV</span><span class="ch-v">Download PDF</span></a></li>
       </ul>
     </div>
   </section>
@@ -128,6 +135,6 @@
     <p><a href="mailto:hola@joaquinborjaleon.com">hola@joaquinborjaleon.com</a></p>
   </div>
 </footer>
-<script src="/assets/site.js?v=24b36ff2" defer></script>
+<script src="/assets/site.js?v=e9b88297" defer></script>
 </body>
 </html>

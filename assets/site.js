@@ -113,6 +113,75 @@
     });
   }
 
+  /* tema: sigue al del sistema hasta que eliges el contrario, y esa elección se recuerda.
+     El script de la cabecera ya puso html.dark o html.light antes de pintar. */
+  var scheme = window.matchMedia ? matchMedia('(prefers-color-scheme: dark)') : null;
+  var toggle = document.querySelector('.theme');
+  var tint = { light: '#ffffff', dark: '#0f1524' };
+  function chosen() {
+    try { var t = localStorage.getItem('theme'); return t === 'dark' || t === 'light' ? t : null; } catch (x) { return null; }
+  }
+  function system() { return scheme && scheme.matches ? 'dark' : 'light'; }
+  function shown() { return root.classList.contains('dark') ? 'dark' : 'light'; }
+  function paint(t) {
+    var own = chosen();
+    root.classList.toggle('dark', t === 'dark');
+    root.classList.toggle('light', t !== 'dark');
+    document.querySelectorAll('meta[name="theme-color"]').forEach(function (m) {
+      m.setAttribute('content', tint[own ? t : (/dark/.test(m.getAttribute('media') || '') ? 'dark' : 'light')]);
+    });
+    if (toggle) toggle.setAttribute('aria-pressed', t === 'dark' ? 'true' : 'false');
+  }
+  /* las portadas del otro tema no se descargan hasta que hacen falta: al ir a cambiar,
+     se piden las que están a la vista para que el cambio no deje huecos */
+  function warm(t) {
+    var list = [].filter.call(document.querySelectorAll('.media .c-' + t), function (im) {
+      var r = im.parentNode.getBoundingClientRect();
+      return r.bottom > -150 && r.top < window.innerHeight + 150;
+    });
+    list.forEach(function (im) { im.loading = 'eager'; });
+    if (!list.length || !list[0].decode) return Promise.resolve();
+    return Promise.race([
+      Promise.all(list.map(function (im) { return im.decode().catch(function () {}); })),
+      new Promise(function (ok) { setTimeout(ok, 400); })
+    ]);
+  }
+  /* el tema pedido en último lugar manda, aunque se pulse dos veces seguidas */
+  var want = shown(), busy = 0;
+  function swap(t) {
+    want = t;
+    if (toggle) toggle.setAttribute('aria-pressed', t === 'dark' ? 'true' : 'false');
+    warm(t).then(function () {
+      if (want !== t) return;
+      if (shown() === t) { paint(t); return; }
+      var go = function () { busy++; root.classList.add('still'); paint(t); };
+      var done = function () { requestAnimationFrame(function () { if (--busy <= 0) { busy = 0; root.classList.remove('still'); } }); };
+      var calm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (document.startViewTransition && !calm && !document.hidden) {
+        var vt = document.startViewTransition(go);
+        vt.finished.then(done, done);
+      } else { go(); void root.offsetHeight; done(); }
+    });
+  }
+  paint(want);
+  if (toggle) {
+    var other = function () { return want === 'dark' ? 'light' : 'dark'; };
+    toggle.addEventListener('click', function () {
+      var t = other();
+      try { if (t === system()) localStorage.removeItem('theme'); else localStorage.setItem('theme', t); } catch (x) {}
+      swap(t);
+    });
+    ['pointerenter', 'focus', 'touchstart'].forEach(function (ev) {
+      toggle.addEventListener(ev, function () { warm(other()); }, { passive: true });
+    });
+  }
+  if (scheme) {
+    var follow = function () { if (!chosen()) swap(system()); };
+    if (scheme.addEventListener) scheme.addEventListener('change', follow);
+    else if (scheme.addListener) scheme.addListener(follow);
+  }
+  window.addEventListener('storage', function (e) { if (e.key === 'theme') swap(chosen() || system()); });
+
   /* el nombre de la cabecera: en la portada sube arriba con suavidad en vez de recargar */
   if (brand) {
     brand.addEventListener('click', function (e) {

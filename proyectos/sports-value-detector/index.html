@@ -3,20 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>try{if(sessionStorage.getItem('pos'))document.documentElement.classList.add('hold','kept')}catch(e){}</script>
 <title>Sports Value Detector, proyecto de Joaquín Borja León</title>
 <meta name="description" content="Modelos de fútbol y tenis medidos contra la cuota de cierre, con una conclusión honesta.">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0f1524" media="(prefers-color-scheme: dark)">
+<script>(function(d){var c=d.documentElement.classList,t;try{if(sessionStorage.getItem('pos'))c.add('hold','kept')}catch(e){}try{t=localStorage.getItem('theme')}catch(e){}var o=t==='dark'||t==='light';if(!o)t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';c.add(t);if(o)d.querySelectorAll('meta[name="theme-color"]').forEach(function(m){m.content=t==='dark'?'#0f1524':'#ffffff'})})(document)</script>
 <meta property="og:title" content="Sports Value Detector, proyecto de Joaquín Borja León">
 <meta property="og:description" content="Modelos de fútbol y tenis medidos contra la cuota de cierre, con una conclusión honesta.">
 <meta property="og:url" content="https://joaquinborjaleon.com/proyectos/sports-value-detector/">
-<meta property="og:image" content="https://joaquinborjaleon.com/img/covers/sports-value-detector.webp">
+<meta property="og:image" content="https://joaquinborjaleon.com/img/og/sports-value-detector.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Gráficos de goles por liga y diagrama de calibración del modelo">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="es_ES">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image:alt" content="Gráficos de goles por liga y diagrama de calibración del modelo">
 <link rel="canonical" href="https://joaquinborjaleon.com/proyectos/sports-value-detector/">
 <link rel="alternate" hreflang="es" href="https://joaquinborjaleon.com/proyectos/sports-value-detector/">
 <link rel="alternate" hreflang="en" href="https://joaquinborjaleon.com/en/projects/sports-value-detector/">
@@ -26,7 +30,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=02a6b525">
 <link rel="preload" href="/assets/fonts/general-sans-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/gambarino-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/site.css?v=96ef8609">
+<link rel="stylesheet" href="/assets/site.css?v=47c994a1">
 </head>
 <body>
 <a class="skip" href="#main">Saltar al contenido</a>
@@ -34,13 +38,16 @@
   <div class="wrap">
     <a class="brand" href="/">Joaquín Borja León</a>
     <a class="crumb" href="/#proyectos"><span aria-hidden="true">←</span> Proyectos</a>
-    <button class="menu" type="button" aria-expanded="false" aria-controls="nav" data-close="Cerrar">Menú</button>
-    <nav id="nav" aria-label="Secciones">
-      <a href="/#proyectos">Proyectos</a>
-      <a href="/#experiencia">Experiencia</a>
-      <a href="/#formacion">Formación</a>
-      <a href="/#contacto">Contacto</a>
-    </nav>
+    <button class="menu" type="button" aria-expanded="false" aria-controls="panel" data-close="Cerrar">Menú</button>
+    <div class="panel" id="panel">
+      <nav id="nav" aria-label="Secciones">
+        <a href="/#proyectos">Proyectos</a>
+        <a href="/#experiencia">Experiencia</a>
+        <a href="/#formacion">Formación</a>
+        <a href="/#contacto">Contacto</a>
+      </nav>
+      <button class="theme" type="button" aria-pressed="false"><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13.5A8.5 8.5 0 1 1 10.5 3.5a8 8 0 0 0 10 10Z"/></svg><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.8v2M12 19.2v2M5.5 5.5l1.4 1.4M17.1 17.1l1.4 1.4M2.8 12h2M19.2 12h2M5.5 18.5l1.4-1.4M17.1 6.9l1.4-1.4"/></svg><span class="t-label">Modo oscuro</span><span class="t-switch" aria-hidden="true"></span></button>
+    </div>
     <a class="lang" href="/en/projects/sports-value-detector/" hreflang="en" lang="en" data-switch="en" aria-label="EN, read in English">EN</a>
   </div>
 </header>
@@ -117,7 +124,7 @@
         <li><a href="mailto:hola@joaquinborjaleon.com"><span class="ch-k">Correo</span><span class="ch-v">hola@joaquinborjaleon.com</span></a></li>
         <li><a href="https://www.linkedin.com/in/joaquinborjaleon" target="_blank" rel="noopener"><span class="ch-k">LinkedIn</span><span class="ch-v">in/joaquinborjaleon</span></a></li>
         <li><a href="https://github.com/JoaquinBorjaLeon" target="_blank" rel="noopener"><span class="ch-k">GitHub</span><span class="ch-v">JoaquinBorjaLeon</span></a></li>
-        <li><a href="/cv/joaquin-borja-leon-cv-es.pdf?v=d5038789" download><span class="ch-k">CV</span><span class="ch-v">Descargar PDF</span></a></li>
+        <li><a href="/cv/joaquin-borja-leon-cv-es.pdf?v=173d8069" download><span class="ch-k">CV</span><span class="ch-v">Descargar PDF</span></a></li>
       </ul>
     </div>
   </section>
@@ -128,6 +135,6 @@
     <p><a href="mailto:hola@joaquinborjaleon.com">hola@joaquinborjaleon.com</a></p>
   </div>
 </footer>
-<script src="/assets/site.js?v=24b36ff2" defer></script>
+<script src="/assets/site.js?v=e9b88297" defer></script>
 </body>
 </html>

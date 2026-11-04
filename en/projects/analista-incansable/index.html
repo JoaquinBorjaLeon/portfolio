@@ -3,20 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>try{if(sessionStorage.getItem('pos'))document.documentElement.classList.add('hold','kept')}catch(e){}</script>
 <title>Analista incansable, a project by Joaquín Borja León</title>
-<meta name="description" content="A fundamental screener that scores companies every day and alerts on Telegram.">
+<meta name="description" content="A fundamentals screener that scores companies every day and sends alerts via Telegram.">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0f1524" media="(prefers-color-scheme: dark)">
+<script>(function(d){var c=d.documentElement.classList,t;try{if(sessionStorage.getItem('pos'))c.add('hold','kept')}catch(e){}try{t=localStorage.getItem('theme')}catch(e){}var o=t==='dark'||t==='light';if(!o)t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';c.add(t);if(o)d.querySelectorAll('meta[name="theme-color"]').forEach(function(m){m.content=t==='dark'?'#0f1524':'#ffffff'})})(document)</script>
 <meta property="og:title" content="Analista incansable, a project by Joaquín Borja León">
-<meta property="og:description" content="A fundamental screener that scores companies every day and alerts on Telegram.">
+<meta property="og:description" content="A fundamentals screener that scores companies every day and sends alerts via Telegram.">
 <meta property="og:url" content="https://joaquinborjaleon.com/en/projects/analista-incansable/">
-<meta property="og:image" content="https://joaquinborjaleon.com/img/covers/analista-incansable.webp">
+<meta property="og:image" content="https://joaquinborjaleon.com/img/og/analista-incansable.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Read-only mobile panel with the watchlist and a company’s details">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="es_ES">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image:alt" content="Read-only mobile panel with the watchlist and a company’s details">
 <link rel="canonical" href="https://joaquinborjaleon.com/en/projects/analista-incansable/">
 <link rel="alternate" hreflang="es" href="https://joaquinborjaleon.com/proyectos/analista-incansable/">
 <link rel="alternate" hreflang="en" href="https://joaquinborjaleon.com/en/projects/analista-incansable/">
@@ -26,7 +30,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=02a6b525">
 <link rel="preload" href="/assets/fonts/general-sans-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/gambarino-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/site.css?v=96ef8609">
+<link rel="stylesheet" href="/assets/site.css?v=47c994a1">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -34,13 +38,16 @@
   <div class="wrap">
     <a class="brand" href="/en/">Joaquín Borja León</a>
     <a class="crumb" href="/en/#projects"><span aria-hidden="true">←</span> Projects</a>
-    <button class="menu" type="button" aria-expanded="false" aria-controls="nav" data-close="Close">Menu</button>
-    <nav id="nav" aria-label="Sections">
-      <a href="/en/#projects">Projects</a>
-      <a href="/en/#experience">Experience</a>
-      <a href="/en/#education">Education</a>
-      <a href="/en/#contact">Contact</a>
-    </nav>
+    <button class="menu" type="button" aria-expanded="false" aria-controls="panel" data-close="Close">Menu</button>
+    <div class="panel" id="panel">
+      <nav id="nav" aria-label="Sections">
+        <a href="/en/#projects">Projects</a>
+        <a href="/en/#experience">Experience</a>
+        <a href="/en/#education">Education</a>
+        <a href="/en/#contact">Contact</a>
+      </nav>
+      <button class="theme" type="button" aria-pressed="false"><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13.5A8.5 8.5 0 1 1 10.5 3.5a8 8 0 0 0 10 10Z"/></svg><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.8v2M12 19.2v2M5.5 5.5l1.4 1.4M17.1 17.1l1.4 1.4M2.8 12h2M19.2 12h2M5.5 18.5l1.4-1.4M17.1 6.9l1.4-1.4"/></svg><span class="t-label">Dark mode</span><span class="t-switch" aria-hidden="true"></span></button>
+    </div>
     <a class="lang" href="/proyectos/analista-incansable/" hreflang="es" lang="es" data-switch="es" aria-label="ES, leer en español">ES</a>
   </div>
 </header>
@@ -57,15 +64,15 @@
   <div class="wrap">
       <figure class="stage reveal">
         <div class="phones n2"><div data-ui class="phone"><img src="/img/analista-incansable/watchlist.webp?v=c8e71a75" width="780" height="1688" fetchpriority="high" decoding="async" alt="Watchlist sorted by distance to the entry zone, with each company’s score"></div><div data-ui class="phone"><img src="/img/analista-incansable/detalle.webp?v=6c2b6aaa" width="780" height="1688" fetchpriority="high" decoding="async" alt="Company detail with price, zone, RSI, moving averages and score breakdown"></div></div>
-        <figcaption>Read-only web panel designed for the phone, with synthetic demo data.</figcaption>
+        <figcaption>Read-only web panel designed for mobile, with synthetic demo data.</figcaption>
       </figure>
       <section class="p-sec reveal">
         <h2>What it does</h2>
-        <div><ul class="points single"><li>Downloads daily prices and annual statements into SQLite. Missing data is shown as “n/a”: it is never invented.</li><li>Scores each company from 0 to 100 on eight criteria and lists red flags separately.</li><li>Alerts when a stock enters its zone or gets within 3%, crosses the 200-day average or gets a new red flag.</li><li>Every zone alert includes the latest headlines and the manual note for the stock.</li></ul></div>
+        <div><ul class="points single"><li>Downloads daily prices and annual statements into SQLite. Missing data is shown as “n/a”: it is never invented.</li><li>Scores each company from 0 to 100 on eight criteria and lists red flags separately.</li><li>Alerts when a stock enters its zone or gets within 3%, crosses its 200-day moving average or gets a new red flag.</li><li>Every zone alert includes the latest headlines and my own note on the stock.</li></ul></div>
       </section>
       <section class="p-sec reveal">
         <h2>How it is built</h2>
-        <div><ul class="points single"><li>Weights and thresholds in YAML, to tune the method without touching code.</li><li>An anti-spam table stops the same alert repeating for 5 days.</li><li>JSON output for an n8n workflow, or straight to the Telegram API.</li><li>A FastAPI panel with no write endpoints and a demo mode with synthetic data.</li></ul></div>
+        <div><ul class="points single"><li>Weights and thresholds in YAML, to tune the method without touching code.</li><li>An anti-spam table stops the same alert repeating for 5 days.</li><li>JSON output for an n8n workflow, or direct delivery through the Telegram API.</li><li>A FastAPI panel with no write endpoints and a demo mode with synthetic data.</li></ul></div>
       </section>
       <section class="p-sec reveal">
         <h2>The score</h2>
@@ -93,10 +100,10 @@
             <figcaption>Daily report in the terminal, with synthetic data.</figcaption>
           </figure><figure class="reveal">
             <div data-ui class="shot"><img src="/img/analista-incansable/puntuacion.webp?v=0d54b0d0" width="1370" height="992" decoding="async" alt="Score breakdown of a fictional company with its red flags"></div>
-            <figcaption>Score breakdown and red flags of a fictional company.</figcaption>
+            <figcaption>Score breakdown and red flags for a fictional company.</figcaption>
           </figure><figure class="reveal">
-            <div data-ui class="shot"><img src="/img/analista-incansable/alertas.webp?v=269eaee6" width="1334" height="608" decoding="async" alt="Alerts generated by the system with the manual note for each stock"></div>
-            <figcaption>Zone alerts ready to send on Telegram.</figcaption>
+            <div data-ui class="shot"><img src="/img/analista-incansable/alertas.webp?v=269eaee6" width="1334" height="608" decoding="async" alt="Alerts generated by the system with my note on each stock"></div>
+            <figcaption>Zone alerts ready to send via Telegram.</figcaption>
           </figure></div>
       </section>
       <nav class="pager reveal" aria-label="More projects">
@@ -116,7 +123,7 @@
         <li><a href="mailto:hola@joaquinborjaleon.com"><span class="ch-k">Email</span><span class="ch-v">hola@joaquinborjaleon.com</span></a></li>
         <li><a href="https://www.linkedin.com/in/joaquinborjaleon" target="_blank" rel="noopener"><span class="ch-k">LinkedIn</span><span class="ch-v">in/joaquinborjaleon</span></a></li>
         <li><a href="https://github.com/JoaquinBorjaLeon" target="_blank" rel="noopener"><span class="ch-k">GitHub</span><span class="ch-v">JoaquinBorjaLeon</span></a></li>
-        <li><a href="/cv/joaquin-borja-leon-cv-en.pdf?v=ca919203" download><span class="ch-k">CV</span><span class="ch-v">Download PDF</span></a></li>
+        <li><a href="/cv/joaquin-borja-leon-cv-en.pdf?v=4576b515" download><span class="ch-k">CV</span><span class="ch-v">Download PDF</span></a></li>
       </ul>
     </div>
   </section>
@@ -127,6 +134,6 @@
     <p><a href="mailto:hola@joaquinborjaleon.com">hola@joaquinborjaleon.com</a></p>
   </div>
 </footer>
-<script src="/assets/site.js?v=24b36ff2" defer></script>
+<script src="/assets/site.js?v=e9b88297" defer></script>
 </body>
 </html>
