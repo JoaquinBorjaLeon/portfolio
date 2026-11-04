@@ -181,7 +181,13 @@
     if (scheme.addEventListener) scheme.addEventListener('change', follow);
     else if (scheme.addListener) scheme.addListener(follow);
   }
-  window.addEventListener('storage', function (e) { if (e.key === 'theme') swap(chosen() || system()); });
+  /* si se cambia en otra pestaña, aquí se aplica al momento, sin fundido */
+  window.addEventListener('storage', function (e) {
+    if (e.key !== 'theme') return;
+    want = chosen() || system();
+    root.classList.add('still'); paint(want); void root.offsetHeight;
+    if (!busy) root.classList.remove('still');
+  });
 
   /* el nombre de la cabecera: en la portada sube arriba con suavidad en vez de recargar */
   if (brand) {
