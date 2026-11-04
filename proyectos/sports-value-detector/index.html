@@ -26,21 +26,22 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=02a6b525">
 <link rel="preload" href="/assets/fonts/general-sans-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/gambarino-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/site.css?v=c6193ffe">
+<link rel="stylesheet" href="/assets/site.css?v=96ef8609">
 </head>
 <body>
 <a class="skip" href="#main">Saltar al contenido</a>
-<header class="top">
+<header class="top sub">
   <div class="wrap">
     <a class="brand" href="/">Joaquín Borja León</a>
     <a class="crumb" href="/#proyectos"><span aria-hidden="true">←</span> Proyectos</a>
-    <nav aria-label="Secciones">
+    <button class="menu" type="button" aria-expanded="false" aria-controls="nav" data-close="Cerrar">Menú</button>
+    <nav id="nav" aria-label="Secciones">
       <a href="/#proyectos">Proyectos</a>
       <a href="/#experiencia">Experiencia</a>
       <a href="/#formacion">Formación</a>
       <a href="/#contacto">Contacto</a>
     </nav>
-    <a class="lang" href="/en/projects/sports-value-detector/" hreflang="en" lang="en" data-switch="en" aria-label="Read in English">EN</a>
+    <a class="lang" href="/en/projects/sports-value-detector/" hreflang="en" lang="en" data-switch="en" aria-label="EN, read in English">EN</a>
   </div>
 </header>
 <main id="main" class="project-page">
@@ -56,10 +57,10 @@
   <div class="wrap">
       <figure class="stage reveal">
         <div data-ui class="chart" id="chart">
-          <h4>Distancia a la línea de cierre</h4>
+          <h2>Distancia a la línea de cierre</h2>
           <p class="sub">Log loss del modelo menos log loss de la cuota de cierre. Cuanto más corta la barra, más cerca del mercado.</p>
           <table>
-            <thead><tr><th scope="col">Mercado</th><th scope="col">Distancia</th><th scope="col"></th><th scope="col" class="ll">Modelo y cierre</th></tr></thead>
+            <thead><tr><th scope="col">Mercado</th><th scope="colgroup" colspan="2">Distancia</th><th scope="col" class="ll">Modelo y cierre</th></tr></thead>
             <tbody>
               <tr><th scope="row">Más/menos 2,5 goles<small>Fútbol, 5 ligas</small></th><td class="bar"><i style="width:34.6%"></i></td><td class="gap">+0,009</td><td class="ll">0,683 frente a 0,674</td></tr>
               <tr><th scope="row">1X2<small>Fútbol, 5 ligas</small></th><td class="bar"><i style="width:57.7%"></i></td><td class="gap">+0,015</td><td class="ll">0,993 frente a 0,978</td></tr>
@@ -116,7 +117,7 @@
         <li><a href="mailto:hola@joaquinborjaleon.com"><span class="ch-k">Correo</span><span class="ch-v">hola@joaquinborjaleon.com</span></a></li>
         <li><a href="https://www.linkedin.com/in/joaquinborjaleon" target="_blank" rel="noopener"><span class="ch-k">LinkedIn</span><span class="ch-v">in/joaquinborjaleon</span></a></li>
         <li><a href="https://github.com/JoaquinBorjaLeon" target="_blank" rel="noopener"><span class="ch-k">GitHub</span><span class="ch-v">JoaquinBorjaLeon</span></a></li>
-        <li><a href="/cv/joaquin-borja-leon-cv-es.pdf?v=1cfccbb2" download><span class="ch-k">CV</span><span class="ch-v">Descargar PDF</span></a></li>
+        <li><a href="/cv/joaquin-borja-leon-cv-es.pdf?v=d5038789" download><span class="ch-k">CV</span><span class="ch-v">Descargar PDF</span></a></li>
       </ul>
     </div>
   </section>
@@ -127,6 +128,6 @@
     <p><a href="mailto:hola@joaquinborjaleon.com">hola@joaquinborjaleon.com</a></p>
   </div>
 </footer>
-<script src="/assets/site.js?v=1412ac1f" defer></script>
+<script src="/assets/site.js?v=24b36ff2" defer></script>
 </body>
 </html>

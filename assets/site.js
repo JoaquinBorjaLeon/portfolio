@@ -90,6 +90,42 @@
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
+  /* menú en móvil y tablet: el botón abre las secciones bajo la cabecera */
+  var menu = document.querySelector('.menu'), closeMenu = function () {};
+  if (menu && top) {
+    var shut = menu.textContent, opened = menu.getAttribute('data-close') || shut;
+    var setMenu = function (open) {
+      top.classList.toggle('open', open);
+      menu.setAttribute('aria-expanded', open ? 'true' : 'false');
+      menu.textContent = open ? opened : shut;
+    };
+    closeMenu = function () { setMenu(false); };
+    menu.addEventListener('click', function () { setMenu(!top.classList.contains('open')); });
+    document.querySelectorAll('#nav a').forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && top.classList.contains('open')) { setMenu(false); menu.focus(); }
+    });
+    document.addEventListener('click', function (e) {
+      if (top.classList.contains('open') && !top.contains(e.target)) setMenu(false);
+    });
+    window.addEventListener('resize', function () {
+      if (top.classList.contains('open') && getComputedStyle(menu).display === 'none') setMenu(false);
+    });
+  }
+
+  /* el nombre de la cabecera: en la portada sube arriba con suavidad en vez de recargar */
+  if (brand) {
+    brand.addEventListener('click', function (e) {
+      if (e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      if (new URL(brand.href, location.href).pathname !== location.pathname) return;
+      e.preventDefault();
+      closeMenu();
+      if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+      var still = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: 0, behavior: still ? 'auto' : 'smooth' });
+    });
+  }
+
   /* al llegar desde el otro idioma: lo que ya estabas viendo aparece sin animación y en su sitio */
   var pend = null;
   try { pend = JSON.parse(sessionStorage.getItem('pos') || 'null'); sessionStorage.removeItem('pos'); } catch (x) {}

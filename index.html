@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>try{if(sessionStorage.getItem('pos'))document.documentElement.classList.add('hold','kept')}catch(e){}</script>
 <title>Joaquín Borja León, ingeniero de software</title>
-<meta name="description" content="Portfolio de Joaquín Borja León, ingeniero de software en Madrid especializado en backend y datos: Orderflow Terminal, DocuChat, VecinUs, Sports Value Detector, RecuerdaMed, Analista incansable, una app de reservas y agenda para peluquería y Poké-Hub.">
+<meta name="description" content="Ingeniero de software en Madrid especializado en backend y datos. Proyectos como Orderflow Terminal, DocuChat, VecinUs y Sports Value Detector.">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0f1524" media="(prefers-color-scheme: dark)">
 <meta property="og:title" content="Joaquín Borja León, ingeniero de software">
-<meta property="og:description" content="Portfolio de Joaquín Borja León, ingeniero de software en Madrid especializado en backend y datos: Orderflow Terminal, DocuChat, VecinUs, Sports Value Detector, RecuerdaMed, Analista incansable, una app de reservas y agenda para peluquería y Poké-Hub.">
+<meta property="og:description" content="Ingeniero de software en Madrid especializado en backend y datos. Proyectos como Orderflow Terminal, DocuChat, VecinUs y Sports Value Detector.">
 <meta property="og:url" content="https://joaquinborjaleon.com/">
 <meta property="og:image" content="https://joaquinborjaleon.com/img/og/home-es.jpg">
 <meta property="og:image:width" content="1200">
@@ -28,7 +28,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=02a6b525">
 <link rel="preload" href="/assets/fonts/general-sans-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/gambarino-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/site.css?v=c6193ffe">
+<link rel="stylesheet" href="/assets/site.css?v=96ef8609">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Joaquín Borja León", "jobTitle": "Software Engineer", "url": "https://joaquinborjaleon.com/", "image": "https://joaquinborjaleon.com/photo.jpg", "address": {"@type": "PostalAddress", "addressLocality": "Madrid", "addressCountry": "ES"}, "worksFor": {"@type": "Organization", "name": "Airbus Defence and Space"}, "alumniOf": {"@type": "CollegeOrUniversity", "name": "Universidad de Sevilla"}, "sameAs": ["https://github.com/JoaquinBorjaLeon", "https://www.linkedin.com/in/joaquinborjaleon"]}</script>
 </head>
 <body>
@@ -36,13 +36,14 @@
 <header class="top">
   <div class="wrap">
     <a class="brand hidden" href="/">Joaquín Borja León</a>
-    <nav aria-label="Secciones">
+    <button class="menu" type="button" aria-expanded="false" aria-controls="nav" data-close="Cerrar">Menú</button>
+    <nav id="nav" aria-label="Secciones">
       <a href="#proyectos">Proyectos</a>
       <a href="#experiencia">Experiencia</a>
       <a href="#formacion">Formación</a>
       <a href="#contacto">Contacto</a>
     </nav>
-    <a class="lang" href="/en/" hreflang="en" lang="en" data-switch="en" aria-label="Read in English">EN</a>
+    <a class="lang" href="/en/" hreflang="en" lang="en" data-switch="en" aria-label="EN, read in English">EN</a>
   </div>
 </header>
 <main id="main">
@@ -58,7 +59,7 @@
           <p class="lead">Digital Governance Trainee en Airbus Defence and Space y estudiante de dos másteres, en la Universidad de Sevilla y en la Universidad Camilo José Cela.</p>
           <div class="cta">
             <a class="btn primary" href="#proyectos">Ver proyectos</a>
-            <a class="btn" href="/cv/joaquin-borja-leon-cv-es.pdf?v=1cfccbb2" download>Descargar CV <span class="arr" aria-hidden="true">↓</span></a>
+            <a class="btn" href="/cv/joaquin-borja-leon-cv-es.pdf?v=d5038789" download>Descargar CV <span class="arr" aria-hidden="true">↓</span></a>
             <a class="textlink" href="https://github.com/JoaquinBorjaLeon" target="_blank" rel="noopener">GitHub</a>
             <a class="textlink" href="https://www.linkedin.com/in/joaquinborjaleon" target="_blank" rel="noopener">LinkedIn</a>
           </div>
@@ -79,7 +80,7 @@
         <h2 id="h-proyectos">Proyectos</h2>
       </div>
       <a class="card featured reveal" href="/proyectos/orderflow-terminal/">
-        <div class="media"><img src="/img/covers/orderflow-terminal.webp?v=b2e0f0ea" width="1600" height="1000" loading="lazy" decoding="async" alt="Terminal con el gráfico de NVDA, sus niveles de gamma y el heatmap de gamma, junto a la vista del móvil"></div>
+        <div class="media"><picture><source srcset="/img/covers/orderflow-terminal-dark.webp?v=9edf44d0" media="(prefers-color-scheme: dark)"><img src="/img/covers/orderflow-terminal.webp?v=b2e0f0ea" width="1600" height="1000" loading="lazy" decoding="async" alt="Terminal con el gráfico de NVDA, sus niveles de gamma y el heatmap de gamma, junto a la vista del móvil"></picture></div>
         <div class="card-body">
           <h3>Orderflow Terminal</h3>
           <p class="card-sum">Terminal de bolsa con flujo de opciones, exposición gamma y fundamentales de la SEC, con datos reales y gratuitos.</p>
@@ -89,7 +90,7 @@
         </div>
       </a>
       <a class="card featured flip reveal" href="/proyectos/docuchat/">
-        <div class="media"><img src="/img/covers/docuchat.webp?v=655ef2da" width="1600" height="1000" loading="lazy" decoding="async" alt="Interfaz de DocuChat respondiendo una pregunta con sus fuentes"></div>
+        <div class="media"><picture><source srcset="/img/covers/docuchat-dark.webp?v=a33258de" media="(prefers-color-scheme: dark)"><img src="/img/covers/docuchat.webp?v=a4f669f7" width="1600" height="1000" loading="lazy" decoding="async" alt="Interfaz de DocuChat respondiendo una pregunta con sus fuentes"></picture></div>
         <div class="card-body">
           <h3>DocuChat</h3>
           <p class="card-sum">Asistente RAG que responde sobre tus PDF y cita la fuente de cada respuesta.</p>
@@ -100,7 +101,7 @@
       </a>
       <div class="cards">
       <a class="card reveal" href="/proyectos/vecinus/">
-        <div class="media"><img src="/img/covers/vecinus.webp?v=4e6163b1" width="1600" height="1000" loading="lazy" decoding="async" alt="Asistente de la comunidad y pase QR de una reserva en VecinUs"></div>
+        <div class="media"><picture><source srcset="/img/covers/vecinus-dark.webp?v=3631b95a" media="(prefers-color-scheme: dark)"><img src="/img/covers/vecinus.webp?v=4e6163b1" width="1600" height="1000" loading="lazy" decoding="async" alt="Asistente de la comunidad y pase QR de una reserva en VecinUs"></picture></div>
         <div class="card-body">
           <h3>VecinUs</h3>
           <p class="card-sum">App para comunidades de vecinos. Fui el jefe de proyecto y monté la integración continua y la seguridad del repositorio.</p>
@@ -110,7 +111,7 @@
         </div>
       </a>
       <a class="card reveal" href="/proyectos/sports-value-detector/">
-        <div class="media"><img src="/img/covers/sports-value-detector.webp?v=193d6319" width="1600" height="1000" loading="lazy" decoding="async" alt="Gráficos de goles por liga y diagrama de calibración del modelo"></div>
+        <div class="media"><picture><source srcset="/img/covers/sports-value-detector-dark.webp?v=297f50b1" media="(prefers-color-scheme: dark)"><img src="/img/covers/sports-value-detector.webp?v=193d6319" width="1600" height="1000" loading="lazy" decoding="async" alt="Gráficos de goles por liga y diagrama de calibración del modelo"></picture></div>
         <div class="card-body">
           <h3>Sports Value Detector</h3>
           <p class="card-sum">Modelos de fútbol y tenis medidos contra la cuota de cierre, con una conclusión honesta.</p>
@@ -120,7 +121,7 @@
         </div>
       </a>
       <a class="card reveal" href="/proyectos/recuerdamed/">
-        <div class="media"><img src="/img/covers/recuerdamed.webp?v=32176e2a" width="1600" height="1000" loading="lazy" decoding="async" alt="Icono de RecuerdaMed y su pantalla de acceso"></div>
+        <div class="media"><picture><source srcset="/img/covers/recuerdamed-dark.webp?v=04887b63" media="(prefers-color-scheme: dark)"><img src="/img/covers/recuerdamed.webp?v=32176e2a" width="1600" height="1000" loading="lazy" decoding="async" alt="Icono de RecuerdaMed y su pantalla de acceso"></picture></div>
         <div class="card-body">
           <h3>RecuerdaMed</h3>
           <p class="card-sum">App de medicación para pacientes y cuidadores, con demo pública.</p>
@@ -130,7 +131,7 @@
         </div>
       </a>
       <a class="card reveal" href="/proyectos/analista-incansable/">
-        <div class="media"><img src="/img/covers/analista-incansable.webp?v=f1542224" width="1600" height="1000" loading="lazy" decoding="async" alt="Panel de solo lectura en el móvil con la lista de seguimiento y el detalle de una empresa"></div>
+        <div class="media"><picture><source srcset="/img/covers/analista-incansable-dark.webp?v=48cee5b9" media="(prefers-color-scheme: dark)"><img src="/img/covers/analista-incansable.webp?v=f1542224" width="1600" height="1000" loading="lazy" decoding="async" alt="Panel de solo lectura en el móvil con la lista de seguimiento y el detalle de una empresa"></picture></div>
         <div class="card-body">
           <h3>Analista incansable</h3>
           <p class="card-sum">Screener fundamental que puntúa empresas cada día y avisa por Telegram.</p>
@@ -140,7 +141,7 @@
         </div>
       </a>
       <a class="card reveal" href="/proyectos/reservas-peluqueria/">
-        <div class="media"><img src="/img/covers/reservas-peluqueria.webp?v=927487c5" width="1600" height="1000" loading="lazy" decoding="async" alt="Página de inicio y paso de elección de hora de la app de reservas"></div>
+        <div class="media"><picture><source srcset="/img/covers/reservas-peluqueria-dark.webp?v=5fbf6248" media="(prefers-color-scheme: dark)"><img src="/img/covers/reservas-peluqueria.webp?v=927487c5" width="1600" height="1000" loading="lazy" decoding="async" alt="Página de inicio y paso de elección de hora de la app de reservas"></picture></div>
         <div class="card-body">
           <h3>Reservas y agenda de peluquería</h3>
           <p class="card-sum">Reserva en tres pasos para el cliente y panel para el negocio. Hice el frontend completo y la API de gestión.</p>
@@ -150,7 +151,7 @@
         </div>
       </a>
       <a class="card reveal" href="/proyectos/poke-hub/">
-        <div class="media"><img src="/img/covers/poke-hub.webp?v=b9705c82" width="1600" height="1000" loading="lazy" decoding="async" alt="Perfil público de un usuario y ficha de un dataset en Poké-Hub"></div>
+        <div class="media"><picture><source srcset="/img/covers/poke-hub-dark.webp?v=d63e5faf" media="(prefers-color-scheme: dark)"><img src="/img/covers/poke-hub.webp?v=b9705c82" width="1600" height="1000" loading="lazy" decoding="async" alt="Perfil público de un usuario y ficha de un dataset en Poké-Hub"></picture></div>
         <div class="card-body">
           <h3>Poké-Hub</h3>
           <p class="card-sum">Repositorio de modelos de datos. Hice el perfil público con los datasets de cada usuario y casi la mitad de los tests.</p>
@@ -236,7 +237,7 @@
         <li><a href="mailto:hola@joaquinborjaleon.com"><span class="ch-k">Correo</span><span class="ch-v">hola@joaquinborjaleon.com</span></a></li>
         <li><a href="https://www.linkedin.com/in/joaquinborjaleon" target="_blank" rel="noopener"><span class="ch-k">LinkedIn</span><span class="ch-v">in/joaquinborjaleon</span></a></li>
         <li><a href="https://github.com/JoaquinBorjaLeon" target="_blank" rel="noopener"><span class="ch-k">GitHub</span><span class="ch-v">JoaquinBorjaLeon</span></a></li>
-        <li><a href="/cv/joaquin-borja-leon-cv-es.pdf?v=1cfccbb2" download><span class="ch-k">CV</span><span class="ch-v">Descargar PDF</span></a></li>
+        <li><a href="/cv/joaquin-borja-leon-cv-es.pdf?v=d5038789" download><span class="ch-k">CV</span><span class="ch-v">Descargar PDF</span></a></li>
       </ul>
     </div>
   </section>
@@ -247,6 +248,6 @@
     <p><a href="mailto:hola@joaquinborjaleon.com">hola@joaquinborjaleon.com</a></p>
   </div>
 </footer>
-<script src="/assets/site.js?v=1412ac1f" defer></script>
+<script src="/assets/site.js?v=24b36ff2" defer></script>
 </body>
 </html>
