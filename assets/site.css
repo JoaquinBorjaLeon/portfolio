@@ -211,15 +211,23 @@ footer a:hover{color:var(--link)}
 .back:hover{color:var(--ink)}
 .p-hero h1{font-size:var(--s-h1);line-height:1.02}
 .p-lead{font-size:var(--s-lead);color:var(--ink-2);max-width:60ch;margin-top:clamp(16px,2vw,22px);line-height:1.5}
-.p-hero .p-meta{margin-top:18px}
 .p-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(24px,3vw,32px)}
 .p-facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px 32px;margin-top:clamp(32px,5vw,52px);background:var(--surface);border-radius:18px;padding:clamp(20px,2.6vw,28px)}
-.p-facts dd{font-weight:600;line-height:1.4}
+.p-facts dd{font-weight:600;line-height:1.4;text-wrap:balance}
 .p-tech{grid-column:1/-1}
 .p-tech dt{margin-bottom:8px}
 .p-facts .stack li{background:var(--raised)}
 @media (max-width:860px){.p-facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:420px){.p-facts{grid-template-columns:1fr}}
+/* cabecera del proyecto en pantallas anchas: la descripción a la izquierda, con su ancho cómodo de lectura,
+   y la ficha a la derecha a la misma altura */
+@media (min-width:1000px){
+  .p-hero.split .wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);column-gap:clamp(40px,5vw,72px);align-items:start}
+  .p-hero.split h1{grid-column:1/-1}
+  .p-hero.split .p-lead{max-width:none}
+  .p-hero.split .p-facts{margin-top:clamp(16px,2vw,22px);grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 24px}
+  .p-hero.split .p-facts>div:nth-child(n+3){grid-column:1/-1}
+}
 .p-sec{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:16px 48px}
 .p-sec h2{font-size:clamp(1.75rem,1.45rem + 1.2vw,2.5rem);line-height:1.1}
 @media (max-width:760px){.p-sec{grid-template-columns:1fr}}
