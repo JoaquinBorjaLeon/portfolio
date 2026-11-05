@@ -32,6 +32,8 @@ a{color:inherit;text-decoration-thickness:1px;text-underline-offset:.22em}
 .card:focus-visible{outline-offset:6px;border-radius:24px}
 ::selection{background:var(--sel);color:var(--sel-ink)}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+/* que una expresión corta no se parta entre líneas */
+.nowrap{white-space:nowrap}
 .skip{position:absolute;left:-9999px;top:10px;z-index:30;background:var(--ink);color:var(--bg);padding:10px 14px;border-radius:8px}
 .skip:focus{left:12px}
 h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:-.01em;text-wrap:balance}
